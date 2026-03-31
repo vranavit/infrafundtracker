@@ -27,6 +27,24 @@ jobs:
         run: |
           pip install requests
 
+      - name: Debug SEC API queries
+        run: |
+          echo "=== Test 1: empty query ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://api.adviserinfo.sec.gov/search/firm?query=&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+          echo ""
+          echo "=== Test 2: wildcard ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://api.adviserinfo.sec.gov/search/firm?query=*&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+          echo ""
+          echo "=== Test 3: name search ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://api.adviserinfo.sec.gov/search/firm?query=goldman&hl=true&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+          echo ""
+          echo "=== Test 4: hl param ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://api.adviserinfo.sec.gov/search/firm?query=wealth%20management&hl=true&nrows=2&start=0&r=25&sort=score+desc&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+
       - name: Run ADV export
         working-directory: adv_engine
         env:
