@@ -1,0 +1,51 @@
+name: ADV Daily Data Refresh
+
+# Runs every day at 07:00 ET (12:00 UTC during EDT, 11:00 UTC during EST)
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 12:00 UTC = 07:00 ET (summer) / 07:00 ET (winter is 12:00 UTC)
+  workflow_dispatch:        # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write           # Needed to commit the JSON back to the repo
+
+jobs:
+  export-adv-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run ADV export
+        working-directory: adv_engine
+        env:
+          # SEC requires a User-Agent with contact info
+          SEC_USER_AGENT: "ISQ-InfraFundTracker support@bloorcapital.com"
+        run: |
+          python export_static.py \
+            --output ../ISQ_Tracker_Deploy/adv_leads.json
+
+      - name: Check if data changed
+        id: check_diff
+        run: |
+          git diff --quiet ISQ_Tracker_Deploy/adv_leads.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated data
+        if: steps.check_diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ISQ_Tracker_Deploy/adv_leads.json
+          git commit -m "chore: refresh ADV leads data $(date -u +%Y-%m-%d)"
+          git push

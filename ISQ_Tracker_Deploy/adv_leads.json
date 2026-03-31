@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-03-31T22:24:01.707380Z",
+  "total_firms_scanned": 3,
+  "total_signals_fired": 6,
+  "kpi": {
+    "tier1_count": 1,
+    "tier2_count": 0,
+    "tier3_count": 1,
+    "new_signals_today": 5
+  },
+  "leads": [
+    {
+      "id": "801-1234",
+      "firm": "Wealth Management Partners LLC",
+      "city": "",
+      "state": "NY",
+      "aum": 750000000,
+      "clients": 45,
+      "avgPerClient": 16666667,
+      "tier": 1,
+      "score": 30.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($16,666,667) exceeds $5,000,000 threshold",
+      "platformAccess": "Schwab",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "family_office_detected",
+          "weight": 9,
+          "evidence": "Firm identified as Family Office",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal."
+    },
+    {
+      "id": "801-9101",
+      "firm": "Morgan Stanley Breakaway Group",
+      "city": "",
+      "state": "TX",
+      "aum": 250000000,
+      "clients": 80,
+      "avgPerClient": 3125000,
+      "tier": 3,
+      "score": 13.8,
+      "qpScore": 7,
+      "qpExpl": "Firm avg AUM per client ($3,125,000) in $2,000,000-$5,000,000 range",
+      "platformAccess": "Pershing",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "wirehouse_breakaway",
+          "weight": 10,
+          "evidence": "Wirehouse background detected",
+          "isNew": false,
+          "category": "business_model",
+          "talkingPoint": "Wirehouses often restrict alternative investments - your independence opens new opportunities"
+        }
+      ],
+      "action": "Lead with new private funds signal."
+    },
+    {
+      "id": "801-5678",
+      "firm": "Alternative Investors Group",
+      "city": "",
+      "state": "CA",
+      "aum": 450000000,
+      "clients": 120,
+      "avgPerClient": 3750000,
+      "tier": 4,
+      "score": 0.0,
+      "qpScore": 7,
+      "qpExpl": "Firm avg AUM per client ($3,750,000) in $2,000,000-$5,000,000 range",
+      "platformAccess": "Fidelity",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [],
+      "action": "Review signals before outreach."
+    }
+  ],
+  "state_counts": {
+    "NY": 1,
+    "TX": 1,
+    "CA": 1
+  },
+  "signal_freq": [
+    {
+      "name": "new_private_funds",
+      "count": 2,
+      "newCount": 2
+    },
+    {
+      "name": "new_real_estate_added",
+      "count": 1,
+      "newCount": 1
+    },
+    {
+      "name": "family_office_detected",
+      "count": 1,
+      "newCount": 1
+    },
+    {
+      "name": "fee_based_compensation",
+      "count": 1,
+      "newCount": 1
+    },
+    {
+      "name": "wirehouse_breakaway",
+      "count": 1,
+      "newCount": 0
+    }
+  ],
+  "platform_counts": [
+    {
+      "name": "Schwab",
+      "count": 1,
+      "tier": 1
+    },
+    {
+      "name": "Pershing (BNY)",
+      "count": 1,
+      "tier": 1
+    },
+    {
+      "name": "Fidelity",
+      "count": 1,
+      "tier": 1
+    }
+  ]
+}
