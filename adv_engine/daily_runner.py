@@ -13,7 +13,6 @@ from typing import List, Optional, Dict, Any
 from config import PIPELINE_CONFIG, DB_CONFIG
 from scrapers.adv_parser import FirmRecord
 from scrapers.iapd_fetcher import IAPDFetcher
-from scrapers.sec_csv_parser import SECCSVParser
 from signals.signal_detector import SignalDetector, Signal
 from signals.qp_scorer import QPScorer
 from signals.platform_scorer import PlatformScorer
@@ -168,27 +167,23 @@ class DailyRunner:
         logger.info(f"Downloading firm data (sample_size={sample_size})...")
 
         try:
-            # Step 1: Download SEC IAPD data
+            # Step 1: Fetch firms directly from SEC IAPD JSON API
             fetcher = IAPDFetcher()
-            csv_paths = fetcher.fetch_latest()
+            firms = fetcher.fetch_latest()
 
-            if csv_paths:
-                # Step 2: Parse CSVs into FirmRecord objects
-                parser = SECCSVParser()
-                firms = parser.parse_firms(csv_paths)
-                logger.info(f"Parsed {len(firms)} firms from SEC IAPD data")
+            if firms:
+                logger.info(f"Fetched {len(firms)} firms from SEC IAPD API")
 
                 if sample_size:
                     firms = firms[:sample_size]
 
-                if firms:
-                    return firms
+                return firms
 
             logger.warning(
-                "SEC IAPD download returned no data, falling back to sample"
+                "SEC IAPD API returned no data, falling back to sample"
             )
         except Exception as e:
-            logger.warning(f"SEC IAPD download failed: {e}, falling back to sample")
+            logger.warning(f"SEC IAPD fetch failed: {e}, falling back to sample")
 
         # Fallback to sample data
         firms = self._get_sample_firms()

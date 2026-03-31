@@ -103,8 +103,8 @@ def _build_lead_card(result: Dict[str, Any]) -> Dict[str, Any]:
     platform_tier = result.get("platform_tier", 0)
     isq_accessible = platform_tier in [1, 2]
 
-    # City is not in SEC bulk data; leave blank or parse from state
-    city = ""
+    # City from API data (stored in raw_data by the fetcher)
+    city = firm.raw_data.get("city", "") if firm.raw_data else ""
 
     # Avg AUM per client
     avg_per_client = (
