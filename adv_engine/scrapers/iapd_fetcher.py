@@ -1,9 +1,11 @@
 """
 IAPD Fetcher - Downloads real SEC IAPD Form ADV data via the public JSON API.
 
-Uses the undocumented but public SEC IAPD search API at
-api.adviserinfo.sec.gov to fetch investment adviser firm data.
-Supports pagination, rate limiting, and caching.
+Uses the SEC IAPD search API at api.adviserinfo.sec.gov to fetch investment
+adviser firm data using text-based queries and pagination.
+
+The search API returns: firm name, CRD, SEC number, state, active status,
+branch count. It does NOT return AUM, client counts, or custodian info.
 """
 
 import json
@@ -13,7 +15,7 @@ import re
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Set
 
 import requests
 
@@ -26,31 +28,46 @@ class IAPDFetcher:
     """
     Fetcher for SEC IAPD Form ADV data via the public JSON search API.
 
-    Uses api.adviserinfo.sec.gov/search/firm to query all SEC-registered
-    investment advisers, with pagination to handle the full ~40,000+ universe.
+    Strategy: search with common RIA industry terms to cover the full
+    universe of ~40,000 firms. Deduplicates by CRD number.
 
-    Features:
-    - Paginated fetching (API caps at 10,000 per query, so we split by state)
-    - Rate limiting (10 req/sec max, per SEC requirements)
-    - JSON caching with configurable expiry
-    - Direct conversion to FirmRecord objects (no CSV intermediate)
+    The API caps at ~10,000 results per query, so we use multiple
+    search terms to achieve broad coverage.
     """
 
     # SEC IAPD public search API
     API_BASE = "https://api.adviserinfo.sec.gov/search/firm"
 
-    # Page size for API requests (max the API reliably handles)
+    # Page size for API requests
     PAGE_SIZE = 100
 
-    # US state codes to iterate through for full coverage
-    # (API has 10k result cap, splitting by state keeps each query under limit)
-    US_STATES = [
-        "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
-        "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
-        "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
-        "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR",
-        "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV",
-        "WI", "WY",
+    # Search terms designed to cover the vast majority of RIA firms.
+    # Each term is paginated up to 10,000 results.
+    # Together these should cover 30,000+ unique firms.
+    SEARCH_TERMS = [
+        "advisors",
+        "advisory",
+        "capital",
+        "wealth",
+        "management",
+        "financial",
+        "partners",
+        "investment",
+        "group",
+        "associates",
+        "consulting",
+        "trust",
+        "family office",
+        "private",
+        "asset",
+        "fund",
+        "securities",
+        "planning",
+        "retirement",
+        "fiduciary",
+        "LLC",
+        "LP",
+        "Inc",
     ]
 
     # Family office name patterns
@@ -70,25 +87,13 @@ class IAPDFetcher:
         rate_limit_delay: float = 0.12,
         user_agent: Optional[str] = None,
         cache_expiry_hours: int = 20,
-        min_aum: float = 50_000_000,
     ):
-        """
-        Initialize IAPD Fetcher.
-
-        Args:
-            cache_dir: Directory to store cached JSON responses
-            rate_limit_delay: Delay between requests (0.12s = ~8 req/sec, under SEC 10/s limit)
-            user_agent: Custom User-Agent header
-            cache_expiry_hours: How long to keep cached data (default 20 hours)
-            min_aum: Minimum AUM to include firms (default $50M)
-        """
         if cache_dir is None:
             from config import CACHE_DIR
             cache_dir = os.path.join(CACHE_DIR, "iapd")
         self.cache_dir = Path(cache_dir)
         self.rate_limit_delay = rate_limit_delay
         self.cache_expiry_hours = cache_expiry_hours
-        self.min_aum = min_aum
 
         if user_agent:
             self.user_agent = user_agent
@@ -112,19 +117,18 @@ class IAPDFetcher:
             "api_calls": 0,
             "total_hits": 0,
             "firms_parsed": 0,
-            "firms_filtered_aum": 0,
+            "firms_inactive": 0,
             "errors": 0,
         }
 
     def fetch_latest(self) -> List[FirmRecord]:
         """
-        Main entry point: fetch all SEC-registered IA firms via the JSON API.
+        Main entry point: fetch SEC-registered IA firms via the JSON API.
 
-        Iterates through US states to stay under the API's 10k result limit
-        per query. Returns FirmRecord objects directly (no CSV intermediate).
+        Uses text-search queries with common RIA terms, deduplicates by CRD.
 
         Returns:
-            List of FirmRecord instances (filtered by min AUM)
+            List of FirmRecord instances (active firms only)
             Empty list if all attempts fail
         """
         # Check cache first
@@ -135,25 +139,30 @@ class IAPDFetcher:
                 logger.info(f"Using cached data: {len(cached)} firms")
                 return cached
 
-        logger.info("Starting IAPD API fetch across all US states")
+        logger.info(
+            f"Starting IAPD API fetch with {len(self.SEARCH_TERMS)} search terms"
+        )
         all_firms = {}  # keyed by CRD to deduplicate
+        seen_crds: Set[str] = set()
 
-        for state in self.US_STATES:
+        for term in self.SEARCH_TERMS:
             try:
-                state_firms = self._fetch_state(state)
-                for firm in state_firms:
-                    # Deduplicate by SEC file number
-                    all_firms[firm.sec_file_number] = firm
+                new_count = self._fetch_by_term(term, all_firms, seen_crds)
+                if new_count > 0:
+                    logger.info(
+                        f"  '{term}': +{new_count} new firms "
+                        f"(total unique: {len(all_firms)})"
+                    )
             except Exception as e:
-                logger.error(f"Error fetching state {state}: {e}")
+                logger.error(f"Error searching '{term}': {e}")
                 self.stats["errors"] += 1
                 continue
 
         firms = list(all_firms.values())
         logger.info(
-            f"IAPD fetch complete: {len(firms)} firms "
+            f"IAPD fetch complete: {len(firms)} active firms "
             f"(API calls: {self.stats['api_calls']}, "
-            f"filtered by AUM: {self.stats['firms_filtered_aum']})"
+            f"inactive skipped: {self.stats['firms_inactive']})"
         )
 
         # Cache results
@@ -162,90 +171,67 @@ class IAPDFetcher:
 
         return firms
 
-    def _fetch_state(self, state: str) -> List[FirmRecord]:
+    def _fetch_by_term(
+        self, term: str, all_firms: Dict[str, FirmRecord], seen_crds: Set[str]
+    ) -> int:
         """
-        Fetch all IA firms in a given state via paginated API calls.
+        Fetch all firms matching a search term, paginating through results.
 
         Args:
-            state: 2-letter US state code
+            term: Search term
+            all_firms: Dict to add firms to (keyed by CRD)
+            seen_crds: Set of already-seen CRD numbers
 
         Returns:
-            List of FirmRecord for firms in that state meeting AUM threshold
+            Number of NEW firms added by this term
         """
-        firms = []
+        new_count = 0
         start = 0
+        max_per_term = 10000  # API limit
 
-        while True:
-            data = self._api_request(state=state, start=start)
+        while start < max_per_term:
+            data = self._api_request(query=term, start=start)
             if data is None:
                 break
 
-            # Debug: log full response structure on first call for this state
-            if start == 0:
-                top_keys = list(data.keys())
-                logger.info(f"  {state} API response keys: {top_keys}")
-                # Try to find the results wherever they are
-                if "hits" in data:
-                    hits_obj = data["hits"]
-                    if isinstance(hits_obj, dict):
-                        logger.info(f"  {state} hits keys: {list(hits_obj.keys())}")
-                    else:
-                        logger.info(f"  {state} hits type: {type(hits_obj)}, len={len(hits_obj) if hasattr(hits_obj, '__len__') else 'N/A'}")
-                # Log first 500 chars of response for debugging
-                import json as _json
-                logger.info(f"  {state} response sample: {_json.dumps(data)[:500]}")
-
             hits = data.get("hits", {})
+            if not isinstance(hits, dict):
+                break
+
             hit_list = hits.get("hits", [])
             total = hits.get("total", 0)
-
-            if not hit_list:
-                # Try alternative response shapes
-                if isinstance(hits, list):
-                    hit_list = hits
-                    total = len(hits)
-                elif "results" in data:
-                    hit_list = data["results"]
-                    total = len(hit_list)
-                elif "firms" in data:
-                    hit_list = data["firms"]
-                    total = len(hit_list)
 
             if not hit_list:
                 break
 
             for hit in hit_list:
-                firm = self._parse_hit(hit)
+                source = hit.get("_source", hit)
+                crd = str(source.get("firm_source_id", ""))
+
+                # Skip if already seen
+                if not crd or crd in seen_crds:
+                    continue
+
+                seen_crds.add(crd)
+
+                firm = self._parse_hit(source)
                 if firm:
-                    firms.append(firm)
+                    all_firms[crd] = firm
+                    new_count += 1
 
             start += len(hit_list)
 
-            # Stop if we've fetched all results
-            if start >= total or start >= 10000:
+            # Stop if we've fetched all results for this term
+            if start >= total:
                 break
 
-        if firms:
-            logger.info(f"  {state}: {len(firms)} firms (of {start} total checked)")
-
-        return firms
+        return new_count
 
     def _api_request(
-        self,
-        state: Optional[str] = None,
-        query: str = "",
-        start: int = 0,
+        self, query: str = "", start: int = 0
     ) -> Optional[Dict]:
         """
         Make a single API request to the SEC IAPD search endpoint.
-
-        Args:
-            state: Filter by state code
-            query: Search query string
-            start: Pagination offset
-
-        Returns:
-            Parsed JSON response or None on failure
         """
         # Rate limit
         elapsed = time.time() - self.last_request_time
@@ -254,15 +240,13 @@ class IAPDFetcher:
 
         params = {
             "query": query,
+            "hl": "true",
             "nrows": self.PAGE_SIZE,
             "start": start,
             "r": self.PAGE_SIZE,
             "sort": "score+desc",
             "wt": "json",
         }
-
-        if state:
-            params["query"] = f"firm_ia_st_cd:{state}"
 
         try:
             self.last_request_time = time.time()
@@ -275,7 +259,6 @@ class IAPDFetcher:
             )
 
             if response.status_code == 429:
-                # Rate limited - back off and retry once
                 logger.warning("Rate limited by SEC API, backing off 5s")
                 time.sleep(5)
                 self.last_request_time = time.time()
@@ -292,75 +275,78 @@ class IAPDFetcher:
             logger.error(f"API request failed: {e}")
             return None
         except json.JSONDecodeError as e:
-            logger.error(f"Failed to parse API response as JSON: {e}")
+            logger.error(f"Failed to parse API response: {e}")
             return None
 
-    def _parse_hit(self, hit: Dict[str, Any]) -> Optional[FirmRecord]:
+    def _parse_hit(self, source: Dict[str, Any]) -> Optional[FirmRecord]:
         """
         Parse a single API search hit into a FirmRecord.
 
-        The API returns hits with a _source object containing firm fields
-        like firm_name, firm_ia_aum, firm_ia_st_cd, etc.
+        The API returns: firm_name, firm_source_id (CRD), firm_ia_scope,
+        firm_ia_full_sec_number, firm_ia_address_details (JSON string),
+        firm_branches_count, firm_other_names.
 
-        Args:
-            hit: Single hit dict from API response
-
-        Returns:
-            FirmRecord if firm meets criteria, None otherwise
+        NOTE: AUM is NOT available from the search API.
         """
         try:
-            # Handle both nested (_source) and flat response formats
-            source = hit.get("_source", None)
-            if source is None:
-                # Maybe the hit itself is the source (flat format)
-                source = hit
-            if not source:
-                return None
-
             firm_name = source.get("firm_name", "").strip()
             if not firm_name:
                 return None
 
-            # CRD number (used as unique ID)
-            crd = source.get("firm_source_id", "")
+            # Only include ACTIVE investment advisers
+            scope = source.get("firm_ia_scope", "")
+            if scope != "ACTIVE":
+                self.stats["firms_inactive"] += 1
+                return None
+
+            crd = str(source.get("firm_source_id", ""))
             if not crd:
                 return None
 
             # SEC file number
             sec_num = source.get("firm_ia_full_sec_number", "")
             if not sec_num:
-                sec_num = f"CRD-{crd}"  # fallback
+                sec_num = f"CRD-{crd}"
 
-            # State
-            state = source.get("firm_ia_st_cd", "")
+            # Parse address details (JSON string)
+            state = ""
+            city = ""
+            address_json = source.get("firm_ia_address_details", "")
+            if address_json and isinstance(address_json, str):
+                try:
+                    addr = json.loads(address_json)
+                    office = addr.get("officeAddress", {})
+                    state = office.get("state", "")
+                    city = office.get("city", "")
+                except (json.JSONDecodeError, AttributeError):
+                    pass
 
-            # AUM - try multiple fields
-            aum = 0.0
-            aum_str = source.get("firm_ia_aum", "")
-            if aum_str:
-                aum = self._parse_aum(str(aum_str))
+            # Normalize state to 2-letter code
+            if state and len(state) > 2:
+                state = self._normalize_state(state)
 
-            # Filter by minimum AUM
-            if aum < self.min_aum:
-                self.stats["firms_filtered_aum"] += 1
-                return None
-
-            # Number of accounts/clients
-            num_clients = self._safe_int(source.get("firm_ia_num_accts", 0))
-
-            # City
-            city = source.get("firm_ia_city", "")
+            # Branch count (proxy for firm size)
+            branches = source.get("firm_branches_count", 0)
+            try:
+                branches = int(branches)
+            except (ValueError, TypeError):
+                branches = 0
 
             # Detect family office from name
             is_family_office = self._detect_family_office(firm_name)
 
-            # Other names (may contain custodian hints)
+            # Detect if name suggests alternatives/private funds
+            manages_private = self._name_suggests_alts(firm_name)
+
+            # Other names
             other_names = source.get("firm_other_names", [])
             if isinstance(other_names, str):
                 other_names = [other_names]
 
-            # BD (broker-dealer) indicator
-            has_bd = bool(source.get("firm_bd_full_sec_number", ""))
+            # Estimate AUM based on branch count (very rough proxy)
+            # Firms with more branches tend to be larger
+            # This is an approximation since the API doesn't provide AUM
+            estimated_aum = self._estimate_aum(branches, is_family_office)
 
             # Build FirmRecord
             firm = FirmRecord(
@@ -369,15 +355,17 @@ class IAPDFetcher:
                 cik=crd,
                 state=state,
                 country="United States",
-                aum_total=aum,
-                aum_regulatory=aum,
-                num_clients=num_clients,
+                aum_total=estimated_aum,
+                aum_regulatory=estimated_aum,
+                num_clients=max(branches * 20, 10),  # rough estimate
                 is_family_office=is_family_office,
-                is_registered_representative=has_bd,
+                manages_private_funds=manages_private,
                 raw_data={
                     "api_source": source,
                     "other_names": other_names,
                     "city": city,
+                    "branches": branches,
+                    "aum_estimated": True,
                 },
             )
 
@@ -389,24 +377,56 @@ class IAPDFetcher:
             self.stats["errors"] += 1
             return None
 
-    def _parse_aum(self, value: str) -> float:
-        """Parse AUM from API response (may be numeric string or formatted)."""
-        if not value:
-            return 0.0
-        try:
-            cleaned = str(value).replace("$", "").replace(",", "").strip()
-            if not cleaned:
-                return 0.0
-            return float(cleaned)
-        except (ValueError, TypeError):
-            return 0.0
+    def _estimate_aum(self, branches: int, is_family_office: bool) -> float:
+        """
+        Rough AUM estimate based on branch count.
 
-    def _safe_int(self, value) -> int:
-        """Safely convert value to int."""
-        try:
-            return int(value)
-        except (ValueError, TypeError):
-            return 0
+        NOTE: This is marked in raw_data as estimated. The dashboard
+        should indicate when AUM data is estimated vs actual.
+
+        Average SEC-registered IA has ~$500M AUM. Firms with more
+        branches tend to be larger. Family offices tend to be smaller
+        but with higher per-client AUM.
+        """
+        if is_family_office:
+            return 200_000_000  # $200M typical family office
+        if branches >= 10:
+            return 5_000_000_000  # $5B+ for large multi-branch firms
+        if branches >= 5:
+            return 1_000_000_000  # $1B
+        if branches >= 2:
+            return 500_000_000  # $500M
+        return 200_000_000  # $200M default for single-office
+
+    def _normalize_state(self, state: str) -> str:
+        """Normalize state name to 2-letter code."""
+        if not state:
+            return ""
+        state = state.strip().upper()
+        if len(state) == 2 and state.isalpha():
+            return state
+
+        state_map = {
+            "ALABAMA": "AL", "ALASKA": "AK", "ARIZONA": "AZ",
+            "ARKANSAS": "AR", "CALIFORNIA": "CA", "COLORADO": "CO",
+            "CONNECTICUT": "CT", "DELAWARE": "DE", "FLORIDA": "FL",
+            "GEORGIA": "GA", "HAWAII": "HI", "IDAHO": "ID",
+            "ILLINOIS": "IL", "INDIANA": "IN", "IOWA": "IA",
+            "KANSAS": "KS", "KENTUCKY": "KY", "LOUISIANA": "LA",
+            "MAINE": "ME", "MARYLAND": "MD", "MASSACHUSETTS": "MA",
+            "MICHIGAN": "MI", "MINNESOTA": "MN", "MISSISSIPPI": "MS",
+            "MISSOURI": "MO", "MONTANA": "MT", "NEBRASKA": "NE",
+            "NEVADA": "NV", "NEW HAMPSHIRE": "NH", "NEW JERSEY": "NJ",
+            "NEW MEXICO": "NM", "NEW YORK": "NY", "NORTH CAROLINA": "NC",
+            "NORTH DAKOTA": "ND", "OHIO": "OH", "OKLAHOMA": "OK",
+            "OREGON": "OR", "PENNSYLVANIA": "PA", "RHODE ISLAND": "RI",
+            "SOUTH CAROLINA": "SC", "SOUTH DAKOTA": "SD", "TENNESSEE": "TN",
+            "TEXAS": "TX", "UTAH": "UT", "VERMONT": "VT",
+            "VIRGINIA": "VA", "WASHINGTON": "WA", "WEST VIRGINIA": "WV",
+            "WISCONSIN": "WI", "WYOMING": "WY",
+            "DISTRICT OF COLUMBIA": "DC",
+        }
+        return state_map.get(state, state[:2] if len(state) >= 2 else "")
 
     def _detect_family_office(self, firm_name: str) -> bool:
         """Detect if firm name suggests a family office."""
@@ -417,6 +437,18 @@ class IAPDFetcher:
             if re.search(pattern, name_lower, re.IGNORECASE):
                 return True
         return False
+
+    def _name_suggests_alts(self, firm_name: str) -> bool:
+        """Detect if firm name suggests alternatives/private funds focus."""
+        if not firm_name:
+            return False
+        name_lower = firm_name.lower()
+        alt_keywords = [
+            "alternative", "private equity", "private fund",
+            "hedge fund", "real estate", "infrastructure",
+            "venture", "private capital", "private credit",
+        ]
+        return any(kw in name_lower for kw in alt_keywords)
 
     def _is_cache_valid(self, path: Path) -> bool:
         """Check if cached file is still fresh."""
@@ -441,7 +473,9 @@ class IAPDFetcher:
                         "aum_total": f.aum_total,
                         "num_clients": f.num_clients,
                         "is_family_office": f.is_family_office,
+                        "manages_private_funds": f.manages_private_funds,
                         "city": f.raw_data.get("city", ""),
+                        "branches": f.raw_data.get("branches", 0),
                     }
                     for f in firms
                 ],
@@ -468,7 +502,12 @@ class IAPDFetcher:
                     aum_total=item.get("aum_total", 0),
                     num_clients=item.get("num_clients", 0),
                     is_family_office=item.get("is_family_office", False),
-                    raw_data={"city": item.get("city", "")},
+                    manages_private_funds=item.get("manages_private_funds", False),
+                    raw_data={
+                        "city": item.get("city", ""),
+                        "branches": item.get("branches", 0),
+                        "aum_estimated": True,
+                    },
                 )
                 firms.append(firm)
 
