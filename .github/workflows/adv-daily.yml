@@ -27,23 +27,35 @@ jobs:
         run: |
           pip install requests
 
-      - name: Debug SEC API queries
+      - name: Debug SEC API - find detail endpoints
         run: |
-          echo "=== Test 1: empty query ==="
+          echo "=== Test 1: firm detail by CRD (JSON) ==="
           curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
-            "https://api.adviserinfo.sec.gov/search/firm?query=&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+            -H "Accept: application/json" \
+            "https://api.adviserinfo.sec.gov/search/firm/157465" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:2000])" 2>&1 || echo "FAILED"
           echo ""
-          echo "=== Test 2: wildcard ==="
+          echo "=== Test 2: firm summary endpoint ==="
           curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
-            "https://api.adviserinfo.sec.gov/search/firm?query=*&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+            -H "Accept: application/json" \
+            "https://adviserinfo.sec.gov/firm/summary/157465" | head -c 2000
           echo ""
-          echo "=== Test 3: name search ==="
-          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
-            "https://api.adviserinfo.sec.gov/search/firm?query=goldman&hl=true&nrows=2&start=0&r=2&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
           echo ""
-          echo "=== Test 4: hl param ==="
+          echo "=== Test 3: IAPD compilation page links ==="
           curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
-            "https://api.adviserinfo.sec.gov/search/firm?query=wealth%20management&hl=true&nrows=2&start=0&r=25&sort=score+desc&wt=json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(json.dumps(d,indent=2)[:1500])"
+            "https://adviserinfo.sec.gov/compilation" | head -c 3000
+          echo ""
+          echo ""
+          echo "=== Test 4: SEC FOIA data page for download links ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers" | grep -ioE 'href="[^"]*\.(zip|csv)[^"]*"' | head -20
+          echo ""
+          echo "=== Test 5: SEC FOIA form-adv-data page ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data" | grep -ioE 'href="[^"]*\.(zip|csv)[^"]*"' | head -20
+          echo ""
+          echo "=== Test 6: reports.adviserinfo.sec.gov ==="
+          curl -s -H "User-Agent: ISQ-InfraFundTracker support@bloorcapital.com" \
+            "https://reports.adviserinfo.sec.gov/" | head -c 2000 2>&1 || echo "FAILED"
 
       - name: Run ADV export
         working-directory: adv_engine
