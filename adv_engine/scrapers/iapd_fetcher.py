@@ -180,9 +180,36 @@ class IAPDFetcher:
             if data is None:
                 break
 
+            # Debug: log full response structure on first call for this state
+            if start == 0:
+                top_keys = list(data.keys())
+                logger.info(f"  {state} API response keys: {top_keys}")
+                # Try to find the results wherever they are
+                if "hits" in data:
+                    hits_obj = data["hits"]
+                    if isinstance(hits_obj, dict):
+                        logger.info(f"  {state} hits keys: {list(hits_obj.keys())}")
+                    else:
+                        logger.info(f"  {state} hits type: {type(hits_obj)}, len={len(hits_obj) if hasattr(hits_obj, '__len__') else 'N/A'}")
+                # Log first 500 chars of response for debugging
+                import json as _json
+                logger.info(f"  {state} response sample: {_json.dumps(data)[:500]}")
+
             hits = data.get("hits", {})
             hit_list = hits.get("hits", [])
             total = hits.get("total", 0)
+
+            if not hit_list:
+                # Try alternative response shapes
+                if isinstance(hits, list):
+                    hit_list = hits
+                    total = len(hits)
+                elif "results" in data:
+                    hit_list = data["results"]
+                    total = len(hit_list)
+                elif "firms" in data:
+                    hit_list = data["firms"]
+                    total = len(hit_list)
 
             if not hit_list:
                 break
@@ -282,7 +309,11 @@ class IAPDFetcher:
             FirmRecord if firm meets criteria, None otherwise
         """
         try:
-            source = hit.get("_source", {})
+            # Handle both nested (_source) and flat response formats
+            source = hit.get("_source", None)
+            if source is None:
+                # Maybe the hit itself is the source (flat format)
+                source = hit
             if not source:
                 return None
 
