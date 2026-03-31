@@ -49,11 +49,12 @@ class SignalScorer:
     """
 
     # Platform gate caps
+    # None means "no custodian data available" - don't penalize, just skip gate
     PLATFORM_GATE_CAPS = {
         1: None,  # Tier 1: no cap
         2: 24,    # Tier 2: cap at 24 (Tier 3 max without upgrade)
         3: 14,    # Tier 3: cap at 14
-        None: 14,  # No platform: cap at 14
+        None: None,  # No platform data: skip gate (don't penalize missing data)
     }
 
     # Score normalization factor (maps internal score to 0-100 range)

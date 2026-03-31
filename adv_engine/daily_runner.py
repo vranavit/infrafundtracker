@@ -277,8 +277,16 @@ class DailyRunner:
                     signals, qp_score, platform_score, platform_tier, firm
                 )
 
-                # Only include firms with signals or high platform tiers
-                if signals or platform_tier in [1, 2]:
+                # Include firms with signals, good platform access,
+                # family offices, or private fund managers
+                include = (
+                    signals
+                    or platform_tier in [1, 2]
+                    or firm.is_family_office
+                    or firm.manages_private_funds
+                    or qp_score >= 8
+                )
+                if include:
                     results.append({
                         "firm": firm,
                         "signals": signals,
