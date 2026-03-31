@@ -113,10 +113,11 @@ class SignalScorer:
         # Step 6: Determine tier
         tier, label, description = self._get_tier_from_score(normalized_score)
 
-        logger.info(
-            f"{firm.firm_name}: Final score {normalized_score:.1f}/100 ({tier}) - "
-            f"Signals: {len(signals)}, QP: {qp_score:.1f}, Platform: Tier {platform_best_tier}"
-        )
+        if signals:
+            logger.info(
+                f"{firm.firm_name}: Final score {normalized_score:.1f}/100 ({tier}) - "
+                f"Signals: {len(signals)}, QP: {qp_score:.1f}, Platform: Tier {platform_best_tier}"
+            )
 
         return OverallScore(
             score=normalized_score,

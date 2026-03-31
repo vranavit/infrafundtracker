@@ -107,10 +107,11 @@ class SignalDetector:
         signals.extend(self._detect_breakaway_signals(current, previous))
         signals.extend(self._detect_fee_structure_signals(current, previous))
 
-        logger.info(
-            f"Detected {len(signals)} signals for {current.firm_name} "
-            f"(new: {sum(1 for s in signals if s.is_new)})"
-        )
+        if signals:
+            logger.info(
+                f"Detected {len(signals)} signals for {current.firm_name} "
+                f"(new: {sum(1 for s in signals if s.is_new)})"
+            )
         return signals
 
     def _detect_platform_signals(

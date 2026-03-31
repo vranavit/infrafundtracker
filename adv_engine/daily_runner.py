@@ -253,7 +253,7 @@ class DailyRunner:
         results = []
 
         for i, firm in enumerate(firms):
-            if (i + 1) % 100 == 0:
+            if (i + 1) % 5000 == 0:
                 logger.info(f"Processed {i + 1}/{len(firms)} firms...")
 
             try:
