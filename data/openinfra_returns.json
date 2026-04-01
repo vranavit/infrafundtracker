@@ -1,62 +1,68 @@
 {
-  "last_updated": "2026-04-01T06:06:50.129574+00:00",
+  "last_updated": "2026-04-01T08:01:45.017687Z",
   "funds": {
     "isq_openinfra": {
+      "return_1m": 0.043163,
+      "return_3m": 0.2664,
+      "return_6m": null,
+      "return_1y": null,
+      "return_ytd": 0.0,
+      "return_itd": 0.2664,
+      "annualised_itd": 1.031013,
       "data_points_count": 4,
-      "return_1m": 4.32,
-      "return_3m": 26.64,
-      "return_itd": 26.64,
       "oldest_nav_date": "2025-10-01",
       "latest_nav_date": "2026-01-31"
     },
     "ares_aci": {
+      "return_1m": -0.004771,
+      "return_3m": -0.004601,
+      "return_6m": 0.002675,
+      "return_1y": -0.000593,
+      "return_ytd": -0.00404,
+      "return_itd": -0.019083,
+      "annualised_itd": -0.019083,
       "data_points_count": 12,
-      "return_1m": -0.4,
-      "return_3m": -0.46,
-      "return_itd": -1.91,
       "oldest_nav_date": "2024-11-30",
       "latest_nav_date": "2026-02-28"
     },
     "kkr_infra_conglomerate": {
+      "return_1m": 0.071858,
+      "return_3m": 0.071858,
+      "return_6m": 0.071858,
+      "return_1y": 0.071858,
+      "return_ytd": 0.0,
+      "return_itd": 0.113645,
+      "annualised_itd": 0.294769,
       "data_points_count": 5,
-      "return_1m": 7.19,
-      "return_3m": 10.11,
-      "return_itd": 11.36,
       "oldest_nav_date": "2024-03-31",
       "latest_nav_date": "2026-02-28"
     },
     "stonepeak_plus": {
+      "return_1m": 0.020238,
+      "return_3m": 0.049917,
+      "return_6m": 0.093287,
+      "return_1y": null,
+      "return_ytd": 0.005063,
+      "return_itd": 0.232441,
+      "annualised_itd": 0.285048,
       "data_points_count": 10,
-      "return_1m": 0.51,
-      "return_3m": 4.99,
-      "return_itd": 23.24,
       "oldest_nav_date": "2025-05-31",
       "latest_nav_date": "2026-02-28"
     },
     "brookfield_infra_income": {
-      "data_points_count": 1,
-      "oldest_nav_date": "2025-12-31",
-      "latest_nav_date": "2025-12-31"
+      "data_points_count": 1
     },
     "blue_owl_odit": {
-      "data_points_count": 1,
-      "oldest_nav_date": "2025-12-31",
-      "latest_nav_date": "2025-12-31"
+      "data_points_count": 1
     },
     "hamilton_lane_infra": {
-      "data_points_count": 0,
-      "oldest_nav_date": null,
-      "latest_nav_date": null
+      "data_points_count": 1
     },
     "partners_group_infra": {
-      "data_points_count": 0,
-      "oldest_nav_date": null,
-      "latest_nav_date": null
+      "data_points_count": 1
     },
     "kkr_kif_lux": {
-      "data_points_count": 1,
-      "oldest_nav_date": "2026-01-31",
-      "latest_nav_date": "2026-01-31"
+      "data_points_count": 1
     }
   }
 }
