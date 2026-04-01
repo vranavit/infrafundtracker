@@ -1,44 +1,46 @@
 {
-  "last_updated": "2026-04-01T04:01:57.020207Z",
+  "last_updated": "2026-04-01T05:02:31.381950Z",
   "funds": {
     "isq_openinfra": {
-      "data_points_count": 1
+      "data_points_count": 4,
+      "return_itd": 26.36,
+      "return_3m": 26.36,
+      "return_1m": 4.09,
+      "oldest_nav_date": "2025-10-01",
+      "latest_nav_date": "2026-01-31"
     },
     "ares_aci": {
-      "return_1m": 0.009799,
-      "return_3m": 0.007309,
+      "return_1m": 0.98,
+      "return_3m": 0.73,
       "return_6m": 0.0089,
       "return_1y": -0.014549,
       "return_ytd": 0.004026,
-      "return_itd": -0.014549,
-      "annualised_itd": -0.019351,
+      "return_itd": -1.45,
       "data_points_count": 9,
       "oldest_nav_date": "2024-11-30",
       "latest_nav_date": "2025-11-30"
     },
     "kkr_infra_conglomerate": {
-      "return_1m": 0.027273,
-      "return_3m": 0.027273,
+      "return_1m": 2.73,
+      "return_3m": 2.73,
       "return_6m": 0.038985,
       "return_1y": null,
       "return_ytd": 0.038985,
-      "return_itd": 0.038985,
-      "annualised_itd": 0.121574,
+      "return_itd": 3.9,
       "data_points_count": 4,
       "oldest_nav_date": "2024-03-31",
       "latest_nav_date": "2024-09-30"
     },
     "stonepeak_plus": {
-      "return_1m": 0.052985,
-      "return_3m": 0.095221,
+      "return_1m": 0.51,
+      "return_3m": 1.15,
       "return_6m": null,
       "return_1y": null,
       "return_ytd": 0.115849,
-      "return_itd": 0.115849,
-      "annualised_itd": 0.300927,
-      "data_points_count": 5,
-      "oldest_nav_date": "2025-06-30",
-      "latest_nav_date": "2025-11-30"
+      "return_itd": 23.24,
+      "data_points_count": 10,
+      "oldest_nav_date": "2025-05-31",
+      "latest_nav_date": "2026-02-28"
     },
     "brookfield_infra_income": {
       "data_points_count": 1

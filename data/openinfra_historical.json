@@ -3,14 +3,54 @@
     "isq_openinfra": {
       "historical": [
         {
-          "date": "2026-01-31",
-          "nav": 31.59,
-          "aum_m": null,
-          "subs_m": null,
+          "date": "2025-10-01",
+          "nav": 25.0,
+          "aum_m": 80.4,
+          "subs_m": 80.4,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "ISQ OpenInfra website",
-          "source_url": "https://isqopeninfraco.com"
+          "source_label": "SEC 8-K filed 2025-10-03 (initial seed)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390025096163/ea0260261-8k_isqopen.htm"
+        },
+        {
+          "date": "2025-11-03",
+          "nav": null,
+          "aum_m": null,
+          "subs_m": 27.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-12-05 (subs only)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390025118675/ea0268432-8k_isqopen.htm"
+        },
+        {
+          "date": "2025-12-01",
+          "nav": 28.83,
+          "aum_m": 122.2,
+          "subs_m": 22.9,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K/A filed 2026-01-09 (amended)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026002647/ea0272327-8ka1_isqopen.htm"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": 30.35,
+          "aum_m": 152.7,
+          "subs_m": 28.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-02-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026012781/ea0275707-8k_isqopen.htm"
+        },
+        {
+          "date": "2026-01-31",
+          "nav": 31.66,
+          "aum_m": 189.0,
+          "subs_m": 13.6,
+          "redemptions_m": null,
+          "dist_per_share": 0.11,
+          "source_label": "SEC 8-K filed 2026-03-10",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
         }
       ],
       "fund_name": "ISQ OpenInfra Company"
@@ -158,64 +198,104 @@
     "stonepeak_plus": {
       "historical": [
         {
+          "date": "2025-05-31",
+          "nav": 25.77,
+          "aum_m": null,
+          "subs_m": 286.1,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-07-07 (inception)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125024968/ef20051618_8k.htm"
+        },
+        {
           "date": "2025-06-30",
           "nav": 28.14,
           "aum_m": null,
-          "subs_m": null,
+          "subs_m": 18.4,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K filed 2025-07-28",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125028400/ef20053069_8k.htm"
+          "source_label": "SEC 8-K filed 2025-08-01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125028400/ef20053069_8k.htm"
         },
         {
           "date": "2025-07-31",
-          "nav": 28.32,
+          "nav": 28.69,
           "aum_m": null,
-          "subs_m": 64.6,
+          "subs_m": 41.8,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-09-04",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125033999/ef20055084_8k.htm"
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125033999/ef20055084_8k.htm"
         },
         {
           "date": "2025-08-31",
-          "nav": 28.67,
+          "nav": 29.05,
           "aum_m": null,
-          "subs_m": 43.7,
+          "subs_m": 32.0,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K filed 2025-09-26",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125037000/ef20056485_8k.htm"
+          "source_label": "SEC 8-K filed 2025-10-01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125037000/ef20056485_8k.htm"
         },
         {
           "date": "2025-09-30",
-          "nav": null,
+          "nav": 30.02,
           "aum_m": null,
           "subs_m": 95.4,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K Oct 2025",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000204545825000014/sp-20251030.htm"
+          "source_label": "SEC 8-K filed 2025-11-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545825000014/sp-20251030.htm"
         },
         {
           "date": "2025-10-31",
-          "nav": 29.82,
+          "nav": 30.15,
           "aum_m": null,
-          "subs_m": null,
+          "subs_m": 41.4,
           "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "SEC 8-K filed 2025-12-01",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000204545825000023/sp-20251201.htm"
+          "dist_per_share": 0.3,
+          "source_label": "SEC 8-K filed 2025-12-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545825000023/sp-20251201.htm"
         },
         {
           "date": "2025-11-30",
-          "nav": 31.4,
-          "aum_m": 686.0,
-          "subs_m": null,
+          "nav": 30.25,
+          "aum_m": null,
+          "subs_m": 238.5,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K Nov 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2045458"
+          "source_label": "SEC 8-K filed 2026-01-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000003/sp-20251229.htm"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": 31.13,
+          "aum_m": null,
+          "subs_m": 57.3,
+          "redemptions_m": null,
+          "dist_per_share": 0.16,
+          "source_label": "SEC 8-K filed 2026-02-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000005/sp-20260130.htm"
+        },
+        {
+          "date": "2026-01-31",
+          "nav": 31.6,
+          "aum_m": null,
+          "subs_m": 71.2,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-03-04",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000007/sp-20260226.htm"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 31.76,
+          "aum_m": null,
+          "subs_m": 97.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-03-31",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/sp-20260325.htm"
         }
       ],
       "fund_name": "Stonepeak-Plus Infrastructure Fund"
