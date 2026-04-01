@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:44:19.346853+00:00",
+  "last_updated": "2026-04-01T16:05:08.644718+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -734,14 +734,64 @@
     "hamilton_lane_infra": {
       "historical": [
         {
-          "date": "2025-12-31",
-          "nav": null,
-          "aum_m": 950.0,
+          "date": "2024-09-30",
+          "nav": 12.67,
+          "aum_m": 30.6,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "Hamilton Lane Q3 FY2026 Earnings",
-          "source_url": "https://www.hamiltonlane.com"
+          "source_label": "NPORT-P filed 2024-11-29 + N-CSRS filed 2024-12-06 (Q1 FY2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554924077086/"
+        },
+        {
+          "date": "2024-12-31",
+          "nav": null,
+          "aum_m": 41.2,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-02-26 (Q2 FY2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925009900/"
+        },
+        {
+          "date": "2025-03-31",
+          "nav": 13.76,
+          "aum_m": 62.9,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-05-29 + N-CSR filed 2025-06-09 (FY2025 Annual)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925034487/"
+        },
+        {
+          "date": "2025-06-30",
+          "nav": null,
+          "aum_m": 98.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-08-26 (Q1 FY2026)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925053401/"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": 14.81,
+          "aum_m": 118.3,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-11-26 + N-CSRS filed 2025-12-05 (Semi-Annual FY2026)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312525300096/"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": null,
+          "aum_m": 142.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-02-27 (Q2 FY2026)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526082385/"
         }
       ]
     },
