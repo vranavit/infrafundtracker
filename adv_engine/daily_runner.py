@@ -99,6 +99,20 @@ class DailyRunner:
             logger.info("Step 2: Loading previous firm records...")
             previous_records = self._load_previous_records(firms)
 
+            # Step 2.5: Enrich top firms with custodian data from Schedule D
+            # This requires separate API calls per firm, so we sort by AUM
+            # first and only enrich the top 250 firms.
+            logger.info("Step 2.5: Enriching custodian data for top firms...")
+            try:
+                fetcher = IAPDFetcher()
+                # Sort by AUM descending, enrich top 250
+                firms_by_aum = sorted(
+                    firms, key=lambda f: f.aum_total, reverse=True
+                )
+                fetcher.enrich_custodians(firms_by_aum, max_firms=250)
+            except Exception as e:
+                logger.warning(f"Custodian enrichment failed: {e}")
+
             # Step 3: Process each firm through signal detection and scoring
             logger.info("Step 3: Processing signals and scoring...")
             processed_results = self._process_firms(

@@ -46,7 +46,7 @@ class IAPDFetcher:
 
     # sec-api.io endpoints
     SEC_API_FIRM_SEARCH = "https://api.sec-api.io/form-adv/firm"
-    SEC_API_SCHEDULE_D = "https://api.sec-api.io/form-adv/schedule-d"
+    SEC_API_SCHEDULE_D = "https://api.sec-api.io/form-adv/schedule-d-5-k"
 
     # Page size for API requests (max 50 per sec-api.io docs)
     PAGE_SIZE = 50
@@ -150,102 +150,131 @@ class IAPDFetcher:
     # sec-api.io fetcher (full data)
     # =========================================================================
 
+    # Date-range windows for paginating past the 10,000 result cap.
+    # sec-api.io caps any single query at 10,000 results; we split by
+    # Filing.Dt ranges so each window stays under the cap.
+    DATE_WINDOWS = [
+        ("2024-01-01", "2024-06-30"),
+        ("2024-07-01", "2024-12-31"),
+        ("2025-01-01", "2025-06-30"),
+        ("2025-07-01", "2025-12-31"),
+        ("2026-01-01", "2026-12-31"),
+    ]
+
     def _fetch_via_sec_api(self) -> List[FirmRecord]:
         """
         Fetch all SEC-registered advisers via sec-api.io Form ADV API.
 
-        Strategy: Query all adviser filings using broad Lucene queries,
-        paginate through results. The API uses field paths like
-        Info.FirmCrdNb, Info.FirmName, etc.
+        Uses date-range windows on Filing.Dt to stay under the 10,000
+        result cap per query.  Deduplicates by CRD across windows so
+        each firm appears only once (most recent filing wins).
 
-        Response format: {"total": N, "filings": [...]}
+        Response format: {"total": {"value": N, "relation": "..."}, "filings": [...]}
         """
         logger.info("Fetching firms via sec-api.io Form ADV API...")
 
-        all_firms: List[FirmRecord] = []
+        all_firms: Dict[str, FirmRecord] = {}  # CRD → FirmRecord (dedup)
         seen_crds: Set[str] = set()
-        offset = 0
 
-        # Query: all firms with a CRD number (effectively all registered firms)
-        # Using wildcard on CRD to get all filings
-        query = "Info.FirmCrdNb:*"
+        for window_start, window_end in self.DATE_WINDOWS:
+            query = (
+                f"Filing.Dt:[{window_start} TO {window_end}] "
+                f"AND Rgstn.St:APPROVED"
+            )
+            logger.info(f"  Window {window_start}..{window_end}")
+            offset = 0
+            window_total = None
 
-        total_available = None
+            while offset < 10000:
+                try:
+                    data = self._sec_api_request(query=query, start=offset)
+                    if data is None:
+                        logger.error(f"API returned None at offset {offset}")
+                        break
 
-        while offset < self.MAX_FIRMS:
-            try:
-                data = self._sec_api_request(query=query, start=offset)
-                if data is None:
-                    logger.error(f"API returned None at offset {offset}")
-                    break
-
-                # sec-api.io returns {"total": N, "filings": [...]}
-                if isinstance(data, dict):
-                    filings = data.get("filings", [])
-                    if total_available is None:
-                        total_available = data.get("total", 0)
-                        logger.info(
-                            f"  sec-api.io reports {total_available} total filings"
-                        )
-                elif isinstance(data, list):
-                    filings = data
-                else:
-                    logger.error(f"Unexpected response type: {type(data)}")
-                    break
-
-                if not filings:
-                    logger.info(f"No more results at offset {offset}")
-                    break
-
-                for filing in filings:
-                    # Deduplicate by CRD
-                    crd = str(
-                        filing.get("Info", {}).get("FirmCrdNb", "")
-                        or filing.get("firmCrdNumber", "")
-                        or ""
+                    filings, window_total = self._extract_filings(
+                        data, window_total
                     )
-                    if crd and crd in seen_crds:
-                        continue
-                    if crd:
+
+                    if not filings:
+                        logger.info(f"  No more results at offset {offset}")
+                        break
+
+                    for filing in filings:
+                        crd = str(
+                            filing.get("Info", {}).get("FirmCrdNb", "")
+                            or ""
+                        )
+                        if not crd:
+                            continue
+                        if crd in seen_crds:
+                            continue
                         seen_crds.add(crd)
 
-                    firm = self._parse_sec_api_filing(filing)
-                    if firm:
-                        all_firms.append(firm)
+                        firm = self._parse_sec_api_filing(filing)
+                        if firm:
+                            all_firms[crd] = firm
+                            if len(all_firms) == 1:
+                                logger.info(
+                                    f"  First parsed firm: {firm.firm_name}, "
+                                    f"CRD={firm.cik}, State={firm.state}, "
+                                    f"AUM=${firm.aum_total:,.0f}, "
+                                    f"Clients={firm.num_clients}"
+                                )
 
-                offset += len(filings)
+                    offset += len(filings)
 
-                if offset % 1000 == 0 or offset < 100:
-                    logger.info(
-                        f"  Fetched {offset} filings, "
-                        f"parsed {len(all_firms)} unique firms so far"
-                    )
+                    if offset % 1000 == 0 or offset < 100:
+                        logger.info(
+                            f"    Fetched {offset} filings in window, "
+                            f"total unique firms: {len(all_firms)}"
+                        )
 
-                # If we got fewer than PAGE_SIZE, we're done
-                if len(filings) < self.PAGE_SIZE:
-                    break
+                    if len(filings) < self.PAGE_SIZE:
+                        break
+                    if window_total and offset >= window_total:
+                        break
 
-                # Stop if we've passed total available
-                if total_available and offset >= total_available:
-                    break
+                except Exception as e:
+                    logger.error(f"Error at offset {offset}: {e}")
+                    self.stats["errors"] += 1
+                    offset += self.PAGE_SIZE
+                    if self.stats["errors"] > 20:
+                        logger.error("Too many errors, stopping fetch")
+                        break
 
-            except Exception as e:
-                logger.error(f"Error at offset {offset}: {e}")
-                self.stats["errors"] += 1
-                # Try to continue from next page
-                offset += self.PAGE_SIZE
-                if self.stats["errors"] > 10:
-                    logger.error("Too many errors, stopping fetch")
-                    break
+            if self.stats["errors"] > 20:
+                break
 
+        result = list(all_firms.values())
         logger.info(
-            f"sec-api.io fetch complete: {len(all_firms)} active firms "
+            f"sec-api.io fetch complete: {len(result)} active firms "
             f"(API calls: {self.stats['api_calls']}, "
             f"skipped: {self.stats['firms_skipped']}, "
             f"errors: {self.stats['errors']})"
         )
+        return result
 
-        return all_firms
+    def _extract_filings(self, data, current_total):
+        """
+        Pull the filings list and total count from an API response.
+        Handles total being either an int or {"value": N, "relation": "..."}.
+        """
+        if isinstance(data, dict):
+            filings = data.get("filings", [])
+            if current_total is None:
+                raw_total = data.get("total", 0)
+                if isinstance(raw_total, dict):
+                    current_total = raw_total.get("value", 0)
+                else:
+                    current_total = int(raw_total) if raw_total else 0
+                logger.info(f"    Window reports {current_total}+ filings")
+            return filings, current_total
+        elif isinstance(data, list):
+            return data, current_total
+        else:
+            logger.error(f"Unexpected response type: {type(data)}")
+            return [], current_total
 
     def _sec_api_request(
         self, query: str, start: int = 0
@@ -315,12 +344,45 @@ class IAPDFetcher:
                             f"  First filing top-level keys: "
                             f"{list(first.keys())[:20]}"
                         )
-                        # Log Info sub-keys if present
+                        # Log sub-keys for field mapping
                         if "Info" in first:
                             logger.info(
                                 f"  Info sub-keys: "
                                 f"{list(first['Info'].keys())[:20]}"
                             )
+                        if "MainAddr" in first:
+                            logger.info(
+                                f"  MainAddr sub-keys: "
+                                f"{list(first['MainAddr'].keys())[:15]}"
+                            )
+                        if "Rgstn" in first:
+                            rgstn_val = first["Rgstn"]
+                            if isinstance(rgstn_val, list) and rgstn_val:
+                                logger.info(
+                                    f"  Rgstn[0] keys: "
+                                    f"{list(rgstn_val[0].keys())[:15]}"
+                                )
+                            elif isinstance(rgstn_val, dict):
+                                logger.info(
+                                    f"  Rgstn keys: "
+                                    f"{list(rgstn_val.keys())[:15]}"
+                                )
+                        if "FormInfo" in first:
+                            fi = first["FormInfo"]
+                            logger.info(
+                                f"  FormInfo sub-keys: "
+                                f"{list(fi.keys())[:10]}"
+                            )
+                            if "Part1A" in fi:
+                                p1a_keys = list(fi['Part1A'].keys())[:20]
+                                logger.info(f"  Part1A sub-keys: {p1a_keys}")
+                                # Log first firm's AUM/client data
+                                p1a = fi["Part1A"]
+                                for item_key in ["Item5C", "Item5D", "Item5E", "Item5F", "Item7B"]:
+                                    if item_key in p1a:
+                                        logger.info(
+                                            f"  {item_key}: {dict(list(p1a[item_key].items())[:5])}"
+                                        )
                 elif isinstance(result, list) and len(result) > 0:
                     logger.info(f"  Response is list, len={len(result)}")
                     logger.info(
@@ -341,28 +403,23 @@ class IAPDFetcher:
         """
         Parse a sec-api.io Form ADV filing into a FirmRecord.
 
-        sec-api.io may return filings in different structures depending on
-        the endpoint. We handle both:
-        - Top-level "Info" structure: Info.FirmCrdNb, Info.FirmName, etc.
-        - Nested "FormInfo" structure: FormInfo.Part1A.Item1, etc.
+        Field paths are based on the official sec-api.io documentation:
+        https://sec-api.io/docs/investment-adviser-and-adv-api
 
-        This parser tries the top-level Info fields first, then falls back
-        to the nested FormInfo structure.
+        Top-level keys: Info, MainAddr, Rgstn (array), FormInfo, Filing, etc.
+        Nested: FormInfo.Part1A.Item5C, Item5D, Item5E, Item5F, Item5G,
+                Item7B, etc.
         """
         try:
-            # ---------- Top-level "Info" fields (primary) ----------
             info = filing.get("Info", {})
-
-            # Navigate to nested form data
+            main_addr = filing.get("MainAddr", {}) or {}
             form_info = filing.get("FormInfo", {})
             part1a = form_info.get("Part1A", {})
 
-            # ---------- Core identification ----------
+            # ---- Core identification ----
             firm_name = (
-                info.get("FirmName", "")
-                or info.get("firmName", "")
-                or part1a.get("Item1", {}).get("Q1A", "")
-                or filing.get("firmName", "")
+                info.get("BusNm", "")
+                or info.get("LegalNm", "")
                 or ""
             ).strip()
 
@@ -370,158 +427,174 @@ class IAPDFetcher:
                 self.stats["firms_skipped"] += 1
                 return None
 
-            # CRD number
-            crd = str(
-                info.get("FirmCrdNb", "")
-                or filing.get("firmCrdNumber", "")
-                or part1a.get("Item1", {}).get("Q1F", "")
-                or ""
-            )
-
-            # SEC file number
-            sec_num = str(
-                info.get("SECRgnCD", "")
-                or info.get("SecFileNb", "")
-                or filing.get("secFileNumber", "")
-                or ""
-            )
+            crd = str(info.get("FirmCrdNb", "") or "")
+            sec_num = str(info.get("SECNb", "") or "")
             if not sec_num:
                 sec_num = f"CRD-{crd}" if crd else ""
 
-            # ---------- Address ----------
-            # Try Info-level address
+            # ---- Address (MainAddr is top-level) ----
             state = (
-                info.get("MainAddr", {}).get("State", "")
-                or info.get("BusAddr", {}).get("State", "")
-                or part1a.get("Item1", {}).get("Q1I", {}).get("state", "")
-                or filing.get("firmAddress", {}).get("state", "")
+                main_addr.get("State", "")
+                or main_addr.get("Stcd", "")
                 or ""
             )
-            city = (
-                info.get("MainAddr", {}).get("City", "")
-                or info.get("BusAddr", {}).get("City", "")
-                or part1a.get("Item1", {}).get("Q1I", {}).get("city", "")
-                or filing.get("firmAddress", {}).get("city", "")
-                or ""
-            )
-            country = "United States"
+            city = main_addr.get("City", "") or ""
+            country = main_addr.get("Cntry", "United States") or "United States"
 
             if state and len(state) > 2:
                 state = self._normalize_state(state)
 
-            # ---------- AUM ----------
-            # Try multiple paths for AUM data
-            item5 = part1a.get("Item5", {})
-            aum_total = self._parse_number(
-                info.get("TtlRgltryAUM", 0)
-                or info.get("TtlGrssAUM", 0)
-                or item5.get("Q5F2C", 0)
-            )
-            aum_discretionary = self._parse_number(
-                info.get("DscrtnryAUM", 0)
-                or item5.get("Q5F2A", 0)
-            )
+            # ---- AUM (Item 5.F) ----
+            # Q5F2A = discretionary AUM, Q5F2C = total regulatory AUM
+            item5f = part1a.get("Item5F", {})
+            aum_total = self._parse_number(item5f.get("Q5F2C", 0))
+            aum_discretionary = self._parse_number(item5f.get("Q5F2A", 0))
             if aum_total == 0:
                 aum_total = aum_discretionary
 
-            # ---------- Client counts ----------
-            num_clients = self._parse_int(
-                info.get("TtlClntCnt", 0)
-                or item5.get("Q5D1", 0)
+            # ---- Client counts (Item 5.C and 5.D) ----
+            # Q5C1 = approximate number of clients (string like "18")
+            item5c = part1a.get("Item5C", {})
+            num_clients = self._parse_int(item5c.get("Q5C1", 0))
+
+            # Item5D: client type breakdown
+            # Q5DA1 = individuals (other than HNW) count
+            # Q5DB1 = high net worth individuals count
+            # Q5DC1 = banking/thrift count
+            # Q5DD1 = investment companies count
+            # Q5DE1 = business dev companies count
+            # Q5DF1 = pooled investment vehicles count
+            # Q5DG1 = pension/profit sharing plans count
+            # Q5DH1 = charitable organisations count
+            # Q5DI1 = state/municipal entities count
+            # Q5DJ1 = other investment advisers count
+            # Q5DK1 = insurance companies count
+            # Q5DL1 = sovereign wealth count
+            # Q5DM1 = corporations/other businesses count
+            # Q5DN1 = other count
+            item5d = part1a.get("Item5D", {})
+            hnw_clients = self._parse_int(item5d.get("Q5DB1", 0))
+            individual_clients = self._parse_int(item5d.get("Q5DA1", 0))
+
+            # Institutional = pension + charitable + state/muni + insurance
+            # + sovereign + corporations + investment cos
+            institutional_clients = (
+                self._parse_int(item5d.get("Q5DG1", 0))  # pension
+                + self._parse_int(item5d.get("Q5DH1", 0))  # charitable
+                + self._parse_int(item5d.get("Q5DI1", 0))  # state/muni
+                + self._parse_int(item5d.get("Q5DK1", 0))  # insurance
+                + self._parse_int(item5d.get("Q5DL1", 0))  # sovereign
+                + self._parse_int(item5d.get("Q5DM1", 0))  # corporations
+                + self._parse_int(item5d.get("Q5DD1", 0))  # investment cos
             )
 
-            hnw_clients = self._parse_int(
-                info.get("HghNtWrthCnt", 0)
-                or item5.get("Q5D2B", 0)
-            )
-            institutional_clients = self._parse_int(
-                info.get("InstnlCnt", 0)
-                or (
-                    self._parse_int(item5.get("Q5D2G", 0))
-                    + self._parse_int(item5.get("Q5D2I", 0))
-                    + self._parse_int(item5.get("Q5D2L", 0))
-                    + self._parse_int(item5.get("Q5D2K", 0))
+            # If num_clients is 0 but we have breakdowns, sum them
+            if num_clients == 0:
+                num_clients = (
+                    individual_clients
+                    + hnw_clients
+                    + institutional_clients
+                    + self._parse_int(item5d.get("Q5DF1", 0))  # pooled
+                    + self._parse_int(item5d.get("Q5DJ1", 0))  # other IAs
+                    + self._parse_int(item5d.get("Q5DN1", 0))  # other
                 )
-            )
 
-            # ---------- Investment types ----------
-            item5b = item5.get("Q5B", {})
-            if not isinstance(item5b, dict):
-                item5b = {}
-            item8 = part1a.get("Item8", {})
+            # ---- Investment types ----
+            # Item7B.Q7B: "Y" if private fund adviser
+            item7b = part1a.get("Item7B", {})
+            manages_private_funds = self._is_yes(item7b.get("Q7B", ""))
 
-            manages_private_funds = (
-                self._is_yes(info.get("PrvtFndFlg", ""))
-                or self._is_yes(item5b.get("Q5B2", ""))
-                or self._is_yes(item8.get("Q8B1", ""))
+            # Item5G: advisory services provided
+            # Q5G4 = pooled investment vehicles (other than investment cos)
+            item5g = part1a.get("Item5G", {})
+            manages_pooled_vehicles = self._is_yes(item5g.get("Q5G4", ""))
+            if not manages_private_funds:
+                manages_private_funds = manages_pooled_vehicles
+
+            # Item5B has employee/advisory staff counts, not investment types
+            # Use firm name heuristics for real estate / hedge fund flags
+            manages_real_estate = self._name_suggests_type(
+                firm_name, ["real estate", "reit", "property", "realty"]
             )
-            manages_real_estate = self._is_yes(
-                item8.get("Q8C", "")
-            )
-            manages_hedge_funds = self._is_yes(
-                item8.get("Q8D", "")
+            manages_hedge_funds = self._name_suggests_type(
+                firm_name, ["hedge fund", "hedge"]
             )
             manages_public_securities = self._is_yes(
-                item8.get("Q8A", "")
+                item5g.get("Q5G1", "")  # securities portfolios
             )
 
-            # ---------- Custodians ----------
-            custodian_names = self._extract_custodians(filing)
+            # ---- Custodians ----
+            # NOTE: Custodian data (Schedule D 5.K) requires a separate
+            # GET /form-adv/schedule-d-5-k/<crd> call.
+            # We leave custodians empty here and batch-fetch them later
+            # for top-scored firms only.
+            custodian_names: List[str] = []
 
-            # ---------- Fee structure ----------
-            item6 = part1a.get("Item6", {})
-            fee_structure = self._determine_fee_structure(item5, item6)
+            # ---- Fee structure (Item 5.E) ----
+            # Q5E1-Q5E7 are Y/N flags for compensation types
+            item5e = part1a.get("Item5E", {})
+            fee_structure = self._determine_fee_structure(item5e)
 
-            # ---------- Minimum account ----------
-            minimum_account = self._parse_number(item5.get("Q5C", 0))
-
-            # ---------- Registration date ----------
-            reg_date_str = (
-                info.get("DtSECEffective", "")
-                or filing.get("filedAt", "")
-                or filing.get("registrationDate", "")
-                or ""
-            )
+            # ---- Registration date (Rgstn array) ----
+            # Rgstn is an array; Rgstn[0].Dt = registration date,
+            # Rgstn[0].St = status (e.g. "APPROVED")
             registration_date = None
-            if reg_date_str:
-                for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%m/%d/%Y",
-                            "%Y-%m-%dT%H:%M:%S.%fZ"]:
-                    try:
-                        registration_date = datetime.strptime(
-                            reg_date_str[:26].rstrip("Z"), fmt.rstrip("Z")
-                        )
-                        break
-                    except ValueError:
-                        continue
+            filing_date_str = ""
+            rgstn = filing.get("Rgstn", [])
+            if isinstance(rgstn, list) and rgstn:
+                rgstn_entry = rgstn[0] if isinstance(rgstn[0], dict) else {}
+                reg_date_str = rgstn_entry.get("Dt", "")
+                if reg_date_str:
+                    filing_date_str = reg_date_str
+                    for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%m/%d/%Y",
+                                "%Y-%m-%dT%H:%M:%S.%fZ"]:
+                        try:
+                            registration_date = datetime.strptime(
+                                reg_date_str[:26].rstrip("Z"), fmt.rstrip("Z")
+                            )
+                            break
+                        except ValueError:
+                            continue
+            elif isinstance(rgstn, dict):
+                reg_date_str = rgstn.get("Dt", "")
+                if reg_date_str:
+                    filing_date_str = reg_date_str
+                    for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]:
+                        try:
+                            registration_date = datetime.strptime(
+                                reg_date_str[:19], fmt
+                            )
+                            break
+                        except ValueError:
+                            continue
 
-            # ---------- Firm classification ----------
-            is_family_office = (
-                self._detect_family_office(firm_name)
-                or self._is_yes(info.get("FmlyOffcFlg", ""))
-            )
+            # Fall back to Filing.Dt if no Rgstn date
+            if not registration_date:
+                filed_at = filing.get("Filing", {}).get("Dt", "") or filing.get("filedAt", "")
+                if filed_at:
+                    filing_date_str = filed_at
+                    for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]:
+                        try:
+                            registration_date = datetime.strptime(
+                                filed_at[:19], fmt
+                            )
+                            break
+                        except ValueError:
+                            continue
+
+            # ---- Firm classification ----
+            is_family_office = self._detect_family_office(firm_name)
             is_multi_family_office = (
                 "multi-family" in firm_name.lower()
                 or "multi family" in firm_name.lower()
                 or "mfo" in firm_name.lower()
             )
 
-            # ---------- Principals ----------
-            principal_names = []
-            principals = filing.get("principals", [])
-            if isinstance(principals, list):
-                for p in principals[:5]:
-                    name = p.get("name", "") if isinstance(p, dict) else str(p)
-                    if name:
-                        principal_names.append(name)
+            # ---- Website (Item1.Q1J) ----
+            item1 = part1a.get("Item1", {})
+            website = item1.get("Q1J", "") or ""
 
-            # ---------- Website ----------
-            website = (
-                info.get("Website", "")
-                or part1a.get("Item1", {}).get("Q1J", "")
-                or ""
-            )
-
-            # ---------- Build FirmRecord ----------
+            # ---- Build FirmRecord ----
             firm = FirmRecord(
                 firm_name=firm_name,
                 sec_file_number=sec_num,
@@ -540,19 +613,21 @@ class IAPDFetcher:
                 manages_hedge_funds=manages_hedge_funds,
                 custodian_names=custodian_names,
                 fee_structure=fee_structure,
-                minimum_account_size=minimum_account,
                 is_family_office=is_family_office,
                 is_multi_family_office=is_multi_family_office,
-                principal_names=principal_names,
                 website=website,
                 raw_data={
                     "city": city,
                     "crd": crd,
                     "aum_estimated": False,
                     "data_source": "sec-api.io",
-                    "filing_date": reg_date_str,
+                    "filing_date": filing_date_str,
                 },
             )
+
+            # Compute avg AUM per client for QP scorer
+            if firm.num_clients > 0 and firm.aum_total > 0:
+                firm.avg_aum_per_client = firm.aum_total / firm.num_clients
 
             self.stats["firms_parsed"] += 1
             return firm
@@ -562,73 +637,104 @@ class IAPDFetcher:
             self.stats["errors"] += 1
             return None
 
-    def _extract_custodians(self, filing: Dict[str, Any]) -> List[str]:
+    def _name_suggests_type(self, name: str, keywords: List[str]) -> bool:
+        """Check if firm name contains any of the given keywords."""
+        if not name:
+            return False
+        lower = name.lower()
+        return any(kw in lower for kw in keywords)
+
+    def _extract_custodians_for_firm(self, crd: str) -> List[str]:
         """
-        Extract custodian names from Schedule D Section 5.F.
+        Fetch custodian names via the Schedule D 5.K endpoint.
 
-        Schedule D 5.F lists the firm's custodians (where they hold client
-        assets). This is the key data for platform detection.
+        This is a SEPARATE GET call per firm:
+        GET /form-adv/schedule-d-5-k/<crd>?token=API_KEY
+
+        Returns list of custodian names.
         """
-        custodians = []
+        if not self.api_key or not crd:
+            return []
 
-        # Try Schedule D data in the filing
-        schedule_d = filing.get("ScheduleD", {})
-        if not schedule_d:
-            schedule_d = filing.get("scheduleD", {})
+        url = f"{self.SEC_API_SCHEDULE_D}/{crd}?token={self.api_key}"
 
-        # Section 5.F — Custody
-        section_5f = schedule_d.get("Section5F", [])
-        if not section_5f:
-            section_5f = schedule_d.get("section5F", [])
-        if not section_5f:
-            # Try nested FormInfo path
-            form_info = filing.get("FormInfo", {})
-            schedule_d_inner = form_info.get("ScheduleD", {})
-            section_5f = schedule_d_inner.get("Section5F", [])
+        # Rate limit
+        elapsed = time.time() - self.last_request_time
+        if elapsed < self.rate_limit_delay:
+            time.sleep(self.rate_limit_delay - elapsed)
 
-        if isinstance(section_5f, list):
-            for entry in section_5f:
+        try:
+            self.last_request_time = time.time()
+            self.stats["api_calls"] += 1
+            resp = self.session.get(url, timeout=30)
+
+            if resp.status_code == 404:
+                return []  # No Schedule D data for this firm
+            if resp.status_code == 429:
+                time.sleep(10)
+                resp = self.session.get(url, timeout=30)
+            resp.raise_for_status()
+
+            data = resp.json()
+            custodians = []
+
+            # Response is a list of custodian entries
+            entries = data if isinstance(data, list) else data.get("data", [])
+            for entry in entries:
                 if isinstance(entry, dict):
                     name = (
                         entry.get("custodianName", "")
-                        or entry.get("Q5F1", "")
                         or entry.get("name", "")
+                        or entry.get("legalName", "")
                         or ""
                     ).strip()
                     if name and name not in custodians:
                         custodians.append(name)
-                elif isinstance(entry, str) and entry.strip():
-                    if entry.strip() not in custodians:
-                        custodians.append(entry.strip())
 
-        # Also check Part1A Item 5.F for simpler custodian references
-        form_info = filing.get("FormInfo", {})
-        part1a = form_info.get("Part1A", {})
-        item5 = part1a.get("Item5", {})
+            return custodians
 
-        # Q5F1 sometimes has primary custodian
-        primary_custodian = item5.get("Q5F1", "")
-        if isinstance(primary_custodian, str) and primary_custodian.strip():
-            if primary_custodian.strip() not in custodians:
-                custodians.append(primary_custodian.strip())
+        except Exception as e:
+            logger.debug(f"Schedule D 5.K fetch failed for CRD {crd}: {e}")
+            return []
 
-        return custodians
+    def enrich_custodians(self, firms: List[FirmRecord], max_firms: int = 250) -> None:
+        """
+        Batch-fetch custodian data for top firms via Schedule D 5.K.
 
-    def _determine_fee_structure(
-        self, item5: Dict, item6: Dict
-    ) -> str:
-        """Determine fee structure from Item 5.E and Item 6."""
-        # Item 6 — compensation arrangement
-        # Q6A = Percentage of AUM
-        # Q6B = Hourly charges
-        # Q6C = Subscription fees
-        # Q6D = Fixed fees
-        # Q6E = Commissions
-        # Q6F = Performance-based fees
+        Called AFTER initial firm fetch + scoring, so we only make
+        expensive per-firm API calls for the most promising leads.
+        """
+        logger.info(f"Enriching custodian data for top {max_firms} firms...")
+        enriched = 0
+        for firm in firms[:max_firms]:
+            if firm.custodian_names:
+                continue  # Already has data
+            crd = firm.cik or firm.raw_data.get("crd", "")
+            if not crd:
+                continue
+            custodians = self._extract_custodians_for_firm(crd)
+            if custodians:
+                firm.custodian_names = custodians
+                enriched += 1
+        logger.info(f"Enriched {enriched} firms with custodian data")
 
-        aum_based = self._is_yes(item6.get("Q6A", ""))
-        commission = self._is_yes(item6.get("Q6E", ""))
-        performance = self._is_yes(item6.get("Q6F", ""))
+    def _determine_fee_structure(self, item5e: Dict) -> str:
+        """
+        Determine fee structure from Item 5.E.
+
+        Item5E fields (all Y/N):
+        Q5E1 = A percentage of AUM
+        Q5E2 = Hourly charges
+        Q5E3 = Subscription fees (fixed/flat)
+        Q5E4 = Commissions
+        Q5E5 = Performance-based fees
+        Q5E6 = Other
+        """
+        aum_based = self._is_yes(item5e.get("Q5E1", ""))
+        hourly = self._is_yes(item5e.get("Q5E2", ""))
+        subscription = self._is_yes(item5e.get("Q5E3", ""))
+        commission = self._is_yes(item5e.get("Q5E4", ""))
+        performance = self._is_yes(item5e.get("Q5E5", ""))
 
         if aum_based and commission:
             return "Hybrid"
@@ -638,6 +744,8 @@ class IAPDFetcher:
             return "Assets Under Management"
         elif commission:
             return "Commission"
+        elif hourly or subscription:
+            return "Fee-Based"
         else:
             return "Fee-Based"
 
