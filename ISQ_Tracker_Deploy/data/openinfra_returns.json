@@ -1,68 +1,71 @@
 {
-  "last_updated": "2026-04-01T08:01:45.017687Z",
+  "last_updated": "2026-04-01T13:15:30.677954+00:00",
   "funds": {
     "isq_openinfra": {
-      "return_1m": 0.043163,
-      "return_3m": 0.2664,
-      "return_6m": null,
-      "return_1y": null,
-      "return_ytd": 0.0,
-      "return_itd": 0.2664,
-      "annualised_itd": 1.031013,
       "data_points_count": 4,
       "oldest_nav_date": "2025-10-01",
-      "latest_nav_date": "2026-01-31"
+      "latest_nav_date": "2026-01-31",
+      "return_1m": 4.32,
+      "return_3m": 26.64,
+      "return_ytd": 4.32,
+      "return_itd": 26.64
     },
     "ares_aci": {
-      "return_1m": -0.004771,
-      "return_3m": -0.004601,
-      "return_6m": 0.002675,
-      "return_1y": -0.000593,
-      "return_ytd": -0.00404,
-      "return_itd": -0.019083,
-      "annualised_itd": -0.019083,
-      "data_points_count": 12,
+      "data_points_count": 16,
       "oldest_nav_date": "2024-11-30",
-      "latest_nav_date": "2026-02-28"
+      "latest_nav_date": "2026-02-28",
+      "return_1m": -0.4,
+      "return_3m": -0.46,
+      "return_6m": 0.38,
+      "return_1y": -0.06,
+      "return_ytd": -0.48,
+      "return_itd": -1.91
     },
     "kkr_infra_conglomerate": {
-      "return_1m": 0.071858,
-      "return_3m": 0.071858,
-      "return_6m": 0.071858,
-      "return_1y": 0.071858,
-      "return_ytd": 0.0,
-      "return_itd": 0.113645,
-      "annualised_itd": 0.294769,
-      "data_points_count": 5,
-      "oldest_nav_date": "2024-03-31",
-      "latest_nav_date": "2026-02-28"
+      "data_points_count": 31,
+      "oldest_nav_date": "2023-08-31",
+      "latest_nav_date": "2026-02-28",
+      "return_1m": 0.6,
+      "return_3m": 0.97,
+      "return_6m": 2.47,
+      "return_1y": 5.4,
+      "return_ytd": 1.07,
+      "return_itd": 15.57
     },
     "stonepeak_plus": {
-      "return_1m": 0.020238,
-      "return_3m": 0.049917,
-      "return_6m": 0.093287,
-      "return_1y": null,
-      "return_ytd": 0.005063,
-      "return_itd": 0.232441,
-      "annualised_itd": 0.285048,
       "data_points_count": 10,
       "oldest_nav_date": "2025-05-31",
-      "latest_nav_date": "2026-02-28"
+      "latest_nav_date": "2026-02-28",
+      "return_1m": 0.51,
+      "return_3m": 4.99,
+      "return_6m": 9.33,
+      "return_ytd": 2.02,
+      "return_itd": 23.24
     },
     "brookfield_infra_income": {
-      "data_points_count": 1
+      "data_points_count": 1,
+      "oldest_nav_date": "2025-12-31",
+      "latest_nav_date": "2025-12-31"
     },
     "blue_owl_odit": {
-      "data_points_count": 1
+      "data_points_count": 1,
+      "oldest_nav_date": "2025-12-31",
+      "latest_nav_date": "2025-12-31"
     },
     "hamilton_lane_infra": {
-      "data_points_count": 1
+      "data_points_count": 0,
+      "oldest_nav_date": null,
+      "latest_nav_date": null
     },
     "partners_group_infra": {
-      "data_points_count": 1
+      "data_points_count": 0,
+      "oldest_nav_date": null,
+      "latest_nav_date": null
     },
     "kkr_kif_lux": {
-      "data_points_count": 1
+      "data_points_count": 1,
+      "oldest_nav_date": "2026-01-31",
+      "latest_nav_date": "2026-01-31"
     }
   }
 }

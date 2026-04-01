@@ -1,5 +1,10 @@
 {
-  "generated_at": "2026-04-01T08:01:45.017687Z",
-  "period_days": 7,
-  "changes": []
+  "last_updated": "2026-04-01T13:15:30.677954+00:00",
+  "changes": [
+    {
+      "date": "2026-04-01",
+      "type": "major_update",
+      "description": "Full SEC historical backfill: Ares ACI now has 15 monthly data points (Nov 2024 - Feb 2026), KKR Infra Conglomerate has 31 monthly data points (Aug 2023 - Feb 2026). Added 6m, 1y, YTD returns calculations."
+    }
+  ]
 }

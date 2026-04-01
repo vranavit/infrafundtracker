@@ -6,6 +6,7 @@
     <title>OpenInfra Fund Intelligence Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     <style>
         * {
             margin: 0;
@@ -1129,12 +1130,16 @@
         async function initDashboard() {
             try {
                 // Load all data
-                [navData, historicalData, changesData, metadataData] = await Promise.all([
+                let navRaw, histRaw;
+                [navRaw, histRaw, changesData, metadataData] = await Promise.all([
                     fetch('/data/openinfra_nav.json').then(r => r.json()),
                     fetch('/data/openinfra_historical.json').then(r => r.json()),
                     fetch('/data/openinfra_changes.json').then(r => r.json()),
                     fetch('/data/openinfra_metadata.json').then(r => r.json())
                 ]);
+                // Convert funds object to array for existing code compatibility
+                navData = Object.values(navRaw.funds || navRaw);
+                historicalData = histRaw;
 
                 // Render all sections
                 renderUpdatesBar();
@@ -1174,7 +1179,7 @@
 
         // SECTION B: Header
         function renderHeader() {
-            const lastUpdated = new Date(metadataData.last_updated);
+            const lastUpdated = new Date(metadataData.last_updated || metadataData.last_run);
             const hoursAgo = Math.floor((Date.now() - lastUpdated) / (1000 * 60 * 60));
 
             let freshness = 'fresh';
@@ -1330,14 +1335,17 @@
                 if (!history || history.length === 0) return;
 
                 const firstNav = history[0].nav;
-                const labels = history.map(h => new Date(h.date).toLocaleDateString());
-                const data = history.map(h => (h.nav / firstNav) * 100);
+                // Use {x, y} data points for time axis
+                const data = history.map(h => ({
+                    x: h.date,
+                    y: parseFloat(((h.nav / firstNav) * 100).toFixed(2))
+                }));
 
                 datasets.push({
-                    label: FUND_NAMES[fund.fund_id],
+                    label: FUND_NAMES[fund.fund_id] || fund.fund_id,
                     data: data,
-                    borderColor: FUND_COLORS[fund.fund_id],
-                    backgroundColor: FUND_COLORS[fund.fund_id] + '10',
+                    borderColor: FUND_COLORS[fund.fund_id] || '#888',
+                    backgroundColor: (FUND_COLORS[fund.fund_id] || '#888') + '10',
                     borderWidth: fund.is_primary ? 3 : 2,
                     tension: 0.4,
                     fill: false,
@@ -1348,10 +1356,7 @@
 
             new Chart(ctx, {
                 type: 'line',
-                data: {
-                    labels: historicalData.funds[navData[0].fund_id].historical.map(h => new Date(h.date).toLocaleDateString()),
-                    datasets: datasets
-                },
+                data: { datasets: datasets },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
@@ -1359,9 +1364,31 @@
                         legend: {
                             position: 'bottom',
                             labels: { usePointStyle: true, padding: 15 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(items) {
+                                    if (items.length) {
+                                        const d = new Date(items[0].parsed.x);
+                                        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+                                    }
+                                    return '';
+                                },
+                                label: function(item) {
+                                    return item.dataset.label + ': ' + item.parsed.y.toFixed(1);
+                                }
+                            }
                         }
                     },
                     scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: { month: 'MMM yyyy' }
+                            },
+                            title: { display: false }
+                        },
                         y: {
                             beginAtZero: false,
                             title: { display: true, text: 'Rebased NAV (100 = inception)' }
@@ -1381,24 +1408,35 @@
                 const history = historicalData.funds[fund.fund_id].historical;
                 fundAumMap[fund.fund_id] = {};
                 history.forEach(h => {
-                    allDates.add(h.date);
-                    fundAumMap[fund.fund_id][h.date] = h.aum_m || 0;
+                    if (h.aum_m && h.aum_m > 0) {
+                        allDates.add(h.date);
+                        fundAumMap[fund.fund_id][h.date] = h.aum_m;
+                    }
                 });
             });
 
             const sortedDates = Array.from(allDates).sort();
-            const datasets = navData.map(fund => ({
-                label: FUND_NAMES[fund.fund_id],
-                data: sortedDates.map(d => fundAumMap[fund.fund_id]?.[d] || 0),
-                backgroundColor: FUND_COLORS[fund.fund_id],
-                borderColor: FUND_COLORS[fund.fund_id],
-                borderWidth: 1
-            }));
+            const datasets = navData
+                .filter(fund => {
+                    // Only include funds that have at least one AUM data point
+                    return sortedDates.some(d => fundAumMap[fund.fund_id]?.[d] > 0);
+                })
+                .map(fund => ({
+                    label: FUND_NAMES[fund.fund_id] || fund.fund_id,
+                    data: sortedDates.map(d => fundAumMap[fund.fund_id]?.[d] || null),
+                    backgroundColor: FUND_COLORS[fund.fund_id] || '#888',
+                    borderColor: FUND_COLORS[fund.fund_id] || '#888',
+                    borderWidth: 1,
+                    skipNull: true
+                }));
 
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: sortedDates.map(d => new Date(d).toLocaleDateString()),
+                    labels: sortedDates.map(d => {
+                        const dt = new Date(d);
+                        return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+                    }),
                     datasets: datasets
                 },
                 options: {
@@ -1407,7 +1445,10 @@
                     indexAxis: 'x',
                     scales: {
                         x: { stacked: false },
-                        y: { stacked: false }
+                        y: {
+                            stacked: false,
+                            title: { display: true, text: 'AUM ($M)' }
+                        }
                     },
                     plugins: {
                         legend: {
@@ -1429,19 +1470,24 @@
                 const history = historicalData.funds[fund.fund_id].historical;
                 fundSubsMap[fund.fund_id] = {};
                 history.forEach(h => {
-                    allDates.add(h.date);
-                    fundSubsMap[fund.fund_id][h.date] = h.subs_m || 0;
+                    if (h.subs_m && h.subs_m > 0) {
+                        allDates.add(h.date);
+                        fundSubsMap[fund.fund_id][h.date] = h.subs_m;
+                    }
                 });
             });
 
             const sortedDates = Array.from(allDates).sort();
-            const datasets = navData.map(fund => ({
-                label: FUND_NAMES[fund.fund_id],
-                data: sortedDates.map(d => fundSubsMap[fund.fund_id]?.[d] || 0),
-                backgroundColor: FUND_COLORS[fund.fund_id],
-                borderColor: FUND_COLORS[fund.fund_id],
-                borderWidth: 1
-            }));
+            const datasets = navData
+                .filter(fund => sortedDates.some(d => fundSubsMap[fund.fund_id]?.[d] > 0))
+                .map(fund => ({
+                    label: FUND_NAMES[fund.fund_id] || fund.fund_id,
+                    data: sortedDates.map(d => fundSubsMap[fund.fund_id]?.[d] || null),
+                    backgroundColor: FUND_COLORS[fund.fund_id] || '#888',
+                    borderColor: FUND_COLORS[fund.fund_id] || '#888',
+                    borderWidth: 1,
+                    skipNull: true
+                }));
 
             new Chart(ctx, {
                 type: 'bar',
