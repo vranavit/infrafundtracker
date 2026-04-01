@@ -73,9 +73,7 @@ const CATEGORIES = [
 ];
 const OPEN_INFRA_SUBTABS = [
   {key:"navTracker",label:"Fund NAV Tracker"},
-  {key:"fundIntel",label:"Fund Intelligence"},
   {key:"darkPipeline",label:"Distribution Tracker"},
-  {key:"advisorSignals",label:"Advisor Signals"},
 ];
 const FUND_SUBTABS = [
   {key:"globalInfra",label:"Global Infrastructure"},{key:"energyTransition",label:"Energy Transition"},
@@ -3652,7 +3650,7 @@ function FundIntelligence(){
 
 function NAVTracker(){
   var _n1=useState(NAV_FUNDS.filter(function(f){return f.isPrimary;}).map(function(f){return f.id;})),selectedFunds=_n1[0],setSelectedFunds=_n1[1];
-  var _n2=useState("nav"),chartMode=_n2[0],setChartMode=_n2[1];
+  var _n2=useState("aum"),chartMode=_n2[0],setChartMode=_n2[1];
   var _n3=useState("all"),timeRange=_n3[0],setTimeRange=_n3[1];
   var _n4=useState(false),normalized=_n4[0],setNormalized=_n4[1];
   var _n5=useState(null),hoveredPoint=_n5[0],setHoveredPoint=_n5[1];
@@ -3742,10 +3740,10 @@ function NAVTracker(){
     React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:10}},
       React.createElement("div",null,
         React.createElement("div",{style:{fontSize:15,fontWeight:700,color:C.text}},"Open-Ended Fund NAV Tracker"),
-        React.createElement("div",{style:{fontSize:10.5,color:C.textSec}},"Monthly NAV per share from SEC 8-K filings and fund websites. All data sourced and linked.")
+        React.createElement("div",{style:{fontSize:10.5,color:C.textSec}},"AUM and NAV per share from SEC filings (NPORT-P, 8-K, N-CSR) and fund websites. All data sourced and linked.")
       ),
       React.createElement("div",{style:{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}},
-        ...[{k:"nav",l:"NAV/Share"},{k:"aum",l:"AUM ($M)"}].map(function(m){
+        ...[{k:"aum",l:"AUM ($M)"},{k:"nav",l:"NAV/Share"}].map(function(m){
           return React.createElement("button",{key:m.k,onClick:function(){setChartMode(m.k);},style:{padding:"4px 12px",fontSize:10.5,border:"1px solid "+(chartMode===m.k?C.teal:C.grayLight),borderRadius:16,background:chartMode===m.k?C.accentLight:"transparent",color:chartMode===m.k?C.teal:C.textSec,fontWeight:chartMode===m.k?600:400,cursor:"pointer"}},m.l);
         }),
         React.createElement("div",{style:{width:1,height:16,background:C.grayLight}}),
