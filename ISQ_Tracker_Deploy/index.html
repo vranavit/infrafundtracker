@@ -3833,25 +3833,25 @@ function NAVTracker(){
                 row.fund.name
               ),
               React.createElement("td",{style:{padding:"8px 12px",color:C.textSec,fontSize:10}},row.fund.shareClass),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:C.text}},row.lastNav!==null?"$"+row.lastNav.toFixed(2):"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:C.text}},row.lastNav!=null?"$"+row.lastNav.toFixed(2):"—"),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"center",fontSize:9.5,color:C.textSec}},
                 row.lastNavDate?(function(){var p=row.lastNavDate.split("-");var moNames=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?moNames[parseInt(p[1])]+" "+p[0]:row.lastNavDate;})():"—"
               ),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.text}},row.aum!==null?"$"+row.aum.toLocaleString():"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.text}},row.aum!=null?"$"+row.aum.toLocaleString():"—"),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
-                row.moReturn!==null?React.createElement("div",null,
+                row.moReturn!=null?React.createElement("div",null,
                   React.createElement("span",{style:{fontWeight:500,color:row.moReturn>=0?C.green:C.red}},(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%"),
                   React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate)+(row.lastPeriodMonths?" ("+row.lastPeriodMonths+"mo)":"");})()),
-                  row.moReturnProrated!==null&&row.lastPeriodMonths!==1?React.createElement("div",{style:{fontSize:8.5,color:row.moReturnProrated>=0?"#2E7D32":"#C62828",marginTop:1,fontStyle:"italic"}},"~"+(row.moReturnProrated>=0?"+":"")+row.moReturnProrated.toFixed(2)+"%/mo"):null
+                  row.moReturnProrated!=null&&row.lastPeriodMonths!==1?React.createElement("div",{style:{fontSize:8.5,color:row.moReturnProrated>=0?"#2E7D32":"#C62828",marginTop:1,fontStyle:"italic"}},"~"+(row.moReturnProrated>=0?"+":"")+row.moReturnProrated.toFixed(2)+"%/mo"):null
                 ):"—"
               ),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
-                row.totalReturn!==null?React.createElement("div",null,
+                row.totalReturn!=null?React.createElement("div",null,
                   React.createElement("span",{style:{fontWeight:600,color:row.totalReturn>=0?C.green:C.red}},(row.totalReturn>=0?"+":"")+row.totalReturn.toFixed(1)+"%"),
                   row.spanMonths!==null?React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},row.spanMonths+"mo"):null
                 ):"—"
               ),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:row.annReturn!==null?(row.annReturn>=0?C.green:C.red):C.textMuted}},row.annReturn!==null?(row.annReturn>=0?"+":"")+row.annReturn.toFixed(1)+"%":"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:row.annReturn!=null?(row.annReturn>=0?C.green:C.red):C.textMuted}},row.annReturn!=null?(row.annReturn>=0?"+":"")+row.annReturn.toFixed(1)+"%":"—"),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"center"}},
                 React.createElement("a",{href:row.fund.sourceUrl,target:"_blank",rel:"noopener",title:row.fund.dataQuality||"",style:{color:C.steel,fontSize:10,textDecoration:"underline",fontWeight:500}},row.fund.sourceType)
               )
@@ -3868,7 +3868,7 @@ function NAVTracker(){
         React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Cumulative price return from first to latest reported NAV"),
         React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
           ...(function(){
-            var rows=latestData.filter(function(r){return r.totalReturn!==null;}).sort(function(a,b){return b.totalReturn-a.totalReturn;});
+            var rows=latestData.filter(function(r){return r.totalReturn!=null;}).sort(function(a,b){return b.totalReturn-a.totalReturn;});
             var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.totalReturn);}));
             if(absMax===0)absMax=1;
             return rows.map(function(row){
@@ -3894,7 +3894,7 @@ function NAVTracker(){
         React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"CAGR since inception (requires >3 months of data)"),
         React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
           ...(function(){
-            var rows=latestData.filter(function(r){return r.annReturn!==null;}).sort(function(a,b){return b.annReturn-a.annReturn;});
+            var rows=latestData.filter(function(r){return r.annReturn!=null;}).sort(function(a,b){return b.annReturn-a.annReturn;});
             var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.annReturn);}));
             if(absMax===0)absMax=1;
             return rows.map(function(row){
@@ -3919,7 +3919,7 @@ function NAVTracker(){
         React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Most recent period return prorated to a 1-month basis for comparability. Actual period return shown in parentheses."),
         React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
           ...(function(){
-            var rows=latestData.filter(function(r){return r.moReturnProrated!==null;}).sort(function(a,b){return b.moReturnProrated-a.moReturnProrated;});
+            var rows=latestData.filter(function(r){return r.moReturnProrated!=null;}).sort(function(a,b){return b.moReturnProrated-a.moReturnProrated;});
             var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.moReturnProrated);}));
             if(absMax===0)absMax=1;
             return rows.map(function(row){
@@ -3946,8 +3946,8 @@ function NAVTracker(){
     viewMode==="aum"&&React.createElement("div",{style:{background:C.cardBg,borderRadius:8,border:"1px solid "+C.grayLight,padding:"16px"}},
       React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:12}},"AUM Comparison (Latest, $M)"),
       React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:8}},
-        ...latestData.filter(function(r){return r.aum!==null;}).sort(function(a,b){return b.aum-a.aum;}).map(function(row){
-          var maxAum=Math.max.apply(null,latestData.filter(function(r){return r.aum!==null;}).map(function(r){return r.aum;}))||1;
+        ...latestData.filter(function(r){return r.aum!=null;}).sort(function(a,b){return b.aum-a.aum;}).map(function(row){
+          var maxAum=Math.max.apply(null,latestData.filter(function(r){return r.aum!=null;}).map(function(r){return r.aum;}))||1;
           var pct=(row.aum/maxAum*100);var isISQ=row.fund.isPrimary;
           return React.createElement("div",{key:row.fund.id,style:{display:"flex",alignItems:"center",gap:8}},
             React.createElement("div",{style:{width:200,fontSize:10.5,fontWeight:isISQ?600:400,color:isISQ?C.teal:C.text,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},row.fund.name),
