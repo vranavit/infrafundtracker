@@ -758,52 +758,65 @@ class IAPDFetcher:
             logger.debug(f"Schedule D 5.K fetch failed for CRD {crd}: {e}")
             return []
 
+    # Max firms to enrich with custodian data (each = 1 API call).
+    # 1000 firms ≈ 4-5 min at 0.25s rate limit + response time.
+    MAX_CUSTODIAN_ENRICHMENT = 1000
+
     def enrich_custodians(self, firms: List[FirmRecord]) -> None:
         """
         Batch-fetch custodian data for high-priority firms via Schedule D 5.K.
 
-        Enrichment targets (in order):
+        Enrichment targets (in priority order, capped at MAX_CUSTODIAN_ENRICHMENT):
         1. Top 500 firms by AUM
-        2. All family offices (regardless of AUM)
-        3. All private fund managers (regardless of AUM)
+        2. Family offices (by AUM descending)
+        3. Private fund managers (by AUM descending)
 
         Deduplicates so each CRD is only fetched once.
         """
-        # Build priority list: top 500 by AUM, then family offices, then
-        # private fund managers — deduplicated by CRD
+        cap = self.MAX_CUSTODIAN_ENRICHMENT
         seen_crds: Set[str] = set()
         enrich_queue: List[FirmRecord] = []
 
-        # 1. Top 500 by AUM
+        def _add(f: FirmRecord) -> bool:
+            """Add firm to queue if not already seen. Returns False if cap hit."""
+            if len(enrich_queue) >= cap:
+                return False
+            crd = f.cik or f.raw_data.get("crd", "")
+            if crd and crd not in seen_crds and not f.custodian_names:
+                seen_crds.add(crd)
+                enrich_queue.append(f)
+            return True
+
+        # 1. Top 500 by AUM (highest priority)
         by_aum = sorted(firms, key=lambda f: f.aum_total, reverse=True)
         for f in by_aum[:500]:
-            crd = f.cik or f.raw_data.get("crd", "")
-            if crd and crd not in seen_crds and not f.custodian_names:
-                seen_crds.add(crd)
-                enrich_queue.append(f)
+            if not _add(f):
+                break
 
-        # 2. All family offices
-        for f in firms:
-            if not f.is_family_office:
-                continue
-            crd = f.cik or f.raw_data.get("crd", "")
-            if crd and crd not in seen_crds and not f.custodian_names:
-                seen_crds.add(crd)
-                enrich_queue.append(f)
+        # 2. Family offices sorted by AUM
+        if len(enrich_queue) < cap:
+            family_offices = sorted(
+                [f for f in firms if f.is_family_office],
+                key=lambda f: f.aum_total, reverse=True,
+            )
+            for f in family_offices:
+                if not _add(f):
+                    break
 
-        # 3. All private fund managers
-        for f in firms:
-            if not f.manages_private_funds:
-                continue
-            crd = f.cik or f.raw_data.get("crd", "")
-            if crd and crd not in seen_crds and not f.custodian_names:
-                seen_crds.add(crd)
-                enrich_queue.append(f)
+        # 3. Private fund managers sorted by AUM
+        if len(enrich_queue) < cap:
+            pvt_fund_mgrs = sorted(
+                [f for f in firms if f.manages_private_funds],
+                key=lambda f: f.aum_total, reverse=True,
+            )
+            for f in pvt_fund_mgrs:
+                if not _add(f):
+                    break
 
         total = len(enrich_queue)
         logger.info(
             f"Enriching custodian data for {total} firms "
-            f"(top 500 AUM + family offices + private fund managers)..."
+            f"(cap={cap}, top AUM + family offices + private fund mgrs)..."
         )
 
         enriched = 0
