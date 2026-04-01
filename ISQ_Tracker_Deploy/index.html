@@ -3957,12 +3957,7 @@ function NAVTracker(){
     ),
     // Methodology
     React.createElement("div",{style:{padding:"10px 14px",background:"#F8F9FB",borderRadius:6,border:"1px solid "+C.grayLight,fontSize:10,color:C.textSec,lineHeight:1.5}},
-      React.createElement("div",{style:{display:"flex",gap:12,marginBottom:6,flexWrap:"wrap"}},
-        React.createElement("span",null,React.createElement("span",{style:{display:"inline-block",width:8,height:8,borderRadius:"50%",background:C.green,marginRight:4}}),React.createElement("strong",null,"R")," = Reported (SEC filing, press release, fund fact sheet)"),
-        React.createElement("span",null,React.createElement("span",{style:{display:"inline-block",width:8,height:8,borderRadius:"50%",background:C.amber,marginRight:4}}),React.createElement("strong",null,"E")," = Estimated (interpolated between reported data points)")
-      ),
-      "AUM figures in USD millions. Most open-ended fund NAVs are behind investor portals and not publicly reported monthly. Where SEC filings provide quarterly or annual snapshots, interim months are interpolated. Returns calculated from NAV changes (price return only, excluding distributions). Click any fund source link for primary filing. ",
-      React.createElement("a",{href:"https://efts.sec.gov/LATEST/search-index?q=%22infrastructure%22&forms=8-K",target:"_blank",rel:"noopener",style:{color:C.steel,textDecoration:"underline"}},"SEC EDGAR full-text search")
+      "AUM figures in USD millions. Returns calculated from NAV changes (price return only, excluding distributions). All data sourced from SEC filings. Click any fund source link for primary filing."
     )
   );
 }
