@@ -759,44 +759,79 @@
       "source_label": "BAM Quarterly Earnings",
       "has_sec_filings": true,
       "inception_date": "2023-11-01",
-      "known_nav": 10.89,
-      "known_nav_date": "2025-12-31",
-      "known_aum_m": 4786.0,
+      "known_nav": 10.94,
+      "known_nav_date": "2026-01-31",
+      "known_aum_m": 4787.0,
       "historical_nav": [
         {
           "date": "2023-12-31",
           "nav": 10.07,
-          "aum_m": 1590.0,
-          "source_label": "N-CSR Annual Report Dec 2023",
+          "aum_m": 1597.0,
+          "source_label": "N-CSR Annual Report Dec 2023 / NPORT-P Q4 2023",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
+        },
+        {
+          "date": "2024-03-31",
+          "nav": null,
+          "aum_m": 2041.0,
+          "source_label": "NPORT-P Q1 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2024-06-30",
           "nav": 10.25,
-          "aum_m": 1900.0,
-          "source_label": "N-CSRS Semi-Annual Jun 2024",
+          "aum_m": 2489.0,
+          "source_label": "N-CSRS Semi-Annual Jun 2024 / NPORT-P Q2 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
+        },
+        {
+          "date": "2024-09-30",
+          "nav": null,
+          "aum_m": 2734.0,
+          "source_label": "NPORT-P Q3 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2024-12-31",
           "nav": 10.44,
-          "aum_m": 2395.0,
-          "source_label": "N-CSR Annual Report Dec 2024",
+          "aum_m": 3169.0,
+          "source_label": "N-CSR Annual Report Dec 2024 / NPORT-P Q4 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
+        },
+        {
+          "date": "2025-03-31",
+          "nav": null,
+          "aum_m": 3619.0,
+          "source_label": "NPORT-P Q1 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2025-06-30",
           "nav": 10.63,
-          "aum_m": 2978.0,
-          "source_label": "N-CSRS Semi-Annual Jun 2025",
+          "aum_m": 4145.0,
+          "source_label": "N-CSRS Semi-Annual Jun 2025 / NPORT-P Q2 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": null,
+          "aum_m": 4681.0,
+          "source_label": "NPORT-P Q3 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2025-12-31",
           "nav": 10.89,
-          "aum_m": 4786.0,
+          "aum_m": 4787.0,
           "source_label": "N-CSR Annual Report Dec 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm"
+        },
+        {
+          "date": "2026-01-31",
+          "nav": 10.94,
+          "aum_m": null,
+          "source_label": "Brookfield Private Wealth Website Jan 2026",
+          "source_url": "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc"
         }
       ]
     },
