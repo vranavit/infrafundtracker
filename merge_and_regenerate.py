@@ -118,7 +118,7 @@ for fund in config["funds"]:
         entry = {
             "date": h["date"],
             "nav": h["nav"],
-            "aum_m": h.get("aum_m"),
+            "aum_m": h.get("aum_m") or h.get("cumulative_raised_m"),
             "subs_m": h.get("subs_m"),
             "redemptions_m": h.get("redemptions_m"),
             "dist_per_share": h.get("dist_per_share"),

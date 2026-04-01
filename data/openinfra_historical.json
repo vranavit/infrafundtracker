@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T13:50:33.741537+00:00",
+  "last_updated": "2026-04-01T13:53:21.149089+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -528,7 +528,7 @@
         {
           "date": "2025-05-31",
           "nav": 25.77,
-          "aum_m": null,
+          "aum_m": 437.0,
           "subs_m": 286.1,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -538,7 +538,7 @@
         {
           "date": "2025-06-30",
           "nav": 28.14,
-          "aum_m": null,
+          "aum_m": 482.4,
           "subs_m": 18.4,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -548,7 +548,7 @@
         {
           "date": "2025-07-31",
           "nav": 28.69,
-          "aum_m": null,
+          "aum_m": 547.0,
           "subs_m": 41.8,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -558,7 +558,7 @@
         {
           "date": "2025-08-31",
           "nav": 29.05,
-          "aum_m": null,
+          "aum_m": 591.0,
           "subs_m": 32.0,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -568,7 +568,7 @@
         {
           "date": "2025-09-30",
           "nav": 30.02,
-          "aum_m": null,
+          "aum_m": 686.0,
           "subs_m": 95.4,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -578,7 +578,7 @@
         {
           "date": "2025-10-31",
           "nav": 30.15,
-          "aum_m": null,
+          "aum_m": 727.5,
           "subs_m": 41.4,
           "redemptions_m": null,
           "dist_per_share": 0.3,
@@ -588,7 +588,7 @@
         {
           "date": "2025-11-30",
           "nav": 30.25,
-          "aum_m": null,
+          "aum_m": 966.0,
           "subs_m": 238.5,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -598,7 +598,7 @@
         {
           "date": "2025-12-31",
           "nav": 31.13,
-          "aum_m": null,
+          "aum_m": 1023.0,
           "subs_m": 57.3,
           "redemptions_m": null,
           "dist_per_share": 0.16,
@@ -608,7 +608,7 @@
         {
           "date": "2026-01-31",
           "nav": 31.6,
-          "aum_m": null,
+          "aum_m": 1094.0,
           "subs_m": 71.2,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -618,7 +618,7 @@
         {
           "date": "2026-02-28",
           "nav": 31.76,
-          "aum_m": null,
+          "aum_m": 1192.0,
           "subs_m": 97.4,
           "redemptions_m": null,
           "dist_per_share": null,
