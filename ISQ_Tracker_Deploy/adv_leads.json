@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-01T02:10:33.084384Z",
-  "total_firms_scanned": 15071,
-  "total_signals_fired": 22053,
+  "generated_at": "2026-04-01T03:22:06.011414Z",
+  "total_firms_scanned": 18256,
+  "total_signals_fired": 25858,
   "kpi": {
-    "tier1_count": 92,
-    "tier2_count": 2236,
-    "tier3_count": 4228,
-    "new_signals_today": 13694
+    "tier1_count": 99,
+    "tier2_count": 2751,
+    "tier3_count": 4481,
+    "new_signals_today": 16750
   },
   "leads": [
     {
@@ -61,159 +61,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-127421",
-      "firm": "LONGWALL FAMILY OFFICE",
-      "city": "WESTPORT",
-      "state": "CT",
-      "aum": 428187059,
-      "clients": 50,
-      "avgPerClient": 8563741,
-      "tier": 1,
-      "score": 30.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($8,563,741) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (5)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "family_office_detected",
-          "weight": 9,
-          "evidence": "Firm identified as Family Office",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-120155",
-      "firm": "VIRTUS FAMILY OFFICE",
-      "city": "EL PASO",
-      "state": "TX",
-      "aum": 726943327,
-      "clients": 2,
-      "avgPerClient": 363471664,
-      "tier": 1,
-      "score": 30.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($363,471,664) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (9)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "family_office_detected",
-          "weight": 9,
-          "evidence": "Firm identified as Family Office",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-107214",
-      "firm": "ELEMENT POINTE FAMILY OFFICE",
-      "city": "MIAMI",
-      "state": "FL",
-      "aum": 1218377295,
-      "clients": 1,
-      "avgPerClient": 1218377295,
-      "tier": 1,
-      "score": 30.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($1,218,377,295) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "family_office_detected",
-          "weight": 9,
-          "evidence": "Firm identified as Family Office",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-71914",
       "firm": "MARCUARD FAMILY OFFICE LTD",
       "city": "ZURICH",
@@ -260,57 +107,6 @@
           "isNew": true,
           "category": "client_composition",
           "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-131739",
-      "firm": "FIVE ELEVEN FAMILY OFFICE LLC",
-      "city": "GARDEN CITY",
-      "state": "NY",
-      "aum": 131391887,
-      "clients": 4,
-      "avgPerClient": 32847972,
-      "tier": 1,
-      "score": 28.5,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($32,847,972) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "family_office_detected",
-          "weight": 9,
-          "evidence": "Firm identified as Family Office",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 454 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
@@ -673,57 +469,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-96259",
-      "firm": "BLACKSTONE PROPERTY ADVISORS L.P.",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 77395567830,
-      "clients": 30,
-      "avgPerClient": 2579852261,
-      "tier": 1,
-      "score": 27.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($2,579,852,261) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "new_real_estate_added",
-          "weight": 5,
-          "evidence": "Firm began managing real estate",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (27)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-77141",
       "firm": "BLUE OWL REAL ESTATE CAPITAL LLC",
       "city": "CHICAGO",
@@ -767,6 +512,57 @@
           "name": "institutional_clients_added",
           "weight": 6,
           "evidence": "Firm began serving institutional clients (18)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-96259",
+      "firm": "BLACKSTONE PROPERTY ADVISORS L.P.",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 77395567830,
+      "clients": 30,
+      "avgPerClient": 2579852261,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($2,579,852,261) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (27)",
           "isNew": true,
           "category": "client_composition",
           "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
@@ -920,6 +716,261 @@
           "name": "institutional_clients_added",
           "weight": 6,
           "evidence": "Firm began serving institutional clients (31)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-61482",
+      "firm": "KBS REALTY ADVISORS, LLC",
+      "city": "NEWPORT BEACH",
+      "state": "CA",
+      "aum": 2724994407,
+      "clients": 3,
+      "avgPerClient": 908331469,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($908,331,469) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (2)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-57460",
+      "firm": "TA REALTY LLC",
+      "city": "BOSTON",
+      "state": "MA",
+      "aum": 1476718962,
+      "clients": 23,
+      "avgPerClient": 64205172,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($64,205,172) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (2)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-37721",
+      "firm": "AMERICAN REALTY ADVISORS",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "aum": 3236267594,
+      "clients": 15,
+      "avgPerClient": 215751173,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($215,751,173) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (11)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-48252",
+      "firm": "HEITMAN REAL ESTATE SECURITIES LLC",
+      "city": "CHICAGO",
+      "state": "IL",
+      "aum": 1821428968,
+      "clients": 6,
+      "avgPerClient": 303571495,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($303,571,495) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (13)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-44655",
+      "firm": "SAROFIM REALTY ADVISORS LLC",
+      "city": "HOUSTON",
+      "state": "TX",
+      "aum": 1160162820,
+      "clients": 4,
+      "avgPerClient": 290040705,
+      "tier": 1,
+      "score": 27.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($290,040,705) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (2)",
           "isNew": true,
           "category": "client_composition",
           "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
@@ -2356,6 +2407,159 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "801-134310",
+      "firm": "BROWN BROTHERS HARRIMAN CREDIT PARTNERS, LLC",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 55217307835,
+      "clients": 49,
+      "avgPerClient": 1126883833,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($1,126,883,833) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (44)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 205 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-135357",
+      "firm": "CORAL CAPITAL MANAGEMENT LLC",
+      "city": "SAN JUAN",
+      "state": "PR",
+      "aum": 106947720,
+      "clients": 5,
+      "avgPerClient": 21389544,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($21,389,544) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 30 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-134610",
+      "firm": "BONDURANT INVESTMENT ADVISORY, LLC",
+      "city": "EVANSTON",
+      "state": "IL",
+      "aum": 111082039,
+      "clients": 3,
+      "avgPerClient": 37027346,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($37,027,346) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (3)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 134 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "801-134968",
       "firm": "PARK LANE ADVISORS, LLC",
       "city": "BIRMINGHAM",
@@ -2399,6 +2603,159 @@
           "name": "recently_registered",
           "weight": 7,
           "evidence": "Registered 107 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-133741",
+      "firm": "O'CONNOR ALTERNATIVE INVESTMENTS, LLC",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 12387662598,
+      "clients": 35,
+      "avgPerClient": 353933217,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($353,933,217) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 282 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-131909",
+      "firm": "VALUEQUEST INVESTMENT ADVISORS PRIVATE LTD",
+      "city": "MUMBAI",
+      "state": "",
+      "aum": 2243909439,
+      "clients": 6,
+      "avgPerClient": 373984906,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($373,984,906) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (154)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 415 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-135657",
+      "firm": "ALLEGRO MINERAL PARTNERS LLC",
+      "city": "HOUSTON",
+      "state": "TX",
+      "aum": 135327850,
+      "clients": 7,
+      "avgPerClient": 19332550,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($19,332,550) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 6 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2458,57 +2815,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-134310",
-      "firm": "BROWN BROTHERS HARRIMAN CREDIT PARTNERS, LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 55217307835,
-      "clients": 49,
-      "avgPerClient": 1126883833,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($1,126,883,833) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (44)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 205 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-134780",
       "firm": "AGRIGLOBE LAND ADVISORS, LLC",
       "city": "FRESNO",
@@ -2552,57 +2858,6 @@
           "name": "recently_registered",
           "weight": 7,
           "evidence": "Registered 132 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-133741",
-      "firm": "O'CONNOR ALTERNATIVE INVESTMENTS, LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 12387662598,
-      "clients": 35,
-      "avgPerClient": 353933217,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($353,933,217) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 282 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3121,57 +3376,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-131909",
-      "firm": "VALUEQUEST INVESTMENT ADVISORS PRIVATE LTD",
-      "city": "MUMBAI",
-      "state": "",
-      "aum": 2243909439,
-      "clients": 6,
-      "avgPerClient": 373984906,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($373,984,906) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (154)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 415 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-131894",
       "firm": "LOUISBOURG INVESTMENTS",
       "city": "DIEPPE, NEW BRUNSWICK",
@@ -3371,57 +3575,6 @@
           "isNew": true,
           "category": "compensation",
           "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-135657",
-      "firm": "ALLEGRO MINERAL PARTNERS LLC",
-      "city": "HOUSTON",
-      "state": "TX",
-      "aum": 135327850,
-      "clients": 7,
-      "avgPerClient": 19332550,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($19,332,550) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 6 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
@@ -3784,57 +3937,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-135357",
-      "firm": "CORAL CAPITAL MANAGEMENT LLC",
-      "city": "SAN JUAN",
-      "state": "PR",
-      "aum": 106947720,
-      "clients": 5,
-      "avgPerClient": 21389544,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($21,389,544) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 30 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-120344",
       "firm": "BANYAN ALPHA INVESTMENT L.P.",
       "city": "SOUTH SAN FRANCISCO",
@@ -3881,57 +3983,6 @@
           "isNew": true,
           "category": "compensation",
           "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-134610",
-      "firm": "BONDURANT INVESTMENT ADVISORY, LLC",
-      "city": "EVANSTON",
-      "state": "IL",
-      "aum": 111082039,
-      "clients": 3,
-      "avgPerClient": 37027346,
-      "tier": 1,
-      "score": 26.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($37,027,346) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (3)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 134 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
@@ -4447,6 +4498,57 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "801-62121",
+      "firm": "CHICKASAW CAPITAL MANAGEMENT, LLC",
+      "city": "MEMPHIS",
+      "state": "TN",
+      "aum": 2545885165,
+      "clients": 1,
+      "avgPerClient": 2545885165,
+      "tier": 1,
+      "score": 26.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($2,545,885,165) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (16)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "801-110433",
       "firm": "FPA REAL ESTATE ADVISERS GROUP, LLC",
       "city": "IRVINE",
@@ -4600,6 +4702,49 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "801-37738",
+      "firm": "MATTER FAMILY OFFICE",
+      "city": "ST LOUIS",
+      "state": "MO",
+      "aum": 3545783894,
+      "clients": 251,
+      "avgPerClient": 14126629,
+      "tier": 1,
+      "score": 25.5,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($14,126,629) exceeds $5,000,000 threshold",
+      "platformAccess": "Schwab",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (2)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "family_office_detected",
+          "weight": 9,
+          "evidence": "Firm identified as Family Office",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        }
+      ],
+      "action": "Lead with new private funds signal."
+    },
+    {
       "id": "801-133966",
       "firm": "AVILA REAL ESTATE CAPITAL",
       "city": "CORTE MADERA",
@@ -4651,6 +4796,92 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "801-127421",
+      "firm": "LONGWALL FAMILY OFFICE",
+      "city": "WESTPORT",
+      "state": "CT",
+      "aum": 428187059,
+      "clients": 50,
+      "avgPerClient": 8563741,
+      "tier": 1,
+      "score": 25.5,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($8,563,741) exceeds $5,000,000 threshold",
+      "platformAccess": "Fidelity",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (5)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "family_office_detected",
+          "weight": 9,
+          "evidence": "Firm identified as Family Office",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        }
+      ],
+      "action": "Lead with new private funds signal."
+    },
+    {
+      "id": "801-107214",
+      "firm": "ELEMENT POINTE FAMILY OFFICE",
+      "city": "MIAMI",
+      "state": "FL",
+      "aum": 1218377295,
+      "clients": 1,
+      "avgPerClient": 1218377295,
+      "tier": 1,
+      "score": 25.5,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($1,218,377,295) exceeds $5,000,000 threshold",
+      "platformAccess": "Fidelity",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "family_office_detected",
+          "weight": 9,
+          "evidence": "Firm identified as Family Office",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        }
+      ],
+      "action": "Lead with new private funds signal."
+    },
+    {
       "id": "801-80546",
       "firm": "PNC REAL ESTATE",
       "city": "LOUISVILLE",
@@ -4700,6 +4931,100 @@
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-64767",
+      "firm": "PENWOOD REAL ESTATE INVESTMENT MANAGEMENT, LLC",
+      "city": "WEST HARTFORD",
+      "state": "CT",
+      "aum": 1473454853,
+      "clients": 6,
+      "avgPerClient": 245575809,
+      "tier": 1,
+      "score": 25.5,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($245,575,809) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "new_real_estate_added",
+          "weight": 5,
+          "evidence": "Firm began managing real estate",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Real estate allocation suggests openness to alternative real assets like infrastructure"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-79223",
+      "firm": "JFG FAMILY OFFICE",
+      "city": "DENVER",
+      "state": "CO",
+      "aum": 4529119285,
+      "clients": 1,
+      "avgPerClient": 4529119285,
+      "tier": 1,
+      "score": 25.5,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($4,529,119,285) exceeds $5,000,000 threshold",
+      "platformAccess": "Schwab",
+      "platformTier": 1,
+      "isqAccessible": true,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        },
+        {
+          "name": "family_office_detected",
+          "weight": 9,
+          "evidence": "Firm identified as Family Office",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        }
+      ],
+      "action": "Lead with new private funds signal."
     },
     {
       "id": "801-133012",
@@ -5008,6 +5333,210 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "801-134354",
+      "firm": "KR CAPITAL LP",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 792357312,
+      "clients": 1,
+      "avgPerClient": 792357312,
+      "tier": 2,
+      "score": 24.8,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($792,357,312) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 135 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-134365",
+      "firm": "PLUM ISLAND PARTNERS LLC",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 300000000,
+      "clients": 1,
+      "avgPerClient": 300000000,
+      "tier": 2,
+      "score": 24.8,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($300,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 191 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-134429",
+      "firm": "TOURMALET ADVISORS, LP",
+      "city": "FAIRFIELD",
+      "state": "CT",
+      "aum": 267941000,
+      "clients": 4,
+      "avgPerClient": 66985250,
+      "tier": 2,
+      "score": 24.8,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($66,985,250) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 188 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-133782",
+      "firm": "CLEARLIST CAPITAL LLC",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 434115430,
+      "clients": 3,
+      "avgPerClient": 144705143,
+      "tier": 2,
+      "score": 24.8,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($144,705,143) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 275 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
+        },
+        {
+          "name": "fee_based_compensation",
+          "weight": 4,
+          "evidence": "Fee structure: Fee-Based",
+          "isNew": true,
+          "category": "compensation",
+          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "801-135533",
       "firm": "FINCADIA ADVISORS LLC",
       "city": "MELVILLE",
@@ -5110,57 +5639,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-134354",
-      "firm": "KR CAPITAL LP",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 792357312,
-      "clients": 1,
-      "avgPerClient": 792357312,
-      "tier": 2,
-      "score": 24.8,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($792,357,312) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 135 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        },
-        {
-          "name": "fee_based_compensation",
-          "weight": 4,
-          "evidence": "Fee structure: Fee-Based",
-          "isNew": true,
-          "category": "compensation",
-          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-134654",
       "firm": "VALUEQUEST ADVISERS, LLC",
       "city": "NEW YORK",
@@ -5196,57 +5674,6 @@
           "name": "recently_registered",
           "weight": 7,
           "evidence": "Registered 133 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        },
-        {
-          "name": "fee_based_compensation",
-          "weight": 4,
-          "evidence": "Fee structure: Fee-Based",
-          "isNew": true,
-          "category": "compensation",
-          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-134365",
-      "firm": "PLUM ISLAND PARTNERS LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 300000000,
-      "clients": 1,
-      "avgPerClient": 300000000,
-      "tier": 2,
-      "score": 24.8,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($300,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 191 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5349,57 +5776,6 @@
           "name": "recently_registered",
           "weight": 7,
           "evidence": "Registered 320 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        },
-        {
-          "name": "fee_based_compensation",
-          "weight": 4,
-          "evidence": "Fee structure: Fee-Based",
-          "isNew": true,
-          "category": "compensation",
-          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-134429",
-      "firm": "TOURMALET ADVISORS, LP",
-      "city": "FAIRFIELD",
-      "state": "CT",
-      "aum": 267941000,
-      "clients": 4,
-      "avgPerClient": 66985250,
-      "tier": 2,
-      "score": 24.8,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($66,985,250) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 188 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5722,57 +6098,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-133782",
-      "firm": "CLEARLIST CAPITAL LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 434115430,
-      "clients": 3,
-      "avgPerClient": 144705143,
-      "tier": 2,
-      "score": 24.8,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($144,705,143) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "recently_registered",
-          "weight": 7,
-          "evidence": "Registered 275 days ago",
-          "isNew": false,
-          "category": "regulatory",
-          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
-        },
-        {
-          "name": "fee_based_compensation",
-          "weight": 4,
-          "evidence": "Fee structure: Fee-Based",
-          "isNew": true,
-          "category": "compensation",
-          "talkingPoint": "Fee-based compensation aligns with long-term alternative fund commitments"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-132040",
       "firm": "ALTRIARCH ASSET MANAGEMENT, LLC",
       "city": "CHARLESTON",
@@ -6028,20 +6353,20 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-122907",
-      "firm": "FORTITUDE FAMILY OFFICE",
-      "city": "SCOTTSDALE",
-      "state": "AZ",
-      "aum": 1000141727,
-      "clients": 361,
-      "avgPerClient": 2770476,
+      "id": "801-131739",
+      "firm": "FIVE ELEVEN FAMILY OFFICE LLC",
+      "city": "GARDEN CITY",
+      "state": "NY",
+      "aum": 131391887,
+      "clients": 4,
+      "avgPerClient": 32847972,
       "tier": 2,
       "score": 24.0,
-      "qpScore": 7,
-      "qpExpl": "Firm avg AUM per client ($2,770,476) in $2,000,000-$5,000,000 range",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($32,847,972) exceeds $5,000,000 threshold",
+      "platformAccess": "Fidelity",
+      "platformTier": 1,
+      "isqAccessible": true,
       "signals": [
         {
           "name": "new_private_funds",
@@ -6052,31 +6377,23 @@
           "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
         },
         {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (3)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        },
-        {
           "name": "family_office_detected",
           "weight": 9,
           "evidence": "Firm identified as Family Office",
           "isNew": true,
           "category": "client_composition",
           "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
+        },
+        {
+          "name": "recently_registered",
+          "weight": 7,
+          "evidence": "Registered 454 days ago",
+          "isNew": false,
+          "category": "regulatory",
+          "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
         }
       ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+      "action": "Lead with new private funds signal."
     },
     {
       "id": "801-131066",
@@ -6262,49 +6579,6 @@
       "score": 23.2,
       "qpScore": 10,
       "qpExpl": "Firm avg AUM per client ($505,701,524) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "family_office_detected",
-          "weight": 9,
-          "evidence": "Firm identified as Family Office",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Family offices are ideal investors in ISQ OpenInfra"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-79590",
-      "firm": "OMNIA FAMILY WEALTH, LLC",
-      "city": "AVENTURA",
-      "state": "FL",
-      "aum": 994578445,
-      "clients": 164,
-      "avgPerClient": 6064503,
-      "tier": 2,
-      "score": 23.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($6,064,503) exceeds $5,000,000 threshold",
       "platformAccess": "None detected",
       "platformTier": null,
       "isqAccessible": false,
@@ -9310,402 +9584,149 @@
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-129223",
-      "firm": "BUOYANT CAPITAL PRIVATE LIMITED",
-      "city": "MUMBAI",
-      "state": "",
-      "aum": 674009932,
-      "clients": 4,
-      "avgPerClient": 168502483,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($168,502,483) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (326)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-128232",
-      "firm": "BAIRD PRINCIPAL GROUP MANAGEMENT COMPANY, LLC",
-      "city": "MILWAUKEE",
-      "state": "WI",
-      "aum": 85689000,
-      "clients": 1,
-      "avgPerClient": 85689000,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($85,689,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-129697",
-      "firm": "ARTESIAN CAPITAL MANAGEMENT (DELAWARE) LP",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 26000000,
-      "clients": 1,
-      "avgPerClient": 26000000,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($26,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-127647",
-      "firm": "JAFFA CAPITAL MANAGEMENT LLC",
-      "city": "CLIFTON",
-      "state": "NJ",
-      "aum": 220025000,
-      "clients": 21,
-      "avgPerClient": 10477381,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,477,381) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (20)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-12411",
-      "firm": "FIRST MANHATTAN CO. LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 34439571092,
-      "clients": 5722,
-      "avgPerClient": 6018800,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($6,018,800) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (223)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-129025",
-      "firm": "WESTBECK CAPITAL MANAGEMENT LLP",
-      "city": "LONDON, ENGLAND",
-      "state": "",
-      "aum": 286698933,
-      "clients": 4,
-      "avgPerClient": 71674733,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($71,674,733) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (1)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     }
   ],
   "state_counts": {
-    "NY": 2214,
-    "CA": 1476,
-    "FL": 856,
-    "TX": 854,
-    "IL": 515,
-    "MA": 465,
-    "CT": 427,
-    "PA": 403,
-    "CO": 286,
-    "NJ": 285,
-    "OH": 260,
-    "GA": 230,
-    "VA": 228,
-    "NC": 211,
-    "MI": 194,
-    "WA": 184,
-    "MN": 183,
-    "MD": 178,
-    "TN": 154,
-    "AZ": 127,
-    "MO": 125,
-    "UT": 122,
-    "OR": 119,
-    "WI": 114,
-    "KS": 97,
-    "IN": 96,
-    "SC": 75,
-    "AL": 65,
-    "KY": 60,
-    "OK": 55,
-    "DC": 53,
-    "NE": 53,
-    "NV": 51,
-    "IA": 49,
-    "ID": 45,
-    "LA": 45,
-    "PR": 44,
-    "NH": 39,
-    "AR": 39,
-    "DE": 32,
-    "RI": 24,
-    "WY": 24,
-    "MS": 21,
-    "ME": 21,
-    "NM": 19,
-    "VT": 17,
-    "HI": 16,
-    "MT": 15,
-    "SD": 12,
-    "AK": 9,
-    "WV": 7,
-    "ND": 6,
+    "NY": 2511,
+    "CA": 1744,
+    "TX": 1001,
+    "FL": 970,
+    "IL": 648,
+    "MA": 588,
+    "PA": 517,
+    "CT": 514,
+    "NJ": 365,
+    "OH": 352,
+    "CO": 338,
+    "GA": 297,
+    "VA": 288,
+    "NC": 265,
+    "MI": 260,
+    "MN": 245,
+    "WA": 239,
+    "MD": 226,
+    "TN": 204,
+    "MO": 171,
+    "WI": 169,
+    "AZ": 157,
+    "OR": 143,
+    "UT": 141,
+    "IN": 137,
+    "KS": 120,
+    "SC": 99,
+    "AL": 89,
+    "KY": 75,
+    "OK": 73,
+    "IA": 72,
+    "LA": 69,
+    "NE": 68,
+    "NH": 65,
+    "NV": 63,
+    "DC": 62,
+    "ID": 53,
+    "AR": 51,
+    "PR": 49,
+    "RI": 45,
+    "DE": 41,
+    "VT": 31,
+    "MS": 30,
+    "ME": 28,
+    "WY": 26,
+    "NM": 23,
+    "HI": 22,
+    "MT": 20,
+    "SD": 13,
+    "WV": 12,
+    "AK": 11,
+    "ND": 10,
     "VI": 2
   },
   "signal_freq": [
     {
       "name": "institutional_clients_added",
-      "count": 6696,
-      "newCount": 6696
+      "count": 8929,
+      "newCount": 8929
     },
     {
       "name": "new_private_funds",
-      "count": 6360,
-      "newCount": 6360
+      "count": 7112,
+      "newCount": 7112
     },
     {
       "name": "existing_private_funds_no_infra",
-      "count": 6329,
+      "count": 6974,
       "newCount": 0
     },
     {
       "name": "recently_registered",
-      "count": 2030,
+      "count": 2134,
       "newCount": 0
     },
     {
       "name": "fee_based_compensation",
-      "count": 452,
-      "newCount": 452
-    },
-    {
-      "name": "new_real_estate_added",
-      "count": 94,
-      "newCount": 94
+      "count": 497,
+      "newCount": 497
     },
     {
       "name": "family_office_detected",
-      "count": 92,
-      "newCount": 92
+      "count": 106,
+      "newCount": 106
+    },
+    {
+      "name": "new_real_estate_added",
+      "count": 106,
+      "newCount": 106
     }
   ],
   "platform_counts": [
     {
       "name": "Fidelity",
-      "count": 27,
+      "count": 110,
       "tier": 1
     },
     {
       "name": "Schwab",
-      "count": 17,
+      "count": 108,
+      "tier": 1
+    },
+    {
+      "name": "Pershing (BNY)",
+      "count": 32,
       "tier": 1
     },
     {
       "name": "Morgan Stanley",
-      "count": 10,
+      "count": 27,
       "tier": 2
     },
     {
-      "name": "Pershing (BNY)",
-      "count": 6,
-      "tier": 1
-    },
-    {
       "name": "UBS",
-      "count": 5,
+      "count": 18,
       "tier": 2
     },
     {
       "name": "Merrill Lynch",
-      "count": 4,
+      "count": 11,
+      "tier": 2
+    },
+    {
+      "name": "Raymond James",
+      "count": 9,
       "tier": 2
     },
     {
       "name": "LPL Financial",
+      "count": 7,
+      "tier": 1
+    },
+    {
+      "name": "CAIS",
       "count": 2,
       "tier": 1
     },
     {
-      "name": "Raymond James",
-      "count": 2,
-      "tier": 2
-    },
-    {
       "name": "No accessible platform",
-      "count": 13093,
+      "count": 15617,
       "tier": 0
     }
   ]
