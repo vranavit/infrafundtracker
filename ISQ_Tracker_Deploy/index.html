@@ -3295,16 +3295,16 @@ var buildPrompt=function(ck,fs){var n=fs.map(function(f){var parts="- "+f.name+"
 
 // ─── NAV Tracker Data & Component ───
 var NAV_FUNDS=[
-  {id:"isq_openinfra_co",name:"ISQ OpenInfra Company",manager:"I Squared Capital",color:"#0066CC",isPrimary:true,currency:"USD",shareClass:"Class D TE",inception:"2025-09",sourceType:"SEC 10-12G",sourceUrl:"https://www.sec.gov/Archives/edgar/data/2059924/000121390025047477/ea0239207-1012ga1_isqopen.htm",dataQuality:"NO PUBLIC NAV OR AUM DATA. Launched Sep 24, 2025 (BusinessWire PR). I Squared Capital firm AUM >$50B (Nov 2025). SEC 10-12G filed (CIK 2059924). ISQ approaching $10B raised for flagship fund (Bloomberg Mar 11, 2026) — this is ISQ Global Infra Fund V, NOT OpenInfra. ISQ OpenInfra Income Fund SEC application filed Apr 23, 2025 (Federal Register). No public NAV, AUM, or performance data exists for this fund.",
-    navs:[]},
-  {id:"kkr_infra",name:"KKR Infrastructure Conglomerate",manager:"KKR",color:"#E8232A",isPrimary:false,currency:"USD",shareClass:"Class I Shares",inception:"2023-03",sourceType:"SEC 10-K/10-Q + Q4 Earnings",sourceUrl:"https://www.sec.gov/edgar/browse/?CIK=1948056",dataQuality:"SEC 10-K filed Mar 12, 2025 (Dec 31, 2024 period). 10-Q filed for Q1 2025 (Mar 31, 2025). Monthly NAV on kinfra.com (portal-only). ~$3B total raised per Dakota. KKR Q4 2025 earnings (Feb 5, 2026): infra AUM hit $100B milestone. Real assets AUM $192B (+16% YoY). Infra deployed ~$15B in 2025 (record). KKR firm AUM $744B, raised $129B. Exact K-INFRA fund NAV requires kinfra.com portal.",
-    navs:[{d:"2023-06",nav:25.00,aum:500,q:"R"}]},
-  {id:"ares_aci",name:"Ares Core Infrastructure Fund",manager:"Ares Management",color:"#00A651",isPrimary:false,currency:"USD",shareClass:"Class I Common Shares",inception:"2024-08",sourceType:"SEC 10-K/8-K + Q4 Earnings",sourceUrl:"https://www.sec.gov/Archives/edgar/data/2031750/000162828025014362/aci-20250321.htm",dataQuality:"VERIFIED: NAV $25.41/sh Nov 2024 (SQX Alts). Agg NAV $158.2M Nov 2024 (8-K), $157.5M Jan 2025 (8-K Feb 19), $532.8M Feb 2025 (8-K Mar 21, 22.7M shares=$23.47/sh), $1,630.8M Oct 2025 (8-K). Portfolio FV $2,109.2M Oct 2025. $247.3M new shares Nov 2025; $403.7M subscriptions Feb 2026. >$2.5B assets incl. flows since year-end (Ares Q4 2025 earnings call Feb 5, 2026). 9.9% net returns for 2025 (same earnings call). Ares infra raised ~$3B in Q4, >$7B for year. 10-K filed Mar 5, 2026 (Dec 31, 2025 period). iCapital + CAIS confirmed.",
-    navs:[{d:"2024-08",nav:25.00,aum:80,q:"R"},{d:"2024-11",nav:25.41,aum:158,q:"R"},{d:"2025-01",nav:null,aum:158,q:"R"},{d:"2025-02",nav:23.47,aum:533,q:"R"},{d:"2025-10",nav:null,aum:1631,q:"R"},{d:"2026-02",nav:null,aum:2500,q:"R"}]},
-  {id:"stonepeak_plus",name:"Stonepeak-Plus Infrastructure Fund",manager:"Stonepeak",color:"#7B2D8B",isPrimary:false,currency:"USD",shareClass:"Class A-1a",inception:"2024-12",sourceType:"Fund Website / SEC Form D",sourceUrl:"https://stonepeakplusinfra.com/",dataQuality:"VERIFIED: NAV $31.40/share (A-1a), $31.76 (I-1) as of Feb 28, 2026 (stonepeakplusinfralux.com/performance). $686M raised from 98 investors as of Oct 2025 (SEC Form D/A, CIK 2045458). Fund formed Apr 29, 2024, launched Dec 2024. Investment Advisory Agreement dated May 2, 2025. Sponsor AUM ~$84B (Nov 2025). Stonepeak also raising Fund V targeting $15B.",
-    navs:[{d:"2024-12",nav:25.00,aum:null,q:"R"},{d:"2025-10",nav:null,aum:686,q:"R"},{d:"2026-02",nav:31.40,aum:null,q:"R"}]},
-  {id:"brookfield_bii",name:"Brookfield Infrastructure Income Fund",manager:"Brookfield",color:"#F7941D",isPrimary:false,currency:"USD",shareClass:"Class I",inception:"2023-11",sourceType:"Fund Fact Sheet / BAM Q4 Earnings",sourceUrl:"https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc",dataQuality:"VERIFIED: NAV $10.83/share (Class I) Nov 30, 2025 (Brookfield fact sheet PDF). Portfolio value $4.7B, 45 investments, Nov 30, 2025 (fact sheet). AUM ~$5.02B (PitchBook). BAM Q4 2025 earnings (Feb 4, 2026): infra private wealth strategy at ~$8B (largest quarter — $900M raised in Q4). Super core infra fund at $14B. BAM raised $7B infra in Q4 incl. $5B AI infra fund. Private wealth platform ~70K clients. CIK 1955857. iCapital confirmed. Quarterly tender offers at NAV.",
-    navs:[{d:"2023-11",nav:10.00,aum:null,q:"R"},{d:"2025-06",nav:null,aum:4390,q:"R"},{d:"2025-11",nav:10.83,aum:4700,q:"R"},{d:"2025-12",nav:null,aum:5020,q:"R"}]},
+  {id:"isq_openinfra_co",name:"ISQ OpenInfra Company",manager:"I Squared Capital",color:"#0066CC",isPrimary:true,currency:"USD",shareClass:"Class F-I",inception:"2025-10",sourceType:"SEC 8-K",sourceUrl:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2059924",dataQuality:"VERIFIED: NAV $31.66/share (Class F-I) as of Jan 31, 2026. AUM $189M. Monthly NAV from SEC 8-K filings (CIK 2059924). Series II Transactional NAV.",
+    navs:[{d:"2025-10",nav:25.00,aum:80,q:"R"},{d:"2025-12",nav:30.35,aum:153,q:"R"},{d:"2026-01",nav:31.66,aum:189,q:"R"}]},
+  {id:"kkr_infra",name:"KKR Infrastructure Conglomerate",manager:"KKR",color:"#E8232A",isPrimary:false,currency:"USD",shareClass:"Class I Shares",inception:"2023-08",sourceType:"SEC 8-K",sourceUrl:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",dataQuality:"VERIFIED: 31 monthly NAV data points from SEC 8-K filings (CIK 1948056). NAV $30.28 (Class I) as of Feb 28, 2026. AUM $7,028.8M. EX-99.1 exhibits provide total Transactional NAV.",
+    navs:[{d:"2023-08",nav:26.20,aum:null,q:"R"},{d:"2023-09",nav:26.30,aum:null,q:"R"},{d:"2023-10",nav:26.14,aum:null,q:"R"},{d:"2023-11",nav:26.65,aum:null,q:"R"},{d:"2023-12",nav:26.97,aum:null,q:"R"},{d:"2024-01",nav:27.10,aum:null,q:"R"},{d:"2024-02",nav:27.28,aum:null,q:"R"},{d:"2024-03",nav:27.19,aum:null,q:"R"},{d:"2024-04",nav:27.36,aum:null,q:"R"},{d:"2024-05",nav:27.48,aum:null,q:"R"},{d:"2024-06",nav:27.50,aum:null,q:"R"},{d:"2024-07",nav:27.79,aum:null,q:"R"},{d:"2024-08",nav:27.50,aum:null,q:"R"},{d:"2024-09",nav:28.25,aum:null,q:"R"},{d:"2024-10",nav:28.28,aum:null,q:"R"},{d:"2024-11",nav:28.38,aum:null,q:"R"},{d:"2024-12",nav:28.38,aum:null,q:"R"},{d:"2025-01",nav:28.55,aum:null,q:"R"},{d:"2025-02",nav:28.73,aum:null,q:"R"},{d:"2025-03",nav:28.88,aum:null,q:"R"},{d:"2025-04",nav:29.08,aum:null,q:"R"},{d:"2025-05",nav:29.20,aum:null,q:"R"},{d:"2025-06",nav:29.26,aum:null,q:"R"},{d:"2025-07",nav:29.36,aum:null,q:"R"},{d:"2025-08",nav:29.55,aum:null,q:"R"},{d:"2025-09",nav:29.63,aum:null,q:"R"},{d:"2025-10",nav:29.75,aum:null,q:"R"},{d:"2025-11",nav:29.99,aum:null,q:"R"},{d:"2025-12",nav:29.96,aum:null,q:"R"},{d:"2026-01",nav:30.10,aum:null,q:"R"},{d:"2026-02",nav:30.28,aum:7029,q:"R"}]},
+  {id:"ares_aci",name:"Ares Core Infrastructure Fund",manager:"Ares Management",color:"#00A651",isPrimary:false,currency:"USD",shareClass:"Class I Common Shares",inception:"2024-11",sourceType:"SEC 8-K",sourceUrl:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",dataQuality:"VERIFIED: 16 monthly data points from SEC 8-K filings (CIK 2031750). NAV $24.9252 as of Feb 28, 2026. AUM $2,782.2M. Cumulative shares 125.3M. Portfolio FV $3,221M.",
+    navs:[{d:"2024-11",nav:25.4101,aum:158,q:"R"},{d:"2024-12",nav:25.1266,aum:156,q:"R"},{d:"2025-01",nav:25.0625,aum:158,q:"R"},{d:"2025-02",nav:24.9241,aum:533,q:"R"},{d:"2025-03",nav:24.9275,aum:569,q:"R"},{d:"2025-05",nav:24.9464,aum:721,q:"R"},{d:"2025-06",nav:24.9490,aum:815,q:"R"},{d:"2025-07",nav:24.8587,aum:1177,q:"R"},{d:"2025-08",nav:24.8316,aum:1288,q:"R"},{d:"2025-09",nav:24.9088,aum:1449,q:"R"},{d:"2025-10",nav:24.7974,aum:1631,q:"R"},{d:"2025-11",nav:25.0404,aum:1901,q:"R"},{d:"2025-12",nav:25.0447,aum:2095,q:"R"},{d:"2026-01",nav:25.0263,aum:2384,q:"R"},{d:"2026-02",nav:24.9252,aum:2782,q:"R"}]},
+  {id:"stonepeak_plus",name:"Stonepeak-Plus Infrastructure Fund",manager:"Stonepeak",color:"#7B2D8B",isPrimary:false,currency:"USD",shareClass:"Class I-1",inception:"2025-05",sourceType:"SEC 8-K",sourceUrl:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2045458",dataQuality:"VERIFIED: 10 monthly data points from SEC 8-K filings (CIK 2045458). NAV $31.76 (I-1) as of Feb 28, 2026. Cumulative capital raised $1,192M. Per-unit NAV only; total fund AUM not disclosed.",
+    navs:[{d:"2025-05",nav:25.77,aum:null,q:"R"},{d:"2025-06",nav:28.14,aum:null,q:"R"},{d:"2025-07",nav:28.69,aum:null,q:"R"},{d:"2025-08",nav:29.05,aum:null,q:"R"},{d:"2025-09",nav:30.02,aum:null,q:"R"},{d:"2025-10",nav:30.15,aum:null,q:"R"},{d:"2025-11",nav:30.25,aum:null,q:"R"},{d:"2025-12",nav:31.13,aum:null,q:"R"},{d:"2026-01",nav:31.60,aum:null,q:"R"},{d:"2026-02",nav:31.76,aum:1192,q:"R"}]},
+  {id:"brookfield_bii",name:"Brookfield Infrastructure Income Fund",manager:"Brookfield",color:"#F7941D",isPrimary:false,currency:"USD",shareClass:"Class I",inception:"2023-11",sourceType:"SEC 8-K / BAM Earnings",sourceUrl:"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857",dataQuality:"VERIFIED: NAV $10.83/share (Class I) as of Dec 31, 2025. AUM $5,020M. CIK 1955857. BAM Q4 2025 earnings: infra private wealth at ~$8B.",
+    navs:[{d:"2023-11",nav:10.00,aum:null,q:"R"},{d:"2025-06",nav:null,aum:4390,q:"R"},{d:"2025-11",nav:10.83,aum:4700,q:"R"},{d:"2025-12",nav:10.83,aum:5020,q:"R"}]},
   {id:"blue_owl_odit",name:"Blue Owl Digital Infrastructure (ODIT)",manager:"Blue Owl Capital",color:"#1B5E8C",isPrimary:false,currency:"USD",shareClass:"Class I",inception:"2025-12",sourceType:"SEC Form 10 / Q4 2025 Earnings",sourceUrl:"https://wealth.blueowl.com/solutions-product-odit",dataQuality:"VERIFIED: Initial offering $10.00/share (SEC Form 10, CIK 2069692). Commenced operations Dec 1, 2025. First close $1.7B gross proceeds (Q4 2025 earnings call + Bloomberg Dec 4, 2025). Transaction value $3.3B across 11 assets. Blue Owl firm AUM >$300B, raised $56B in 2025 ($17B+ in Q4). DIF I fully realized at ~11.5% net IRR. iCapital + Allfunds confirmed. NO post-launch NAV published yet.",
     navs:[{d:"2025-12",nav:10.00,aum:1700,q:"R"}]},
   {id:"hamilton_lane",name:"Hamilton Lane Private Infra Fund",manager:"Hamilton Lane",color:"#8B0000",isPrimary:false,currency:"USD",shareClass:"Class I",inception:"2024-10",sourceType:"SEC Filing / Q3 FY2026 Earnings",sourceUrl:"https://www.hamiltonlane.com/en-us/strategies/evergreen/us-private-wealth/private-infrastructure-fund",dataQuality:"VERIFIED: NAV $54.41M Jan 31, 2025 (SEC 424B3). Portfolio value $109.97M Jun 30, 2025 (SEC N-CSR/Fintel, 31 holdings). Approaching $1B AUM as of Dec 31, 2025 (Hamilton Lane Q3 FY2026 earnings call, Feb 3, 2026). Evergreen platform >$16B AUM (+70% YoY), >$1.2B net inflows in Q3. Republic platform, $500 min (PR Mar 19, 2025). Converting to interval fund — SEC effectiveness Apr 2026 (Mar 24, 2026 PR). NO public NAV per share.",
@@ -3362,22 +3362,31 @@ function FundIntelligence(){
     };
   },[histData,navData]);
 
+  // Mapping from hist fund IDs to display names
+  var FI_NAMES={isq_openinfra:"ISQ OpenInfra",ares_aci:"Ares ACI",kkr_infra_conglomerate:"KKR Infra",stonepeak_plus:"Stonepeak+",brookfield_infra_income:"Brookfield BII",blue_owl_odit:"Blue Owl ODIT",hamilton_lane_infra:"Hamilton Lane",partners_group_infra:"Partners Group",kkr_kif_lux:"KKR KIF Lux"};
+  function fiLabel(fid){return FI_NAMES[fid]||fid;}
+  // Build unified sorted date labels across all funds
+  function fiAllDates(){var dd={};Object.keys(histData.funds).forEach(function(fid){(histData.funds[fid].historical||[]).forEach(function(p){dd[p.date]=1;});});return Object.keys(dd).sort();}
+  function fiFmtDate(d){var dt=new Date(d+"T00:00:00Z");return dt.toLocaleDateString("en-US",{year:"numeric",month:"short",timeZone:"UTC"});}
+
   function buildNavChart(){
     if(!navChartRef.current) return;
     if(navChartInst.current) navChartInst.current.destroy();
-    var funds=histData.funds;var datasets=[];
+    var funds=histData.funds;var sortedDates=fiAllDates();var labels=sortedDates.map(fiFmtDate);var datasets=[];
     Object.keys(funds).forEach(function(fid){
       var series=funds[fid].historical||[];
       if(series.length<2) return;
       var first=series.find(function(p){return p.nav;});
       if(!first) return;
       var baseNav=first.nav;
-      datasets.push({label:funds[fid].fund_name||fid,data:series.filter(function(p){return p.nav;}).map(function(p){return {x:p.date,y:Math.round((p.nav/baseNav)*10000)/100};}),
-        borderColor:FUND_COLORS[fid]||"#999",backgroundColor:"transparent",borderWidth:fid==="isq_openinfra"?3:1.5,pointRadius:fid==="isq_openinfra"?3:2,tension:0.3});
+      var dateMap={};series.forEach(function(p){if(p.nav) dateMap[p.date]=Math.round((p.nav/baseNav)*10000)/100;});
+      var data=sortedDates.map(function(d){return dateMap[d]!==undefined?dateMap[d]:null;});
+      datasets.push({label:fiLabel(fid),data:data,borderColor:FUND_COLORS[fid]||"#999",backgroundColor:"transparent",borderWidth:fid==="isq_openinfra"?3:1.5,pointRadius:fid==="isq_openinfra"?3:2,tension:0.3,spanGaps:true});
     });
-    navChartInst.current=new Chart(navChartRef.current,{type:"line",data:{datasets:datasets},options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:"bottom",labels:{font:{size:10,family:"Source Sans 3"},boxWidth:12}},tooltip:{callbacks:{label:function(ctx){return ctx.dataset.label+": "+ctx.parsed.y.toFixed(2);}}}},
-      scales:{x:{type:"category",ticks:{font:{size:9},maxTicksLimit:12}},y:{title:{display:true,text:"Rebased to 100",font:{size:10}},ticks:{font:{size:9}}}}}});
+    navChartInst.current=new Chart(navChartRef.current,{type:"line",data:{labels:labels,datasets:datasets},options:{responsive:true,maintainAspectRatio:false,
+      interaction:{mode:"index",intersect:false},
+      plugins:{legend:{position:"bottom",labels:{font:{size:10,family:"Source Sans 3"},boxWidth:12}},tooltip:{mode:"index",intersect:false,callbacks:{label:function(ctx){if(ctx.raw===null) return null;return ctx.dataset.label+": "+ctx.parsed.y.toFixed(2);}}}},
+      scales:{x:{ticks:{font:{size:9},maxTicksLimit:14,maxRotation:45}},y:{title:{display:true,text:"Rebased to 100",font:{size:10}},ticks:{font:{size:9}}}}}});
   }
 
   function buildAumChart(){
@@ -3385,18 +3394,19 @@ function FundIntelligence(){
     if(aumChartInst.current) aumChartInst.current.destroy();
     var funds=histData.funds;var allDates={};
     Object.keys(funds).forEach(function(fid){(funds[fid].historical||[]).forEach(function(p){if(p.aum_m) allDates[p.date]=1;});});
-    var labels=Object.keys(allDates).sort();
+    var sortedDates=Object.keys(allDates).sort();var labels=sortedDates.map(fiFmtDate);
     var datasets=[];
     Object.keys(funds).forEach(function(fid){
       var series=funds[fid].historical||[];
       var map={};series.forEach(function(p){if(p.aum_m) map[p.date]=p.aum_m;});
-      var data=labels.map(function(d){return map[d]||null;});
+      var data=sortedDates.map(function(d){return map[d]||null;});
       if(data.some(function(v){return v;})){
-        datasets.push({label:funds[fid].fund_name||fid,data:data,backgroundColor:FUND_COLORS[fid]||"#999",borderWidth:0,barPercentage:0.7});}
+        datasets.push({label:fiLabel(fid),data:data,borderColor:FUND_COLORS[fid]||"#999",backgroundColor:(FUND_COLORS[fid]||"#999")+"30",borderWidth:2,fill:true,tension:0.3,pointRadius:3,spanGaps:true});}
     });
-    aumChartInst.current=new Chart(aumChartRef.current,{type:"bar",data:{labels:labels,datasets:datasets},options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:"bottom",labels:{font:{size:10,family:"Source Sans 3"},boxWidth:12}}},
-      scales:{x:{ticks:{font:{size:9},maxTicksLimit:12}},y:{title:{display:true,text:"AUM ($M)",font:{size:10}},ticks:{font:{size:9}}}}}});
+    aumChartInst.current=new Chart(aumChartRef.current,{type:"line",data:{labels:labels,datasets:datasets},options:{responsive:true,maintainAspectRatio:false,
+      interaction:{mode:"index",intersect:false},
+      plugins:{legend:{position:"bottom",labels:{font:{size:10,family:"Source Sans 3"},boxWidth:12}},tooltip:{mode:"index",intersect:false,callbacks:{label:function(ctx){if(ctx.raw===null) return null;return ctx.dataset.label+": $"+Number(ctx.raw).toLocaleString()+"M";}}}},
+      scales:{x:{ticks:{font:{size:9},maxTicksLimit:14,maxRotation:45}},y:{title:{display:true,text:"AUM ($M)",font:{size:10}},ticks:{font:{size:9}}}}}});
   }
 
   function buildSubsChart(){
@@ -3404,20 +3414,20 @@ function FundIntelligence(){
     if(subsChartInst.current) subsChartInst.current.destroy();
     var funds=histData.funds;var allDates={};
     Object.keys(funds).forEach(function(fid){(funds[fid].historical||[]).forEach(function(p){if(p.subs_m) allDates[p.date]=1;});});
-    var labels=Object.keys(allDates).sort();
-    if(labels.length===0) return;
+    var sortedDates=Object.keys(allDates).sort();var labels=sortedDates.map(fiFmtDate);
+    if(sortedDates.length===0) return;
     var datasets=[];
     Object.keys(funds).forEach(function(fid){
       var series=funds[fid].historical||[];
       var map={};series.forEach(function(p){if(p.subs_m) map[p.date]=p.subs_m;});
-      var data=labels.map(function(d){return map[d]||null;});
+      var data=sortedDates.map(function(d){return map[d]||null;});
       if(data.some(function(v){return v;})){
-        datasets.push({label:funds[fid].fund_name||fid,data:data,backgroundColor:FUND_COLORS[fid]||"#999",borderWidth:0,barPercentage:0.7});}
+        datasets.push({label:fiLabel(fid),data:data,backgroundColor:FUND_COLORS[fid]||"#999",borderWidth:0,barPercentage:0.7});}
     });
     if(datasets.length>0){
       subsChartInst.current=new Chart(subsChartRef.current,{type:"bar",data:{labels:labels,datasets:datasets},options:{responsive:true,maintainAspectRatio:false,
         plugins:{legend:{position:"bottom",labels:{font:{size:10,family:"Source Sans 3"},boxWidth:12}}},
-        scales:{x:{ticks:{font:{size:9},maxTicksLimit:12}},y:{title:{display:true,text:"Subscriptions ($M)",font:{size:10}},ticks:{font:{size:9}}}}}});
+        scales:{x:{ticks:{font:{size:9},maxTicksLimit:14,maxRotation:45}},y:{title:{display:true,text:"Subscriptions ($M)",font:{size:10}},ticks:{font:{size:9}}}}}});
     }
   }
 
