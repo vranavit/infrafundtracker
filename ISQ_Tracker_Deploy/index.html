@@ -3727,7 +3727,11 @@ function NAVTracker(){
     var annReturn=(first&&lastWithNav)?(function(){var fp=first.d.split("-"),lp=lastWithNav.d.split("-");var months=(parseInt(lp[0])-parseInt(fp[0]))*12+(parseInt(lp[1])-parseInt(fp[1]));var yrs=months/12;return yrs>0.25?(Math.pow(lastWithNav.nav/first.nav,1/yrs)-1)*100:null;})():null;
     var navsWithAum=fund.navs.filter(function(n){return n.aum!==null;});
     var lastAum=navsWithAum.length>0?navsWithAum[navsWithAum.length-1].aum:null;
-    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,aum:lastAum,moReturn:moReturn,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,moFlow:null};
+    var lastNavDate=lastWithNav?lastWithNav.d:null;
+    var prevNavDate=prevWithNav?prevWithNav.d:null;
+    var firstNavDate=first?first.d:null;
+    var spanMonths=(first&&lastWithNav)?(function(){var fp=first.d.split("-"),lp=lastWithNav.d.split("-");return (parseInt(lp[0])-parseInt(fp[0]))*12+(parseInt(lp[1])-parseInt(fp[1]));})():null;
+    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,lastNavDate:lastNavDate,prevNavDate:prevNavDate,firstNavDate:firstNavDate,spanMonths:spanMonths,aum:lastAum,moReturn:moReturn,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,moFlow:null};
   }).sort(function(a,b){return (b.annReturn||0)-(a.annReturn||0);});
   return React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16}},
     // Header
@@ -3798,7 +3802,7 @@ function NAVTracker(){
     ),
     // View toggle
     React.createElement("div",{style:{display:"flex",gap:6}},
-      ...[{k:"table",l:"Performance Table"},{k:"aum",l:"AUM Comparison"}].map(function(v){
+      ...[{k:"table",l:"Performance Table"},{k:"returns",l:"Returns Comparison"},{k:"aum",l:"AUM Comparison"}].map(function(v){
         return React.createElement("button",{key:v.k,onClick:function(){setViewMode(v.k);},style:{padding:"5px 14px",fontSize:11,border:"1px solid "+(viewMode===v.k?C.navy:C.grayLight),borderRadius:16,background:viewMode===v.k?C.navy:"transparent",color:viewMode===v.k?C.white:C.textSec,fontWeight:viewMode===v.k?600:400,cursor:"pointer"}},v.l);
       })
     ),
@@ -3810,11 +3814,11 @@ function NAVTracker(){
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"left",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Fund"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"left",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Share Class"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Latest NAV"),
+            React.createElement("th",{style:{padding:"8px 12px",textAlign:"center",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"As Of"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"AUM ($M)"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Last Period"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Total Return"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Ann. Return"),
-            React.createElement("th",{style:{padding:"8px 12px",textAlign:"right",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Est. Net Flows"),
             React.createElement("th",{style:{padding:"8px 12px",textAlign:"center",fontSize:10,fontWeight:600,color:C.textSec,textTransform:"uppercase"}},"Source")
           )
         ),
@@ -3828,16 +3832,109 @@ function NAVTracker(){
               ),
               React.createElement("td",{style:{padding:"8px 12px",color:C.textSec,fontSize:10}},row.fund.shareClass),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:C.text}},row.lastNav!==null?"$"+row.lastNav.toFixed(2):"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"center",fontSize:9.5,color:C.textSec}},
+                row.lastNavDate?(function(){var p=row.lastNavDate.split("-");var moNames=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?moNames[parseInt(p[1])]+" "+p[0]:row.lastNavDate;})():"—"
+              ),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.text}},row.aum!==null?"$"+row.aum.toLocaleString():"—"),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:500,color:row.moReturn!==null?(row.moReturn>=0?C.green:C.red):C.textMuted}},row.moReturn!==null?(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%":"—"),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:row.totalReturn!==null?(row.totalReturn>=0?C.green:C.red):C.textMuted}},row.totalReturn!==null?(row.totalReturn>=0?"+":"")+row.totalReturn.toFixed(1)+"%":"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
+                row.moReturn!==null?React.createElement("div",null,
+                  React.createElement("span",{style:{fontWeight:500,color:row.moReturn>=0?C.green:C.red}},(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%"),
+                  React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate);})())
+                ):"—"
+              ),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
+                row.totalReturn!==null?React.createElement("div",null,
+                  React.createElement("span",{style:{fontWeight:600,color:row.totalReturn>=0?C.green:C.red}},(row.totalReturn>=0?"+":"")+row.totalReturn.toFixed(1)+"%"),
+                  row.spanMonths!==null?React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},row.spanMonths+"mo"):null
+                ):"—"
+              ),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",fontWeight:600,color:row.annReturn!==null?(row.annReturn>=0?C.green:C.red):C.textMuted}},row.annReturn!==null?(row.annReturn>=0?"+":"")+row.annReturn.toFixed(1)+"%":"—"),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.textMuted}},"—"),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"center"}},
                 React.createElement("a",{href:row.fund.sourceUrl,target:"_blank",rel:"noopener",title:row.fund.dataQuality||"",style:{color:C.steel,fontSize:10,textDecoration:"underline",fontWeight:500}},row.fund.sourceType)
               )
             );
           })
+        )
+      )
+    ),
+    // Returns Comparison dashboard
+    viewMode==="returns"&&React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16}},
+      // -- Total Return bars --
+      React.createElement("div",{style:{background:C.cardBg,borderRadius:8,border:"1px solid "+C.grayLight,padding:"16px"}},
+        React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:4}},"Total Return (Since Inception)"),
+        React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Cumulative price return from first to latest reported NAV"),
+        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
+          ...(function(){
+            var rows=latestData.filter(function(r){return r.totalReturn!==null;}).sort(function(a,b){return b.totalReturn-a.totalReturn;});
+            var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.totalReturn);}));
+            if(absMax===0)absMax=1;
+            return rows.map(function(row){
+              var isISQ=row.fund.isPrimary;var pct=row.totalReturn;var barW=Math.abs(pct)/absMax*100;
+              return React.createElement("div",{key:row.fund.id+"_tot",style:{display:"flex",alignItems:"center",gap:8}},
+                React.createElement("div",{style:{width:200,fontSize:10.5,fontWeight:isISQ?600:400,color:isISQ?C.teal:C.text,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},row.fund.name),
+                React.createElement("div",{style:{flex:1,display:"flex",alignItems:"center",height:22}},
+                  pct>=0?React.createElement("div",{style:{width:barW+"%",height:"100%",background:row.fund.color,borderRadius:"0 4px 4px 0",minWidth:2,transition:"width 0.3s"}}):
+                  React.createElement("div",{style:{display:"flex",justifyContent:"flex-end",width:"100%"}},
+                    React.createElement("div",{style:{width:barW+"%",height:"100%",background:C.red,borderRadius:"4px 0 0 4px",minWidth:2,transition:"width 0.3s"}})
+                  )
+                ),
+                React.createElement("div",{style:{width:75,fontSize:10.5,fontWeight:600,color:pct>=0?C.green:C.red,textAlign:"right"}},(pct>=0?"+":"")+pct.toFixed(1)+"%"),
+                React.createElement("div",{style:{width:40,fontSize:8.5,color:C.textMuted,textAlign:"right"}},row.spanMonths!==null?row.spanMonths+"mo":"")
+              );
+            });
+          })()
+        )
+      ),
+      // -- Annualized Return bars --
+      React.createElement("div",{style:{background:C.cardBg,borderRadius:8,border:"1px solid "+C.grayLight,padding:"16px"}},
+        React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:4}},"Annualized Return"),
+        React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"CAGR since inception (requires >3 months of data)"),
+        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
+          ...(function(){
+            var rows=latestData.filter(function(r){return r.annReturn!==null;}).sort(function(a,b){return b.annReturn-a.annReturn;});
+            var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.annReturn);}));
+            if(absMax===0)absMax=1;
+            return rows.map(function(row){
+              var isISQ=row.fund.isPrimary;var pct=row.annReturn;var barW=Math.abs(pct)/absMax*100;
+              return React.createElement("div",{key:row.fund.id+"_ann",style:{display:"flex",alignItems:"center",gap:8}},
+                React.createElement("div",{style:{width:200,fontSize:10.5,fontWeight:isISQ?600:400,color:isISQ?C.teal:C.text,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},row.fund.name),
+                React.createElement("div",{style:{flex:1,display:"flex",alignItems:"center",height:22}},
+                  pct>=0?React.createElement("div",{style:{width:barW+"%",height:"100%",background:row.fund.color,borderRadius:"0 4px 4px 0",minWidth:2,transition:"width 0.3s"}}):
+                  React.createElement("div",{style:{display:"flex",justifyContent:"flex-end",width:"100%"}},
+                    React.createElement("div",{style:{width:barW+"%",height:"100%",background:C.red,borderRadius:"4px 0 0 4px",minWidth:2,transition:"width 0.3s"}})
+                  )
+                ),
+                React.createElement("div",{style:{width:75,fontSize:10.5,fontWeight:600,color:pct>=0?C.green:C.red,textAlign:"right"}},(pct>=0?"+":"")+pct.toFixed(1)+"%")
+              );
+            });
+          })()
+        )
+      ),
+      // -- Last Period Return bars --
+      React.createElement("div",{style:{background:C.cardBg,borderRadius:8,border:"1px solid "+C.grayLight,padding:"16px"}},
+        React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:4}},"Last Period Return"),
+        React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Most recent period-over-period NAV change (periods vary by fund)"),
+        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
+          ...(function(){
+            var rows=latestData.filter(function(r){return r.moReturn!==null;}).sort(function(a,b){return b.moReturn-a.moReturn;});
+            var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.moReturn);}));
+            if(absMax===0)absMax=1;
+            return rows.map(function(row){
+              var isISQ=row.fund.isPrimary;var pct=row.moReturn;var barW=Math.abs(pct)/absMax*100;
+              var periodLabel=(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate);})();
+              return React.createElement("div",{key:row.fund.id+"_lp",style:{display:"flex",alignItems:"center",gap:8}},
+                React.createElement("div",{style:{width:200,fontSize:10.5,fontWeight:isISQ?600:400,color:isISQ?C.teal:C.text,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},row.fund.name),
+                React.createElement("div",{style:{flex:1,display:"flex",alignItems:"center",height:22}},
+                  pct>=0?React.createElement("div",{style:{width:barW+"%",height:"100%",background:row.fund.color,borderRadius:"0 4px 4px 0",minWidth:2,transition:"width 0.3s"}}):
+                  React.createElement("div",{style:{display:"flex",justifyContent:"flex-end",width:"100%"}},
+                    React.createElement("div",{style:{width:barW+"%",height:"100%",background:C.red,borderRadius:"4px 0 0 4px",minWidth:2,transition:"width 0.3s"}})
+                  )
+                ),
+                React.createElement("div",{style:{width:75,fontSize:10.5,fontWeight:600,color:pct>=0?C.green:C.red,textAlign:"right"}},(pct>=0?"+":"")+pct.toFixed(2)+"%"),
+                React.createElement("div",{style:{width:95,fontSize:8.5,color:C.textMuted,textAlign:"right"}},periodLabel)
+              );
+            });
+          })()
         )
       )
     ),
