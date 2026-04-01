@@ -3731,7 +3731,9 @@ function NAVTracker(){
     var prevNavDate=prevWithNav?prevWithNav.d:null;
     var firstNavDate=first?first.d:null;
     var spanMonths=(first&&lastWithNav)?(function(){var fp=first.d.split("-"),lp=lastWithNav.d.split("-");return (parseInt(lp[0])-parseInt(fp[0]))*12+(parseInt(lp[1])-parseInt(fp[1]));})():null;
-    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,lastNavDate:lastNavDate,prevNavDate:prevNavDate,firstNavDate:firstNavDate,spanMonths:spanMonths,aum:lastAum,moReturn:moReturn,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,moFlow:null};
+    var lastPeriodMonths=(prevWithNav&&lastWithNav)?(function(){var pp=prevWithNav.d.split("-"),lp=lastWithNav.d.split("-");return (parseInt(lp[0])-parseInt(pp[0]))*12+(parseInt(lp[1])-parseInt(pp[1]));})():null;
+    var moReturnProrated=(moReturn!==null&&lastPeriodMonths&&lastPeriodMonths>0)?(moReturn/lastPeriodMonths):null;
+    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,lastNavDate:lastNavDate,prevNavDate:prevNavDate,firstNavDate:firstNavDate,spanMonths:spanMonths,lastPeriodMonths:lastPeriodMonths,moReturn:moReturn,moReturnProrated:moReturnProrated,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,moFlow:null};
   }).sort(function(a,b){return (b.annReturn||0)-(a.annReturn||0);});
   return React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16}},
     // Header
@@ -3839,7 +3841,8 @@ function NAVTracker(){
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
                 row.moReturn!==null?React.createElement("div",null,
                   React.createElement("span",{style:{fontWeight:500,color:row.moReturn>=0?C.green:C.red}},(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%"),
-                  React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate);})())
+                  React.createElement("div",{style:{fontSize:8.5,color:C.textMuted,marginTop:1}},(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate)+(row.lastPeriodMonths?" ("+row.lastPeriodMonths+"mo)":"");})()),
+                  row.moReturnProrated!==null&&row.lastPeriodMonths!==1?React.createElement("div",{style:{fontSize:8.5,color:row.moReturnProrated>=0?"#2E7D32":"#C62828",marginTop:1,fontStyle:"italic"}},"~"+(row.moReturnProrated>=0?"+":"")+row.moReturnProrated.toFixed(2)+"%/mo"):null
                 ):"—"
               ),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
@@ -3910,18 +3913,18 @@ function NAVTracker(){
           })()
         )
       ),
-      // -- Last Period Return bars --
+      // -- Last Period Return bars (prorated to monthly) --
       React.createElement("div",{style:{background:C.cardBg,borderRadius:8,border:"1px solid "+C.grayLight,padding:"16px"}},
-        React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:4}},"Last Period Return"),
-        React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Most recent period-over-period NAV change (periods vary by fund)"),
+        React.createElement("div",{style:{fontSize:12,fontWeight:600,color:C.text,marginBottom:4}},"Last Period Return (Prorated Monthly)"),
+        React.createElement("div",{style:{fontSize:9.5,color:C.textSec,marginBottom:12}},"Most recent period return prorated to a 1-month basis for comparability. Actual period return shown in parentheses."),
         React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
           ...(function(){
-            var rows=latestData.filter(function(r){return r.moReturn!==null;}).sort(function(a,b){return b.moReturn-a.moReturn;});
-            var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.moReturn);}));
+            var rows=latestData.filter(function(r){return r.moReturnProrated!==null;}).sort(function(a,b){return b.moReturnProrated-a.moReturnProrated;});
+            var absMax=Math.max.apply(null,rows.map(function(r){return Math.abs(r.moReturnProrated);}));
             if(absMax===0)absMax=1;
             return rows.map(function(row){
-              var isISQ=row.fund.isPrimary;var pct=row.moReturn;var barW=Math.abs(pct)/absMax*100;
-              var periodLabel=(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate);})();
+              var isISQ=row.fund.isPrimary;var pct=row.moReturnProrated;var barW=Math.abs(pct)/absMax*100;
+              var periodLabel=(function(){if(!row.prevNavDate||!row.lastNavDate)return"";var fmt=function(d){var p=d.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?mo[parseInt(p[1])]+" '"+p[0].slice(2):d;};return fmt(row.prevNavDate)+" → "+fmt(row.lastNavDate)+(row.lastPeriodMonths?" ("+row.lastPeriodMonths+"mo)":"");})();
               return React.createElement("div",{key:row.fund.id+"_lp",style:{display:"flex",alignItems:"center",gap:8}},
                 React.createElement("div",{style:{width:200,fontSize:10.5,fontWeight:isISQ?600:400,color:isISQ?C.teal:C.text,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}},row.fund.name),
                 React.createElement("div",{style:{flex:1,display:"flex",alignItems:"center",height:22}},
@@ -3930,8 +3933,9 @@ function NAVTracker(){
                     React.createElement("div",{style:{width:barW+"%",height:"100%",background:C.red,borderRadius:"4px 0 0 4px",minWidth:2,transition:"width 0.3s"}})
                   )
                 ),
-                React.createElement("div",{style:{width:75,fontSize:10.5,fontWeight:600,color:pct>=0?C.green:C.red,textAlign:"right"}},(pct>=0?"+":"")+pct.toFixed(2)+"%"),
-                React.createElement("div",{style:{width:95,fontSize:8.5,color:C.textMuted,textAlign:"right"}},periodLabel)
+                React.createElement("div",{style:{width:65,fontSize:10.5,fontWeight:600,color:pct>=0?C.green:C.red,textAlign:"right"}},(pct>=0?"+":"")+pct.toFixed(2)+"%/mo"),
+                React.createElement("div",{style:{width:55,fontSize:9,color:C.textMuted,textAlign:"right"}},"("+(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%)"),
+                React.createElement("div",{style:{width:105,fontSize:8.5,color:C.textMuted,textAlign:"right"}},periodLabel)
               );
             });
           })()
