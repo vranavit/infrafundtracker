@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T13:16:37.613766+00:00",
+  "last_updated": "2026-04-01T13:50:33.741537+00:00",
   "funds": {
     "isq_openinfra": {
       "fund_id": "isq_openinfra",
@@ -71,7 +71,7 @@
       "benchmark_class": "Class I Shares",
       "nav_per_share": 30.28,
       "nav_date": "2026-02-28",
-      "total_aum_millions": 7028.8,
+      "total_aum_millions": 7029.0,
       "gross_subscriptions_millions": null,
       "gross_redemptions_millions": null,
       "net_flows_millions": null,
@@ -132,9 +132,9 @@
       "manager": "Brookfield Asset Management",
       "is_primary": false,
       "benchmark_class": "Class I",
-      "nav_per_share": 10.83,
+      "nav_per_share": 10.89,
       "nav_date": "2025-12-31",
-      "total_aum_millions": 5020.0,
+      "total_aum_millions": 4786.0,
       "gross_subscriptions_millions": null,
       "gross_redemptions_millions": null,
       "net_flows_millions": null,
@@ -142,15 +142,18 @@
       "total_investors": null,
       "placement_agents": [],
       "source_type": "SEC_8K",
-      "source_url": "https://bam.brookfield.com/press-releases",
-      "source_label": "BAM Q4 2025 Earnings",
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR",
+      "source_label": "N-CSR Annual Report Dec 2025",
       "confidence": "HIGH",
       "last_updated": "2026-04-01",
       "fund_website": "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc",
       "sec_filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857",
-      "data_points_count": 1,
-      "oldest_nav_date": "2025-12-31",
-      "latest_nav_date": "2025-12-31"
+      "data_points_count": 5,
+      "oldest_nav_date": "2023-12-31",
+      "latest_nav_date": "2025-12-31",
+      "return_1m": 2.45,
+      "return_3m": 6.24,
+      "return_itd": 8.14
     },
     "blue_owl_odit": {
       "fund_id": "blue_owl_odit",
