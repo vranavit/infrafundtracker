@@ -158,7 +158,10 @@ class IAPDFetcher:
         ("2024-07-01", "2024-12-31"),
         ("2025-01-01", "2025-06-30"),
         ("2025-07-01", "2025-12-31"),
-        ("2026-01-01", "2026-12-31"),
+        ("2026-01-01", "2026-03-31"),
+        ("2026-04-01", "2026-06-30"),
+        ("2026-07-01", "2026-09-30"),
+        ("2026-10-01", "2026-12-31"),
     ]
 
     def _fetch_via_sec_api(self) -> List[FirmRecord]:
@@ -648,10 +651,22 @@ class IAPDFetcher:
         """
         Fetch custodian names via the Schedule D 5.K endpoint.
 
-        This is a SEPARATE GET call per firm:
         GET /form-adv/schedule-d-5-k/<crd>?token=API_KEY
 
-        Returns list of custodian names.
+        Response structure (from sec-api.io docs):
+        {
+          "1-separatelyManagedAccounts": { ... asset allocations ... },
+          "2-borrowingsAndDerivatives": { ... },
+          "3-custodiansForSeparatelyManagedAccounts": [
+            {
+              "a-legalName": "GOLDMAN SACHS & CO. LLC",
+              "b-businessName": "GOLDMAN SACHS & CO. LLC",
+              "c-locations": [...],
+              "d-isRelatedPerson": false,
+              "g-amountHeldAtCustodian": "$ 97,402,293,517"
+            }
+          ]
+        }
         """
         if not self.api_key or not crd:
             return []
@@ -669,7 +684,7 @@ class IAPDFetcher:
             resp = self.session.get(url, timeout=30)
 
             if resp.status_code == 404:
-                return []  # No Schedule D data for this firm
+                return []  # No Schedule D 5.K data for this firm
             if resp.status_code == 429:
                 time.sleep(10)
                 resp = self.session.get(url, timeout=30)
@@ -678,18 +693,60 @@ class IAPDFetcher:
             data = resp.json()
             custodians = []
 
-            # Response is a list of custodian entries
-            entries = data if isinstance(data, list) else data.get("data", [])
-            for entry in entries:
-                if isinstance(entry, dict):
-                    name = (
-                        entry.get("custodianName", "")
-                        or entry.get("name", "")
-                        or entry.get("legalName", "")
-                        or ""
-                    ).strip()
-                    if name and name not in custodians:
-                        custodians.append(name)
+            # Log structure of first successful response for debugging
+            if self.stats.get("custodian_debug_logged") is None:
+                self.stats["custodian_debug_logged"] = True
+                if isinstance(data, dict):
+                    logger.info(
+                        f"  Schedule D 5.K response keys for CRD {crd}: "
+                        f"{list(data.keys())[:10]}"
+                    )
+                elif isinstance(data, list):
+                    logger.info(
+                        f"  Schedule D 5.K response is list, len={len(data)}"
+                    )
+                    if data and isinstance(data[0], dict):
+                        logger.info(
+                            f"  First item keys: {list(data[0].keys())[:10]}"
+                        )
+
+            # --- Parse custodians from the response ---
+            # The custodians live in "3-custodiansForSeparatelyManagedAccounts"
+            if isinstance(data, dict):
+                custodian_entries = data.get(
+                    "3-custodiansForSeparatelyManagedAccounts", []
+                )
+                if isinstance(custodian_entries, list):
+                    for entry in custodian_entries:
+                        if not isinstance(entry, dict):
+                            continue
+                        name = (
+                            entry.get("a-legalName", "")
+                            or entry.get("b-businessName", "")
+                            or ""
+                        ).strip()
+                        if name and name not in custodians:
+                            custodians.append(name)
+
+            # If the response is a list (multiple filings), iterate
+            elif isinstance(data, list):
+                for item in data:
+                    if not isinstance(item, dict):
+                        continue
+                    custodian_entries = item.get(
+                        "3-custodiansForSeparatelyManagedAccounts", []
+                    )
+                    if isinstance(custodian_entries, list):
+                        for entry in custodian_entries:
+                            if not isinstance(entry, dict):
+                                continue
+                            name = (
+                                entry.get("a-legalName", "")
+                                or entry.get("b-businessName", "")
+                                or ""
+                            ).strip()
+                            if name and name not in custodians:
+                                custodians.append(name)
 
             return custodians
 
@@ -706,7 +763,9 @@ class IAPDFetcher:
         """
         logger.info(f"Enriching custodian data for top {max_firms} firms...")
         enriched = 0
-        for firm in firms[:max_firms]:
+        empty_responses = 0
+        errors = 0
+        for i, firm in enumerate(firms[:max_firms]):
             if firm.custodian_names:
                 continue  # Already has data
             crd = firm.cik or firm.raw_data.get("crd", "")
@@ -716,7 +775,25 @@ class IAPDFetcher:
             if custodians:
                 firm.custodian_names = custodians
                 enriched += 1
-        logger.info(f"Enriched {enriched} firms with custodian data")
+                if enriched <= 3:
+                    logger.info(
+                        f"  Custodian match: {firm.firm_name} → "
+                        f"{custodians[:3]}"
+                    )
+            else:
+                empty_responses += 1
+
+            # Progress logging
+            if (i + 1) % 50 == 0:
+                logger.info(
+                    f"  Custodian progress: {i+1}/{max_firms} checked, "
+                    f"{enriched} enriched, {empty_responses} empty"
+                )
+
+        logger.info(
+            f"Custodian enrichment complete: {enriched} firms enriched, "
+            f"{empty_responses} had no Schedule D 5.K custodian data"
+        )
 
     def _determine_fee_structure(self, item5e: Dict) -> str:
         """
