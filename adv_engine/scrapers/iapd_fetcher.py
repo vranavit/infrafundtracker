@@ -1,11 +1,12 @@
 """
-IAPD Fetcher - Downloads real SEC IAPD Form ADV data via the public JSON API.
+IAPD Fetcher - Downloads real SEC Form ADV data via sec-api.io
 
-Uses the SEC IAPD search API at api.adviserinfo.sec.gov to fetch investment
-adviser firm data using text-based queries and pagination.
+Uses the sec-api.io Form ADV API to fetch complete adviser filings including
+AUM, custodian names (Schedule D), client counts, investment types, fee
+structure, and historical data.
 
-The search API returns: firm name, CRD, SEC number, state, active status,
-branch count. It does NOT return AUM, client counts, or custodian info.
+Requires SEC_API_KEY environment variable (from sec-api.io, $55/month plan).
+Falls back to the free SEC IAPD search API if no API key is set.
 """
 
 import json
@@ -26,49 +27,46 @@ logger = logging.getLogger(__name__)
 
 class IAPDFetcher:
     """
-    Fetcher for SEC IAPD Form ADV data via the public JSON search API.
+    Fetcher for SEC Form ADV data via sec-api.io.
 
-    Strategy: search with common RIA industry terms to cover the full
-    universe of ~40,000 firms. Deduplicates by CRD number.
+    The sec-api.io Form ADV API provides complete filing data for 41,000+
+    adviser firms including:
+    - Real AUM (discretionary and total)
+    - Custodian names from Schedule D Section 5.F
+    - Client counts by type (HNW, institutional, etc.)
+    - Investment types (private funds, real estate, etc.)
+    - Fee structure and minimums
+    - Registration dates
+    - Historical filings for change detection
 
-    The API caps at ~10,000 results per query, so we use multiple
-    search terms to achieve broad coverage.
+    API: POST https://api.sec-api.io/form-adv/firm?token=API_KEY
+    Auth: token query parameter
+    Docs: https://sec-api.io/docs/investment-adviser-and-adv-api
     """
 
-    # SEC IAPD public search API
-    API_BASE = "https://api.adviserinfo.sec.gov/search/firm"
+    # sec-api.io endpoints
+    SEC_API_FIRM_SEARCH = "https://api.sec-api.io/form-adv/firm"
+    SEC_API_SCHEDULE_D = "https://api.sec-api.io/form-adv/schedule-d"
 
-    # Page size for API requests
-    PAGE_SIZE = 100
+    # Page size for API requests (max 50 per sec-api.io docs)
+    PAGE_SIZE = 50
 
-    # Search terms designed to cover the vast majority of RIA firms.
-    # Each term is paginated up to 10,000 results.
-    # Together these should cover 30,000+ unique firms.
-    SEARCH_TERMS = [
-        "advisors",
-        "advisory",
-        "capital",
-        "wealth",
-        "management",
-        "financial",
-        "partners",
-        "investment",
-        "group",
-        "associates",
-        "consulting",
-        "trust",
-        "family office",
-        "private",
-        "asset",
-        "fund",
-        "securities",
-        "planning",
-        "retirement",
-        "fiduciary",
-        "LLC",
-        "LP",
-        "Inc",
-    ]
+    # How many firms to fetch total (covers SEC-registered advisers)
+    MAX_FIRMS = 45000
+
+    # Custodian keyword mapping for platform detection
+    CUSTODIAN_KEYWORDS = {
+        "schwab": ["schwab", "charles schwab"],
+        "fidelity": ["fidelity", "national financial services", "nfs"],
+        "pershing": ["pershing", "bny pershing"],
+        "lpl": ["lpl financial", "lpl"],
+        "icapital": ["icapital"],
+        "cais": ["cais"],
+        "morgan stanley": ["morgan stanley"],
+        "merrill": ["merrill lynch", "merrill"],
+        "ubs": ["ubs"],
+        "raymond james": ["raymond james"],
+    }
 
     # Family office name patterns
     FAMILY_OFFICE_PATTERNS = [
@@ -84,8 +82,7 @@ class IAPDFetcher:
     def __init__(
         self,
         cache_dir: Optional[str] = None,
-        rate_limit_delay: float = 0.12,
-        user_agent: Optional[str] = None,
+        rate_limit_delay: float = 0.25,
         cache_expiry_hours: int = 20,
     ):
         if cache_dir is None:
@@ -95,19 +92,18 @@ class IAPDFetcher:
         self.rate_limit_delay = rate_limit_delay
         self.cache_expiry_hours = cache_expiry_hours
 
-        if user_agent:
-            self.user_agent = user_agent
-        else:
-            self.user_agent = os.getenv(
-                "SEC_USER_AGENT",
-                "ISQ-InfraFundTracker support@bloorcapital.com"
+        self.api_key = os.environ.get("SEC_API_KEY", "")
+        if not self.api_key:
+            logger.warning(
+                "SEC_API_KEY not set — will fall back to free IAPD search API "
+                "(limited data: no AUM, no custodians, no client counts)"
             )
 
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": self.user_agent,
+            "Content-Type": "application/json",
             "Accept": "application/json",
         })
         self.last_request_time = 0.0
@@ -117,53 +113,32 @@ class IAPDFetcher:
             "api_calls": 0,
             "total_hits": 0,
             "firms_parsed": 0,
-            "firms_inactive": 0,
+            "firms_skipped": 0,
             "errors": 0,
         }
 
     def fetch_latest(self) -> List[FirmRecord]:
         """
-        Main entry point: fetch SEC-registered IA firms via the JSON API.
+        Main entry point: fetch SEC-registered IA firms.
 
-        Uses text-search queries with common RIA terms, deduplicates by CRD.
+        Uses sec-api.io if API key is available, otherwise falls back to
+        the free SEC IAPD search API.
 
         Returns:
             List of FirmRecord instances (active firms only)
-            Empty list if all attempts fail
         """
         # Check cache first
-        cache_path = self.cache_dir / "iapd_firms.json"
+        cache_path = self.cache_dir / "secapi_firms.json"
         if self._is_cache_valid(cache_path):
             cached = self._load_cache(cache_path)
             if cached:
                 logger.info(f"Using cached data: {len(cached)} firms")
                 return cached
 
-        logger.info(
-            f"Starting IAPD API fetch with {len(self.SEARCH_TERMS)} search terms"
-        )
-        all_firms = {}  # keyed by CRD to deduplicate
-        seen_crds: Set[str] = set()
-
-        for term in self.SEARCH_TERMS:
-            try:
-                new_count = self._fetch_by_term(term, all_firms, seen_crds)
-                if new_count > 0:
-                    logger.info(
-                        f"  '{term}': +{new_count} new firms "
-                        f"(total unique: {len(all_firms)})"
-                    )
-            except Exception as e:
-                logger.error(f"Error searching '{term}': {e}")
-                self.stats["errors"] += 1
-                continue
-
-        firms = list(all_firms.values())
-        logger.info(
-            f"IAPD fetch complete: {len(firms)} active firms "
-            f"(API calls: {self.stats['api_calls']}, "
-            f"inactive skipped: {self.stats['firms_inactive']})"
-        )
+        if self.api_key:
+            firms = self._fetch_via_sec_api()
+        else:
+            firms = self._fetch_via_free_api()
 
         # Cache results
         if firms:
@@ -171,201 +146,352 @@ class IAPDFetcher:
 
         return firms
 
-    def _fetch_by_term(
-        self, term: str, all_firms: Dict[str, FirmRecord], seen_crds: Set[str]
-    ) -> int:
+    # =========================================================================
+    # sec-api.io fetcher (full data)
+    # =========================================================================
+
+    def _fetch_via_sec_api(self) -> List[FirmRecord]:
         """
-        Fetch all firms matching a search term, paginating through results.
+        Fetch all SEC-registered advisers via sec-api.io Form ADV API.
 
-        Args:
-            term: Search term
-            all_firms: Dict to add firms to (keyed by CRD)
-            seen_crds: Set of already-seen CRD numbers
+        Strategy: Query for all SEC-registered firms (FormInfo.Part1A.Item2A
+        indicates SEC registration), paginate through results.
 
-        Returns:
-            Number of NEW firms added by this term
+        The API supports Lucene query syntax and returns full Form ADV data.
         """
-        new_count = 0
-        start = 0
-        max_per_term = 10000  # API limit
+        logger.info("Fetching firms via sec-api.io Form ADV API...")
 
-        while start < max_per_term:
-            data = self._api_request(query=term, start=start)
-            if data is None:
-                break
+        all_firms: List[FirmRecord] = []
+        offset = 0
 
-            hits = data.get("hits", {})
-            if not isinstance(hits, dict):
-                break
+        # Query: all SEC-registered investment advisers with active status
+        # Q2A1:Y means "Yes, registered with SEC"
+        query = 'FormInfo.Part1A.Item2A.Q2A1:"Y"'
 
-            hit_list = hits.get("hits", [])
-            total = hits.get("total", 0)
+        while offset < self.MAX_FIRMS:
+            try:
+                data = self._sec_api_request(query=query, start=offset)
+                if data is None:
+                    logger.error(f"API returned None at offset {offset}")
+                    break
 
-            if not hit_list:
-                break
+                # sec-api.io returns a list of filings directly
+                filings = data if isinstance(data, list) else data.get("data", [])
 
-            for hit in hit_list:
-                source = hit.get("_source", hit)
-                crd = str(source.get("firm_source_id", ""))
+                if not filings:
+                    logger.info(f"No more results at offset {offset}")
+                    break
 
-                # Skip if already seen
-                if not crd or crd in seen_crds:
-                    continue
+                for filing in filings:
+                    firm = self._parse_sec_api_filing(filing)
+                    if firm:
+                        all_firms.append(firm)
 
-                seen_crds.add(crd)
+                offset += len(filings)
 
-                firm = self._parse_hit(source)
-                if firm:
-                    all_firms[crd] = firm
-                    new_count += 1
+                if offset % 1000 == 0 or offset < 100:
+                    logger.info(
+                        f"  Fetched {offset} filings, "
+                        f"parsed {len(all_firms)} firms so far"
+                    )
 
-            start += len(hit_list)
+                # If we got fewer than PAGE_SIZE, we're done
+                if len(filings) < self.PAGE_SIZE:
+                    break
 
-            # Stop if we've fetched all results for this term
-            if start >= total:
-                break
+            except Exception as e:
+                logger.error(f"Error at offset {offset}: {e}")
+                self.stats["errors"] += 1
+                # Try to continue from next page
+                offset += self.PAGE_SIZE
+                if self.stats["errors"] > 10:
+                    logger.error("Too many errors, stopping fetch")
+                    break
 
-        return new_count
+        logger.info(
+            f"sec-api.io fetch complete: {len(all_firms)} active firms "
+            f"(API calls: {self.stats['api_calls']}, "
+            f"skipped: {self.stats['firms_skipped']}, "
+            f"errors: {self.stats['errors']})"
+        )
 
-    def _api_request(
-        self, query: str = "", start: int = 0
-    ) -> Optional[Dict]:
+        return all_firms
+
+    def _sec_api_request(
+        self, query: str, start: int = 0
+    ) -> Optional[Any]:
         """
-        Make a single API request to the SEC IAPD search endpoint.
+        Make a single POST request to sec-api.io Form ADV firm search.
+
+        API: POST https://api.sec-api.io/form-adv/firm?token=API_KEY
+        Body: {"query": "...", "from": 0, "size": 50}
         """
         # Rate limit
         elapsed = time.time() - self.last_request_time
         if elapsed < self.rate_limit_delay:
             time.sleep(self.rate_limit_delay - elapsed)
 
-        params = {
+        url = f"{self.SEC_API_FIRM_SEARCH}?token={self.api_key}"
+
+        payload = {
             "query": query,
-            "hl": "true",
-            "nrows": self.PAGE_SIZE,
-            "start": start,
-            "r": self.PAGE_SIZE,
-            "sort": "score+desc",
-            "wt": "json",
+            "from": start,
+            "size": self.PAGE_SIZE,
         }
 
         try:
             self.last_request_time = time.time()
             self.stats["api_calls"] += 1
 
-            response = self.session.get(
-                self.API_BASE,
-                params=params,
-                timeout=30,
+            response = self.session.post(
+                url,
+                json=payload,
+                timeout=60,
             )
 
             if response.status_code == 429:
-                logger.warning("Rate limited by SEC API, backing off 5s")
-                time.sleep(5)
+                logger.warning("Rate limited by sec-api.io, backing off 10s")
+                time.sleep(10)
                 self.last_request_time = time.time()
-                response = self.session.get(
-                    self.API_BASE,
-                    params=params,
-                    timeout=30,
+                response = self.session.post(url, json=payload, timeout=60)
+
+            if response.status_code == 401:
+                logger.error(
+                    "sec-api.io returned 401 Unauthorized — check SEC_API_KEY"
                 )
+                return None
+
+            if response.status_code == 402:
+                logger.error(
+                    "sec-api.io returned 402 — API quota exceeded. "
+                    "Upgrade plan or wait for reset."
+                )
+                return None
 
             response.raise_for_status()
             return response.json()
 
         except requests.RequestException as e:
-            logger.error(f"API request failed: {e}")
+            logger.error(f"sec-api.io request failed: {e}")
             return None
         except json.JSONDecodeError as e:
-            logger.error(f"Failed to parse API response: {e}")
+            logger.error(f"Failed to parse sec-api.io response: {e}")
             return None
 
-    def _parse_hit(self, source: Dict[str, Any]) -> Optional[FirmRecord]:
+    def _parse_sec_api_filing(self, filing: Dict[str, Any]) -> Optional[FirmRecord]:
         """
-        Parse a single API search hit into a FirmRecord.
+        Parse a sec-api.io Form ADV filing into a FirmRecord.
 
-        The API returns: firm_name, firm_source_id (CRD), firm_ia_scope,
-        firm_ia_full_sec_number, firm_ia_address_details (JSON string),
-        firm_branches_count, firm_other_names.
-
-        NOTE: AUM is NOT available from the search API.
+        The filing contains the complete Form ADV structure:
+        - FormInfo.Part1A.Item1 — Firm identification
+        - FormInfo.Part1A.Item2A — SEC registration
+        - FormInfo.Part1A.Item5 — Client information
+        - FormInfo.Part1A.Item5F — AUM data
+        - FormInfo.Part1A.Item6 — Compensation types
+        - FormInfo.Part1A.Item7 — Types of clients
+        - FormInfo.Part1A.Item8 — Investment strategies
+        - Schedule D Section 5.F — Custodian details
         """
         try:
-            firm_name = source.get("firm_name", "").strip()
+            # Navigate to the form info
+            form_info = filing.get("FormInfo", {})
+            part1a = form_info.get("Part1A", {})
+
+            # ---------- Core identification ----------
+            item1 = part1a.get("Item1", {})
+            firm_name = (
+                item1.get("Q1A", "")  # Legal name
+                or filing.get("firmName", "")
+                or ""
+            ).strip()
+
             if not firm_name:
+                self.stats["firms_skipped"] += 1
                 return None
 
-            # Only include ACTIVE investment advisers
-            scope = source.get("firm_ia_scope", "")
-            if scope != "ACTIVE":
-                self.stats["firms_inactive"] += 1
-                return None
-
-            crd = str(source.get("firm_source_id", ""))
-            if not crd:
-                return None
+            # CRD number
+            crd = str(
+                filing.get("firmCrdNumber", "")
+                or item1.get("Q1F", "")
+                or ""
+            )
 
             # SEC file number
-            sec_num = source.get("firm_ia_full_sec_number", "")
+            sec_num = str(
+                filing.get("secFileNumber", "")
+                or item1.get("Q1E", "")
+                or ""
+            )
             if not sec_num:
-                sec_num = f"CRD-{crd}"
+                sec_num = f"CRD-{crd}" if crd else ""
 
-            # Parse address details (JSON string)
-            state = ""
-            city = ""
-            address_json = source.get("firm_ia_address_details", "")
-            if address_json and isinstance(address_json, str):
-                try:
-                    addr = json.loads(address_json)
-                    office = addr.get("officeAddress", {})
-                    state = office.get("state", "")
-                    city = office.get("city", "")
-                except (json.JSONDecodeError, AttributeError):
-                    pass
+            # ---------- Address ----------
+            address = item1.get("Q1I", {})  # Principal office address
+            if not address:
+                address = filing.get("firmAddress", {}) or {}
 
-            # Normalize state to 2-letter code
+            state = address.get("state", "") or ""
+            city = address.get("city", "") or ""
+            country = address.get("country", "United States") or "United States"
+
+            # Normalize state
             if state and len(state) > 2:
                 state = self._normalize_state(state)
 
-            # Branch count (proxy for firm size)
-            branches = source.get("firm_branches_count", 0)
-            try:
-                branches = int(branches)
-            except (ValueError, TypeError):
-                branches = 0
+            # ---------- AUM (Item 5.F) ----------
+            item5 = part1a.get("Item5", {})
 
-            # Detect family office from name
-            is_family_office = self._detect_family_office(firm_name)
+            # Q5F2A = Discretionary AUM, Q5F2C = Total AUM
+            aum_discretionary = self._parse_number(
+                item5.get("Q5F2A", 0)
+            )
+            aum_total = self._parse_number(
+                item5.get("Q5F2C", 0)
+            )
+            # Use total if available, else discretionary
+            if aum_total == 0:
+                aum_total = aum_discretionary
 
-            # Detect if name suggests alternatives/private funds
-            manages_private = self._name_suggests_alts(firm_name)
+            # ---------- Client counts (Item 5.D) ----------
+            # Q5D1 = Number of clients
+            num_clients = self._parse_int(item5.get("Q5D1", 0))
 
-            # Other names
-            other_names = source.get("firm_other_names", [])
-            if isinstance(other_names, str):
-                other_names = [other_names]
+            # Item 5.D(2) — client type breakdown
+            # Q5D2A = Individuals (other than HNW)
+            # Q5D2B = Individuals (HNW)
+            # Q5D2C = Banking/thrift institutions
+            # Q5D2D = Investment companies
+            # Q5D2E = Business development companies
+            # Q5D2F = Pooled investment vehicles
+            # Q5D2G = Pension/profit sharing plans
+            # Q5D2H = Charitable organizations
+            # Q5D2I = State/municipal government entities
+            # Q5D2J = Other investment advisers
+            # Q5D2K = Insurance companies
+            # Q5D2L = Sovereign wealth funds
+            # Q5D2M = Corporations/other business (non-financial)
+            # Q5D2N = Other
+            hnw_clients = self._parse_int(item5.get("Q5D2B", 0))
+            institutional_clients = (
+                self._parse_int(item5.get("Q5D2G", 0))  # Pension plans
+                + self._parse_int(item5.get("Q5D2I", 0))  # Government
+                + self._parse_int(item5.get("Q5D2L", 0))  # Sovereign wealth
+                + self._parse_int(item5.get("Q5D2K", 0))  # Insurance
+            )
 
-            # Estimate AUM based on branch count (very rough proxy)
-            # Firms with more branches tend to be larger
-            # This is an approximation since the API doesn't provide AUM
-            estimated_aum = self._estimate_aum(branches, is_family_office)
+            # ---------- Investment types (Item 5.B, Item 8) ----------
+            # Item 5B — Types of advisory services
+            item5b = item5.get("Q5B", {})
+            if not isinstance(item5b, dict):
+                item5b = {}
 
-            # Build FirmRecord
+            item8 = part1a.get("Item8", {})
+
+            manages_private_funds = (
+                self._is_yes(item5b.get("Q5B2", ""))  # Pooled investment vehicles
+                or self._is_yes(item8.get("Q8B1", ""))  # Private fund manager
+            )
+
+            manages_real_estate = self._is_yes(
+                item8.get("Q8C", "")  # Real estate strategies
+            )
+
+            manages_hedge_funds = self._is_yes(
+                item8.get("Q8D", "")  # Hedge fund strategies
+            )
+
+            manages_public_securities = self._is_yes(
+                item8.get("Q8A", "")  # Securities/equity strategies
+            )
+
+            # ---------- Custodian names (Schedule D, Section 5.F) ----------
+            custodian_names = self._extract_custodians(filing)
+
+            # ---------- Fee structure (Item 5.E / Item 6) ----------
+            item6 = part1a.get("Item6", {})
+            fee_structure = self._determine_fee_structure(item5, item6)
+
+            # ---------- Minimum account size ----------
+            # Item 5.C — sometimes includes minimum
+            minimum_account = self._parse_number(
+                item5.get("Q5C", 0)
+            )
+
+            # ---------- Registration date ----------
+            reg_date_str = (
+                filing.get("filedAt", "")
+                or filing.get("registrationDate", "")
+                or ""
+            )
+            registration_date = None
+            if reg_date_str:
+                try:
+                    # Handle various date formats
+                    for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%m/%d/%Y"]:
+                        try:
+                            registration_date = datetime.strptime(
+                                reg_date_str[:19], fmt
+                            )
+                            break
+                        except ValueError:
+                            continue
+                except Exception:
+                    pass
+
+            # ---------- Firm classification ----------
+            is_family_office = (
+                self._detect_family_office(firm_name)
+                or self._is_yes(item1.get("Q1N", ""))  # Exempt reporting adviser
+            )
+
+            is_multi_family_office = (
+                "multi-family" in firm_name.lower()
+                or "multi family" in firm_name.lower()
+                or "mfo" in firm_name.lower()
+            )
+
+            # ---------- Principal names ----------
+            principal_names = []
+            principals = filing.get("principals", [])
+            if isinstance(principals, list):
+                for p in principals[:5]:  # Limit to first 5
+                    name = p.get("name", "") if isinstance(p, dict) else str(p)
+                    if name:
+                        principal_names.append(name)
+
+            # ---------- Website ----------
+            website = item1.get("Q1J", "") or ""
+
+            # ---------- Build FirmRecord ----------
             firm = FirmRecord(
                 firm_name=firm_name,
                 sec_file_number=sec_num,
                 cik=crd,
                 state=state,
-                country="United States",
-                aum_total=estimated_aum,
-                aum_regulatory=estimated_aum,
-                num_clients=max(branches * 20, 10),  # rough estimate
+                country=country,
+                registration_date=registration_date,
+                aum_total=aum_total,
+                aum_regulatory=aum_discretionary,
+                num_clients=max(num_clients, 1),  # Avoid division by zero
+                hnw_clients=hnw_clients,
+                institutional_clients=institutional_clients,
+                manages_public_securities=manages_public_securities,
+                manages_private_funds=manages_private_funds,
+                manages_real_estate=manages_real_estate,
+                manages_hedge_funds=manages_hedge_funds,
+                custodian_names=custodian_names,
+                fee_structure=fee_structure,
+                minimum_account_size=minimum_account,
                 is_family_office=is_family_office,
-                manages_private_funds=manages_private,
+                is_multi_family_office=is_multi_family_office,
+                principal_names=principal_names,
+                website=website,
                 raw_data={
-                    "api_source": source,
-                    "other_names": other_names,
                     "city": city,
-                    "branches": branches,
-                    "aum_estimated": True,
+                    "crd": crd,
+                    "aum_estimated": False,  # Real data from sec-api.io
+                    "data_source": "sec-api.io",
+                    "filing_date": reg_date_str,
                 },
             )
 
@@ -373,30 +499,292 @@ class IAPDFetcher:
             return firm
 
         except Exception as e:
-            logger.debug(f"Error parsing hit: {e}")
+            logger.debug(f"Error parsing filing: {e}")
             self.stats["errors"] += 1
             return None
 
+    def _extract_custodians(self, filing: Dict[str, Any]) -> List[str]:
+        """
+        Extract custodian names from Schedule D Section 5.F.
+
+        Schedule D 5.F lists the firm's custodians (where they hold client
+        assets). This is the key data for platform detection.
+        """
+        custodians = []
+
+        # Try Schedule D data in the filing
+        schedule_d = filing.get("ScheduleD", {})
+        if not schedule_d:
+            schedule_d = filing.get("scheduleD", {})
+
+        # Section 5.F — Custody
+        section_5f = schedule_d.get("Section5F", [])
+        if not section_5f:
+            section_5f = schedule_d.get("section5F", [])
+        if not section_5f:
+            # Try nested FormInfo path
+            form_info = filing.get("FormInfo", {})
+            schedule_d_inner = form_info.get("ScheduleD", {})
+            section_5f = schedule_d_inner.get("Section5F", [])
+
+        if isinstance(section_5f, list):
+            for entry in section_5f:
+                if isinstance(entry, dict):
+                    name = (
+                        entry.get("custodianName", "")
+                        or entry.get("Q5F1", "")
+                        or entry.get("name", "")
+                        or ""
+                    ).strip()
+                    if name and name not in custodians:
+                        custodians.append(name)
+                elif isinstance(entry, str) and entry.strip():
+                    if entry.strip() not in custodians:
+                        custodians.append(entry.strip())
+
+        # Also check Part1A Item 5.F for simpler custodian references
+        form_info = filing.get("FormInfo", {})
+        part1a = form_info.get("Part1A", {})
+        item5 = part1a.get("Item5", {})
+
+        # Q5F1 sometimes has primary custodian
+        primary_custodian = item5.get("Q5F1", "")
+        if isinstance(primary_custodian, str) and primary_custodian.strip():
+            if primary_custodian.strip() not in custodians:
+                custodians.append(primary_custodian.strip())
+
+        return custodians
+
+    def _determine_fee_structure(
+        self, item5: Dict, item6: Dict
+    ) -> str:
+        """Determine fee structure from Item 5.E and Item 6."""
+        # Item 6 — compensation arrangement
+        # Q6A = Percentage of AUM
+        # Q6B = Hourly charges
+        # Q6C = Subscription fees
+        # Q6D = Fixed fees
+        # Q6E = Commissions
+        # Q6F = Performance-based fees
+
+        aum_based = self._is_yes(item6.get("Q6A", ""))
+        commission = self._is_yes(item6.get("Q6E", ""))
+        performance = self._is_yes(item6.get("Q6F", ""))
+
+        if aum_based and commission:
+            return "Hybrid"
+        elif aum_based:
+            if performance:
+                return "Fee-Based"
+            return "Assets Under Management"
+        elif commission:
+            return "Commission"
+        else:
+            return "Fee-Based"
+
+    # =========================================================================
+    # Free IAPD API fallback (limited data)
+    # =========================================================================
+
+    def _fetch_via_free_api(self) -> List[FirmRecord]:
+        """
+        Fallback: fetch firms via the free SEC IAPD search API.
+
+        This API only returns: firm name, CRD, SEC number, state, branch count.
+        AUM, custodians, and client data are NOT available.
+        """
+        logger.info(
+            "Falling back to free SEC IAPD search API "
+            "(no SEC_API_KEY set — data will be limited)"
+        )
+
+        FREE_API_BASE = "https://api.adviserinfo.sec.gov/search/firm"
+        SEARCH_TERMS = [
+            "advisors", "advisory", "capital", "wealth", "management",
+            "financial", "partners", "investment", "group", "associates",
+            "consulting", "trust", "family office", "private", "asset",
+            "fund", "securities", "planning", "retirement", "fiduciary",
+            "LLC", "LP", "Inc",
+        ]
+
+        # Set up headers for the free API
+        user_agent = os.getenv(
+            "SEC_USER_AGENT",
+            "ISQ-InfraFundTracker support@bloorcapital.com"
+        )
+        free_session = requests.Session()
+        free_session.headers.update({
+            "User-Agent": user_agent,
+            "Accept": "application/json",
+        })
+
+        all_firms = {}
+        seen_crds: Set[str] = set()
+
+        for term in SEARCH_TERMS:
+            try:
+                start = 0
+                while start < 10000:
+                    elapsed = time.time() - self.last_request_time
+                    if elapsed < 0.12:
+                        time.sleep(0.12 - elapsed)
+
+                    params = {
+                        "query": term,
+                        "hl": "true",
+                        "nrows": 100,
+                        "start": start,
+                        "r": 100,
+                        "sort": "score+desc",
+                        "wt": "json",
+                    }
+                    self.last_request_time = time.time()
+                    self.stats["api_calls"] += 1
+
+                    resp = free_session.get(
+                        FREE_API_BASE, params=params, timeout=30
+                    )
+                    if resp.status_code == 429:
+                        time.sleep(5)
+                        resp = free_session.get(
+                            FREE_API_BASE, params=params, timeout=30
+                        )
+                    resp.raise_for_status()
+                    data = resp.json()
+
+                    hits = data.get("hits", {})
+                    hit_list = hits.get("hits", [])
+                    total = hits.get("total", 0)
+
+                    if not hit_list:
+                        break
+
+                    new_this_page = 0
+                    for hit in hit_list:
+                        source = hit.get("_source", hit)
+                        crd = str(source.get("firm_source_id", ""))
+                        if not crd or crd in seen_crds:
+                            continue
+                        seen_crds.add(crd)
+
+                        # Only active IAs
+                        if source.get("firm_ia_scope", "") != "ACTIVE":
+                            continue
+
+                        firm_name = source.get("firm_name", "").strip()
+                        if not firm_name:
+                            continue
+
+                        sec_num = source.get("firm_ia_full_sec_number", "")
+                        if not sec_num:
+                            sec_num = f"CRD-{crd}"
+
+                        # Parse address
+                        f_state = ""
+                        f_city = ""
+                        addr_json = source.get("firm_ia_address_details", "")
+                        if addr_json and isinstance(addr_json, str):
+                            try:
+                                addr = json.loads(addr_json)
+                                office = addr.get("officeAddress", {})
+                                f_state = office.get("state", "")
+                                f_city = office.get("city", "")
+                            except (json.JSONDecodeError, AttributeError):
+                                pass
+
+                        if f_state and len(f_state) > 2:
+                            f_state = self._normalize_state(f_state)
+
+                        branches = 0
+                        try:
+                            branches = int(source.get("firm_branches_count", 0))
+                        except (ValueError, TypeError):
+                            pass
+
+                        is_fo = self._detect_family_office(firm_name)
+
+                        firm = FirmRecord(
+                            firm_name=firm_name,
+                            sec_file_number=sec_num,
+                            cik=crd,
+                            state=f_state,
+                            country="United States",
+                            aum_total=self._estimate_aum(branches, is_fo),
+                            aum_regulatory=0,
+                            num_clients=max(branches * 20, 10),
+                            is_family_office=is_fo,
+                            manages_private_funds=self._name_suggests_alts(firm_name),
+                            raw_data={
+                                "city": f_city,
+                                "branches": branches,
+                                "aum_estimated": True,
+                                "data_source": "free_iapd_api",
+                            },
+                        )
+                        all_firms[crd] = firm
+                        new_this_page += 1
+
+                    start += len(hit_list)
+                    if start >= total:
+                        break
+
+                if new_this_page > 0:
+                    logger.info(
+                        f"  '{term}': found firms (total unique: {len(all_firms)})"
+                    )
+
+            except Exception as e:
+                logger.error(f"Error searching '{term}': {e}")
+                continue
+
+        firms = list(all_firms.values())
+        logger.info(f"Free API fetch complete: {len(firms)} active firms")
+        return firms
+
+    # =========================================================================
+    # Helpers
+    # =========================================================================
+
+    def _parse_number(self, value: Any) -> float:
+        """Parse a number from various formats."""
+        if value is None:
+            return 0.0
+        if isinstance(value, (int, float)):
+            return float(value)
+        if isinstance(value, str):
+            # Remove commas, dollar signs, spaces
+            cleaned = re.sub(r"[,$\s]", "", value)
+            if not cleaned:
+                return 0.0
+            try:
+                return float(cleaned)
+            except ValueError:
+                return 0.0
+        return 0.0
+
+    def _parse_int(self, value: Any) -> int:
+        """Parse an integer from various formats."""
+        return int(self._parse_number(value))
+
+    def _is_yes(self, value: Any) -> bool:
+        """Check if a Form ADV field value means 'Yes'."""
+        if isinstance(value, bool):
+            return value
+        if isinstance(value, str):
+            return value.strip().upper() in ("Y", "YES", "TRUE", "1")
+        return False
+
     def _estimate_aum(self, branches: int, is_family_office: bool) -> float:
-        """
-        Rough AUM estimate based on branch count.
-
-        NOTE: This is marked in raw_data as estimated. The dashboard
-        should indicate when AUM data is estimated vs actual.
-
-        Average SEC-registered IA has ~$500M AUM. Firms with more
-        branches tend to be larger. Family offices tend to be smaller
-        but with higher per-client AUM.
-        """
+        """Rough AUM estimate for fallback mode (free API)."""
         if is_family_office:
-            return 200_000_000  # $200M typical family office
+            return 200_000_000
         if branches >= 10:
-            return 5_000_000_000  # $5B+ for large multi-branch firms
+            return 5_000_000_000
         if branches >= 5:
-            return 1_000_000_000  # $1B
+            return 1_000_000_000
         if branches >= 2:
-            return 500_000_000  # $500M
-        return 200_000_000  # $200M default for single-office
+            return 500_000_000
+        return 200_000_000
 
     def _normalize_state(self, state: str) -> str:
         """Normalize state name to 2-letter code."""
@@ -439,7 +827,7 @@ class IAPDFetcher:
         return False
 
     def _name_suggests_alts(self, firm_name: str) -> bool:
-        """Detect if firm name suggests alternatives/private funds focus."""
+        """Detect if firm name suggests alternatives/private funds."""
         if not firm_name:
             return False
         name_lower = firm_name.lower()
@@ -449,6 +837,10 @@ class IAPDFetcher:
             "venture", "private capital", "private credit",
         ]
         return any(kw in name_lower for kw in alt_keywords)
+
+    # =========================================================================
+    # Caching
+    # =========================================================================
 
     def _is_cache_valid(self, path: Path) -> bool:
         """Check if cached file is still fresh."""
@@ -464,6 +856,7 @@ class IAPDFetcher:
             cache_data = {
                 "generated_at": datetime.now().isoformat(),
                 "count": len(firms),
+                "data_source": "sec-api.io" if self.api_key else "free_iapd_api",
                 "firms": [
                     {
                         "firm_name": f.firm_name,
@@ -471,11 +864,27 @@ class IAPDFetcher:
                         "crd": f.cik,
                         "state": f.state,
                         "aum_total": f.aum_total,
+                        "aum_regulatory": f.aum_regulatory,
                         "num_clients": f.num_clients,
-                        "is_family_office": f.is_family_office,
+                        "hnw_clients": f.hnw_clients,
+                        "institutional_clients": f.institutional_clients,
+                        "custodian_names": f.custodian_names,
                         "manages_private_funds": f.manages_private_funds,
+                        "manages_real_estate": f.manages_real_estate,
+                        "manages_hedge_funds": f.manages_hedge_funds,
+                        "manages_public_securities": f.manages_public_securities,
+                        "fee_structure": f.fee_structure,
+                        "minimum_account_size": f.minimum_account_size,
+                        "is_family_office": f.is_family_office,
+                        "is_multi_family_office": f.is_multi_family_office,
+                        "registration_date": (
+                            f.registration_date.isoformat()
+                            if f.registration_date else None
+                        ),
+                        "website": f.website,
                         "city": f.raw_data.get("city", ""),
-                        "branches": f.raw_data.get("branches", 0),
+                        "aum_estimated": f.raw_data.get("aum_estimated", True),
+                        "data_source": f.raw_data.get("data_source", ""),
                     }
                     for f in firms
                 ],
@@ -494,19 +903,40 @@ class IAPDFetcher:
 
             firms = []
             for item in data.get("firms", []):
+                reg_date = None
+                if item.get("registration_date"):
+                    try:
+                        reg_date = datetime.fromisoformat(
+                            item["registration_date"]
+                        )
+                    except (ValueError, TypeError):
+                        pass
+
                 firm = FirmRecord(
                     firm_name=item["firm_name"],
                     sec_file_number=item["sec_file_number"],
                     cik=item.get("crd", ""),
                     state=item.get("state", ""),
                     aum_total=item.get("aum_total", 0),
+                    aum_regulatory=item.get("aum_regulatory", 0),
                     num_clients=item.get("num_clients", 0),
-                    is_family_office=item.get("is_family_office", False),
+                    hnw_clients=item.get("hnw_clients", 0),
+                    institutional_clients=item.get("institutional_clients", 0),
+                    custodian_names=item.get("custodian_names", []),
                     manages_private_funds=item.get("manages_private_funds", False),
+                    manages_real_estate=item.get("manages_real_estate", False),
+                    manages_hedge_funds=item.get("manages_hedge_funds", False),
+                    manages_public_securities=item.get("manages_public_securities", False),
+                    fee_structure=item.get("fee_structure", "Commission"),
+                    minimum_account_size=item.get("minimum_account_size", 0),
+                    is_family_office=item.get("is_family_office", False),
+                    is_multi_family_office=item.get("is_multi_family_office", False),
+                    registration_date=reg_date,
+                    website=item.get("website", ""),
                     raw_data={
                         "city": item.get("city", ""),
-                        "branches": item.get("branches", 0),
-                        "aum_estimated": True,
+                        "aum_estimated": item.get("aum_estimated", True),
+                        "data_source": item.get("data_source", ""),
                     },
                 )
                 firms.append(firm)

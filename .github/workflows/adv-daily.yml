@@ -31,6 +31,7 @@ jobs:
         working-directory: adv_engine
         env:
           SEC_USER_AGENT: "ISQ-InfraFundTracker support@bloorcapital.com"
+          SEC_API_KEY: ${{ secrets.SEC_API_KEY }}
         run: |
           python export_static.py \
             --output ../ISQ_Tracker_Deploy/adv_leads.json
