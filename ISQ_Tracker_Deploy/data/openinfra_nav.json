@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T13:53:21.149089+00:00",
+  "last_updated": "2026-04-01T14:08:13.906179+00:00",
   "funds": {
     "isq_openinfra": {
       "fund_id": "isq_openinfra",
@@ -9,7 +9,7 @@
       "benchmark_class": "Class F-I",
       "nav_per_share": 31.66,
       "nav_date": "2026-01-31",
-      "total_aum_millions": 189.0,
+      "total_aum_millions": 188.9,
       "gross_subscriptions_millions": 13.6,
       "gross_redemptions_millions": null,
       "net_flows_millions": null,
