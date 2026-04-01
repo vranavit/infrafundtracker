@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T14:53:39.654115+00:00",
+  "last_updated": "2026-04-01T15:07:54.779544+00:00",
   "funds": {
     "isq_openinfra": {
       "fund_id": "isq_openinfra",
@@ -71,7 +71,7 @@
       "benchmark_class": "Class I Shares",
       "nav_per_share": 30.28,
       "nav_date": "2026-02-28",
-      "total_aum_millions": 7029.0,
+      "total_aum_millions": 7028.8,
       "gross_subscriptions_millions": null,
       "gross_redemptions_millions": null,
       "net_flows_millions": null,
@@ -79,8 +79,8 @@
       "total_investors": null,
       "placement_agents": [],
       "source_type": "SEC_8K",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-      "source_label": "SEC 8-K EX-99.1 Feb 2026",
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+      "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-02)",
       "confidence": "HIGH",
       "last_updated": "2026-04-01",
       "fund_website": "https://www.kinfra.com",

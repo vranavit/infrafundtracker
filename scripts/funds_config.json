@@ -295,55 +295,61 @@
           "date": "2023-08-31",
           "nav": 26.2,
           "nav_class_i": 26.2,
-          "aum_m": null,
+          "aum_m": 512.9,
           "subs_m": null,
-          "source_label": "SEC 8-K 2023-08",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-08)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 19592157
         },
         {
           "date": "2023-09-30",
           "nav": 26.3,
           "nav_class_i": 26.3,
-          "aum_m": null,
+          "aum_m": 778.9,
           "subs_m": null,
-          "source_label": "SEC 8-K 2023-09",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-09)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 29627732
         },
         {
           "date": "2023-10-31",
           "nav": 26.14,
           "nav_class_i": 26.14,
-          "aum_m": null,
+          "aum_m": 917.9,
           "subs_m": null,
-          "source_label": "SEC 8-K 2023-10",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-10)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 35144743
         },
         {
           "date": "2023-11-30",
           "nav": 26.65,
           "nav_class_i": 26.65,
-          "aum_m": null,
+          "aum_m": 1077.4,
           "subs_m": null,
-          "source_label": "SEC 8-K 2023-11",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-11)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 40446120
         },
         {
           "date": "2023-12-31",
           "nav": 26.97,
           "nav_class_i": 26.97,
-          "aum_m": null,
+          "aum_m": 1220.8,
           "subs_m": null,
-          "source_label": "SEC 8-K 2023-12",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-12)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 45294472
         },
         {
           "date": "2024-01-31",
           "nav": 27.1,
           "nav_class_i": 27.1,
-          "aum_m": null,
+          "aum_m": 1356.0,
           "subs_m": null,
-          "source_label": "SEC 8-K 2024-01",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-01)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 50083219
         },
         {
           "date": "2024-02-29",
@@ -358,28 +364,31 @@
           "date": "2024-03-31",
           "nav": 27.19,
           "nav_class_i": 27.19,
-          "aum_m": null,
+          "aum_m": 1643.6,
           "subs_m": null,
-          "source_label": "SEC 8-K Mar 2024",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-03)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 60472345
         },
         {
           "date": "2024-04-30",
           "nav": 27.36,
           "nav_class_i": 27.36,
-          "aum_m": null,
+          "aum_m": 1857.4,
           "subs_m": null,
-          "source_label": "SEC 8-K 2024-04",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-04)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 67944062
         },
         {
           "date": "2024-05-31",
           "nav": 27.48,
           "nav_class_i": 27.48,
-          "aum_m": null,
+          "aum_m": 2116.0,
           "subs_m": null,
-          "source_label": "SEC 8-K 2024-05",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-05)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 77080234
         },
         {
           "date": "2024-06-30",
@@ -390,206 +399,227 @@
           "nav_class_d": 27.49,
           "nav_class_i": 27.5,
           "nav_class_s": 27.52,
-          "aum_m": 1644.0,
+          "aum_m": 2259.6,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2024-06",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0001948056/000194805624000035/kkr-20240720.htm",
-          "total_shares": 60472340
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-06)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 60472340,
+          "shares": 82206860
         },
         {
           "date": "2024-07-31",
           "nav": 27.79,
           "nav_class_i": 27.79,
-          "aum_m": 2418.0,
+          "aum_m": 2417.9,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2024-07",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 87078576
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-07)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 87078576,
+          "shares": 87078576
         },
         {
           "date": "2024-08-31",
           "nav": 27.5,
-          "aum_m": 2582.0,
+          "aum_m": 2581.9,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2024-08",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 91697259
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-08)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 91697259,
+          "shares": 91697259
         },
         {
           "date": "2024-09-30",
           "nav": 28.25,
-          "aum_m": 2260.0,
+          "aum_m": 2734.9,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2024-09",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 82206860
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-09)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 82206860,
+          "shares": 96824157
         },
         {
           "date": "2024-10-31",
           "nav": 28.28,
           "nav_class_i": 28.28,
-          "aum_m": null,
+          "aum_m": 2888.3,
           "subs_m": null,
-          "source_label": "SEC 8-K 2024-10",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-10)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 102170135
         },
         {
           "date": "2024-11-30",
           "nav": 28.38,
           "nav_class_i": 28.38,
-          "aum_m": null,
+          "aum_m": 3053.3,
           "subs_m": null,
-          "source_label": "SEC 8-K 2024-11",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-11)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 107658682
         },
         {
           "date": "2024-12-31",
           "nav": 28.38,
           "nav_class_i": 28.38,
-          "aum_m": 2735.0,
+          "aum_m": 3237.5,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2024-12",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 96824157
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-12)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 96824157,
+          "shares": 114085418
         },
         {
           "date": "2025-01-31",
           "nav": 28.55,
           "nav_class_i": 28.55,
-          "aum_m": 3519.0,
+          "aum_m": 3518.8,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-01",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 123271259
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-01)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 123271259,
+          "shares": 123271259
         },
         {
           "date": "2025-02-28",
           "nav": 28.73,
           "nav_class_i": 28.73,
-          "aum_m": null,
+          "aum_m": 3716.9,
           "subs_m": null,
-          "source_label": "SEC 8-K 2025-02",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-02)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 129481713
         },
         {
           "date": "2025-03-31",
           "nav": 28.88,
           "nav_class_i": 28.88,
-          "aum_m": 3238.0,
+          "aum_m": 3985.9,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-03",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 114085418
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-03)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 114085418,
+          "shares": 138000777
         },
         {
           "date": "2025-04-30",
           "nav": 29.08,
           "nav_class_i": 29.08,
-          "aum_m": 4246.0,
+          "aum_m": 4246.3,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-04",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 146071324
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-04)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 146071324,
+          "shares": 146071324
         },
         {
           "date": "2025-05-31",
           "nav": 29.2,
           "nav_class_i": 29.2,
-          "aum_m": null,
+          "aum_m": 4444.8,
           "subs_m": null,
-          "source_label": "SEC 8-K 2025-05",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-05)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 152302664
         },
         {
           "date": "2025-06-30",
           "nav": 29.26,
           "nav_class_i": 29.26,
-          "aum_m": 3986.0,
+          "aum_m": 4682.4,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-06",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 138000777
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-06)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 138000777,
+          "shares": 159970227
         },
         {
           "date": "2025-07-31",
           "nav": 29.36,
           "nav_class_i": 29.36,
-          "aum_m": null,
+          "aum_m": 4948.3,
           "subs_m": null,
-          "source_label": "SEC 8-K 2025-07",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-07)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 168559090
         },
         {
           "date": "2025-08-31",
           "nav": 29.55,
           "nav_class_i": 29.55,
-          "aum_m": null,
+          "aum_m": 5222.5,
           "subs_m": null,
-          "source_label": "SEC 8-K 2025-08",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-08)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 176818622
         },
         {
           "date": "2025-09-30",
           "nav": 29.63,
           "nav_class_i": 29.63,
-          "aum_m": 4682.0,
+          "aum_m": 5514.7,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-09",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 156970227
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-09)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 156970227,
+          "shares": 186061352
         },
         {
           "date": "2025-10-31",
           "nav": 29.75,
           "nav_class_i": 29.75,
-          "aum_m": 5924.0,
+          "aum_m": 5924.1,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-10",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 199028037
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-10)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 199028037,
+          "shares": 199028037
         },
         {
           "date": "2025-11-30",
           "nav": 29.99,
           "nav_class_i": 29.99,
-          "aum_m": 6243.0,
+          "aum_m": 6242.9,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2025-11",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 208179905
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-11)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 208179905,
+          "shares": 208179905
         },
         {
           "date": "2025-12-31",
           "nav": 29.96,
           "nav_class_i": 29.96,
-          "aum_m": null,
+          "aum_m": 6471.7,
           "subs_m": null,
-          "source_label": "SEC 8-K 2025-12",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-12)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 215892126
         },
         {
           "date": "2026-01-31",
           "nav": 30.1,
           "nav_class_i": 30.1,
-          "aum_m": 6810.0,
+          "aum_m": 6809.7,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 2026-01",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056",
-          "total_shares": 226105449
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-01)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "total_shares": 226105449,
+          "shares": 226105449
         },
         {
           "date": "2026-02-28",
           "nav": 30.28,
           "nav_class_i": 30.28,
-          "aum_m": 7029.0,
+          "aum_m": 7028.8,
           "total_shares": 232031512,
           "investments_fv_m": 5876.8,
           "cash_m": 1230.2,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K EX-99.1 Feb 2026",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-02)",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
+          "shares": 232031512
         }
       ],
       "note": "KKR files monthly NAV 8-Ks. AUM $7.0B as of Feb 2026. EX-99.1 exhibits provide total Transactional NAV (AUM)."
