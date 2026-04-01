@@ -1,0 +1,62 @@
+name: Fetch OpenInfra Fund Data
+
+# Runs daily at 06:30 UTC
+on:
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-openinfra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install sec-api requests beautifulsoup4 lxml
+
+      - name: Fetch OpenInfra fund data
+        env:
+          SEC_API_KEY: ${{ secrets.SEC_API_KEY }}
+        run: |
+          python scripts/fetch_openinfra_data.py
+
+      - name: Copy data into deploy directory
+        run: |
+          mkdir -p ISQ_Tracker_Deploy/data
+          cp data/openinfra_*.json ISQ_Tracker_Deploy/data/
+
+      - name: Check if data changed
+        id: check_diff
+        run: |
+          git diff --quiet data/ ISQ_Tracker_Deploy/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated data
+        if: steps.check_diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ ISQ_Tracker_Deploy/data/
+          git commit -m "chore: refresh OpenInfra fund data $(date -u +%Y-%m-%d) [skip ci]"
+          git push
+
+      - name: Deploy to Netlify
+        if: steps.check_diff.outputs.changed == 'true'
+        run: |
+          npx netlify-cli deploy \
+            --prod \
+            --dir=ISQ_Tracker_Deploy \
+            --site=${{ secrets.NETLIFY_SITE_ID }} \
+            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }}

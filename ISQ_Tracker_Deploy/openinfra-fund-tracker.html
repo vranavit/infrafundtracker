@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenInfra Fund Intelligence Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1B3A4B;
+            --teal: #006B77;
+            --teal-light: #0098A6;
+            --green: #5B9E4F;
+            --steel: #0072B1;
+            --red: #C0392B;
+            --amber: #D4A843;
+            --gray: #9CA3AF;
+            --gray-light: #E5E7EB;
+            --bg: #F4F6F8;
+            --card-bg: #FFFFFF;
+            --text: #1F2937;
+            --text-sec: #6B7280;
+        }
+
+        html, body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        /* Password Gate */
+        .password-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .password-gate.hidden {
+            display: none;
+        }
+
+        .password-container {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .password-container h1 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .password-container p {
+            color: var(--text-sec);
+            margin-bottom: 1.5rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-light);
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        .password-btn {
+            background: var(--steel);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .password-btn:hover {
+            background: var(--navy);
+        }
+
+        .password-error {
+            color: var(--red);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Main Content */
+        .container {
+            display: none;
+        }
+
+        .container.visible {
+            display: block;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: var(--steel);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--navy);
+        }
+
+        /* SECTION A: 7-Day Updates Bar */
+        .updates-bar {
+            background: var(--navy);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .updates-label {
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .updates-content {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .updates-scroll {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 8s linear infinite;
+            white-space: nowrap;
+        }
+
+        .updates-content:hover .updates-scroll {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .updates-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .updates-item a {
+            color: var(--amber);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .updates-item a:hover {
+            text-decoration: underline;
+        }
+
+        .updates-controls {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .btn-secondary {
+            background: var(--teal);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            background: var(--teal-light);
+        }
+
+        /* SECTION B: Header */
+        .header {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-title {
+            flex: 1;
+        }
+
+        .header-title h1 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-title p {
+            color: var(--text-sec);
+            font-size: 1rem;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .freshness-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gray-light);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .freshness-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .freshness-dot.fresh {
+            background: var(--green);
+        }
+
+        .freshness-dot.warn {
+            background: var(--amber);
+        }
+
+        .freshness-dot.stale {
+            background: var(--red);
+        }
+
+        .btn-primary {
+            background: var(--steel);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+        }
+
+        .header-meta {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+
+        /* SECTION C: Fund Summary Cards */
+        .summary-cards {
+            padding: 1rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .cards-scroll {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            width: fit-content;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            min-width: 280px;
+            flex-shrink: 0;
+            border-left: 4px solid var(--gray);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .summary-card.primary {
+            border-left: 6px solid var(--steel);
+            background: linear-gradient(to right, rgba(0, 114, 177, 0.03), transparent);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
+        .card-primary-label {
+            background: var(--steel);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 1rem;
+        }
+
+        .card-confidence {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .confidence-high {
+            background: rgba(91, 158, 79, 0.2);
+            color: var(--green);
+        }
+
+        .confidence-medium {
+            background: rgba(212, 168, 67, 0.2);
+            color: var(--amber);
+        }
+
+        .confidence-low {
+            background: rgba(156, 163, 175, 0.2);
+            color: var(--gray);
+        }
+
+        .card-stat {
+            margin-bottom: 0.8rem;
+        }
+
+        .card-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            margin-bottom: 0.2rem;
+        }
+
+        .card-stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .card-stat-value.positive {
+            color: var(--green);
+        }
+
+        .card-stat-value.negative {
+            color: var(--red);
+        }
+
+        .source-badge {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .source-badge:hover {
+            text-decoration: underline;
+        }
+
+        /* SECTION D: Comparison Table */
+        .comparison-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .comparison-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table thead {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 10;
+        }
+
+        .comparison-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gray-light);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .comparison-table th:hover {
+            background: var(--gray-light);
+        }
+
+        .comparison-table th.sortable::after {
+            content: ' ⇅';
+            color: var(--gray);
+        }
+
+        .comparison-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-light);
+            color: var(--text);
+        }
+
+        .comparison-table tr {
+            transition: background 0.2s;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--bg);
+        }
+
+        .comparison-table tbody tr.primary {
+            background: rgba(0, 114, 177, 0.05);
+            font-weight: 500;
+        }
+
+        .comparison-table td.fund-name {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .comparison-table td.positive {
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        .comparison-table td.negative {
+            color: var(--red);
+            font-weight: 500;
+        }
+
+        .comparison-table a {
+            color: var(--steel);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .comparison-table a:hover {
+            text-decoration: underline;
+        }
+
+        .empty-cell {
+            color: var(--gray);
+        }
+
+        /* SECTION E: Charts */
+        .charts-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .charts-section h2 {
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 3rem;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 6px;
+        }
+
+        .chart-title {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* SECTION F: History Table */
+        .history-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .accordion {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--gray-light);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-header {
+            background: var(--bg);
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .accordion-header:hover {
+            background: var(--gray-light);
+        }
+
+        .accordion-header.active {
+            background: var(--steel);
+            color: white;
+        }
+
+        .accordion-toggle {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid var(--gray-light);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .history-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gray-light);
+            white-space: nowrap;
+        }
+
+        .history-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        /* SECTION G: Holdings */
+        .holdings-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .holdings-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* SECTION H: Investor Count */
+        .investors-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .investors-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .investors-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .investors-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gray-light);
+            white-space: nowrap;
+        }
+
+        .investors-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        /* SECTION I: Changelog */
+        .changelog-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .changelog-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .changelog-filters {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--gray-light);
+            border: 1px solid var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: var(--steel);
+            color: white;
+            border-color: var(--steel);
+        }
+
+        .changelog-item {
+            padding: 1rem;
+            border-left: 4px solid var(--gray-light);
+            margin-bottom: 1rem;
+            background: var(--bg);
+            border-radius: 4px;
+        }
+
+        .changelog-item.nav-change {
+            border-left-color: var(--teal);
+        }
+
+        .changelog-item.aum-change {
+            border-left-color: var(--amber);
+        }
+
+        .changelog-item.new-filing {
+            border-left-color: var(--green);
+        }
+
+        .changelog-fund {
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .changelog-desc {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .changelog-meta {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* SECTION J: Audit */
+        .audit-section {
+            padding: 1.5rem;
+            margin: 1rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .audit-section h2 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .audit-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gray-light);
+            white-space: nowrap;
+        }
+
+        .audit-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .audit-table a {
+            color: var(--steel);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .audit-table a:hover {
+            text-decoration: underline;
+        }
+
+        .audit-table a::after {
+            content: ' ↗';
+        }
+
+        /* Loading & Error States */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-sec);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--gray-light);
+            border-top-color: var(--steel);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: rgba(192, 57, 43, 0.1);
+            border-left: 4px solid var(--red);
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 4px;
+            color: var(--red);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-controls {
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .updates-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .updates-controls {
+                width: 100%;
+            }
+
+            .btn-secondary {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Gate -->
+    <div class="password-gate" id="passwordGate">
+        <div class="password-container">
+            <h1>Fund Intelligence</h1>
+            <p>Enter password to continue</p>
+            <input
+                type="password"
+                id="passwordInput"
+                class="password-input"
+                placeholder="Password"
+                autocomplete="off"
+            >
+            <button class="password-btn" onclick="checkPassword()">Access Dashboard</button>
+            <div class="password-error" id="passwordError">Incorrect password</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContainer">
+        <div style="padding: 1rem; border-bottom: 1px solid var(--gray-light);">
+            <a href="index.html" class="back-link">← Back to Dashboard</a>
+        </div>
+
+        <!-- SECTION A: 7-Day Updates Bar -->
+        <div class="updates-bar" id="updatesBar">
+            <div class="updates-label">Last 7 Days</div>
+            <div class="updates-content" id="updatesContent">
+                <div class="updates-scroll" id="updatesScroll"></div>
+            </div>
+            <div class="updates-controls">
+                <button class="btn-secondary" onclick="showAllChanges()">View All</button>
+            </div>
+        </div>
+
+        <!-- SECTION B: Header -->
+        <div class="header">
+            <div class="header-top">
+                <div class="header-title">
+                    <h1>OpenInfra Fund Intelligence</h1>
+                    <p>Live competitive data across 9 open-ended infrastructure funds</p>
+                </div>
+                <div class="header-controls">
+                    <div class="freshness-badge">
+                        <div class="freshness-dot" id="freshnessDot"></div>
+                        <span id="freshnessText"></span>
+                    </div>
+                    <button class="btn-primary" onclick="exportCSV()">Export CSV</button>
+                    <button class="btn-primary" onclick="exportPDF()">Export PDF</button>
+                </div>
+            </div>
+            <div class="header-meta">
+                <span id="headerMeta"></span>
+            </div>
+        </div>
+
+        <!-- SECTION C: Fund Summary Cards -->
+        <div class="summary-cards">
+            <div class="cards-scroll" id="summaryCards"></div>
+        </div>
+
+        <!-- SECTION D: Comparison Table -->
+        <div class="comparison-section">
+            <h2>Fund Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table" id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" onclick="sortTable(0)">Fund</th>
+                            <th class="sortable" onclick="sortTable(1)">Manager</th>
+                            <th class="sortable" onclick="sortTable(2)">Class</th>
+                            <th class="sortable" onclick="sortTable(3)">NAV</th>
+                            <th class="sortable" onclick="sortTable(4)">AUM ($M)</th>
+                            <th class="sortable" onclick="sortTable(5)">1M</th>
+                            <th class="sortable" onclick="sortTable(6)">3M</th>
+                            <th class="sortable" onclick="sortTable(7)">6M</th>
+                            <th class="sortable" onclick="sortTable(8)">1Y</th>
+                            <th class="sortable" onclick="sortTable(9)">ITD (ann.)</th>
+                            <th class="sortable" onclick="sortTable(10)">Net Flows</th>
+                            <th class="sortable" onclick="sortTable(11)">Dist/Share</th>
+                            <th class="sortable" onclick="sortTable(12)">Investors</th>
+                            <th class="sortable" onclick="sortTable(13)">Source</th>
+                            <th class="sortable" onclick="sortTable(14)">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION E: Charts -->
+        <div class="charts-section">
+            <h2>Performance Analytics</h2>
+
+            <div class="chart-title">NAV Performance (Rebased to 100)</div>
+            <div class="chart-container">
+                <canvas id="navChart"></canvas>
+            </div>
+
+            <div class="chart-title">AUM Growth ($M)</div>
+            <div class="chart-container">
+                <canvas id="aumChart"></canvas>
+            </div>
+
+            <div class="chart-title">Gross Subscriptions ($M)</div>
+            <div class="chart-container">
+                <canvas id="subsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SECTION F: History Table -->
+        <div class="history-section">
+            <h2>Monthly History by Fund</h2>
+            <div class="accordion" id="historyAccordion"></div>
+        </div>
+
+        <!-- SECTION G: Holdings -->
+        <div class="holdings-section">
+            <h2>Portfolio Holdings</h2>
+            <div class="accordion" id="holdingsAccordion"></div>
+        </div>
+
+        <!-- SECTION H: Investor Count -->
+        <div class="investors-section">
+            <h2>Investor Count & Form D Data</h2>
+            <table class="investors-table">
+                <thead>
+                    <tr>
+                        <th>Fund</th>
+                        <th>Investors</th>
+                        <th>Total Raised</th>
+                        <th>First Sale</th>
+                        <th>Placement Agents</th>
+                        <th>Form D Link</th>
+                    </tr>
+                </thead>
+                <tbody id="investorsTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- SECTION I: Changelog -->
+        <div class="changelog-section">
+            <h2>7-Day Full Changelog</h2>
+            <div class="changelog-filters">
+                <button class="filter-btn active" onclick="filterChangelog('all')">All</button>
+                <button class="filter-btn" onclick="filterChangelog('nav')">NAV</button>
+                <button class="filter-btn" onclick="filterChangelog('aum')">AUM</button>
+                <button class="filter-btn" onclick="filterChangelog('filing')">New Filings</button>
+            </div>
+            <div id="changelogContainer"></div>
+        </div>
+
+        <!-- SECTION J: Audit -->
+        <div class="audit-section">
+            <h2>Data Sources Audit</h2>
+            <table class="audit-table">
+                <thead>
+                    <tr>
+                        <th>Fund</th>
+                        <th>Data Type</th>
+                        <th>Source</th>
+                        <th>Last Fetched</th>
+                        <th>Filing Date</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="auditTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const FUND_COLORS = {
+            isq_openinfra: '#0072B1',
+            ares_aci: '#006B77',
+            kkr_infra_conglomerate: '#D4A843',
+            stonepeak_plus: '#5B9E4F',
+            brookfield_infra_income: '#C0392B',
+            blue_owl_odit: '#9B59B6',
+            hamilton_lane_infra: '#E67E22',
+            partners_group_infra: '#1ABC9C',
+            kkr_kif_lux: '#34495E'
+        };
+
+        const FUND_NAMES = {
+            isq_openinfra: 'ISQ OpenInfra Company',
+            ares_aci: 'Ares Core Infrastructure Fund',
+            kkr_infra_conglomerate: 'KKR Infrastructure Conglomerate',
+            stonepeak_plus: 'Stonepeak-Plus Infrastructure Fund',
+            brookfield_infra_income: 'Brookfield Infrastructure Income Fund',
+            blue_owl_odit: 'Blue Owl Digital Infrastructure ODIT',
+            hamilton_lane_infra: 'Hamilton Lane Private Infrastructure Fund',
+            partners_group_infra: 'Partners Group Infrastructure Evergreen',
+            kkr_kif_lux: 'KKR Diversified Core Infrastructure Fund Luxembourg'
+        };
+
+        let navData = null;
+        let historicalData = null;
+        let changesData = null;
+        let metadataData = null;
+        let currentSortColumn = null;
+        let currentSortOrder = 'asc';
+
+        // Password Gate
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'ISQ2026') {
+                document.getElementById('passwordGate').classList.add('hidden');
+                document.getElementById('mainContainer').classList.add('visible');
+                initDashboard();
+            } else {
+                document.getElementById('passwordError').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('passwordError').style.display = 'none';
+                }, 3000);
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // Initialize Dashboard
+        async function initDashboard() {
+            try {
+                // Load all data
+                [navData, historicalData, changesData, metadataData] = await Promise.all([
+                    fetch('/data/openinfra_nav.json').then(r => r.json()),
+                    fetch('/data/openinfra_historical.json').then(r => r.json()),
+                    fetch('/data/openinfra_changes.json').then(r => r.json()),
+                    fetch('/data/openinfra_metadata.json').then(r => r.json())
+                ]);
+
+                // Render all sections
+                renderUpdatesBar();
+                renderHeader();
+                renderSummaryCards();
+                renderComparisonTable();
+                renderCharts();
+                renderHistory();
+                renderHoldings();
+                renderInvestors();
+                renderChangelog();
+                renderAudit();
+            } catch (error) {
+                console.error('Failed to load data:', error);
+                document.getElementById('mainContainer').innerHTML = '<div class="error-message">Failed to load dashboard data. Please try again later.</div>';
+            }
+        }
+
+        // SECTION A: Updates Bar
+        function renderUpdatesBar() {
+            const scrollContainer = document.getElementById('updatesScroll');
+
+            if (!changesData.changes || changesData.changes.length === 0) {
+                scrollContainer.innerHTML = `<div class="updates-item">No updates in the last 7 days. Data current as of ${metadataData.last_updated}</div>`;
+                return;
+            }
+
+            scrollContainer.innerHTML = changesData.changes.slice(0, 10).map(change => `
+                <div class="updates-item">
+                    <strong>${change.fund_name}</strong> |
+                    ${change.change_type}: ${change.description} |
+                    <a href="${change.source_url}" target="_blank" rel="noopener">${change.source_url.split('/').slice(-1)[0]}</a> |
+                    <small>${getTimeAgo(change.detected_at)}</small>
+                </div>
+            `).join('');
+        }
+
+        // SECTION B: Header
+        function renderHeader() {
+            const lastUpdated = new Date(metadataData.last_updated);
+            const hoursAgo = Math.floor((Date.now() - lastUpdated) / (1000 * 60 * 60));
+
+            let freshness = 'fresh';
+            let freshnessClass = 'fresh';
+            if (hoursAgo > 48) {
+                freshness = 'Stale (>48h)';
+                freshnessClass = 'stale';
+            } else if (hoursAgo > 24) {
+                freshness = 'Aging (24-48h)';
+                freshnessClass = 'warn';
+            } else {
+                freshness = 'Fresh (<24h)';
+                freshnessClass = 'fresh';
+            }
+
+            const nextRefresh = new Date(lastUpdated);
+            nextRefresh.setDate(nextRefresh.getDate() + 1);
+            nextRefresh.setUTCHours(6, 30, 0);
+
+            document.getElementById('freshnessText').textContent = freshness;
+            document.getElementById('freshnessDot').className = `freshness-dot ${freshnessClass}`;
+            document.getElementById('headerMeta').textContent =
+                `Data as of ${lastUpdated.toLocaleString()} | Next refresh: ${nextRefresh.toLocaleDateString()} 06:30 UTC`;
+        }
+
+        // SECTION C: Summary Cards
+        function renderSummaryCards() {
+            const container = document.getElementById('summaryCards');
+            const funds = navData.sort((a, b) => {
+                if (a.is_primary) return -1;
+                if (b.is_primary) return 1;
+                return 0;
+            });
+
+            container.innerHTML = funds.map(fund => {
+                const confidenceClass =
+                    fund.confidence === 'HIGH' ? 'high' :
+                    fund.confidence === 'MEDIUM' ? 'medium' : 'low';
+
+                return `
+                    <div class="summary-card ${fund.is_primary ? 'primary' : ''}">
+                        <div class="card-header">
+                            <div class="card-title">${FUND_NAMES[fund.fund_id]}</div>
+                            ${fund.is_primary ? '<span class="card-primary-label">PRIMARY</span>' : ''}
+                        </div>
+                        <div class="card-meta">${fund.manager}</div>
+                        <div class="card-confidence confidence-${confidenceClass}">${fund.confidence}</div>
+                        <div class="card-stat">
+                            <div class="card-stat-label">NAV per Share</div>
+                            <div class="card-stat-value">
+                                <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                                    ${fund.nav_per_share ? `$${Number(fund.nav_per_share).toFixed(2)}` : '—'}
+                                </a>
+                            </div>
+                            <small style="color: var(--text-sec);">${fund.nav_date}</small>
+                        </div>
+                        <div class="card-stat">
+                            <div class="card-stat-label">AUM</div>
+                            <div class="card-stat-value">
+                                <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                                    $${Number(fund.total_aum_millions).toFixed(0)}M
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-stat">
+                            <div class="card-stat-label">ITD Return</div>
+                            <div class="card-stat-value ${fund.return_itd >= 0 ? 'positive' : 'negative'}">
+                                ${fund.return_itd ? `${Number(fund.return_itd).toFixed(1)}%` : '—'}
+                            </div>
+                        </div>
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" class="source-badge">
+                            ${fund.source_label}
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // SECTION D: Comparison Table
+        function renderComparisonTable() {
+            const tbody = document.getElementById('comparisonTableBody');
+            const funds = navData.sort((a, b) => {
+                if (a.is_primary) return -1;
+                if (b.is_primary) return 1;
+                return 0;
+            });
+
+            tbody.innerHTML = funds.map(fund => `
+                <tr class="${fund.is_primary ? 'primary' : ''}">
+                    <td class="fund-name">
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                            ${FUND_NAMES[fund.fund_id]}
+                        </a>
+                    </td>
+                    <td>${fund.manager}</td>
+                    <td>${fund.benchmark_class || '—'}</td>
+                    <td>
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                            ${fund.nav_per_share ? `$${Number(fund.nav_per_share).toFixed(2)}` : '—'}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                            ${fund.total_aum_millions ? `$${Number(fund.total_aum_millions).toFixed(0)}` : '—'}
+                        </a>
+                    </td>
+                    <td class="${fund.return_1m >= 0 ? 'positive' : 'negative'}">
+                        ${fund.return_1m ? `${Number(fund.return_1m).toFixed(2)}%` : '—'}
+                    </td>
+                    <td class="${fund.return_3m >= 0 ? 'positive' : 'negative'}">
+                        ${fund.return_3m ? `${Number(fund.return_3m).toFixed(2)}%` : '—'}
+                    </td>
+                    <td class="${fund.return_6m >= 0 ? 'positive' : 'negative'}">
+                        ${fund.return_6m ? `${Number(fund.return_6m).toFixed(2)}%` : '—'}
+                    </td>
+                    <td class="${fund.return_1y >= 0 ? 'positive' : 'negative'}">
+                        ${fund.return_1y ? `${Number(fund.return_1y).toFixed(2)}%` : '—'}
+                    </td>
+                    <td class="${fund.annualised_itd >= 0 ? 'positive' : 'negative'}">
+                        ${fund.annualised_itd ? `${Number(fund.annualised_itd).toFixed(2)}%` : '—'}
+                    </td>
+                    <td>
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                            ${fund.gross_subscriptions_millions ? `$${Number(fund.gross_subscriptions_millions).toFixed(0)}M` : '—'}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="${fund.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
+                            ${fund.distribution_per_share ? `$${Number(fund.distribution_per_share).toFixed(2)}` : '—'}
+                        </a>
+                    </td>
+                    <td>${fund.total_investors || '—'}</td>
+                    <td><a href="${fund.source_url}" target="_blank" rel="noopener">${fund.source_label}</a></td>
+                    <td>${new Date(fund.last_updated).toLocaleDateString()}</td>
+                </tr>
+            `).join('');
+        }
+
+        // SECTION E: Charts
+        function renderCharts() {
+            renderNAVChart();
+            renderAUMChart();
+            renderSubscriptionsChart();
+        }
+
+        function renderNAVChart() {
+            const ctx = document.getElementById('navChart').getContext('2d');
+            const datasets = [];
+
+            navData.forEach(fund => {
+                if (!historicalData.funds[fund.fund_id]) return;
+                const history = historicalData.funds[fund.fund_id].historical;
+                if (!history || history.length === 0) return;
+
+                const firstNav = history[0].nav;
+                const labels = history.map(h => new Date(h.date).toLocaleDateString());
+                const data = history.map(h => (h.nav / firstNav) * 100);
+
+                datasets.push({
+                    label: FUND_NAMES[fund.fund_id],
+                    data: data,
+                    borderColor: FUND_COLORS[fund.fund_id],
+                    backgroundColor: FUND_COLORS[fund.fund_id] + '10',
+                    borderWidth: fund.is_primary ? 3 : 2,
+                    tension: 0.4,
+                    fill: false,
+                    pointRadius: 0,
+                    pointHoverRadius: 5
+                });
+            });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: historicalData.funds[navData[0].fund_id].historical.map(h => new Date(h.date).toLocaleDateString()),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, padding: 15 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: { display: true, text: 'Rebased NAV (100 = inception)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderAUMChart() {
+            const ctx = document.getElementById('aumChart').getContext('2d');
+            const allDates = new Set();
+            const fundAumMap = {};
+
+            navData.forEach(fund => {
+                if (!historicalData.funds[fund.fund_id]) return;
+                const history = historicalData.funds[fund.fund_id].historical;
+                fundAumMap[fund.fund_id] = {};
+                history.forEach(h => {
+                    allDates.add(h.date);
+                    fundAumMap[fund.fund_id][h.date] = h.aum_m || 0;
+                });
+            });
+
+            const sortedDates = Array.from(allDates).sort();
+            const datasets = navData.map(fund => ({
+                label: FUND_NAMES[fund.fund_id],
+                data: sortedDates.map(d => fundAumMap[fund.fund_id]?.[d] || 0),
+                backgroundColor: FUND_COLORS[fund.fund_id],
+                borderColor: FUND_COLORS[fund.fund_id],
+                borderWidth: 1
+            }));
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedDates.map(d => new Date(d).toLocaleDateString()),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'x',
+                    scales: {
+                        x: { stacked: false },
+                        y: { stacked: false }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, padding: 15 }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderSubscriptionsChart() {
+            const ctx = document.getElementById('subsChart').getContext('2d');
+            const allDates = new Set();
+            const fundSubsMap = {};
+
+            navData.forEach(fund => {
+                if (!historicalData.funds[fund.fund_id]) return;
+                const history = historicalData.funds[fund.fund_id].historical;
+                fundSubsMap[fund.fund_id] = {};
+                history.forEach(h => {
+                    allDates.add(h.date);
+                    fundSubsMap[fund.fund_id][h.date] = h.subs_m || 0;
+                });
+            });
+
+            const sortedDates = Array.from(allDates).sort();
+            const datasets = navData.map(fund => ({
+                label: FUND_NAMES[fund.fund_id],
+                data: sortedDates.map(d => fundSubsMap[fund.fund_id]?.[d] || 0),
+                backgroundColor: FUND_COLORS[fund.fund_id],
+                borderColor: FUND_COLORS[fund.fund_id],
+                borderWidth: 1
+            }));
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedDates.map(d => new Date(d).toLocaleDateString()),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'x',
+                    scales: {
+                        x: { stacked: false },
+                        y: { stacked: false }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, padding: 15 }
+                        }
+                    }
+                }
+            });
+        }
+
+        // SECTION F: History Table
+        function renderHistory() {
+            const accordion = document.getElementById('historyAccordion');
+
+            accordion.innerHTML = navData.map(fund => {
+                if (!historicalData.funds[fund.fund_id]) return '';
+                const history = historicalData.funds[fund.fund_id].historical || [];
+
+                return `
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>${FUND_NAMES[fund.fund_id]}</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <table class="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>NAV</th>
+                                        <th>AUM ($M)</th>
+                                        <th>Subscriptions ($M)</th>
+                                        <th>Distribution</th>
+                                        <th>Source</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${history.map(h => `
+                                        <tr>
+                                            <td>${h.date}</td>
+                                            <td><a href="${h.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">$${Number(h.nav).toFixed(2)}</a></td>
+                                            <td><a href="${h.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">${h.aum_m ? `$${Number(h.aum_m).toFixed(0)}` : '—'}</a></td>
+                                            <td><a href="${h.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">${h.subs_m ? `$${Number(h.subs_m).toFixed(0)}` : '—'}</a></td>
+                                            <td><a href="${h.source_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">${h.dist_per_share ? `$${Number(h.dist_per_share).toFixed(2)}` : '—'}</a></td>
+                                            <td><a href="${h.source_url}" target="_blank" rel="noopener">${h.source_label}</a></td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // SECTION G: Holdings
+        function renderHoldings() {
+            const accordion = document.getElementById('holdingsAccordion');
+
+            accordion.innerHTML = navData.map(fund => `
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>${FUND_NAMES[fund.fund_id]}</span>
+                        <span class="accordion-toggle">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Holdings not yet available. Next 10-Q expected: Q2 2026</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // SECTION H: Investor Count
+        function renderInvestors() {
+            const tbody = document.getElementById('investorsTableBody');
+
+            tbody.innerHTML = navData.map(fund => `
+                <tr>
+                    <td>${FUND_NAMES[fund.fund_id]}</td>
+                    <td>${fund.total_investors || '—'}</td>
+                    <td>${fund.gross_subscriptions_millions ? `$${Number(fund.gross_subscriptions_millions).toFixed(0)}M` : '—'}</td>
+                    <td>${fund.source_label}</td>
+                    <td>—</td>
+                    <td><a href="${fund.source_url}" target="_blank" rel="noopener">${new URL(fund.source_url).hostname}</a></td>
+                </tr>
+            `).join('');
+        }
+
+        // SECTION I: Changelog
+        function renderChangelog() {
+            displayChangelogItems('all');
+        }
+
+        function filterChangelog(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            displayChangelogItems(type);
+        }
+
+        function displayChangelogItems(type) {
+            const container = document.getElementById('changelogContainer');
+            let items = changesData.changes || [];
+
+            if (type === 'nav') items = items.filter(c => c.change_type === 'NAV');
+            if (type === 'aum') items = items.filter(c => c.change_type === 'AUM');
+            if (type === 'filing') items = items.filter(c => c.change_type === 'New Filing');
+
+            container.innerHTML = items.map(change => {
+                let changeClass = 'changelog-item';
+                if (change.change_type === 'NAV') changeClass += ' nav-change';
+                if (change.change_type === 'AUM') changeClass += ' aum-change';
+                if (change.change_type === 'New Filing') changeClass += ' new-filing';
+
+                return `
+                    <div class="${changeClass}">
+                        <div class="changelog-fund">${change.fund_name}</div>
+                        <div class="changelog-desc">${change.description}</div>
+                        <div class="changelog-meta">
+                            <span>${getTimeAgo(change.detected_at)}</span>
+                            <a href="${change.source_url}" target="_blank" rel="noopener">${change.source_label}</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // SECTION J: Audit
+        function renderAudit() {
+            const tbody = document.getElementById('auditTableBody');
+            const auditRows = [];
+
+            navData.forEach(fund => {
+                auditRows.push(`
+                    <tr>
+                        <td>${FUND_NAMES[fund.fund_id]}</td>
+                        <td>NAV per Share</td>
+                        <td>${fund.source_label}</td>
+                        <td>${new Date(fund.last_updated).toLocaleDateString()}</td>
+                        <td>${fund.nav_date}</td>
+                        <td><a href="${fund.source_url}" target="_blank" rel="noopener">${new URL(fund.source_url).hostname}</a></td>
+                    </tr>
+                `);
+
+                auditRows.push(`
+                    <tr>
+                        <td>${FUND_NAMES[fund.fund_id]}</td>
+                        <td>AUM</td>
+                        <td>${fund.source_label}</td>
+                        <td>${new Date(fund.last_updated).toLocaleDateString()}</td>
+                        <td>${fund.nav_date}</td>
+                        <td><a href="${fund.source_url}" target="_blank" rel="noopener">${new URL(fund.source_url).hostname}</a></td>
+                    </tr>
+                `);
+            });
+
+            tbody.innerHTML = auditRows.join('');
+        }
+
+        // Utilities
+        function toggleAccordion(header) {
+            header.classList.toggle('active');
+            header.nextElementSibling.classList.toggle('active');
+        }
+
+        function sortTable(columnIndex) {
+            // Simplified sort - would need more robust implementation for production
+            console.log('Sort by column:', columnIndex);
+        }
+
+        function showAllChanges() {
+            document.getElementById('changelogContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function exportCSV() {
+            let csv = 'Fund,Manager,Class,NAV,NAV Date,AUM ($M),1M Return,3M Return,6M Return,1Y Return,ITD Return,Source URL\n';
+            navData.forEach(fund => {
+                csv += `"${FUND_NAMES[fund.fund_id]}","${fund.manager}","${fund.benchmark_class || ''}","$${Number(fund.nav_per_share).toFixed(2)}","${fund.nav_date}","$${Number(fund.total_aum_millions).toFixed(0)}","${fund.return_1m ? `${Number(fund.return_1m).toFixed(2)}%` : ''}","${fund.return_3m ? `${Number(fund.return_3m).toFixed(2)}%` : ''}","${fund.return_6m ? `${Number(fund.return_6m).toFixed(2)}%` : ''}","${fund.return_1y ? `${Number(fund.return_1y).toFixed(2)}%` : ''}","${fund.return_itd ? `${Number(fund.return_itd).toFixed(2)}%` : ''}","${fund.source_url}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `openinfra-funds-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        function exportPDF() {
+            window.print();
+        }
+
+        function getTimeAgo(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const seconds = Math.floor((now - date) / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+            if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            if (minutes > 0) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            return 'just now';
+        }
+    </script>
+</body>
+</html>

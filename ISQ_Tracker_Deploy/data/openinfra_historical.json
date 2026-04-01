@@ -1,0 +1,299 @@
+{
+  "funds": {
+    "isq_openinfra": {
+      "historical": [
+        {
+          "date": "2026-01-31",
+          "nav": 31.59,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "ISQ OpenInfra website",
+          "source_url": "https://isqopeninfraco.com"
+        }
+      ],
+      "fund_name": "ISQ OpenInfra Company"
+    },
+    "ares_aci": {
+      "historical": [
+        {
+          "date": "2024-11-30",
+          "nav": 25.4101,
+          "aum_m": 158.2,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.9221,
+          "source_label": "SEC 8-K filed 2024-12-23",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828024052352/november2024nav8-k.htm"
+        },
+        {
+          "date": "2024-12-31",
+          "nav": 25.1266,
+          "aum_m": 156.5,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-01-22",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828025002161/aci-20250122.htm"
+        },
+        {
+          "date": "2025-02-28",
+          "nav": 24.94,
+          "aum_m": 532.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Feb 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2025-04-30",
+          "nav": 24.8195,
+          "aum_m": null,
+          "subs_m": 64.7,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-05-20",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828025026871/aci-20250520.htm"
+        },
+        {
+          "date": "2025-06-30",
+          "nav": 24.949,
+          "aum_m": 815.1,
+          "subs_m": 364.1,
+          "redemptions_m": null,
+          "dist_per_share": 0.2079,
+          "source_label": "SEC 8-K filed 2025-07-21",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828025035491/aci-20250721.htm"
+        },
+        {
+          "date": "2025-07-31",
+          "nav": 24.8587,
+          "aum_m": 1176.6,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Jul 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": 24.9088,
+          "aum_m": 1449.2,
+          "subs_m": 182.5,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-10-21",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000203175025000035/aci-20251021.htm"
+        },
+        {
+          "date": "2025-10-31",
+          "nav": 24.7974,
+          "aum_m": 1630.8,
+          "subs_m": 247.3,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Oct 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2025-11-30",
+          "nav": 25.0404,
+          "aum_m": 1900.6,
+          "subs_m": 200.6,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Nov 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        }
+      ],
+      "fund_name": "Ares Core Infrastructure Fund"
+    },
+    "kkr_infra_conglomerate": {
+      "historical": [
+        {
+          "date": "2024-03-31",
+          "nav": 27.19,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Mar 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+        },
+        {
+          "date": "2024-06-30",
+          "nav": 27.5,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2024-07-20",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0001948056/000194805624000035/kkr-20240720.htm"
+        },
+        {
+          "date": "2024-08-31",
+          "nav": 27.5,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Aug 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+        },
+        {
+          "date": "2024-09-30",
+          "nav": 28.25,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Sep 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+        }
+      ],
+      "fund_name": "KKR Infrastructure Conglomerate"
+    },
+    "stonepeak_plus": {
+      "historical": [
+        {
+          "date": "2025-06-30",
+          "nav": 28.14,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-07-28",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125028400/ef20053069_8k.htm"
+        },
+        {
+          "date": "2025-07-31",
+          "nav": 28.32,
+          "aum_m": null,
+          "subs_m": 64.6,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-09-04",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125033999/ef20055084_8k.htm"
+        },
+        {
+          "date": "2025-08-31",
+          "nav": 28.67,
+          "aum_m": null,
+          "subs_m": 43.7,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-09-26",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000114036125037000/ef20056485_8k.htm"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": null,
+          "aum_m": null,
+          "subs_m": 95.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Oct 2025",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000204545825000014/sp-20251030.htm"
+        },
+        {
+          "date": "2025-10-31",
+          "nav": 29.82,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-12-01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002045458/000204545825000023/sp-20251201.htm"
+        },
+        {
+          "date": "2025-11-30",
+          "nav": 31.4,
+          "aum_m": 686.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K Nov 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2045458"
+        }
+      ],
+      "fund_name": "Stonepeak-Plus Infrastructure Fund"
+    },
+    "brookfield_infra_income": {
+      "historical": [
+        {
+          "date": "2025-12-31",
+          "nav": 10.83,
+          "aum_m": 5020.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "BAM Q4 2025 Earnings",
+          "source_url": "https://bam.brookfield.com/press-releases"
+        }
+      ],
+      "fund_name": "Brookfield Infrastructure Income Fund"
+    },
+    "blue_owl_odit": {
+      "historical": [
+        {
+          "date": "2025-12-31",
+          "nav": 10.0,
+          "aum_m": 1700.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "Blue Owl Q4 2025 Earnings",
+          "source_url": "https://www.blueowl.com"
+        }
+      ],
+      "fund_name": "Blue Owl Digital Infrastructure (ODIT)"
+    },
+    "hamilton_lane_infra": {
+      "historical": [
+        {
+          "date": "2025-12-31",
+          "nav": null,
+          "aum_m": 950.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "Hamilton Lane Q3 FY2026 Earnings",
+          "source_url": "https://www.hamiltonlane.com"
+        }
+      ],
+      "fund_name": "Hamilton Lane Private Infrastructure Fund"
+    },
+    "partners_group_infra": {
+      "historical": [
+        {
+          "date": "2025-10-31",
+          "nav": null,
+          "aum_m": 1000.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "Press Release Oct 2025",
+          "source_url": "https://www.partnersgroup.com/en/news-and-views/"
+        }
+      ],
+      "fund_name": "Partners Group Infrastructure Evergreen"
+    },
+    "kkr_kif_lux": {
+      "historical": [
+        {
+          "date": "2026-01-31",
+          "nav": 34.31,
+          "aum_m": 11800.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "KSeries Website Jan 2026",
+          "source_url": "https://kseries.kkr.com/kif/"
+        }
+      ],
+      "fund_name": "KKR Diversified Core Infrastructure Fund (Luxembourg)"
+    }
+  }
+}

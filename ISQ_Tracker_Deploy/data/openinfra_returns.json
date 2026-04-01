@@ -1,0 +1,59 @@
+{
+  "last_updated": "2026-04-01T03:39:57.157892Z",
+  "funds": {
+    "isq_openinfra": {
+      "data_points_count": 1
+    },
+    "ares_aci": {
+      "return_1m": 0.009799,
+      "return_3m": 0.007309,
+      "return_6m": 0.0089,
+      "return_1y": -0.014549,
+      "return_ytd": 0.004026,
+      "return_itd": -0.014549,
+      "annualised_itd": -0.019351,
+      "data_points_count": 9,
+      "oldest_nav_date": "2024-11-30",
+      "latest_nav_date": "2025-11-30"
+    },
+    "kkr_infra_conglomerate": {
+      "return_1m": 0.027273,
+      "return_3m": 0.027273,
+      "return_6m": 0.038985,
+      "return_1y": null,
+      "return_ytd": 0.038985,
+      "return_itd": 0.038985,
+      "annualised_itd": 0.121574,
+      "data_points_count": 4,
+      "oldest_nav_date": "2024-03-31",
+      "latest_nav_date": "2024-09-30"
+    },
+    "stonepeak_plus": {
+      "return_1m": 0.052985,
+      "return_3m": 0.095221,
+      "return_6m": null,
+      "return_1y": null,
+      "return_ytd": 0.115849,
+      "return_itd": 0.115849,
+      "annualised_itd": 0.300927,
+      "data_points_count": 5,
+      "oldest_nav_date": "2025-06-30",
+      "latest_nav_date": "2025-11-30"
+    },
+    "brookfield_infra_income": {
+      "data_points_count": 1
+    },
+    "blue_owl_odit": {
+      "data_points_count": 1
+    },
+    "hamilton_lane_infra": {
+      "data_points_count": 1
+    },
+    "partners_group_infra": {
+      "data_points_count": 1
+    },
+    "kkr_kif_lux": {
+      "data_points_count": 1
+    }
+  }
+}

@@ -72,6 +72,7 @@ const CATEGORIES = [
 ];
 const OPEN_INFRA_SUBTABS = [
   {key:"navTracker",label:"Fund NAV Tracker"},
+  {key:"fundIntel",label:"Fund Intelligence \u2197",href:"openinfra-fund-tracker.html"},
   {key:"darkPipeline",label:"Distribution Tracker"},
   {key:"advisorSignals",label:"Advisor Signals"},
 ];
@@ -4403,7 +4404,7 @@ function App(){
       )
     ),
     tab==="openInfra"&&React.createElement("div",{style:{background:"#F8F9FB",borderBottom:"1px solid "+C.grayLight,padding:"8px 32px",display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}},
-      ...OPEN_INFRA_SUBTABS.map(function(st){var a=openInfraSubTab===st.key;return React.createElement("button",{key:st.key,onClick:function(){setOpenInfraSubTab(st.key);},style:{padding:"5px 14px",background:a?C.white:"transparent",border:a?"1px solid "+C.grayLight:"1px solid transparent",borderRadius:16,color:a?C.navy:C.textSec,fontSize:11,fontWeight:a?600:400,cursor:"pointer",display:"flex",alignItems:"center",gap:5,boxShadow:a?"0 1px 3px rgba(0,0,0,0.06)":"none",transition:"all 0.15s ease"}},st.label);})
+      ...OPEN_INFRA_SUBTABS.map(function(st){var a=openInfraSubTab===st.key;if(st.href){return React.createElement("a",{key:st.key,href:st.href,style:{padding:"5px 14px",background:"transparent",border:"1px solid "+C.teal,borderRadius:16,color:C.teal,fontSize:11,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:5,textDecoration:"none",transition:"all 0.15s ease"}},st.label);}return React.createElement("button",{key:st.key,onClick:function(){setOpenInfraSubTab(st.key);},style:{padding:"5px 14px",background:a?C.white:"transparent",border:a?"1px solid "+C.grayLight:"1px solid transparent",borderRadius:16,color:a?C.navy:C.textSec,fontSize:11,fontWeight:a?600:400,cursor:"pointer",display:"flex",alignItems:"center",gap:5,boxShadow:a?"0 1px 3px rgba(0,0,0,0.06)":"none",transition:"all 0.15s ease"}},st.label);})
     ),
     React.createElement("div",{style:{padding:"18px 32px 36px"}},
       tab==="news"?React.createElement(NewsFeed,{items:data.news}):
