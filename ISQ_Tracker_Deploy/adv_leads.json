@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-03-31T23:51:26.482806Z",
-  "total_firms_scanned": 36204,
-  "total_signals_fired": 2117,
+  "generated_at": "2026-04-01T00:00:58.973555Z",
+  "total_firms_scanned": 36185,
+  "total_signals_fired": 2129,
   "kpi": {
     "tier1_count": 0,
     "tier2_count": 1,
-    "tier3_count": 1100,
-    "new_signals_today": 1138
+    "tier3_count": 1106,
+    "new_signals_today": 1144
   },
   "leads": [
     {
@@ -127,41 +127,6 @@
       "firm": "J2 VENTURES ADVISORS, LLC",
       "city": "BOSTON",
       "state": "MA",
-      "aum": 200000000,
-      "clients": 20,
-      "avgPerClient": 10000000,
-      "tier": 3,
-      "score": 14.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-121844",
-      "firm": "SDS REAL ESTATE ADVISORS",
-      "city": "LOS ANGELES",
-      "state": "CA",
       "aum": 200000000,
       "clients": 20,
       "avgPerClient": 10000000,
@@ -1593,6 +1558,41 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "802-134210",
+      "firm": "HELIOS DIGITAL VENTURES ADVISORS LLC",
+      "city": "WASHINGTON",
+      "state": "DC",
+      "aum": 200000000,
+      "clients": 20,
+      "avgPerClient": 10000000,
+      "tier": 3,
+      "score": 14.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "CRD-311681",
       "firm": "PRIVATE EQUITY FINANCIAL ADVISORS, INC.",
       "city": "ADDISON",
@@ -1877,6 +1877,41 @@
       "firm": "BLACKSTONE REAL ESTATE ADVISORS EUROPE L.P.",
       "city": "NEW YORK",
       "state": "NY",
+      "aum": 200000000,
+      "clients": 20,
+      "avgPerClient": 10000000,
+      "tier": 3,
+      "score": 14.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "802-75376",
+      "firm": "ATLAS VENTURE",
+      "city": "BOSTON",
+      "state": "MA",
       "aum": 200000000,
       "clients": 20,
       "avgPerClient": 10000000,
@@ -2923,6 +2958,41 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "802-132619",
+      "firm": "TCP VENTURE CAPITAL",
+      "city": "OWINGS MILLS",
+      "state": "MD",
+      "aum": 200000000,
+      "clients": 20,
+      "avgPerClient": 10000000,
+      "tier": 3,
+      "score": 14.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "802-124828",
       "firm": "XYZ VENTURE CAPITAL",
       "city": "SAN FRANCISCO",
@@ -3763,9 +3833,9 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "802-130533",
-      "firm": "EVIO VENTURE CAPITAL, LLC",
-      "city": "ATHENS",
+      "id": "802-128231",
+      "firm": "ADD VENTURES CAPITAL, LLC",
+      "city": "SANTIAGO",
       "state": "",
       "aum": 200000000,
       "clients": 10,
@@ -3798,9 +3868,9 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "802-128231",
-      "firm": "ADD VENTURES CAPITAL, LLC",
-      "city": "SANTIAGO",
+      "id": "802-130533",
+      "firm": "EVIO VENTURE CAPITAL, LLC",
+      "city": "ATHENS",
       "state": "",
       "aum": 200000000,
       "clients": 10,
@@ -5443,6 +5513,41 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
+      "id": "802-130289",
+      "firm": "DF VENTURE MANAGEMENT, LLC",
+      "city": "BURLINGTON",
+      "state": "VT",
+      "aum": 200000000,
+      "clients": 20,
+      "avgPerClient": 10000000,
+      "tier": 3,
+      "score": 14.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
       "id": "CRD-331096",
       "firm": "CONVEX VENTURE MANAGEMENT",
       "city": "DORADO",
@@ -6493,9 +6598,9 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "802-118555",
-      "firm": "GRAPH VENTURES 5 MANAGEMENT",
-      "city": "LOS ALTOS",
+      "id": "802-113928",
+      "firm": "VALO VENTURES MANAGEMENT, L.P.",
+      "city": "SAN FRANCISCO",
       "state": "CA",
       "aum": 200000000,
       "clients": 20,
@@ -6528,9 +6633,9 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "CRD-330017",
-      "firm": "FOG VENTURES MANAGEMENT LLC",
-      "city": "MILL VALLEY",
+      "id": "802-118555",
+      "firm": "GRAPH VENTURES 5 MANAGEMENT",
+      "city": "LOS ALTOS",
       "state": "CA",
       "aum": 200000000,
       "clients": 20,
@@ -6567,6 +6672,41 @@
       "firm": "TIA VENTURES MANAGEMENT, LLC",
       "city": "WESTPORT",
       "state": "CT",
+      "aum": 200000000,
+      "clients": 20,
+      "avgPerClient": 10000000,
+      "tier": 3,
+      "score": 14.2,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "CRD-330017",
+      "firm": "FOG VENTURES MANAGEMENT LLC",
+      "city": "MILL VALLEY",
+      "state": "CA",
       "aum": 200000000,
       "clients": 20,
       "avgPerClient": 10000000,
@@ -6876,212 +7016,72 @@
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "802-122563",
-      "firm": "VAST VENTURES MANAGEMENT LLC",
-      "city": "FT. LAUDERDALE",
-      "state": "FL",
-      "aum": 200000000,
-      "clients": 20,
-      "avgPerClient": 10000000,
-      "tier": 3,
-      "score": 14.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "CRD-308807",
-      "firm": "ACUTA VENTURE MANAGEMENT, LLC",
-      "city": "REDWOOD CITY",
-      "state": "CA",
-      "aum": 200000000,
-      "clients": 20,
-      "avgPerClient": 10000000,
-      "tier": 3,
-      "score": 14.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "CRD-171740",
-      "firm": "VALOR VENTURE MANAGEMENT LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 200000000,
-      "clients": 20,
-      "avgPerClient": 10000000,
-      "tier": 3,
-      "score": 14.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "802-113725",
-      "firm": "CRAFT VENTURES MANAGEMENT LP",
-      "city": "SAN FRANCISCO",
-      "state": "CA",
-      "aum": 200000000,
-      "clients": 20,
-      "avgPerClient": 10000000,
-      "tier": 3,
-      "score": 14.2,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($10,000,000) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     }
   ],
   "state_counts": {
-    "CA": 5358,
-    "NY": 3595,
-    "TX": 2884,
-    "FL": 2513,
-    "MA": 1315,
-    "IL": 1248,
-    "PA": 1130,
-    "CO": 1057,
-    "CT": 952,
-    "OH": 931,
-    "NJ": 898,
-    "GA": 814,
+    "CA": 5362,
+    "NY": 3583,
+    "TX": 2879,
+    "FL": 2503,
+    "MA": 1313,
+    "IL": 1244,
+    "PA": 1129,
+    "CO": 1054,
+    "CT": 955,
+    "OH": 928,
+    "NJ": 897,
+    "GA": 813,
     "WA": 790,
-    "VA": 754,
-    "MI": 734,
-    "NC": 696,
-    "AZ": 646,
-    "MD": 561,
-    "MN": 486,
-    "TN": 441,
-    "IN": 409,
-    "MO": 399,
-    "WI": 397,
-    "UT": 388,
-    "OR": 379,
+    "VA": 759,
+    "MI": 733,
+    "NC": 691,
+    "AZ": 648,
+    "MD": 564,
+    "MN": 487,
+    "TN": 438,
+    "IN": 408,
+    "MO": 402,
+    "WI": 400,
+    "UT": 394,
+    "OR": 377,
     "SC": 314,
     "NV": 297,
     "KS": 257,
     "NH": 219,
-    "OK": 195,
-    "AL": 187,
-    "LA": 185,
-    "IA": 173,
-    "KY": 170,
-    "PR": 163,
-    "ID": 156,
-    "NE": 140,
-    "DC": 129,
-    "AR": 126,
+    "OK": 193,
+    "AL": 189,
+    "LA": 188,
+    "IA": 172,
+    "KY": 169,
+    "PR": 166,
+    "ID": 157,
+    "NE": 139,
+    "DC": 130,
+    "AR": 124,
     "DE": 111,
     "ME": 91,
-    "RI": 89,
-    "WY": 84,
+    "RI": 88,
+    "WY": 86,
     "MT": 75,
     "NM": 74,
-    "HI": 64,
     "VT": 64,
+    "HI": 64,
     "MS": 55,
     "SD": 47,
     "ND": 33,
-    "WV": 32,
+    "WV": 31,
     "AK": 25,
     "VI": 8
   },
   "signal_freq": [
     {
       "name": "new_private_funds",
-      "count": 979,
-      "newCount": 979
+      "count": 985,
+      "newCount": 985
     },
     {
       "name": "existing_private_funds_no_infra",
-      "count": 979,
+      "count": 985,
       "newCount": 0
     },
     {
@@ -7093,7 +7093,7 @@
   "platform_counts": [
     {
       "name": "No accessible platform",
-      "count": 35820,
+      "count": 35800,
       "tier": 0
     }
   ]
