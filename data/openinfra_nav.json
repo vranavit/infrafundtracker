@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:35:05.286908+00:00",
+  "last_updated": "2026-04-01T15:44:19.346853+00:00",
   "funds": {
     "isq_openinfra": {
       "fund_id": "isq_openinfra",
@@ -156,32 +156,6 @@
       "return_ytd": 0.46,
       "return_itd": 8.64
     },
-    "blue_owl_odit": {
-      "fund_id": "blue_owl_odit",
-      "fund_name": "Blue Owl Digital Infrastructure (ODIT)",
-      "manager": "Blue Owl Capital",
-      "is_primary": false,
-      "benchmark_class": "Class I",
-      "nav_per_share": 10.0,
-      "nav_date": "2025-12-31",
-      "total_aum_millions": 1700.0,
-      "gross_subscriptions_millions": null,
-      "gross_redemptions_millions": null,
-      "net_flows_millions": null,
-      "distribution_per_share": null,
-      "total_investors": null,
-      "placement_agents": [],
-      "source_type": "SEC_8K",
-      "source_url": "https://www.blueowl.com",
-      "source_label": "Blue Owl Q4 2025 Earnings",
-      "confidence": "HIGH",
-      "last_updated": "2026-04-01",
-      "fund_website": "https://wealth.blueowl.com/solutions-product-odit",
-      "sec_filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2069692",
-      "data_points_count": 1,
-      "oldest_nav_date": "2025-12-31",
-      "latest_nav_date": "2025-12-31"
-    },
     "hamilton_lane_infra": {
       "fund_id": "hamilton_lane_infra",
       "fund_name": "Hamilton Lane Private Infrastructure Fund",
@@ -236,32 +210,6 @@
       "return_1m": 4.68,
       "return_3m": 23.45,
       "return_itd": 23.45
-    },
-    "kkr_kif_lux": {
-      "fund_id": "kkr_kif_lux",
-      "fund_name": "KKR Diversified Core Infrastructure Fund (Luxembourg)",
-      "manager": "KKR",
-      "is_primary": false,
-      "benchmark_class": "Class RA USD Accumulating",
-      "nav_per_share": 34.31,
-      "nav_date": "2026-01-31",
-      "total_aum_millions": 11800.0,
-      "gross_subscriptions_millions": null,
-      "gross_redemptions_millions": null,
-      "net_flows_millions": null,
-      "distribution_per_share": null,
-      "total_investors": null,
-      "placement_agents": [],
-      "source_type": "WEBSITE",
-      "source_url": "https://kseries.kkr.com/kif/",
-      "source_label": "KSeries Website Jan 2026",
-      "confidence": "MEDIUM",
-      "last_updated": "2026-04-01",
-      "fund_website": "https://kseries.kkr.com/kif/",
-      "sec_filings_url": "",
-      "data_points_count": 1,
-      "oldest_nav_date": "2026-01-31",
-      "latest_nav_date": "2026-01-31"
     }
   }
 }

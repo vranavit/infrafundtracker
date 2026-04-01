@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:35:05.286908+00:00",
+  "last_updated": "2026-04-01T15:44:19.346853+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -731,20 +731,6 @@
         }
       ]
     },
-    "blue_owl_odit": {
-      "historical": [
-        {
-          "date": "2025-12-31",
-          "nav": 10.0,
-          "aum_m": 1700.0,
-          "subs_m": null,
-          "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "Blue Owl Q4 2025 Earnings",
-          "source_url": "https://www.blueowl.com"
-        }
-      ]
-    },
     "hamilton_lane_infra": {
       "historical": [
         {
@@ -840,20 +826,6 @@
           "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
-        }
-      ]
-    },
-    "kkr_kif_lux": {
-      "historical": [
-        {
-          "date": "2026-01-31",
-          "nav": 34.31,
-          "aum_m": 11800.0,
-          "subs_m": null,
-          "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "KSeries Website Jan 2026",
-          "source_url": "https://kseries.kkr.com/kif/"
         }
       ]
     }

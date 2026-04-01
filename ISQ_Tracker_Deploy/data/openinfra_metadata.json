@@ -1,8 +1,8 @@
 {
-  "last_run": "2026-04-01T15:35:05.286908+00:00",
-  "last_updated": "2026-04-01T15:35:05.286908+00:00",
+  "last_run": "2026-04-01T15:44:19.346853+00:00",
+  "last_updated": "2026-04-01T15:44:19.346853+00:00",
   "run_status": "success",
-  "funds_updated": 9,
+  "funds_updated": 7,
   "data_sources": [
     "SEC EDGAR 8-K filings",
     "Fund websites",

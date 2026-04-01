@@ -866,33 +866,6 @@
       ]
     },
     {
-      "id": "blue_owl_odit",
-      "name": "Blue Owl Digital Infrastructure (ODIT)",
-      "manager": "Blue Owl Capital",
-      "is_primary": false,
-      "cik": "2069692",
-      "benchmark_class": "Class I",
-      "currency": "USD",
-      "website": "https://wealth.blueowl.com/solutions-product-odit",
-      "sec_filings_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2069692",
-      "source_url": "https://www.blueowl.com",
-      "source_label": "Blue Owl Q4 2025 Earnings",
-      "has_sec_filings": true,
-      "inception_date": "2025-12-01",
-      "known_nav": 10.0,
-      "known_nav_date": "2025-12-31",
-      "known_aum_m": 1700.0,
-      "historical_nav": [
-        {
-          "date": "2025-12-31",
-          "nav": 10.0,
-          "aum_m": 1700.0,
-          "source_label": "Blue Owl Q4 2025 Earnings",
-          "source_url": "https://www.blueowl.com"
-        }
-      ]
-    },
-    {
       "id": "hamilton_lane_infra",
       "name": "Hamilton Lane Private Infrastructure Fund",
       "manager": "Hamilton Lane",
@@ -991,62 +964,6 @@
           "aum_m": 228.0,
           "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
-        }
-      ]
-    },
-    {
-      "id": "kkr_kif_lux",
-      "name": "KKR Diversified Core Infrastructure Fund (Luxembourg)",
-      "manager": "KKR",
-      "is_primary": false,
-      "cik": null,
-      "benchmark_class": "Class RA USD Accumulating",
-      "currency": "USD",
-      "website": "https://kseries.kkr.com/kif/",
-      "source_url": "https://kseries.kkr.com/kif/",
-      "source_label": "KSeries Website",
-      "has_sec_filings": false,
-      "inception_date": "2023-06-01",
-      "known_nav": 34.31,
-      "known_nav_date": "2026-01-31",
-      "known_aum_m": 11800.0,
-      "share_classes": [
-        {
-          "name": "Class RA USD Accumulating",
-          "isin": "LU2575970327",
-          "known_nav": 34.31,
-          "known_nav_date": "2026-01-31"
-        },
-        {
-          "name": "Class RD USD Distributing",
-          "isin": "LU2575972885",
-          "known_nav": 30.96,
-          "known_nav_date": "2026-01-31"
-        },
-        {
-          "name": "Class NA USD Accumulating",
-          "isin": "LU2575973263",
-          "known_nav": 33.54,
-          "known_nav_date": "2026-01-31"
-        },
-        {
-          "name": "Class R1A USD Accumulating",
-          "isin": "LU2924050060",
-          "known_nav": 27.85,
-          "known_nav_date": "2026-01-31"
-        }
-      ],
-      "historical_nav": [
-        {
-          "date": "2026-01-31",
-          "nav": 34.31,
-          "nav_class_ra": 34.31,
-          "nav_class_rd": 30.96,
-          "nav_class_na": 33.54,
-          "nav_class_r1a": 27.85,
-          "aum_m": 11800.0,
-          "source_label": "KSeries Website Jan 2026",
-          "source_url": "https://kseries.kkr.com/kif/"
         }
       ]
     }

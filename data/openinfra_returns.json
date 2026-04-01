@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:35:05.286908+00:00",
+  "last_updated": "2026-04-01T15:44:19.346853+00:00",
   "funds": {
     "isq_openinfra": {
       "data_points_count": 4,
@@ -51,11 +51,6 @@
       "return_ytd": 0.46,
       "return_itd": 8.64
     },
-    "blue_owl_odit": {
-      "data_points_count": 1,
-      "oldest_nav_date": "2025-12-31",
-      "latest_nav_date": "2025-12-31"
-    },
     "hamilton_lane_infra": {
       "data_points_count": 0,
       "oldest_nav_date": null,
@@ -68,11 +63,6 @@
       "return_1m": 4.68,
       "return_3m": 23.45,
       "return_itd": 23.45
-    },
-    "kkr_kif_lux": {
-      "data_points_count": 1,
-      "oldest_nav_date": "2026-01-31",
-      "latest_nav_date": "2026-01-31"
     }
   }
 }
