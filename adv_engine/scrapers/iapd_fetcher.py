@@ -154,19 +154,23 @@ class IAPDFetcher:
         """
         Fetch all SEC-registered advisers via sec-api.io Form ADV API.
 
-        Strategy: Query for all SEC-registered firms (FormInfo.Part1A.Item2A
-        indicates SEC registration), paginate through results.
+        Strategy: Query all adviser filings using broad Lucene queries,
+        paginate through results. The API uses field paths like
+        Info.FirmCrdNb, Info.FirmName, etc.
 
-        The API supports Lucene query syntax and returns full Form ADV data.
+        Response format: {"total": N, "filings": [...]}
         """
         logger.info("Fetching firms via sec-api.io Form ADV API...")
 
         all_firms: List[FirmRecord] = []
+        seen_crds: Set[str] = set()
         offset = 0
 
-        # Query: all SEC-registered investment advisers with active status
-        # Q2A1:Y means "Yes, registered with SEC"
-        query = 'FormInfo.Part1A.Item2A.Q2A1:"Y"'
+        # Query: all firms with a CRD number (effectively all registered firms)
+        # Using wildcard on CRD to get all filings
+        query = "Info.FirmCrdNb:*"
+
+        total_available = None
 
         while offset < self.MAX_FIRMS:
             try:
@@ -175,14 +179,36 @@ class IAPDFetcher:
                     logger.error(f"API returned None at offset {offset}")
                     break
 
-                # sec-api.io returns a list of filings directly
-                filings = data if isinstance(data, list) else data.get("data", [])
+                # sec-api.io returns {"total": N, "filings": [...]}
+                if isinstance(data, dict):
+                    filings = data.get("filings", [])
+                    if total_available is None:
+                        total_available = data.get("total", 0)
+                        logger.info(
+                            f"  sec-api.io reports {total_available} total filings"
+                        )
+                elif isinstance(data, list):
+                    filings = data
+                else:
+                    logger.error(f"Unexpected response type: {type(data)}")
+                    break
 
                 if not filings:
                     logger.info(f"No more results at offset {offset}")
                     break
 
                 for filing in filings:
+                    # Deduplicate by CRD
+                    crd = str(
+                        filing.get("Info", {}).get("FirmCrdNb", "")
+                        or filing.get("firmCrdNumber", "")
+                        or ""
+                    )
+                    if crd and crd in seen_crds:
+                        continue
+                    if crd:
+                        seen_crds.add(crd)
+
                     firm = self._parse_sec_api_filing(filing)
                     if firm:
                         all_firms.append(firm)
@@ -192,11 +218,15 @@ class IAPDFetcher:
                 if offset % 1000 == 0 or offset < 100:
                     logger.info(
                         f"  Fetched {offset} filings, "
-                        f"parsed {len(all_firms)} firms so far"
+                        f"parsed {len(all_firms)} unique firms so far"
                     )
 
                 # If we got fewer than PAGE_SIZE, we're done
                 if len(filings) < self.PAGE_SIZE:
+                    break
+
+                # Stop if we've passed total available
+                if total_available and offset >= total_available:
                     break
 
             except Exception as e:
@@ -269,7 +299,36 @@ class IAPDFetcher:
                 return None
 
             response.raise_for_status()
-            return response.json()
+            result = response.json()
+
+            # Debug: log the structure of the first response so we can
+            # verify field paths are correct
+            if self.stats["api_calls"] <= 1:
+                if isinstance(result, dict):
+                    logger.info(
+                        f"  API response keys: {list(result.keys())}"
+                    )
+                    filings = result.get("filings", result.get("data", []))
+                    if filings and isinstance(filings, list) and len(filings) > 0:
+                        first = filings[0]
+                        logger.info(
+                            f"  First filing top-level keys: "
+                            f"{list(first.keys())[:20]}"
+                        )
+                        # Log Info sub-keys if present
+                        if "Info" in first:
+                            logger.info(
+                                f"  Info sub-keys: "
+                                f"{list(first['Info'].keys())[:20]}"
+                            )
+                elif isinstance(result, list) and len(result) > 0:
+                    logger.info(f"  Response is list, len={len(result)}")
+                    logger.info(
+                        f"  First item keys: "
+                        f"{list(result[0].keys())[:20]}"
+                    )
+
+            return result
 
         except requests.RequestException as e:
             logger.error(f"sec-api.io request failed: {e}")
@@ -282,25 +341,27 @@ class IAPDFetcher:
         """
         Parse a sec-api.io Form ADV filing into a FirmRecord.
 
-        The filing contains the complete Form ADV structure:
-        - FormInfo.Part1A.Item1 — Firm identification
-        - FormInfo.Part1A.Item2A — SEC registration
-        - FormInfo.Part1A.Item5 — Client information
-        - FormInfo.Part1A.Item5F — AUM data
-        - FormInfo.Part1A.Item6 — Compensation types
-        - FormInfo.Part1A.Item7 — Types of clients
-        - FormInfo.Part1A.Item8 — Investment strategies
-        - Schedule D Section 5.F — Custodian details
+        sec-api.io may return filings in different structures depending on
+        the endpoint. We handle both:
+        - Top-level "Info" structure: Info.FirmCrdNb, Info.FirmName, etc.
+        - Nested "FormInfo" structure: FormInfo.Part1A.Item1, etc.
+
+        This parser tries the top-level Info fields first, then falls back
+        to the nested FormInfo structure.
         """
         try:
-            # Navigate to the form info
+            # ---------- Top-level "Info" fields (primary) ----------
+            info = filing.get("Info", {})
+
+            # Navigate to nested form data
             form_info = filing.get("FormInfo", {})
             part1a = form_info.get("Part1A", {})
 
             # ---------- Core identification ----------
-            item1 = part1a.get("Item1", {})
             firm_name = (
-                item1.get("Q1A", "")  # Legal name
+                info.get("FirmName", "")
+                or info.get("firmName", "")
+                or part1a.get("Item1", {}).get("Q1A", "")
                 or filing.get("firmName", "")
                 or ""
             ).strip()
@@ -311,156 +372,154 @@ class IAPDFetcher:
 
             # CRD number
             crd = str(
-                filing.get("firmCrdNumber", "")
-                or item1.get("Q1F", "")
+                info.get("FirmCrdNb", "")
+                or filing.get("firmCrdNumber", "")
+                or part1a.get("Item1", {}).get("Q1F", "")
                 or ""
             )
 
             # SEC file number
             sec_num = str(
-                filing.get("secFileNumber", "")
-                or item1.get("Q1E", "")
+                info.get("SECRgnCD", "")
+                or info.get("SecFileNb", "")
+                or filing.get("secFileNumber", "")
                 or ""
             )
             if not sec_num:
                 sec_num = f"CRD-{crd}" if crd else ""
 
             # ---------- Address ----------
-            address = item1.get("Q1I", {})  # Principal office address
-            if not address:
-                address = filing.get("firmAddress", {}) or {}
+            # Try Info-level address
+            state = (
+                info.get("MainAddr", {}).get("State", "")
+                or info.get("BusAddr", {}).get("State", "")
+                or part1a.get("Item1", {}).get("Q1I", {}).get("state", "")
+                or filing.get("firmAddress", {}).get("state", "")
+                or ""
+            )
+            city = (
+                info.get("MainAddr", {}).get("City", "")
+                or info.get("BusAddr", {}).get("City", "")
+                or part1a.get("Item1", {}).get("Q1I", {}).get("city", "")
+                or filing.get("firmAddress", {}).get("city", "")
+                or ""
+            )
+            country = "United States"
 
-            state = address.get("state", "") or ""
-            city = address.get("city", "") or ""
-            country = address.get("country", "United States") or "United States"
-
-            # Normalize state
             if state and len(state) > 2:
                 state = self._normalize_state(state)
 
-            # ---------- AUM (Item 5.F) ----------
+            # ---------- AUM ----------
+            # Try multiple paths for AUM data
             item5 = part1a.get("Item5", {})
-
-            # Q5F2A = Discretionary AUM, Q5F2C = Total AUM
-            aum_discretionary = self._parse_number(
-                item5.get("Q5F2A", 0)
-            )
             aum_total = self._parse_number(
-                item5.get("Q5F2C", 0)
+                info.get("TtlRgltryAUM", 0)
+                or info.get("TtlGrssAUM", 0)
+                or item5.get("Q5F2C", 0)
             )
-            # Use total if available, else discretionary
+            aum_discretionary = self._parse_number(
+                info.get("DscrtnryAUM", 0)
+                or item5.get("Q5F2A", 0)
+            )
             if aum_total == 0:
                 aum_total = aum_discretionary
 
-            # ---------- Client counts (Item 5.D) ----------
-            # Q5D1 = Number of clients
-            num_clients = self._parse_int(item5.get("Q5D1", 0))
-
-            # Item 5.D(2) — client type breakdown
-            # Q5D2A = Individuals (other than HNW)
-            # Q5D2B = Individuals (HNW)
-            # Q5D2C = Banking/thrift institutions
-            # Q5D2D = Investment companies
-            # Q5D2E = Business development companies
-            # Q5D2F = Pooled investment vehicles
-            # Q5D2G = Pension/profit sharing plans
-            # Q5D2H = Charitable organizations
-            # Q5D2I = State/municipal government entities
-            # Q5D2J = Other investment advisers
-            # Q5D2K = Insurance companies
-            # Q5D2L = Sovereign wealth funds
-            # Q5D2M = Corporations/other business (non-financial)
-            # Q5D2N = Other
-            hnw_clients = self._parse_int(item5.get("Q5D2B", 0))
-            institutional_clients = (
-                self._parse_int(item5.get("Q5D2G", 0))  # Pension plans
-                + self._parse_int(item5.get("Q5D2I", 0))  # Government
-                + self._parse_int(item5.get("Q5D2L", 0))  # Sovereign wealth
-                + self._parse_int(item5.get("Q5D2K", 0))  # Insurance
+            # ---------- Client counts ----------
+            num_clients = self._parse_int(
+                info.get("TtlClntCnt", 0)
+                or item5.get("Q5D1", 0)
             )
 
-            # ---------- Investment types (Item 5.B, Item 8) ----------
-            # Item 5B — Types of advisory services
+            hnw_clients = self._parse_int(
+                info.get("HghNtWrthCnt", 0)
+                or item5.get("Q5D2B", 0)
+            )
+            institutional_clients = self._parse_int(
+                info.get("InstnlCnt", 0)
+                or (
+                    self._parse_int(item5.get("Q5D2G", 0))
+                    + self._parse_int(item5.get("Q5D2I", 0))
+                    + self._parse_int(item5.get("Q5D2L", 0))
+                    + self._parse_int(item5.get("Q5D2K", 0))
+                )
+            )
+
+            # ---------- Investment types ----------
             item5b = item5.get("Q5B", {})
             if not isinstance(item5b, dict):
                 item5b = {}
-
             item8 = part1a.get("Item8", {})
 
             manages_private_funds = (
-                self._is_yes(item5b.get("Q5B2", ""))  # Pooled investment vehicles
-                or self._is_yes(item8.get("Q8B1", ""))  # Private fund manager
+                self._is_yes(info.get("PrvtFndFlg", ""))
+                or self._is_yes(item5b.get("Q5B2", ""))
+                or self._is_yes(item8.get("Q8B1", ""))
             )
-
             manages_real_estate = self._is_yes(
-                item8.get("Q8C", "")  # Real estate strategies
+                item8.get("Q8C", "")
             )
-
             manages_hedge_funds = self._is_yes(
-                item8.get("Q8D", "")  # Hedge fund strategies
+                item8.get("Q8D", "")
             )
-
             manages_public_securities = self._is_yes(
-                item8.get("Q8A", "")  # Securities/equity strategies
+                item8.get("Q8A", "")
             )
 
-            # ---------- Custodian names (Schedule D, Section 5.F) ----------
+            # ---------- Custodians ----------
             custodian_names = self._extract_custodians(filing)
 
-            # ---------- Fee structure (Item 5.E / Item 6) ----------
+            # ---------- Fee structure ----------
             item6 = part1a.get("Item6", {})
             fee_structure = self._determine_fee_structure(item5, item6)
 
-            # ---------- Minimum account size ----------
-            # Item 5.C — sometimes includes minimum
-            minimum_account = self._parse_number(
-                item5.get("Q5C", 0)
-            )
+            # ---------- Minimum account ----------
+            minimum_account = self._parse_number(item5.get("Q5C", 0))
 
             # ---------- Registration date ----------
             reg_date_str = (
-                filing.get("filedAt", "")
+                info.get("DtSECEffective", "")
+                or filing.get("filedAt", "")
                 or filing.get("registrationDate", "")
                 or ""
             )
             registration_date = None
             if reg_date_str:
-                try:
-                    # Handle various date formats
-                    for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%m/%d/%Y"]:
-                        try:
-                            registration_date = datetime.strptime(
-                                reg_date_str[:19], fmt
-                            )
-                            break
-                        except ValueError:
-                            continue
-                except Exception:
-                    pass
+                for fmt in ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%m/%d/%Y",
+                            "%Y-%m-%dT%H:%M:%S.%fZ"]:
+                    try:
+                        registration_date = datetime.strptime(
+                            reg_date_str[:26].rstrip("Z"), fmt.rstrip("Z")
+                        )
+                        break
+                    except ValueError:
+                        continue
 
             # ---------- Firm classification ----------
             is_family_office = (
                 self._detect_family_office(firm_name)
-                or self._is_yes(item1.get("Q1N", ""))  # Exempt reporting adviser
+                or self._is_yes(info.get("FmlyOffcFlg", ""))
             )
-
             is_multi_family_office = (
                 "multi-family" in firm_name.lower()
                 or "multi family" in firm_name.lower()
                 or "mfo" in firm_name.lower()
             )
 
-            # ---------- Principal names ----------
+            # ---------- Principals ----------
             principal_names = []
             principals = filing.get("principals", [])
             if isinstance(principals, list):
-                for p in principals[:5]:  # Limit to first 5
+                for p in principals[:5]:
                     name = p.get("name", "") if isinstance(p, dict) else str(p)
                     if name:
                         principal_names.append(name)
 
             # ---------- Website ----------
-            website = item1.get("Q1J", "") or ""
+            website = (
+                info.get("Website", "")
+                or part1a.get("Item1", {}).get("Q1J", "")
+                or ""
+            )
 
             # ---------- Build FirmRecord ----------
             firm = FirmRecord(
@@ -472,7 +531,7 @@ class IAPDFetcher:
                 registration_date=registration_date,
                 aum_total=aum_total,
                 aum_regulatory=aum_discretionary,
-                num_clients=max(num_clients, 1),  # Avoid division by zero
+                num_clients=max(num_clients, 1),
                 hnw_clients=hnw_clients,
                 institutional_clients=institutional_clients,
                 manages_public_securities=manages_public_securities,
@@ -489,7 +548,7 @@ class IAPDFetcher:
                 raw_data={
                     "city": city,
                     "crd": crd,
-                    "aum_estimated": False,  # Real data from sec-api.io
+                    "aum_estimated": False,
                     "data_source": "sec-api.io",
                     "filing_date": reg_date_str,
                 },
