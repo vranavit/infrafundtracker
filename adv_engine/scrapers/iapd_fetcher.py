@@ -158,10 +158,14 @@ class IAPDFetcher:
         ("2024-07-01", "2024-12-31"),
         ("2025-01-01", "2025-06-30"),
         ("2025-07-01", "2025-12-31"),
-        ("2026-01-01", "2026-03-31"),
-        ("2026-04-01", "2026-06-30"),
-        ("2026-07-01", "2026-09-30"),
-        ("2026-10-01", "2026-12-31"),
+        # 2026 split into monthly windows — Q1 alone had 10K+ filings
+        ("2026-01-01", "2026-01-31"),
+        ("2026-02-01", "2026-02-28"),
+        ("2026-03-01", "2026-03-31"),
+        ("2026-04-01", "2026-04-30"),
+        ("2026-05-01", "2026-05-31"),
+        ("2026-06-01", "2026-06-30"),
+        ("2026-07-01", "2026-12-31"),
     ]
 
     def _fetch_via_sec_api(self) -> List[FirmRecord]:
@@ -754,28 +758,63 @@ class IAPDFetcher:
             logger.debug(f"Schedule D 5.K fetch failed for CRD {crd}: {e}")
             return []
 
-    def enrich_custodians(self, firms: List[FirmRecord], max_firms: int = 250) -> None:
+    def enrich_custodians(self, firms: List[FirmRecord]) -> None:
         """
-        Batch-fetch custodian data for top firms via Schedule D 5.K.
+        Batch-fetch custodian data for high-priority firms via Schedule D 5.K.
 
-        Called AFTER initial firm fetch + scoring, so we only make
-        expensive per-firm API calls for the most promising leads.
+        Enrichment targets (in order):
+        1. Top 500 firms by AUM
+        2. All family offices (regardless of AUM)
+        3. All private fund managers (regardless of AUM)
+
+        Deduplicates so each CRD is only fetched once.
         """
-        logger.info(f"Enriching custodian data for top {max_firms} firms...")
+        # Build priority list: top 500 by AUM, then family offices, then
+        # private fund managers — deduplicated by CRD
+        seen_crds: Set[str] = set()
+        enrich_queue: List[FirmRecord] = []
+
+        # 1. Top 500 by AUM
+        by_aum = sorted(firms, key=lambda f: f.aum_total, reverse=True)
+        for f in by_aum[:500]:
+            crd = f.cik or f.raw_data.get("crd", "")
+            if crd and crd not in seen_crds and not f.custodian_names:
+                seen_crds.add(crd)
+                enrich_queue.append(f)
+
+        # 2. All family offices
+        for f in firms:
+            if not f.is_family_office:
+                continue
+            crd = f.cik or f.raw_data.get("crd", "")
+            if crd and crd not in seen_crds and not f.custodian_names:
+                seen_crds.add(crd)
+                enrich_queue.append(f)
+
+        # 3. All private fund managers
+        for f in firms:
+            if not f.manages_private_funds:
+                continue
+            crd = f.cik or f.raw_data.get("crd", "")
+            if crd and crd not in seen_crds and not f.custodian_names:
+                seen_crds.add(crd)
+                enrich_queue.append(f)
+
+        total = len(enrich_queue)
+        logger.info(
+            f"Enriching custodian data for {total} firms "
+            f"(top 500 AUM + family offices + private fund managers)..."
+        )
+
         enriched = 0
         empty_responses = 0
-        errors = 0
-        for i, firm in enumerate(firms[:max_firms]):
-            if firm.custodian_names:
-                continue  # Already has data
+        for i, firm in enumerate(enrich_queue):
             crd = firm.cik or firm.raw_data.get("crd", "")
-            if not crd:
-                continue
             custodians = self._extract_custodians_for_firm(crd)
             if custodians:
                 firm.custodian_names = custodians
                 enriched += 1
-                if enriched <= 3:
+                if enriched <= 5:
                     logger.info(
                         f"  Custodian match: {firm.firm_name} → "
                         f"{custodians[:3]}"
@@ -784,9 +823,9 @@ class IAPDFetcher:
                 empty_responses += 1
 
             # Progress logging
-            if (i + 1) % 50 == 0:
+            if (i + 1) % 100 == 0:
                 logger.info(
-                    f"  Custodian progress: {i+1}/{max_firms} checked, "
+                    f"  Custodian progress: {i+1}/{total} checked, "
                     f"{enriched} enriched, {empty_responses} empty"
                 )
 
