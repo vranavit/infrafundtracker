@@ -30,7 +30,6 @@ jobs:
       - name: Run ADV export
         working-directory: adv_engine
         env:
-          # SEC requires a User-Agent with contact info
           SEC_USER_AGENT: "ISQ-InfraFundTracker support@bloorcapital.com"
         run: |
           python export_static.py \
@@ -49,3 +48,11 @@ jobs:
           git add ISQ_Tracker_Deploy/adv_leads.json
           git commit -m "chore: refresh ADV leads data $(date -u +%Y-%m-%d)"
           git push
+
+      - name: Deploy to Netlify
+        run: |
+          npx netlify-cli deploy \
+            --prod \
+            --dir=ISQ_Tracker_Deploy \
+            --site=${{ secrets.NETLIFY_SITE_ID }} \
+            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }}
