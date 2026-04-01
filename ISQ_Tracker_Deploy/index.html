@@ -71,7 +71,7 @@ const CATEGORIES = [
   {key:"pensionCalendar",label:"Pension Board Monitor"},{key:"conferences",label:"Conference Calendar"},
 ];
 const OPEN_INFRA_SUBTABS = [
-  {key:"navTracker",label:"Fund NAV Tracker"},
+  {key:"navTracker",label:"Fund Tracker"},
   {key:"darkPipeline",label:"Distribution Tracker"},
 ];
 const FUND_SUBTABS = [
@@ -3733,7 +3733,7 @@ function NAVTracker(){
     // Header
     React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:10}},
       React.createElement("div",null,
-        React.createElement("div",{style:{fontSize:15,fontWeight:700,color:C.text}},"Open-Ended Fund NAV Tracker"),
+        React.createElement("div",{style:{fontSize:15,fontWeight:700,color:C.text}},"Open-Ended Fund Tracker"),
         React.createElement("div",{style:{fontSize:10.5,color:C.textSec}},"AUM and NAV per share from SEC filings (NPORT-P, 8-K, N-CSR) and fund websites. All data sourced and linked.")
       ),
       React.createElement("div",{style:{display:"flex",gap:6,alignItems:"center",flexWrap:"wrap"}},
