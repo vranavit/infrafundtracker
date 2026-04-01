@@ -923,24 +923,74 @@
       "name": "Partners Group Infrastructure Evergreen",
       "manager": "Partners Group",
       "is_primary": false,
-      "cik": null,
-      "benchmark_class": "Class I",
+      "cik": "1989393",
+      "benchmark_class": "Class I Units",
       "currency": "USD",
       "website": "https://www.partnersgroup.com",
-      "source_url": "https://www.partnersgroup.com/en/news-and-views/",
-      "source_label": "Partners Group FY2025 Results",
-      "has_sec_filings": false,
-      "inception_date": null,
-      "known_nav": null,
-      "known_nav_date": null,
-      "known_aum_m": 1000.0,
+      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1989393&type=&dateb=&owner=include&count=40",
+      "source_label": "SEC EDGAR (NPORT-P + N-CSR)",
+      "has_sec_filings": true,
+      "inception_date": "2024-03-01",
+      "known_nav": 1.79,
+      "known_nav_date": "2025-09-30",
+      "known_aum_m": 228.0,
+      "note": "US-registered feeder vehicle (CIK 1989393). Global fund reached USD 1B per Oct 2025 press release. SEC data covers US entity only. 1-for-4 unit split on July 2, 2024; NAV values are post-split.",
       "historical_nav": [
         {
-          "date": "2025-10-31",
+          "date": "2024-03-31",
+          "nav": 1.45,
+          "aum_m": 62.0,
+          "source_label": "N-CSRS (Semi-Annual Sep 2024) - inception period ending Mar 31, 2024",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834424022914/fp0090505-1_ncsrs.htm"
+        },
+        {
+          "date": "2024-06-30",
           "nav": null,
-          "aum_m": 1000.0,
-          "source_label": "Press Release Oct 2025",
-          "source_url": "https://www.partnersgroup.com/en/news-and-views/"
+          "aum_m": 74.0,
+          "source_label": "NPORT-P filed 2024-08-29 (Q2 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424200094/0001752724-24-200094-index.htm"
+        },
+        {
+          "date": "2024-09-30",
+          "nav": 1.53,
+          "aum_m": 82.0,
+          "source_label": "NPORT-P filed 2024-11-27 + N-CSRS (Q3 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424273551/0001752724-24-273551-index.htm"
+        },
+        {
+          "date": "2024-12-31",
+          "nav": null,
+          "aum_m": 95.0,
+          "source_label": "NPORT-P filed 2025-02-28 (Q4 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272425048490/0001752724-25-048490-index.htm"
+        },
+        {
+          "date": "2025-03-31",
+          "nav": 1.71,
+          "aum_m": 117.0,
+          "source_label": "NPORT-P filed 2025-05-29 + N-CSR Annual (FY ending Mar 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425011603/fp0093157-1_ncsr.htm"
+        },
+        {
+          "date": "2025-06-30",
+          "nav": null,
+          "aum_m": 147.0,
+          "source_label": "NPORT-P filed 2025-08-29 (Q2 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036825001816/0001410368-25-001816-index.htm"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": 1.79,
+          "aum_m": 168.0,
+          "source_label": "NPORT-P filed 2025-11-28 + N-CSRS Semi-Annual (Sep 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425022226/fp0095902-1_ncsrs.htm"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": null,
+          "aum_m": 228.0,
+          "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
         }
       ]
     },

@@ -113,8 +113,8 @@ for fund in config["funds"]:
     fid = fund["id"]
     entries = []
     for h in fund.get("historical_nav", []):
-        if h.get("nav") is None:
-            continue  # Skip entries without NAV for graph purposes
+        if h.get("nav") is None and h.get("aum_m") is None and h.get("cumulative_raised_m") is None:
+            continue  # Skip entries without NAV or AUM
         entry = {
             "date": h["date"],
             "nav": h["nav"],

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:07:54.779544+00:00",
+  "last_updated": "2026-04-01T15:35:05.286908+00:00",
   "funds": {
     "isq_openinfra": {
       "data_points_count": 4,
@@ -62,9 +62,12 @@
       "latest_nav_date": null
     },
     "partners_group_infra": {
-      "data_points_count": 0,
-      "oldest_nav_date": null,
-      "latest_nav_date": null
+      "data_points_count": 4,
+      "oldest_nav_date": "2024-03-31",
+      "latest_nav_date": "2025-09-30",
+      "return_1m": 4.68,
+      "return_3m": 23.45,
+      "return_itd": 23.45
     },
     "kkr_kif_lux": {
       "data_points_count": 1,

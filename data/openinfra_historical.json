@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01T15:07:54.779544+00:00",
+  "last_updated": "2026-04-01T15:35:05.286908+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -640,6 +640,16 @@
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
         },
         {
+          "date": "2024-03-31",
+          "nav": null,
+          "aum_m": 2041.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P Q1 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
+        },
+        {
           "date": "2024-06-30",
           "nav": 10.25,
           "aum_m": 2489.0,
@@ -648,6 +658,16 @@
           "dist_per_share": null,
           "source_label": "N-CSRS Semi-Annual Jun 2024 / NPORT-P Q2 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
+        },
+        {
+          "date": "2024-09-30",
+          "nav": null,
+          "aum_m": 2734.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P Q3 2024",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2024-12-31",
@@ -660,6 +680,16 @@
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
         },
         {
+          "date": "2025-03-31",
+          "nav": null,
+          "aum_m": 3619.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P Q1 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
+        },
+        {
           "date": "2025-06-30",
           "nav": 10.63,
           "aum_m": 4145.0,
@@ -668,6 +698,16 @@
           "dist_per_share": null,
           "source_label": "N-CSRS Semi-Annual Jun 2025 / NPORT-P Q2 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": null,
+          "aum_m": 4681.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P Q3 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
         {
           "date": "2025-12-31",
@@ -706,10 +746,102 @@
       ]
     },
     "hamilton_lane_infra": {
-      "historical": []
+      "historical": [
+        {
+          "date": "2025-12-31",
+          "nav": null,
+          "aum_m": 950.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "Hamilton Lane Q3 FY2026 Earnings",
+          "source_url": "https://www.hamiltonlane.com"
+        }
+      ]
     },
     "partners_group_infra": {
-      "historical": []
+      "historical": [
+        {
+          "date": "2024-03-31",
+          "nav": 1.45,
+          "aum_m": 62.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "N-CSRS (Semi-Annual Sep 2024) - inception period ending Mar 31, 2024",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834424022914/fp0090505-1_ncsrs.htm"
+        },
+        {
+          "date": "2024-06-30",
+          "nav": null,
+          "aum_m": 74.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2024-08-29 (Q2 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424200094/0001752724-24-200094-index.htm"
+        },
+        {
+          "date": "2024-09-30",
+          "nav": 1.53,
+          "aum_m": 82.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2024-11-27 + N-CSRS (Q3 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424273551/0001752724-24-273551-index.htm"
+        },
+        {
+          "date": "2024-12-31",
+          "nav": null,
+          "aum_m": 95.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-02-28 (Q4 2024)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272425048490/0001752724-25-048490-index.htm"
+        },
+        {
+          "date": "2025-03-31",
+          "nav": 1.71,
+          "aum_m": 117.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-05-29 + N-CSR Annual (FY ending Mar 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425011603/fp0093157-1_ncsr.htm"
+        },
+        {
+          "date": "2025-06-30",
+          "nav": null,
+          "aum_m": 147.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-08-29 (Q2 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036825001816/0001410368-25-001816-index.htm"
+        },
+        {
+          "date": "2025-09-30",
+          "nav": 1.79,
+          "aum_m": 168.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2025-11-28 + N-CSRS Semi-Annual (Sep 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425022226/fp0095902-1_ncsrs.htm"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": null,
+          "aum_m": 228.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
+        }
+      ]
     },
     "kkr_kif_lux": {
       "historical": [
