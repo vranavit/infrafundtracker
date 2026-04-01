@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-01T01:43:42.995136Z",
+  "generated_at": "2026-04-01T02:10:33.084384Z",
   "total_firms_scanned": 15071,
-  "total_signals_fired": 22084,
+  "total_signals_fired": 22053,
   "kpi": {
     "tier1_count": 92,
-    "tier2_count": 2246,
-    "tier3_count": 4219,
+    "tier2_count": 2236,
+    "tier3_count": 4228,
     "new_signals_today": 13694
   },
   "leads": [
@@ -8229,92 +8229,6 @@
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     },
     {
-      "id": "801-37170",
-      "firm": "CREDIT SUISSE ASSET MANAGEMENT, LLC",
-      "city": "NEW YORK",
-      "state": "NY",
-      "aum": 59885356451,
-      "clients": 1073,
-      "avgPerClient": 55811143,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($55,811,143) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (58)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
-      "id": "801-45304",
-      "firm": "GSAM STABLE  VALUE, LLC",
-      "city": "BURLINGTON",
-      "state": "VT",
-      "aum": 55399904824,
-      "clients": 59,
-      "avgPerClient": 938981438,
-      "tier": 2,
-      "score": 21.0,
-      "qpScore": 10,
-      "qpExpl": "Firm avg AUM per client ($938,981,438) exceeds $5,000,000 threshold",
-      "platformAccess": "None detected",
-      "platformTier": null,
-      "isqAccessible": false,
-      "signals": [
-        {
-          "name": "new_private_funds",
-          "weight": 10,
-          "evidence": "Firm began managing private funds",
-          "isNew": true,
-          "category": "investment_expansion",
-          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
-        },
-        {
-          "name": "existing_private_funds_no_infra",
-          "weight": 6,
-          "evidence": "Manages private funds without Tier 1/2 custody",
-          "isNew": false,
-          "category": "investment_expansion",
-          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
-        },
-        {
-          "name": "institutional_clients_added",
-          "weight": 6,
-          "evidence": "Firm began serving institutional clients (52)",
-          "isNew": true,
-          "category": "client_composition",
-          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
-        }
-      ],
-      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
-    },
-    {
       "id": "801-25958",
       "firm": "SASCO CAPITAL INC",
       "city": "FAIRFIELD",
@@ -9568,6 +9482,92 @@
         }
       ],
       "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-12411",
+      "firm": "FIRST MANHATTAN CO. LLC",
+      "city": "NEW YORK",
+      "state": "NY",
+      "aum": 34439571092,
+      "clients": 5722,
+      "avgPerClient": 6018800,
+      "tier": 2,
+      "score": 21.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($6,018,800) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (223)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
+    },
+    {
+      "id": "801-129025",
+      "firm": "WESTBECK CAPITAL MANAGEMENT LLP",
+      "city": "LONDON, ENGLAND",
+      "state": "",
+      "aum": 286698933,
+      "clients": 4,
+      "avgPerClient": 71674733,
+      "tier": 2,
+      "score": 21.0,
+      "qpScore": 10,
+      "qpExpl": "Firm avg AUM per client ($71,674,733) exceeds $5,000,000 threshold",
+      "platformAccess": "None detected",
+      "platformTier": null,
+      "isqAccessible": false,
+      "signals": [
+        {
+          "name": "new_private_funds",
+          "weight": 10,
+          "evidence": "Firm began managing private funds",
+          "isNew": true,
+          "category": "investment_expansion",
+          "talkingPoint": "Your recent expansion into private funds aligns perfectly with ISQ OpenInfra"
+        },
+        {
+          "name": "existing_private_funds_no_infra",
+          "weight": 6,
+          "evidence": "Manages private funds without Tier 1/2 custody",
+          "isNew": false,
+          "category": "investment_expansion",
+          "talkingPoint": "Your private fund offering is missing infrastructure - a key allocation area"
+        },
+        {
+          "name": "institutional_clients_added",
+          "weight": 6,
+          "evidence": "Firm began serving institutional clients (1)",
+          "isNew": true,
+          "category": "client_composition",
+          "talkingPoint": "Your expansion into institutional clients opens doors to larger ISQ allocations"
+        }
+      ],
+      "action": "Lead with new private funds signal. No ISQ-accessible platform \u2014 needs onboarding first."
     }
   ],
   "state_counts": {
@@ -9576,7 +9576,7 @@
     "FL": 856,
     "TX": 854,
     "IL": 515,
-    "MA": 464,
+    "MA": 465,
     "CT": 427,
     "PA": 403,
     "CO": 286,
@@ -9638,7 +9638,7 @@
     },
     {
       "name": "existing_private_funds_no_infra",
-      "count": 6360,
+      "count": 6329,
       "newCount": 0
     },
     {
@@ -9664,8 +9664,48 @@
   ],
   "platform_counts": [
     {
+      "name": "Fidelity",
+      "count": 27,
+      "tier": 1
+    },
+    {
+      "name": "Schwab",
+      "count": 17,
+      "tier": 1
+    },
+    {
+      "name": "Morgan Stanley",
+      "count": 10,
+      "tier": 2
+    },
+    {
+      "name": "Pershing (BNY)",
+      "count": 6,
+      "tier": 1
+    },
+    {
+      "name": "UBS",
+      "count": 5,
+      "tier": 2
+    },
+    {
+      "name": "Merrill Lynch",
+      "count": 4,
+      "tier": 2
+    },
+    {
+      "name": "LPL Financial",
+      "count": 2,
+      "tier": 1
+    },
+    {
+      "name": "Raymond James",
+      "count": 2,
+      "tier": 2
+    },
+    {
       "name": "No accessible platform",
-      "count": 13138,
+      "count": 13093,
       "tier": 0
     }
   ]
