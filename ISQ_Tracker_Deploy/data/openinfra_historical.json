@@ -52,8 +52,7 @@
           "source_label": "SEC 8-K filed 2026-03-10",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
         }
-      ],
-      "fund_name": "ISQ OpenInfra Company"
+      ]
     },
     "ares_aci": {
       "historical": [
@@ -146,9 +145,38 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K Nov 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2025-12-31",
+          "nav": 25.0447,
+          "aum_m": 2094.6,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K Dec 2025",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2026-01-31",
+          "nav": 25.0263,
+          "aum_m": 2383.7,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K Jan 2026",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 24.9252,
+          "aum_m": 2782.2,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K Feb 2026",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         }
-      ],
-      "fund_name": "Ares Core Infrastructure Fund"
+      ]
     },
     "kkr_infra_conglomerate": {
       "historical": [
@@ -191,9 +219,18 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K Sep 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 30.28,
+          "aum_m": 7028.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K EX-99.1 Feb 2026",
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
         }
-      ],
-      "fund_name": "KKR Infrastructure Conglomerate"
+      ]
     },
     "stonepeak_plus": {
       "historical": [
@@ -297,8 +334,7 @@
           "source_label": "SEC 8-K filed 2026-03-31",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/sp-20260325.htm"
         }
-      ],
-      "fund_name": "Stonepeak-Plus Infrastructure Fund"
+      ]
     },
     "brookfield_infra_income": {
       "historical": [
@@ -312,8 +348,7 @@
           "source_label": "BAM Q4 2025 Earnings",
           "source_url": "https://bam.brookfield.com/press-releases"
         }
-      ],
-      "fund_name": "Brookfield Infrastructure Income Fund"
+      ]
     },
     "blue_owl_odit": {
       "historical": [
@@ -327,8 +362,7 @@
           "source_label": "Blue Owl Q4 2025 Earnings",
           "source_url": "https://www.blueowl.com"
         }
-      ],
-      "fund_name": "Blue Owl Digital Infrastructure (ODIT)"
+      ]
     },
     "hamilton_lane_infra": {
       "historical": [
@@ -342,8 +376,7 @@
           "source_label": "Hamilton Lane Q3 FY2026 Earnings",
           "source_url": "https://www.hamiltonlane.com"
         }
-      ],
-      "fund_name": "Hamilton Lane Private Infrastructure Fund"
+      ]
     },
     "partners_group_infra": {
       "historical": [
@@ -357,8 +390,7 @@
           "source_label": "Press Release Oct 2025",
           "source_url": "https://www.partnersgroup.com/en/news-and-views/"
         }
-      ],
-      "fund_name": "Partners Group Infrastructure Evergreen"
+      ]
     },
     "kkr_kif_lux": {
       "historical": [
@@ -372,8 +404,7 @@
           "source_label": "KSeries Website Jan 2026",
           "source_url": "https://kseries.kkr.com/kif/"
         }
-      ],
-      "fund_name": "KKR Diversified Core Infrastructure Fund (Luxembourg)"
+      ]
     }
   }
 }

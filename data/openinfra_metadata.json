@@ -1,9 +1,12 @@
 {
-  "last_updated": "2026-04-01T05:02:31.381950Z",
-  "next_update": "tomorrow 06:30 UTC",
-  "funds_monitored": 9,
-  "funds_with_sec_filings": 4,
-  "run_status": "COMPLETE",
-  "errors": [],
-  "validation_warnings": []
+  "last_run": "2026-04-01T06:06:50.129574+00:00",
+  "run_status": "success",
+  "funds_updated": 9,
+  "data_sources": [
+    "SEC EDGAR 8-K filings",
+    "Fund websites",
+    "Earnings calls"
+  ],
+  "next_scheduled_run": null,
+  "version": "1.1.0"
 }

@@ -1,5 +1,10 @@
 {
-  "generated_at": "2026-04-01T03:56:31.639215Z",
-  "period_days": 7,
-  "changes": []
+  "last_updated": "2026-04-01T06:06:50.129574+00:00",
+  "changes": [
+    {
+      "date": "2026-04-01",
+      "type": "data_update",
+      "description": "Updated Ares ACI with Dec 2025, Jan 2026, Feb 2026 data (AUM now $2,782.2M). Updated KKR Infra with Feb 2026 data (AUM now $7,028.8M). Added CIK for Brookfield and Blue Owl ODIT."
+    }
+  ]
 }
