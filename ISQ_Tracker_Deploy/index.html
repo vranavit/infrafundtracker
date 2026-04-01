@@ -3725,15 +3725,16 @@ function NAVTracker(){
     var moReturn=(prevWithNav&&lastWithNav)?((lastWithNav.nav/prevWithNav.nav-1)*100):null;
     var totalReturn=(first&&lastWithNav)?((lastWithNav.nav/first.nav-1)*100):null;
     var annReturn=(first&&lastWithNav)?(function(){var fp=first.d.split("-"),lp=lastWithNav.d.split("-");var months=(parseInt(lp[0])-parseInt(fp[0]))*12+(parseInt(lp[1])-parseInt(fp[1]));var yrs=months/12;return yrs>0.25?(Math.pow(lastWithNav.nav/first.nav,1/yrs)-1)*100:null;})():null;
-    var navsWithAum=fund.navs.filter(function(n){return n.aum!==null;});
-    var lastAum=navsWithAum.length>0?navsWithAum[navsWithAum.length-1].aum:null;
+    var lastAum=null;var aumDate=null;
+    if(lastWithNav&&lastWithNav.aum!=null){lastAum=lastWithNav.aum;aumDate=lastWithNav.d;}
+    else{var navsWithAum=fund.navs.filter(function(n){return n.aum!=null;});if(navsWithAum.length>0){var la=navsWithAum[navsWithAum.length-1];lastAum=la.aum;aumDate=la.d;}}
     var lastNavDate=lastWithNav?lastWithNav.d:null;
     var prevNavDate=prevWithNav?prevWithNav.d:null;
     var firstNavDate=first?first.d:null;
     var spanMonths=(first&&lastWithNav)?(function(){var fp=first.d.split("-"),lp=lastWithNav.d.split("-");return (parseInt(lp[0])-parseInt(fp[0]))*12+(parseInt(lp[1])-parseInt(fp[1]));})():null;
     var lastPeriodMonths=(prevWithNav&&lastWithNav)?(function(){var pp=prevWithNav.d.split("-"),lp=lastWithNav.d.split("-");return (parseInt(lp[0])-parseInt(pp[0]))*12+(parseInt(lp[1])-parseInt(pp[1]));})():null;
     var moReturnProrated=(moReturn!==null&&lastPeriodMonths&&lastPeriodMonths>0)?(moReturn/lastPeriodMonths):null;
-    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,lastNavDate:lastNavDate,prevNavDate:prevNavDate,firstNavDate:firstNavDate,spanMonths:spanMonths,lastPeriodMonths:lastPeriodMonths,moReturn:moReturn,moReturnProrated:moReturnProrated,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,moFlow:null};
+    return {fund:fund,lastNav:lastWithNav?lastWithNav.nav:null,lastDate:last.d,lastNavDate:lastNavDate,prevNavDate:prevNavDate,firstNavDate:firstNavDate,spanMonths:spanMonths,lastPeriodMonths:lastPeriodMonths,moReturn:moReturn,moReturnProrated:moReturnProrated,totalReturn:totalReturn,annReturn:annReturn!==undefined?annReturn:null,aum:lastAum,aumDate:aumDate,moFlow:null};
   }).sort(function(a,b){return (b.annReturn||0)-(a.annReturn||0);});
   return React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:16}},
     // Header
@@ -3837,7 +3838,8 @@ function NAVTracker(){
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"center",fontSize:9.5,color:C.textSec}},
                 row.lastNavDate?(function(){var p=row.lastNavDate.split("-");var moNames=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return p.length>=2?moNames[parseInt(p[1])]+" "+p[0]:row.lastNavDate;})():"—"
               ),
-              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.text}},row.aum!=null?"$"+row.aum.toLocaleString():"—"),
+              React.createElement("td",{style:{padding:"8px 12px",textAlign:"right",color:C.text}},row.aum!=null?React.createElement("div",null,"$"+row.aum.toLocaleString(),(row.aumDate&&row.lastNavDate&&row.aumDate!==row.lastNavDate)?React.createElement("div",{style:{fontSize:8,color:C.textMuted,marginTop:1}},(function(){var p=row.aumDate.split("-");var mo=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return "as of "+mo[parseInt(p[1])]+" "+p[0];})())
+:null):"—"),
               React.createElement("td",{style:{padding:"8px 12px",textAlign:"right"}},
                 row.moReturn!=null?React.createElement("div",null,
                   React.createElement("span",{style:{fontWeight:500,color:row.moReturn>=0?C.green:C.red}},(row.moReturn>=0?"+":"")+row.moReturn.toFixed(2)+"%"),
