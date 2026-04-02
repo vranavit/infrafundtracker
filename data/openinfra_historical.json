@@ -14,6 +14,16 @@
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390025096163/ea0260261-8k_isqopen.htm"
         },
         {
+          "date": "2025-11-03",
+          "nav": null,
+          "aum_m": null,
+          "subs_m": 27.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2025-12-05 (subs only)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390025118675/ea0268432-8k_isqopen.htm"
+        },
+        {
           "date": "2025-12-01",
           "nav": 28.83,
           "aum_m": 122.8,
@@ -211,6 +221,16 @@
     },
     "kkr_infra_conglomerate": {
       "historical": [
+        {
+          "date": "2023-07-31",
+          "nav": 26.18,
+          "aum_m": 474.2,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-07) \u2014 Class I first sold, 1,033 shares",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000119312523219231/d509863dex991.htm"
+        },
         {
           "date": "2023-08-31",
           "nav": 26.2,

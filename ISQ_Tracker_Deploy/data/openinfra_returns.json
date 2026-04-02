@@ -1,71 +1,89 @@
 {
-  "last_updated": "2026-04-01T16:05:08.644718+00:00",
+  "last_updated": "2026-04-02T07:48:00.203539Z",
   "funds": {
     "isq_openinfra": {
+      "return_1m": 0.043163,
+      "return_3m": 0.2664,
+      "return_6m": null,
+      "return_1y": null,
+      "return_ytd": 0.0,
+      "return_itd": 0.2664,
+      "annualised_itd": 1.031013,
       "data_points_count": 4,
       "oldest_nav_date": "2025-10-01",
-      "latest_nav_date": "2026-01-31",
-      "return_1m": 4.32,
-      "return_3m": 26.64,
-      "return_ytd": 4.32,
-      "return_itd": 26.64
+      "latest_nav_date": "2026-01-31"
     },
     "ares_aci": {
+      "return_1m": -0.004771,
+      "return_3m": -0.004601,
+      "return_6m": 0.003769,
+      "return_1y": -0.000593,
+      "return_ytd": -0.00404,
+      "return_itd": -0.019083,
+      "annualised_itd": -0.014347,
       "data_points_count": 16,
       "oldest_nav_date": "2024-11-30",
-      "latest_nav_date": "2026-02-28",
-      "return_1m": -0.4,
-      "return_3m": -0.46,
-      "return_6m": 0.38,
-      "return_1y": -0.06,
-      "return_ytd": -0.48,
-      "return_itd": -1.91
+      "latest_nav_date": "2026-02-28"
     },
     "kkr_infra_conglomerate": {
-      "data_points_count": 31,
-      "oldest_nav_date": "2023-08-31",
-      "latest_nav_date": "2026-02-28",
-      "return_1m": 0.6,
-      "return_3m": 0.97,
-      "return_6m": 2.47,
-      "return_1y": 5.4,
-      "return_ytd": 1.07,
-      "return_itd": 15.57
+      "return_1m": 0.010681,
+      "return_3m": 0.00967,
+      "return_6m": 0.024704,
+      "return_1y": 0.053951,
+      "return_ytd": 0.00598,
+      "return_itd": 0.156608,
+      "annualised_itd": 0.056075,
+      "data_points_count": 32,
+      "oldest_nav_date": "2023-07-31",
+      "latest_nav_date": "2026-02-28"
     },
     "stonepeak_plus": {
+      "return_1m": 0.020238,
+      "return_3m": 0.049917,
+      "return_6m": 0.093287,
+      "return_1y": null,
+      "return_ytd": 0.005063,
+      "return_itd": 0.232441,
+      "annualised_itd": 0.285048,
       "data_points_count": 10,
       "oldest_nav_date": "2025-05-31",
-      "latest_nav_date": "2026-02-28",
-      "return_1m": 0.51,
-      "return_3m": 4.99,
-      "return_6m": 9.33,
-      "return_ytd": 2.02,
-      "return_itd": 23.24
+      "latest_nav_date": "2026-02-28"
     },
     "brookfield_infra_income": {
+      "return_1m": 0.004591,
+      "return_3m": 0.029163,
+      "return_6m": 0.029163,
+      "return_1y": 0.047893,
+      "return_ytd": 0.0,
+      "return_itd": 0.086395,
+      "annualised_itd": 0.180254,
       "data_points_count": 6,
       "oldest_nav_date": "2023-12-31",
-      "latest_nav_date": "2026-01-31",
-      "return_1m": 0.46,
-      "return_3m": 4.79,
-      "return_ytd": 0.46,
-      "return_itd": 8.64
+      "latest_nav_date": "2026-01-31"
     },
     "hamilton_lane_infra": {
+      "return_1m": 0.076308,
+      "return_3m": 0.076308,
+      "return_6m": 0.076308,
+      "return_1y": 0.168903,
+      "return_ytd": 0.076308,
+      "return_itd": 0.168903,
+      "annualised_itd": 0.866869,
       "data_points_count": 3,
       "oldest_nav_date": "2024-09-30",
-      "latest_nav_date": "2025-09-30",
-      "return_1m": 7.63,
-      "return_3m": 16.89,
-      "return_itd": 16.89
+      "latest_nav_date": "2025-09-30"
     },
     "partners_group_infra": {
+      "return_1m": 0.046784,
+      "return_3m": 0.046784,
+      "return_6m": 0.046784,
+      "return_1y": 0.169935,
+      "return_ytd": 0.046784,
+      "return_itd": 0.234483,
+      "annualised_itd": 0.881288,
       "data_points_count": 4,
       "oldest_nav_date": "2024-03-31",
-      "latest_nav_date": "2025-09-30",
-      "return_1m": 4.68,
-      "return_3m": 23.45,
-      "return_itd": 23.45
+      "latest_nav_date": "2025-09-30"
     }
   }
 }

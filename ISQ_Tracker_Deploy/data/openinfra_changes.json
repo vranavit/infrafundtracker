@@ -1,10 +1,34 @@
 {
-  "last_updated": "2026-04-01T16:05:08.644718+00:00",
+  "generated_at": "2026-04-02T07:48:00.203539Z",
+  "period_days": 7,
   "changes": [
     {
-      "date": "2026-04-01",
-      "type": "major_update",
-      "description": "Full SEC historical backfill: Ares ACI now has 15 monthly data points (Nov 2024 - Feb 2026), KKR Infra Conglomerate has 31 monthly data points (Aug 2023 - Feb 2026). Added 6m, 1y, YTD returns calculations."
+      "fund_id": "hamilton_lane_infra",
+      "fund_name": "Hamilton Lane Private Infrastructure Fund",
+      "change_type": "AUM_UPDATE",
+      "old_value": 118.3,
+      "new_value": 142.8,
+      "change_pct": 20.71,
+      "date": "2026-04-02",
+      "source_url": null,
+      "source_label": null,
+      "significance": "HIGH",
+      "description": "Hamilton Lane Private Infrastructure Fund AUM grew 20.7% to $143M",
+      "detected_at": "2026-04-02"
+    },
+    {
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "change_type": "AUM_UPDATE",
+      "old_value": 168.0,
+      "new_value": 228.0,
+      "change_pct": 35.71,
+      "date": "2026-04-02",
+      "source_url": null,
+      "source_label": null,
+      "significance": "HIGH",
+      "description": "Partners Group Infrastructure Evergreen AUM grew 35.7% to $228M",
+      "detected_at": "2026-04-02"
     }
   ]
 }

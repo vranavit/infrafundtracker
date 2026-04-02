@@ -1,13 +1,17 @@
 {
-  "last_run": "2026-04-01T16:05:08.644718+00:00",
-  "last_updated": "2026-04-01T16:05:08.644718+00:00",
-  "run_status": "success",
-  "funds_updated": 7,
-  "data_sources": [
-    "SEC EDGAR 8-K filings",
-    "Fund websites",
-    "Earnings calls"
-  ],
-  "next_scheduled_run": null,
-  "version": "2.0.0"
+  "last_updated": "2026-04-02T07:48:00.203539Z",
+  "next_update": "tomorrow 06:30 UTC",
+  "funds_monitored": 7,
+  "funds_with_sec_filings": 7,
+  "run_status": "COMPLETE",
+  "errors": [],
+  "validation_warnings": [
+    "isq_openinfra: No source URL",
+    "ares_aci: No source URL",
+    "kkr_infra_conglomerate: No source URL",
+    "stonepeak_plus: No source URL",
+    "brookfield_infra_income: No source URL",
+    "hamilton_lane_infra: No source URL",
+    "partners_group_infra: No source URL"
+  ]
 }
