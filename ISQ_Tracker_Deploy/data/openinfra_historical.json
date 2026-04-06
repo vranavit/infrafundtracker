@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-01T16:05:08.644718+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -52,16 +52,6 @@
           "dist_per_share": 0.11,
           "source_label": "SEC 8-K filed 2026-03-10",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
-        },
-        {
-          "date": "2026-02-28",
-          "nav": 32.4,
-          "aum_m": 207.0,
-          "subs_m": null,
-          "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "SEC 8-K EX-99.1 filed 2026-04-02",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
         }
       ]
     },
@@ -742,13 +732,12 @@
         {
           "date": "2025-12-31",
           "nav": 10.89,
-          "aum_m": 5015.9,
+          "aum_m": 4787.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "N-CSR Annual Report Dec 2025 (NAV: $10.89) + NPORT-P filed 2026-02-27 (AUM: $5,015.9M)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm",
-          "nport_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126005312/primary_doc.xml"
+          "source_label": "N-CSR Annual Report Dec 2025",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm"
         },
         {
           "date": "2026-01-31",
