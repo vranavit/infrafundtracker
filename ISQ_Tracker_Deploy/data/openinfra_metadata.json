@@ -1,17 +1,24 @@
 {
-  "last_updated": "2026-04-05T07:38:25.904629Z",
-  "next_update": "tomorrow 06:30 UTC",
-  "funds_monitored": 7,
-  "funds_with_sec_filings": 7,
-  "run_status": "COMPLETE",
-  "errors": [],
-  "validation_warnings": [
-    "isq_openinfra: No source URL",
-    "ares_aci: No source URL",
-    "kkr_infra_conglomerate: No source URL",
-    "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+  "last_run": "2026-04-05T06:00:00.000000+00:00",
+  "last_updated": "2026-04-05T06:00:00.000000+00:00",
+  "run_status": "success",
+  "funds_updated": 7,
+  "data_sources": [
+    "SEC EDGAR 8-K filings (EX-99.1 exhibits)",
+    "SEC EDGAR NPORT-P quarterly filings",
+    "SEC EDGAR N-CSR/N-CSRS annual/semi-annual reports",
+    "Fund websites"
+  ],
+  "next_scheduled_run": "2026-04-06T06:00:00-04:00",
+  "version": "2.1.0",
+  "sec_api_key": "configured",
+  "cik_registry": {
+    "isq_openinfra": "2059924",
+    "kkr_infra": "1948056",
+    "ares_aci": "2031750",
+    "stonepeak_plus": "2045458",
+    "brookfield_bii": "1955857",
+    "hamilton_lane": "2020510",
+    "partners_group": "1989393"
+  }
 }

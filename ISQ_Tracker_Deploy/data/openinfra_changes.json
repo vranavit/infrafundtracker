@@ -1,5 +1,40 @@
 {
-  "generated_at": "2026-04-05T07:38:25.904629Z",
-  "period_days": 7,
-  "changes": []
+  "last_updated": "2026-04-05T06:00:00.000000+00:00",
+  "changes": [
+    {
+      "date": "2026-04-05",
+      "type": "data_update",
+      "description": "ISQ OpenInfra Feb 2026 NAV $32.40/share, AUM $207M (SEC 8-K EX-99.1 filed 2026-04-02, CIK 2059924). Brookfield Dec 2025 AUM updated to $5,016M per NPORT-P (CIK 1955857). All 7 funds verified against latest SEC filings."
+    },
+    {
+      "date": "2026-04-01",
+      "type": "event",
+      "description": "KKR Infrastructure Conglomerate declared Q1 2026 distribution: $0.33/share (Class I), payable Apr 27, 2026. (SEC 8-K Item 8.01 filed 2026-04-01, CIK 1948056)"
+    },
+    {
+      "date": "2026-03-31",
+      "type": "event",
+      "description": "Ares ACI increased revolving credit facility from $50M to $200M via ACI Portfolio Aggregator SPV LLC. (SEC 8-K Item 2.03 filed 2026-03-31, CIK 2031750)"
+    },
+    {
+      "date": "2026-03-25",
+      "type": "event",
+      "description": "Stonepeak-Plus sold units for $69.9M in March 2026 closing. SP+ INFRA cumulative capital raised: $1,192M since May 2025 inception. (SEC 8-K Item 3.02 filed 2026-03-31, CIK 2045458)"
+    },
+    {
+      "date": "2026-03-23",
+      "type": "event",
+      "description": "Ares ACI sold $354.1M common shares in March 2026 monthly closing (12.4M Class I + 1.8M Class S shares at Feb 28 NAV $24.9252). (SEC 8-K Item 3.02 filed 2026-03-23, CIK 2031750)"
+    },
+    {
+      "date": "2026-03-06",
+      "type": "filing",
+      "description": "Brookfield BII filed N-CSR annual report for FY2025 (Dec 31, 2025). Audited Class I NAV $10.89/share confirmed. Total net assets $5,016M per NPORT-P. (CIK 1955857)"
+    },
+    {
+      "date": "2026-04-01",
+      "type": "major_update",
+      "description": "Full SEC historical backfill: Ares ACI now has 15 monthly data points (Nov 2024 - Feb 2026), KKR Infra Conglomerate has 31 monthly data points (Aug 2023 - Feb 2026). Added 6m, 1y, YTD returns calculations."
+    }
+  ]
 }
