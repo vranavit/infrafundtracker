@@ -1,5 +1,34 @@
 {
   "generated_at": "2026-04-08T07:59:18.046247Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-04-08",
+      "fund_id": "isq_openinfra",
+      "type": "nav_update",
+      "description": "ISQ OpenInfra Feb 2026 NAV $32.40/share (Class F-I), AUM $207.0M. Series II Transactional NAV $207,006K / 6,389,136 shares. Source: SEC 8-K EX-99.1 filed 2026-04-02 (CIK 2059924, Acc# 0001213900-26-039308).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
+    },
+    {
+      "date": "2026-04-08",
+      "fund_id": "isq_openinfra",
+      "type": "distribution",
+      "description": "ISQ OpenInfra declared special cash distribution on Mar 31, 2026: $0.3399/share for Series II F-I, F-S, F-J, E share classes. Source: SEC 8-K filed 2026-04-02.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea0284780-8k_isq.htm"
+    },
+    {
+      "date": "2026-04-08",
+      "fund_id": "kkr_infra_conglomerate",
+      "type": "distribution",
+      "description": "KKR Infrastructure declared distributions payable Mar 31, 2026: Class I $0.3300/share. Source: SEC 8-K filed 2026-04-01.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000025/kkr-20260331.htm"
+    },
+    {
+      "date": "2026-04-08",
+      "fund_id": "ares_aci",
+      "type": "share_sales",
+      "description": "Ares ACI April 2026 closing: $305.2M aggregate share sales. As of Mar 31, 2026: 119.1M Class I + 6.5M Class S + 16.7K Class D shares outstanding. March NAV expected ~20 business days after Apr 1. Source: SEC 8-K filed 2026-04-07.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000022/aci-20260407.htm"
+    }
+  ]
 }

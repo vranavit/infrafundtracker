@@ -1,17 +1,18 @@
 {
-  "last_updated": "2026-04-08T07:59:18.046247Z",
+  "last_updated": "2026-04-08T12:00:00Z",
+  "last_run": "2026-04-08T12:00:00Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
   "validation_warnings": [
-    "isq_openinfra: No source URL",
-    "ares_aci: No source URL",
-    "kkr_infra_conglomerate: No source URL",
-    "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+    "ares_aci: No source URL in nav.json",
+    "kkr_infra_conglomerate: No source URL in nav.json",
+    "stonepeak_plus: No source URL in nav.json",
+    "brookfield_infra_income: No source URL in nav.json",
+    "hamilton_lane_infra: No source URL in nav.json",
+    "partners_group_infra: No source URL in nav.json"
+  ],
+  "notes": "ISQ OpenInfra Feb 2026 NAV updated from SEC 8-K EX-99.1 (filed 2026-04-02). No new monthly NAV filings found for other 8-K filers (KKR, Ares, Stonepeak) — March 2026 NAV not yet filed. Quarterly filers (Brookfield, Hamilton Lane, Partners Group) — no new NPORT-P or N-CSR since last update."
 }
