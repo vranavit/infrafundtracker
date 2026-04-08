@@ -1,30 +1,5 @@
 {
-  "generated_at": "2026-04-07T16:00:00Z",
+  "generated_at": "2026-04-08T07:59:18.046247Z",
   "period_days": 7,
-  "changes": [
-    {
-      "fund_id": "isq_openinfra",
-      "change_type": "NAV_UPDATE",
-      "date": "2026-04-07",
-      "description": "ISQ OpenInfra Feb 2026 NAV: $32.40/share (Series II blended), AUM $207.0M. Subs $28.3M. Distribution $0.3399/share declared Mar 31.",
-      "source": "SEC 8-K EX-99.1 filed 2026-04-02 (CIK 2059924, accession 0001213900-26-039308)",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
-    },
-    {
-      "fund_id": "kkr_infra_conglomerate",
-      "change_type": "DISTRIBUTION",
-      "date": "2026-04-07",
-      "description": "KKR Infrastructure Conglomerate declared distributions: Class I $0.33/share, payable Mar 31, 2026. Payment on or about Apr 27, 2026.",
-      "source": "SEC 8-K filed 2026-04-01 (CIK 1948056, accession 0001948056-26-000025)",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000025/kkr-20260331.htm"
-    },
-    {
-      "fund_id": "ares_aci",
-      "change_type": "DISTRIBUTION",
-      "date": "2026-04-07",
-      "description": "Ares Core Infrastructure Fund declared Mar 2026 distributions: Class I gross $0.20830/share (net $0.20830), payable Mar 31 to holders of record Mar 31.",
-      "source": "SEC 8-K filed 2026-03-23 (CIK 2031750, accession 0002031750-26-000017)",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000017/aci-20260323.htm"
-    }
-  ]
+  "changes": []
 }
