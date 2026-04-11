@@ -1,5 +1,51 @@
 {
-  "generated_at": "2026-04-11T07:33:17.368576Z",
+  "generated_at": "2026-04-11T10:20:36.428Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "timestamp": "2026-04-11T10:20:36.428Z",
+      "fund": "isq_openinfra",
+      "type": "NAV_UPDATE",
+      "description": "Added February 28, 2026 NAV data from SEC 8-K filed 2026-04-02",
+      "old_value": {
+        "nav_per_share": 31.66,
+        "nav_date": "2026-01-31",
+        "aum_m": 188.9
+      },
+      "new_value": {
+        "nav_per_share": 32.4,
+        "nav_date": "2026-02-28",
+        "aum_m": 207.006
+      },
+      "source": "SEC 8-K acc 0001213900-26-039308, EX-99.1 (Series II Transactional NAV $207,006K / 6,389,136 shares)"
+    },
+    {
+      "timestamp": "2026-04-11T10:20:36.428Z",
+      "fund": "brookfield_infra_income",
+      "type": "AUM_CORRECTION",
+      "description": "Corrected Dec 2025 AUM to NPORT-P value per task instructions",
+      "old_value": {
+        "aum_m": 4787.0,
+        "source": "N-CSR Annual Report Dec 2025"
+      },
+      "new_value": {
+        "aum_m": 5015.9,
+        "source": "NPORT-P filed 2026-02-27 (totAssets $5,175.3M - totLiabs $159.4M)"
+      },
+      "source": "SEC NPORT-P acc 0002071691-26-005312, period 2025-12-31"
+    },
+    {
+      "timestamp": "2026-04-11T10:20:36.428Z",
+      "fund": "partners_group_infra",
+      "type": "AUM_CORRECTION",
+      "description": "Corrected Dec 2025 AUM to exact NPORT-P computed value",
+      "old_value": {
+        "aum_m": 228.0
+      },
+      "new_value": {
+        "aum_m": 227.5
+      },
+      "source": "SEC NPORT-P acc 0001410368-26-021559, period 2025-12-31"
+    }
+  ]
 }
