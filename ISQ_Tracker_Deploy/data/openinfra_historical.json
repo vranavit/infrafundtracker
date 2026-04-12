@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11T10:20:23.584Z",
+  "last_updated": "2026-04-01T16:05:08.644718+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -52,16 +52,6 @@
           "dist_per_share": 0.11,
           "source_label": "SEC 8-K filed 2026-03-10",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
-        },
-        {
-          "date": "2026-02-28",
-          "nav": 32.4,
-          "aum_m": 207.006,
-          "subs_m": 28.28,
-          "redemptions_m": null,
-          "dist_per_share": 0.3399,
-          "source_label": "SEC 8-K filed 2026-04-02 (Feb 2026 NAV, acc 0001213900-26-039308)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
         }
       ]
     },
@@ -742,12 +732,12 @@
         {
           "date": "2025-12-31",
           "nav": 10.89,
-          "aum_m": 5015.9,
+          "aum_m": 4787.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-02-27 (Q4 2025) + N-CSR filed 2026-03-06 (Annual Dec 2025)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126005312/primary_doc.xml"
+          "source_label": "N-CSR Annual Report Dec 2025",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm"
         },
         {
           "date": "2026-01-31",
@@ -900,12 +890,12 @@
         {
           "date": "2025-12-31",
           "nav": null,
-          "aum_m": 227.5,
+          "aum_m": 228.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-03-02 (Q4 2025, acc 0001410368-26-021559)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/primary_doc.xml"
+          "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
         }
       ]
     }
