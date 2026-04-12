@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-11T12:51:35.298065Z",
+  "generated_at": "2026-04-12T12:39:58.958946Z",
   "total_firms_scanned": 15914,
-  "total_signals_fired": 22641,
+  "total_signals_fired": 22635,
   "kpi": {
     "tier1_count": 93,
     "tier2_count": 2260,
-    "tier3_count": 4263,
+    "tier3_count": 4262,
     "new_signals_today": 14246
   },
   "leads": [
@@ -154,7 +154,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 204 days ago",
+          "evidence": "Registered 205 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -664,7 +664,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 326 days ago",
+          "evidence": "Registered 327 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -715,7 +715,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 481 days ago",
+          "evidence": "Registered 482 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -766,7 +766,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 360 days ago",
+          "evidence": "Registered 361 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -817,7 +817,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 123 days ago",
+          "evidence": "Registered 124 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -868,7 +868,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 124 days ago",
+          "evidence": "Registered 125 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -919,7 +919,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 316 days ago",
+          "evidence": "Registered 317 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -970,7 +970,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 225 days ago",
+          "evidence": "Registered 226 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1021,7 +1021,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 400 days ago",
+          "evidence": "Registered 401 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1072,7 +1072,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 508 days ago",
+          "evidence": "Registered 509 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1123,7 +1123,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 407 days ago",
+          "evidence": "Registered 408 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1174,7 +1174,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 486 days ago",
+          "evidence": "Registered 487 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1276,7 +1276,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 88 days ago",
+          "evidence": "Registered 89 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1378,7 +1378,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 145 days ago",
+          "evidence": "Registered 146 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1429,7 +1429,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 40 days ago",
+          "evidence": "Registered 41 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1480,7 +1480,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 144 days ago",
+          "evidence": "Registered 145 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1531,7 +1531,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 117 days ago",
+          "evidence": "Registered 118 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1582,7 +1582,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 425 days ago",
+          "evidence": "Registered 426 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1633,7 +1633,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 16 days ago",
+          "evidence": "Registered 17 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1684,7 +1684,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 80 days ago",
+          "evidence": "Registered 81 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1735,7 +1735,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 215 days ago",
+          "evidence": "Registered 216 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1786,7 +1786,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 142 days ago",
+          "evidence": "Registered 143 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1837,7 +1837,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 243 days ago",
+          "evidence": "Registered 244 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1888,7 +1888,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 250 days ago",
+          "evidence": "Registered 251 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1939,7 +1939,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 292 days ago",
+          "evidence": "Registered 293 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -1990,7 +1990,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 284 days ago",
+          "evidence": "Registered 285 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2041,7 +2041,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 410 days ago",
+          "evidence": "Registered 411 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2092,7 +2092,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 264 days ago",
+          "evidence": "Registered 265 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2143,7 +2143,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 450 days ago",
+          "evidence": "Registered 451 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2194,7 +2194,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 445 days ago",
+          "evidence": "Registered 446 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2245,7 +2245,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 442 days ago",
+          "evidence": "Registered 443 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2296,7 +2296,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 495 days ago",
+          "evidence": "Registered 496 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2347,7 +2347,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 456 days ago",
+          "evidence": "Registered 457 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2398,7 +2398,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 526 days ago",
+          "evidence": "Registered 527 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2449,7 +2449,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 478 days ago",
+          "evidence": "Registered 479 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2500,7 +2500,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 141 days ago",
+          "evidence": "Registered 142 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2551,7 +2551,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 435 days ago",
+          "evidence": "Registered 436 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2602,7 +2602,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 327 days ago",
+          "evidence": "Registered 328 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2653,7 +2653,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 481 days ago",
+          "evidence": "Registered 482 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2704,7 +2704,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 276 days ago",
+          "evidence": "Registered 277 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2806,7 +2806,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 536 days ago",
+          "evidence": "Registered 537 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2857,7 +2857,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 506 days ago",
+          "evidence": "Registered 507 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -2908,7 +2908,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 243 days ago",
+          "evidence": "Registered 244 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3010,7 +3010,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 310 days ago",
+          "evidence": "Registered 311 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3061,7 +3061,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 481 days ago",
+          "evidence": "Registered 482 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3112,7 +3112,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 99 days ago",
+          "evidence": "Registered 100 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3163,7 +3163,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 58 days ago",
+          "evidence": "Registered 59 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3214,7 +3214,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 488 days ago",
+          "evidence": "Registered 489 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3265,7 +3265,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 526 days ago",
+          "evidence": "Registered 527 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3367,7 +3367,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 260 days ago",
+          "evidence": "Registered 261 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3418,7 +3418,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 254 days ago",
+          "evidence": "Registered 255 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3622,7 +3622,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 374 days ago",
+          "evidence": "Registered 375 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3724,7 +3724,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 225 days ago",
+          "evidence": "Registered 226 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -3775,7 +3775,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 352 days ago",
+          "evidence": "Registered 353 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4081,7 +4081,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 257 days ago",
+          "evidence": "Registered 258 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4234,7 +4234,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 334 days ago",
+          "evidence": "Registered 335 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4285,7 +4285,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 288 days ago",
+          "evidence": "Registered 289 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4438,7 +4438,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 229 days ago",
+          "evidence": "Registered 230 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4489,7 +4489,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 260 days ago",
+          "evidence": "Registered 261 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4771,7 +4771,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 93 days ago",
+          "evidence": "Registered 94 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4822,7 +4822,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 530 days ago",
+          "evidence": "Registered 531 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4873,7 +4873,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 80 days ago",
+          "evidence": "Registered 81 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4924,7 +4924,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 145 days ago",
+          "evidence": "Registered 146 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -4975,7 +4975,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 31 days ago",
+          "evidence": "Registered 32 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5026,7 +5026,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 117 days ago",
+          "evidence": "Registered 118 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5077,7 +5077,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 143 days ago",
+          "evidence": "Registered 144 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5128,7 +5128,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 201 days ago",
+          "evidence": "Registered 202 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5179,7 +5179,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 194 days ago",
+          "evidence": "Registered 195 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5230,7 +5230,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 330 days ago",
+          "evidence": "Registered 331 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5281,7 +5281,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 299 days ago",
+          "evidence": "Registered 300 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5332,7 +5332,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 198 days ago",
+          "evidence": "Registered 199 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5383,7 +5383,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 374 days ago",
+          "evidence": "Registered 375 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5434,7 +5434,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 257 days ago",
+          "evidence": "Registered 258 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5485,7 +5485,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 334 days ago",
+          "evidence": "Registered 335 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5536,7 +5536,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 456 days ago",
+          "evidence": "Registered 457 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5587,7 +5587,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 390 days ago",
+          "evidence": "Registered 391 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5638,7 +5638,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 425 days ago",
+          "evidence": "Registered 426 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5689,7 +5689,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 369 days ago",
+          "evidence": "Registered 370 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5740,7 +5740,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 257 days ago",
+          "evidence": "Registered 258 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5791,7 +5791,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 400 days ago",
+          "evidence": "Registered 401 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5842,7 +5842,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 295 days ago",
+          "evidence": "Registered 296 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5893,7 +5893,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 248 days ago",
+          "evidence": "Registered 249 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5944,7 +5944,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 80 days ago",
+          "evidence": "Registered 81 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -5995,7 +5995,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 12 days ago",
+          "evidence": "Registered 13 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -6046,7 +6046,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 242 days ago",
+          "evidence": "Registered 243 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -6097,7 +6097,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 124 days ago",
+          "evidence": "Registered 125 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -6148,7 +6148,7 @@
         {
           "name": "recently_registered",
           "weight": 7,
-          "evidence": "Registered 71 days ago",
+          "evidence": "Registered 72 days ago",
           "isNew": false,
           "category": "regulatory",
           "talkingPoint": "New RIA registration often brings expanded alternative investment capabilities"
@@ -9564,7 +9564,7 @@
   ],
   "state_counts": {
     "NY": 2257,
-    "CA": 1537,
+    "CA": 1536,
     "FL": 905,
     "TX": 874,
     "IL": 536,
@@ -9580,13 +9580,13 @@
     "MI": 214,
     "MN": 195,
     "WA": 185,
-    "MD": 181,
+    "MD": 180,
     "TN": 160,
     "AZ": 135,
     "MO": 135,
     "WI": 133,
     "UT": 125,
-    "OR": 123,
+    "OR": 122,
     "IN": 106,
     "KS": 103,
     "SC": 91,
@@ -9635,7 +9635,7 @@
     },
     {
       "name": "recently_registered",
-      "count": 2129,
+      "count": 2123,
       "newCount": 0
     },
     {
@@ -9702,7 +9702,7 @@
     },
     {
       "name": "No accessible platform",
-      "count": 13559,
+      "count": 13555,
       "tier": 0
     }
   ]
