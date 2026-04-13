@@ -1,5 +1,48 @@
 {
-  "generated_at": "2026-04-13T08:28:29.826865Z",
+  "generated_at": "2026-04-13T16:00:00.000000Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "isq_openinfra",
+      "change_type": "nav_update",
+      "date": "2026-04-13",
+      "description": "ISQ OpenInfra Feb 28, 2026 NAV updated: $32.40/share (Series II Transactional NAV $207,006K / 6,389,136 shares). AUM $207.0M. Source: SEC 8-K filed 2026-04-02 (acc 0001213900-26-039308), EX-99.1.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
+    },
+    {
+      "fund_id": "isq_openinfra",
+      "change_type": "distribution",
+      "date": "2026-03-31",
+      "description": "ISQ OpenInfra declared March distribution of $0.3399/share across all classes (Series I & II). Payable May 5, 2026 to holders of record March 31. Source: SEC 8-K filed 2026-04-02.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea0284780-8k_isq.htm"
+    },
+    {
+      "fund_id": "kkr_infra_conglomerate",
+      "change_type": "distribution",
+      "date": "2026-03-31",
+      "description": "KKR Infrastructure declared March distribution: Class I $0.3300/share. Payable April 25, 2026 to holders of record March 31. Source: SEC 8-K filed 2026-04-01.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000025/kkr-20260331.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "change_type": "distribution",
+      "date": "2026-03-23",
+      "description": "Ares ACI declared quarterly distributions: Class I $0.20830/share gross for April, May, June 2026. Source: SEC 8-K filed 2026-03-23.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000017/aci-20260323.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "change_type": "credit_facility",
+      "date": "2026-03-25",
+      "description": "Ares ACI subsidiary increased revolving credit facility commitments. Source: SEC 8-K filed 2026-03-31 (Item 2.03).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000019/aci-20260325.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "change_type": "share_sales",
+      "date": "2026-04-07",
+      "description": "Ares ACI April 2026 monthly closing: $305.2M aggregate share sales. 119.1M Class I shares outstanding as of March 31, 2026. March NAV expected ~20 business days after April 1. Source: SEC 8-K filed 2026-04-07.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000022/aci-20260407.htm"
+    }
+  ]
 }
