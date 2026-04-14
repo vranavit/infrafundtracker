@@ -1,5 +1,38 @@
 {
-  "generated_at": "2026-04-14T08:11:06.266189Z",
+  "generated_at": "2026-04-14T00:00:00.000000Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "isq_openinfra",
+      "fund_name": "ISQ OpenInfra Company",
+      "change_type": "nav_update",
+      "date": "2026-04-14",
+      "description": "New NAV data: Feb 28, 2026. Class F-I = $32.28/share (+1.96% MoM). AUM: $207.0M. Distribution: $0.3399/share. Source: SEC 8-K filed 2026-04-02 (accno 0001213900-26-039308).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea0284780-8k_isq.htm"
+    },
+    {
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "event",
+      "date": "2026-04-14",
+      "description": "Distribution declared March 31, 2026: Class I = $0.3300/share. Record date March 31, 2026; payable on or about April 27, 2026. Source: SEC 8-K filed 2026-04-01.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000025/kkr-20260331.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "event",
+      "date": "2026-04-14",
+      "description": "April 2026 closing: $305.2M in new subscriptions at March 31, 2026 NAV (NAV TBD within 20 business days of April 1). Shares outstanding as of March 31, 2026: 119,118,454 Class I. Source: SEC 8-K filed 2026-04-07.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000022/aci-20260407.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "event",
+      "date": "2026-04-14",
+      "description": "Credit facility increased: ACI Portfolio Aggregator SPV LLC revolving credit facility increased from $50M to $200M on March 25, 2026. Source: SEC 8-K filed 2026-03-31.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000019/aci-20260325.htm"
+    }
+  ]
 }
