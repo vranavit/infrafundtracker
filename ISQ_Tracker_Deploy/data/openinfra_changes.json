@@ -1,5 +1,14 @@
 {
   "generated_at": "2026-04-16T08:13:46.913442Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-04-16",
+      "fund_id": "isq_openinfra",
+      "type": "nav_update",
+      "description": "ISQ OpenInfra Feb 28, 2026 NAV: $32.28/share (Class F-I), AUM $207.0M. Series II total Transactional NAV $207,006K / 6,389,136 shares. Distribution $0.3399/share. Subs $28.3M (March 1 closing).",
+      "source": "SEC 8-K filed 2026-04-02, CIK 2059924, acc 0001213900-26-039308",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea0284780-8k_isq.htm"
+    }
+  ]
 }
