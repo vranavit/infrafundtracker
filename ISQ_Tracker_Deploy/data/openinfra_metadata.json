@@ -1,26 +1,17 @@
 {
-  "last_updated": "2026-04-16T12:00:00.000000Z",
-  "last_run": "2026-04-16T12:00:00.000000Z",
+  "last_updated": "2026-04-17T08:13:16.658726Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
   "validation_warnings": [
+    "isq_openinfra: No source URL",
     "ares_aci: No source URL",
     "kkr_infra_conglomerate: No source URL",
     "stonepeak_plus: No source URL",
     "brookfield_infra_income: No source URL",
     "hamilton_lane_infra: No source URL",
     "partners_group_infra: No source URL"
-  ],
-  "updates_this_run": [
-    {
-      "fund_id": "isq_openinfra",
-      "nav_date": "2026-02-28",
-      "nav_per_share": 32.28,
-      "aum_millions": 207.0,
-      "source": "SEC 8-K CIK 2059924 acc 0001213900-26-039308 filed 2026-04-02"
-    }
   ]
 }

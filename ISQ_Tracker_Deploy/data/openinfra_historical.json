@@ -52,16 +52,6 @@
           "dist_per_share": 0.11,
           "source_label": "SEC 8-K filed 2026-03-10",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
-        },
-        {
-          "date": "2026-02-28",
-          "nav": 32.28,
-          "aum_m": 207.0,
-          "subs_m": 28.3,
-          "redemptions_m": null,
-          "dist_per_share": 0.3399,
-          "source_label": "SEC 8-K filed 2026-04-02 (Class F-I NAV as of Feb 28, 2026)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea0284780-8k_isq.htm"
         }
       ]
     },
