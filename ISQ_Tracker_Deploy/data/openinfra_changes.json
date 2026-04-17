@@ -1,5 +1,72 @@
 {
-  "generated_at": "2026-04-17T08:13:16.658726Z",
-  "period_days": 7,
-  "changes": []
+  "generated_at": "2026-04-17T10:13:27.417477+00:00",
+  "period_days": 30,
+  "changes": [
+    {
+      "detected_at": "2026-04-07T00:00:00Z",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "share_sale",
+      "description": "April 2026 monthly closing: agreed to sell $305.2M Class I/D/S Common Shares; March 31 outstanding shares 119.1M Class I, 16,661 Class D, 6.49M Class S",
+      "significance": "8-K Item 3.02 + 8.01",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000022/aci-20260407.htm",
+      "filing_date": "2026-04-07",
+      "accession": "0002031750-26-000022"
+    },
+    {
+      "detected_at": "2026-04-01T00:00:00Z",
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "distribution",
+      "description": "March 31, 2026 monthly distribution declared: Class I $0.3300/share; Class S/U $0.2651; Class D $0.3109; Class E/F/R $0.3300. Payable April 27, 2026.",
+      "significance": "8-K Item 8.01",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000025/kkr-20260331.htm",
+      "filing_date": "2026-04-01",
+      "accession": "0001948056-26-000025"
+    },
+    {
+      "detected_at": "2026-03-31T00:00:00Z",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "credit_facility",
+      "description": "ACI Portfolio Aggregator SPV increased Revolving Credit Agreement commitments from $50M to $200M with NatWest Markets as administrative agent.",
+      "significance": "8-K Item 2.03 - material credit facility expansion",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000019/aci-20260325.htm",
+      "filing_date": "2026-03-31",
+      "accession": "0002031750-26-000019"
+    },
+    {
+      "detected_at": "2026-03-25T00:00:00Z",
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "share_sale",
+      "description": "March 2026 share sale closing: Class I 4,775,576 shares ($144.6M); Class S 3,967,169 ($120.1M); Class D 343,625 ($10.4M). Total $275.1M. Cumulative since inception: ~$6,578M. K-Series Platform total ~$12,536M since inception.",
+      "significance": "8-K Item 3.02",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000020/kkr-20260320.htm",
+      "filing_date": "2026-03-25",
+      "accession": "0001948056-26-000020"
+    },
+    {
+      "detected_at": "2026-03-19T00:00:00Z",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "credit_facility",
+      "description": "Ares Aspen Member LLC (subsidiary) First Amendment to Credit Agreement: additional $249.9M delayed draw term loan + $16.1M debt service LOC; aggregate facility now $478M term + $31.7M LOC. Interest rate decreased from SOFR+1.75% to SOFR+1.625%.",
+      "significance": "8-K Item 1.01 - material credit facility amendment",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000110465926032067/tm269215d1_8k.htm",
+      "filing_date": "2026-03-19",
+      "accession": "0001104659-26-032067"
+    },
+    {
+      "detected_at": "2026-04-02T00:00:00Z",
+      "fund_id": "isq_openinfra",
+      "fund_name": "ISQ OpenInfra Company",
+      "change_type": "nav_update",
+      "description": "Feb 28, 2026 NAV disclosed: Class F-I $32.28/share; Series II Transactional NAV $207.0M / 6,389,136 shares. GAAP NAV $202.6M + $4.4M shareholder servicing fee adj. Distribution $0.3399/share.",
+      "significance": "8-K EX-99.1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm",
+      "filing_date": "2026-04-02",
+      "accession": "0001213900-26-039308"
+    }
+  ]
 }
