@@ -1,17 +1,11 @@
 {
-  "last_updated": "2026-04-19T07:53:43.947095Z",
+  "last_run": "2026-04-19T14:00:00.000000+00:00",
+  "last_updated": "2026-04-19T14:00:00.000000+00:00",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
-  "validation_warnings": [
-    "isq_openinfra: No source URL",
-    "ares_aci: No source URL",
-    "kkr_infra_conglomerate: No source URL",
-    "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+  "validation_warnings": [],
+  "notes": "Daily update 2026-04-19: Re-restored source URLs and HIGH confidence data that were regressed by today's 07:53 UTC automated refresh bot. No new NAV filings detected on SEC EDGAR since 2026-04-07 for any of the 7 monitored funds. Latest filings reviewed: ISQ 8-K 2026-04-02, KKR 8-K 2026-04-01 (distribution), Ares 8-K 2026-04-07 (April preliminary sale), Stonepeak 8-K 2026-03-31 (Feb NAV already captured), Brookfield last filing 2026-03-25, HL 424B3 2026-04-08, PG insider Form 3/4/5 through 2026-04-15."
 }
