@@ -1,34 +1,5 @@
 {
-  "generated_at": "2026-04-21T08:17:53.129388Z",
+  "generated_at": "2026-04-22T08:15:55.670029Z",
   "period_days": 7,
-  "changes": [
-    {
-      "fund_id": "isq_openinfra",
-      "fund_name": "ISQ OpenInfra Company",
-      "change_type": "NAV_UPDATE",
-      "old_value": 32.28,
-      "new_value": 31.66,
-      "change_pct": -1.921,
-      "date": "2026-01-31",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "ISQ OpenInfra Company NAV decreased 1.92% to $31.6600 as of 2026-01-31",
-      "detected_at": "2026-04-21"
-    },
-    {
-      "fund_id": "isq_openinfra",
-      "fund_name": "ISQ OpenInfra Company",
-      "change_type": "AUM_UPDATE",
-      "old_value": 207.0,
-      "new_value": 188.9,
-      "change_pct": -8.74,
-      "date": "2026-04-21",
-      "source_url": null,
-      "source_label": null,
-      "significance": "MEDIUM",
-      "description": "ISQ OpenInfra Company AUM declined 8.7% to $189M",
-      "detected_at": "2026-04-21"
-    }
-  ]
+  "changes": []
 }
