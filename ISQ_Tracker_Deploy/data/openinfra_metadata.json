@@ -1,17 +1,16 @@
 {
-  "last_updated": "2026-04-27T09:04:41.355113Z",
+  "last_updated": "2026-04-27T17:30:00.000000Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
   "validation_warnings": [
-    "isq_openinfra: No source URL",
-    "ares_aci: No source URL",
-    "kkr_infra_conglomerate: No source URL",
-    "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+    "isq_openinfra: source pinned to most recent 8-K (acc 0001213900-26-039308, 2026-02-28 NAV)",
+    "stonepeak_plus: latest 8-K 2026-03-31 reports Feb 28, 2026 NAV (no new data this run)",
+    "brookfield_infra_income: latest data Dec 2025 NPORT-P + Jan 2026 Brookfield website",
+    "hamilton_lane_infra: quarterly cadence, last NPORT-P 2026-02-27 (Dec 2025 period)",
+    "partners_group_infra: quarterly cadence, last NPORT-P 2026-03-02 (Dec 2025 period)"
+  ],
+  "last_run": "2026-04-27T17:30:00.000000Z"
 }

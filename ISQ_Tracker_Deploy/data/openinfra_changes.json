@@ -1,5 +1,66 @@
 {
-  "generated_at": "2026-04-27T09:04:41.355113Z",
+  "generated_at": "2026-04-27T17:30:00.000000Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "type": "NAV_UPDATE",
+      "date": "2026-03-31",
+      "description": "March 2026 Class I NAV $29.96 (-1.06% from Feb), Total Transactional NAV $7,230.7M (+2.87%)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm",
+      "source_label": "SEC 8-K filed 2026-04-21",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    },
+    {
+      "fund": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "type": "METHODOLOGY_CHANGE",
+      "date": "2026-04-21",
+      "description": "Effective Jan 1, 2026, KKR began capitalizing and amortizing certain financing/acquisition-related costs over up to 10 years (deducted from Transactional NAV). Mar 31, 2026 unamortized balance: $14.4M.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm",
+      "source_label": "SEC 8-K filed 2026-04-21",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    },
+    {
+      "fund": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "type": "SUBSCRIPTION",
+      "date": "2026-04-01",
+      "description": "April 2026 subscription closing: $269.5M (Class I/S/D). Cumulative since inception: $6,848M. Infra K-Series Platform total $13,266M.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000033/kkr-20260421.htm",
+      "source_label": "SEC 8-K filed 2026-04-24",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    },
+    {
+      "fund": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "type": "NAV_UPDATE",
+      "date": "2026-03-31",
+      "description": "March 2026 Class I NAV $24.9176 (-0.03% from Feb), Aggregate NAV $3,130.0M (+12.5%), Portfolio FV $3,466.7M",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm",
+      "source_label": "SEC 8-K filed 2026-04-23",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    },
+    {
+      "fund": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "type": "SUBSCRIPTION",
+      "date": "2026-04-23",
+      "description": "April 2026 subscription closing: $313.1M (Class I 10.53M shares $262.5M, Class D 4K $0.1M, Class S 2.03M $50.5M). Pre-announced $305.2M on 2026-04-07.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm",
+      "source_label": "SEC 8-K filed 2026-04-23",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    },
+    {
+      "fund": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "type": "DISTRIBUTION",
+      "date": "2026-04-30",
+      "description": "April 2026 gross distribution $0.20830/share all classes; record 2026-04-30, payable on/about 2026-05-21. May/June 2026 declared at $0.20830/share.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm",
+      "source_label": "SEC 8-K filed 2026-04-23",
+      "detected_at": "2026-04-27T17:30:00.000000Z"
+    }
+  ]
 }
