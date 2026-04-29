@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29T08:38:33.738811Z",
+  "last_updated": "2026-04-29T10:30:00.000000Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
@@ -11,7 +11,7 @@
     "kkr_infra_conglomerate: No source URL",
     "stonepeak_plus: No source URL",
     "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+    "hamilton_lane_infra: No source URL"
+  ],
+  "last_run": "2026-04-29T10:30:00.000000Z"
 }
