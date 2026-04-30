@@ -1,5 +1,55 @@
 {
-  "generated_at": "2026-04-30T08:39:31.503198Z",
+  "generated_at": "2026-04-30T10:30:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "isq_openinfra",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0001213900-26-039308 (2026-04-02)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "kkr_infra_conglomerate",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0001948056-26-000028 (2026-04-21)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "ares_aci",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0002031750-26-000024 (2026-04-23)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "stonepeak_plus",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0002045458-26-000010 (2026-03-31)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "brookfield_infra_income",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0002071691-26-005312 (2026-02-27)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126005312/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "hamilton_lane_infra",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0001193125-26-082385 (2026-02-27)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526082385/"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "data_sync",
+      "fund_id": "partners_group_infra",
+      "description": "Synced JSON nav file with SEC-verified data already present in index.html NAV_FUNDS (no new SEC filings since 2026-04-29 update). Latest filing: 0001398344-26-007391 (2026-04-28)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/"
+    }
+  ]
 }
