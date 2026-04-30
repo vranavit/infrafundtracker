@@ -1,25 +1,5 @@
 {
-  "generated_at": "2026-04-29T10:30:00.000000Z",
+  "generated_at": "2026-04-30T08:39:31.503198Z",
   "period_days": 7,
-  "changes": [
-    {
-      "fund_id": "partners_group_infra",
-      "fund_name": "Partners Group Infrastructure Evergreen",
-      "change_type": "DATA_UPDATE",
-      "date": "2026-04-29",
-      "summary": "Added Feb 28, 2026 monthly data point from SC TO-I tender offer filing.",
-      "detail": "SC TO-I (accession 0001398344-26-007391, filed 2026-04-28) disclosed Feb 28, 2026 NAV per Class I Unit of $1.8426 (Class A $1.8378, Class S $1.8333, Class M $1.8426) and total fund net asset value of $257,823,417.12 (~$258M). Previous latest data point was Dec 31, 2025 (NPORT-P AUM $227.5M). NAV change from Sep 30, 2025 ($1.79) to Feb 28, 2026 ($1.8426) = +2.93%.",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/fp0098690-1_sctoi.htm",
-      "previous": {
-        "nav_per_share": 1.79,
-        "nav_date": "2025-09-30",
-        "total_aum_millions": 227.5
-      },
-      "current": {
-        "nav_per_share": 1.8426,
-        "nav_date": "2026-02-28",
-        "total_aum_millions": 257.8
-      }
-    }
-  ]
+  "changes": []
 }

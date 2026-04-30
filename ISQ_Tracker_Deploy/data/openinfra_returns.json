@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29T10:30:00.000000Z",
+  "last_updated": "2026-04-30T08:39:31.503198Z",
   "funds": {
     "isq_openinfra": {
       "return_1m": 0.063591,
@@ -74,16 +74,16 @@
       "latest_nav_date": "2025-09-30"
     },
     "partners_group_infra": {
-      "return_1m": 0.029288,
-      "return_3m": 0.029288,
-      "return_6m": 0.029288,
-      "return_1y": 0.077544,
-      "return_ytd": 0.029288,
-      "return_itd": 0.270759,
-      "annualised_itd": 0.132984,
-      "data_points_count": 5,
+      "return_1m": 0.046784,
+      "return_3m": 0.046784,
+      "return_6m": 0.046784,
+      "return_1y": 0.169935,
+      "return_ytd": 0.046784,
+      "return_itd": 0.234483,
+      "annualised_itd": 0.881288,
+      "data_points_count": 4,
       "oldest_nav_date": "2024-03-31",
-      "latest_nav_date": "2026-02-28"
+      "latest_nav_date": "2025-09-30"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29T10:30:00.000000Z",
+  "last_updated": "2026-04-20T13:00:00.000000+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -906,16 +906,6 @@
           "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
-        },
-        {
-          "date": "2026-02-28",
-          "nav": 1.8426,
-          "aum_m": 257.8,
-          "subs_m": null,
-          "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "SC TO-I (acc 0001398344-26-007391, filed 2026-04-28) - tender offer disclosing Feb 28, 2026 NAV per Class I unit and total fund net assets",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/fp0098690-1_sctoi.htm"
         }
       ]
     }
