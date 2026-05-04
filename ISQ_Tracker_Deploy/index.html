@@ -4791,7 +4791,7 @@ function App(){
   var funds=useMemo(function(){return rawFunds.slice().sort(sortFn);},[rawFunds,sortKey]);
   var cat=tab==="funds"?FUND_SUBTABS.find(function(c){return c.key===fundSubTab;}):CATEGORIES.find(function(c){return c.key===tab;});
   var groups=useMemo(function(){var g={};funds.forEach(function(f){if(!g[f.firm]) g[f.firm]={firm:f.firm,funds:[],tot:0,isISQ:f.isISQ};g[f.firm].funds.push(f);if(f.raised) g[f.firm].tot+=f.raised;});return Object.fromEntries(Object.entries(g).sort(function(a,b){return b[1].tot-a[1].tot;}));},[funds]);
-  var DATA_LAST_UPDATED="2026-04-30";
+  var DATA_LAST_UPDATED="2026-05-04";
   var fr=busy?{color:C.amber,label:"Refreshing...",dot:"pulse"}:lr?{color:C.green,label:"Refreshed: "+new Date(lr).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}),dot:"static"}:{color:C.green,label:"Data as of 28 Mar 2026",dot:"static"};
   var duLabel=(function(){var d=new Date(DATA_LAST_UPDATED+"T00:00:00");return "SEC data updated: "+d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});})();
 
