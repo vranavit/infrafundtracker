@@ -1,55 +1,5 @@
 {
-  "generated_at": "2026-05-04T10:30:00Z",
+  "generated_at": "2026-05-05T08:32:33.162676Z",
   "period_days": 7,
-  "changes": [
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "isq_openinfra",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "kkr_infra_conglomerate",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "ares_aci",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "stonepeak_plus",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "brookfield_infra_income",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "hamilton_lane_infra",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    },
-    {
-      "date": "2026-05-04",
-      "type": "data_sync",
-      "fund_id": "partners_group_infra",
-      "description": "Re-synced JSON nav file with SEC-verified data in index.html NAV_FUNDS (auto-bot reverted prior sync on 2026-05-01). No new SEC filings detected since 2026-04-30 update.",
-      "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK="
-    }
-  ]
+  "changes": []
 }
