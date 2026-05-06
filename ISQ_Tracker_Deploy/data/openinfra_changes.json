@@ -1,5 +1,60 @@
 {
-  "generated_at": "2026-05-06T09:11:54.104083Z",
+  "generated_at": "2026-05-06T10:30:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "isq_openinfra",
+      "change_type": "monthly_nav_update",
+      "date": "2026-05-05",
+      "as_of": "2026-03-31",
+      "description": "New monthly NAV: Class F-I $32.08 (-0.62% vs Feb 28, 2026 $32.28). Series II Transactional NAV $233.3M (+12.7%). Outstanding shares 7,259,274. April 1 subs $52.4M.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea028912801ex99-1.htm",
+      "source_label": "SEC 8-K acc 0001213900-26-052182"
+    },
+    {
+      "fund_id": "kkr_infra_conglomerate",
+      "change_type": "monthly_nav_update",
+      "date": "2026-04-21",
+      "as_of": "2026-03-31",
+      "description": "New monthly NAV: Class I $29.96 (-1.06% vs Feb $30.28) reflecting Jan 1, 2026 methodology change (capitalize/amortize financing/acquisition costs over up to 10 years; $14.4M unamortized at Mar 31). Total Transactional NAV $7,230.7M (+2.87%).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm",
+      "source_label": "SEC 8-K acc 0001948056-26-000028"
+    },
+    {
+      "fund_id": "ares_aci",
+      "change_type": "monthly_nav_update",
+      "date": "2026-04-23",
+      "as_of": "2026-03-31",
+      "description": "New monthly NAV: Class I/D/S $24.9176 (-0.03% vs Feb $24.9252). Aggregate NAV $3,130.0M (+12.5%). April subs finalized $313.1M (12.56M shares; Class I 10.53M for $262.5M). April distribution $0.20830/share gross. May/June 2026 distributions declared at $0.20830/share.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm",
+      "source_label": "SEC 8-K acc 0002031750-26-000024"
+    },
+    {
+      "fund_id": "ares_aci",
+      "change_type": "credit_facility",
+      "date": "2026-05-04",
+      "as_of": "2026-04-28",
+      "description": "Item 2.03: Acquired BCP Renaissance Parent / BCP Renaissance LLC (49.9% Rover Pipeline). Rover Credit Agreement: senior secured Term Loan B, $1.09B outstanding as of Mar 31, 2026. SOFR+2.25% (1.0% floor). Maturity Oct 31, 2031. Interest rate swap $750M with Morgan Stanley fixed at 3.7566% through Jun 30, 2026. Non-recourse to Fund except for collateral.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000162828026029840/aci-20260428.htm",
+      "source_label": "SEC 8-K acc 0001628280-26-029840"
+    },
+    {
+      "fund_id": "stonepeak_plus",
+      "change_type": "monthly_nav_update",
+      "date": "2026-05-05",
+      "as_of": "2026-03-31",
+      "description": "New monthly NAV: Class I-1 $32.15 (+1.23% vs Feb $31.76). Other classes \u2014 A-1a $31.82, A-1b $31.86, A-1c $31.89, F-1 $31.89, X $32.91. SP+ INFRA cumulative capital raised $1,292.4M (April +$100.5M). April Fund-only subs $65.0M (Class I-1 136,188 units / $4.32M). March distribution Class I-1 $0.2400/unit (record Mar 31, payable May 7, 2026).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm",
+      "source_label": "SEC 8-K acc 0002045458-26-000015"
+    },
+    {
+      "fund_id": "stonepeak_plus",
+      "change_type": "partnership_amendment",
+      "date": "2026-05-04",
+      "as_of": "2026-05-04",
+      "description": "Item 5.03: Third Amended & Restated LPA \u2014 authorized Class Z series (Series D-2, I-2, S-2 of Class Z); cancelled unissued Class D-2/I-2/S-2 Units. Second A&R Investment Advisory Agreement also entered.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm",
+      "source_label": "SEC 8-K acc 0002045458-26-000015 Ex 3.1, Ex 10.1"
+    }
+  ]
 }
