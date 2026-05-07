@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20T13:00:00.000000+00:00",
+  "last_updated": "2026-05-07T10:16:33.943468Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -62,6 +62,16 @@
           "dist_per_share": 0.3399,
           "source_label": "SEC 8-K filed 2026-04-02 (Series II Transactional NAV $207,006K / 6,389,136 shares; Class F-I table $32.28)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.08,
+          "aum_m": 233.3,
+          "subs_m": 52.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-05-05 (Class F-I Transactional NAV $32.08; Series II Total NAV $233,291K / 7,259,274 shares; April 1 2026 subs $52.4M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea0289128-8k_isq.htm"
         }
       ]
     },
@@ -226,6 +236,16 @@
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Feb 2026",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 24.9176,
+          "aum_m": 3130.0,
+          "subs_m": 313.1,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-04-23 (Class I/D/S NAV $24.9176 as of Mar 31 2026; aggregate NAV $3,130.0M; April subs $313.1M finalized; April distribution $0.20830/share gross)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm"
         }
       ]
     },
@@ -550,6 +570,16 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-02)",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 29.96,
+          "aum_m": 7230.7,
+          "subs_m": 269.5,
+          "redemptions_m": null,
+          "dist_per_share": 0.33,
+          "source_label": "SEC 8-K EX-99.1 filed 2026-04-21 (Class I NAV $29.96; Total Transactional NAV $7,230,684K / 241,120,040 shares); distribution $0.3300 declared 2026-03-31",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm"
         }
       ]
     },
@@ -654,6 +684,16 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-03-31",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/sp-20260325.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.15,
+          "aum_m": 1292.4,
+          "subs_m": 100.5,
+          "redemptions_m": null,
+          "dist_per_share": 0.24,
+          "source_label": "SEC 8-K filed 2026-05-05 (Class I-1 Transactional NAV $32.15 as of Mar 31 2026; SP+ INFRA cumulative $1,292M; April aggregate $100.5M; Class I-1 distribution $0.2400/unit)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm"
         }
       ]
     },

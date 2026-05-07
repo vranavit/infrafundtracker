@@ -1,5 +1,38 @@
 {
-  "generated_at": "2026-05-07T09:11:04.436623Z",
+  "generated_at": "2026-05-07T10:16:33.943468Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund": "isq_openinfra",
+      "fund_name": "ISQ OpenInfra Company",
+      "event_type": "NAV_UPDATE",
+      "event_date": "2026-03-31",
+      "description": "New monthly NAV $32.08 (Class F-I) as of Mar 31 2026 (-0.62% vs Feb $32.28). Series II Transactional NAV $233.3M (+12.7% vs $207.0M Feb). April 1 2026 subscriptions $52.4M total (Class F-I 309,611 shares for $9.93M).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea0289128-8k_isq.htm"
+    },
+    {
+      "fund": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "event_type": "NAV_UPDATE",
+      "event_date": "2026-03-31",
+      "description": "New monthly NAV $29.96 (Class I) as of Mar 31 2026 (-1.06% vs Feb $30.28). Total Transactional NAV $7,230.7M (+2.87%). April 1 2026 share sale $269.5M (Class I 5,012,494 shares for $150.2M). $0.3300/share distribution declared 2026-03-31.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm"
+    },
+    {
+      "fund": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "event_type": "NAV_UPDATE",
+      "event_date": "2026-03-31",
+      "description": "New monthly NAV $24.9176 (Class I/D/S) as of Mar 31 2026 (-0.03% vs Feb $24.9252). Aggregate NAV $3,130.0M (+12.5%). April subs $313.1M finalized 2026-04-23 (Class I 10.53M shares $262.5M). April distribution $0.20830/share gross. Rover Credit Agreement (~$1.09B Term Loan B, SOFR+2.25%, matures 2031) acquired 2026-04-28.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm"
+    },
+    {
+      "fund": "stonepeak_plus",
+      "fund_name": "Stonepeak-Plus Infrastructure Fund",
+      "event_type": "NAV_UPDATE",
+      "event_date": "2026-03-31",
+      "description": "New monthly NAV $32.15 (Class I-1) as of Mar 31 2026 (+1.23% vs Feb $31.76). SP+ INFRA cumulative capital raised $1,292M (April +$100.5M, Fund-only $65.0M). Class A-1a $31.82, A-1b $31.86, A-1c $31.89, F-1 $31.89, X $32.91. Item 5.03 May 4 2026: Third A&R LPA authorizing new Class Z series. Class I-1 distribution $0.2400/unit (record Mar 31, paid May 7).",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm"
+    }
+  ]
 }
