@@ -1,5 +1,38 @@
 {
-  "generated_at": "2026-05-10T08:26:44.921105Z",
+  "generated_at": "2026-05-10T11:00:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "ares_aci",
+      "type": "MAY_2026_CLOSING",
+      "date": "2026-05-07",
+      "summary": "May 2026 monthly closing: aggregate $712.6M agreed across Class I/D/N/S Common Shares (priced at April 30, 2026 NAV - pending). As of April 30, 2026 outstanding: 129,940,620 Class I + 20,810 Class D + 8,524,981 Class S; no Class N.",
+      "source_label": "SEC 8-K acc 0002031750-26-000028 (filed 2026-05-07)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000028/aci-20260507.htm"
+    },
+    {
+      "fund_id": "ares_aci",
+      "type": "CREDIT_FACILITY_ACQUIRED",
+      "date": "2026-05-04",
+      "summary": "Item 2.03/8.01: On April 28, 2026, Ares acquired BCP Renaissance Parent LLC and BCP Renaissance LLC indirect subs in connection with portfolio investment. Rover Credit Agreement: senior secured Term Loan B, ~$1.09B outstanding (Mar 31, 2026), SOFR+2.25% floor 1.00%, matures Oct 31, 2031. $750M interest rate swap with Morgan Stanley fixed at 3.7566% (terminates Jun 30, 2026). Non-recourse to Fund.",
+      "source_label": "SEC 8-K acc 0001628280-26-029840 (filed 2026-05-04)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000162828026029840/aci-20260428.htm"
+    },
+    {
+      "fund_id": "brookfield_infra_income",
+      "type": "TENDER_OFFER_RESULT",
+      "date": "2026-05-08",
+      "summary": "SC TO-I/A Final Amendment: Q1 2026 tender offer (5% cap) expired Mar 25, 2026. 2,454,016.88 Shares tendered at NAV per Share as of Mar 31, 2026 valuation date. Aggregate NAV of tendered shares ~$27,022,326.82; Fund paid ~$26,985,176.25 on Apr 29, 2026 (net of 2% Early Withdrawal Fees). 100% of tendered shares accepted under Rule 13e-4(f)(1).",
+      "source_label": "SEC SC TO-I/A acc 0001213900-26-053734 (filed 2026-05-08)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000121390026053734/ea0289428-01_sctoia.htm"
+    },
+    {
+      "fund_id": "hamilton_lane_infra",
+      "type": "OFFICER_CHANGE",
+      "date": "2026-05-08",
+      "summary": "424B3 SAI Supplement: Keith Kleinman resigned as Secretary; Board appointed Mary Kate Leonard (Senior Legal Counsel at Hamilton Lane Advisors; previously Chief Capital Officer at Bel Canto Asset Growth Fund and SVP at Blackstone) as new Secretary effective immediately.",
+      "source_label": "SEC 424B3 acc 0001213900-26-053953 (filed 2026-05-08)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026053953/ea0289729-03_424b3.htm"
+    }
+  ]
 }
