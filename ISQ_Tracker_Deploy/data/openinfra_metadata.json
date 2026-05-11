@@ -1,11 +1,17 @@
 {
-  "last_updated": "2026-05-10T11:00:00Z",
+  "last_updated": "2026-05-11T10:07:08.175810Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
-  "validation_warnings": [],
-  "last_run": "2026-05-10T11:00:00Z",
-  "notes": "No new monthly NAV/AUM disclosed for any fund since 2026-05-05. New events recorded: Ares May 2026 closing $712.6M (acc 0002031750-26-000028), Ares Rover Credit Agreement (acc 0001628280-26-029840), Brookfield SC TO-I/A tender offer final results (acc 0001213900-26-053734), Hamilton Lane new Secretary appointment (acc 0001213900-26-053953)."
+  "validation_warnings": [
+    "isq_openinfra: No source URL",
+    "ares_aci: No source URL",
+    "kkr_infra_conglomerate: No source URL",
+    "stonepeak_plus: No source URL",
+    "brookfield_infra_income: No source URL",
+    "hamilton_lane_infra: No source URL",
+    "partners_group_infra: No source URL"
+  ]
 }
