@@ -1,5 +1,62 @@
 {
-  "generated_at": "2026-05-17T08:36:55.922094Z",
+  "generated_at": "2026-05-17T10:11:38.260636Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-05-12",
+      "fund_id": "isq_openinfra",
+      "type": "nav_update",
+      "summary": "ISQ OpenInfra Mar 31, 2026 NAV $32.08 (Class F-I Series II), -0.62% MoM. Series II Transactional NAV $233.3M (+12.7%). April subs $52.4M.",
+      "source": "SEC 8-K filed 2026-05-05 acc 0001213900-26-052182"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "kkr_infra_conglomerate",
+      "type": "nav_update",
+      "summary": "KKR Infra Conglomerate Mar 31, 2026 NAV $29.96 (Class I), -1.06% MoM. Total Transactional NAV $7,230.7M (+2.9%). Effective Jan 1, 2026, new methodology capitalizes financing/acquisition costs over up to 10 years ($14.4M unamortized).",
+      "source": "SEC 8-K filed 2026-04-21 acc 0001948056-26-000028"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "ares_aci",
+      "type": "nav_update",
+      "summary": "Ares ACI Mar 31, 2026 NAV $24.9176 (Class I/D/S), -0.03% MoM. Aggregate NAV $3,130.0M (+12.5%). April closing $313.1M finalized. Class I April distribution $0.20830.",
+      "source": "SEC 8-K filed 2026-04-23 acc 0002031750-26-000024"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "ares_aci",
+      "type": "credit_facility",
+      "summary": "Ares ACI acquired BCP Renaissance subsidiaries on April 28, 2026 (Rover Credit Agreement ~$1.09B Term Loans SOFR+2.25%; $750M Morgan Stanley swap at 3.7566% fixed).",
+      "source": "SEC 8-K Item 2.03 filed 2026-05-04 acc 0001628280-26-029840"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "stonepeak_plus",
+      "type": "nav_update",
+      "summary": "Stonepeak Plus Mar 31, 2026 NAV $32.15 (Class I-1), +1.23% MoM. SP+ INFRA cumulative capital raised $1,292.4M ($100.5M April subs). Class I-1 March distribution $0.2400/unit (record Mar 31).",
+      "source": "SEC 8-K filed 2026-05-05 acc 0002045458-26-000015"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "stonepeak_plus",
+      "type": "lpa_amendment",
+      "summary": "Stonepeak Plus filed Third Amended & Restated LPA on May 5, 2026 (Item 5.03), creating new Class Z series.",
+      "source": "SEC 8-K Items 1.01, 5.03 filed 2026-05-05 acc 0002045458-26-000015"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "partners_group_infra",
+      "type": "nav_update",
+      "summary": "Partners Group Infra Evergreen Feb 28, 2026 NAV per Unit (Class I) $1.8426. Total Fund net assets $257.8M; 6,997,121 Units outstanding. Tender offer commenced for up to 5% NAV (~$12.9M) at Mar 31 valuation date.",
+      "source": "SEC SC TO-I filed 2026-04-28 acc 0001398344-26-007391"
+    },
+    {
+      "date": "2026-05-12",
+      "fund_id": "brookfield_infra_income",
+      "type": "tender_offer",
+      "summary": "Brookfield BII Q1 2026 quarterly tender offer (Feb 25, 2026 commencement) closed Mar 25, 2026. Aggregate NAV $27.02M tendered at Mar 31, 2026 valuation. Fund paid $26.99M Apr 29, 2026 net of 2% Early Withdrawal Fees.",
+      "source": "SEC SC TO-I/A Final Amendment filed 2026-05-08 acc 0001213900-26-053734"
+    }
+  ]
 }
