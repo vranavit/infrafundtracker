@@ -1,10 +1,11 @@
 {
-  "last_updated": "2026-05-17T10:11:38.260636Z",
+  "last_updated": "2026-05-18T10:00:00.000000Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
   "validation_warnings": [],
-  "last_run": "2026-05-17T10:11:38.260636Z"
+  "last_run": "2026-05-18T10:00:00.000000Z",
+  "last_run_notes": "No new SEC filings since 5/17 contain new NAV/AUM data. Q1 2026 10-Qs (ISQ 5/15, KKR 5/13, Ares 5/14, Stonepeak 5/15) confirm Mar 31, 2026 NAVs already tracked. Ares Apr 30, 2026 NAV pending (8-K 0002031750-26-000028: NAV available ~20 business days after May 1, 2026). HL N-23C3A (5/15) is repurchase notification \u2014 Class I NAV $15.79 noted but per established methodology only N-CSR/N-CSRS Financial Highlights tracked. PG N-2 (5/12) is registration update."
 }
