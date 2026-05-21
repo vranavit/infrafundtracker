@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-20T12:00:00.000000+00:00",
+  "last_updated": "2026-04-20T13:00:00.000000+00:00",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -226,26 +226,6 @@
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Feb 2026",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
-        },
-        {
-          "date": "2026-03-31",
-          "nav": 24.9176,
-          "aum_m": 3130.0,
-          "subs_m": 313.1,
-          "redemptions_m": null,
-          "dist_per_share": 0.2083,
-          "source_label": "SEC 8-K filed 2026-04-23 (acc 0002031750-26-000024)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm"
-        },
-        {
-          "date": "2026-04-30",
-          "nav": 24.8805,
-          "aum_m": 3445.8,
-          "subs_m": 715.5,
-          "redemptions_m": null,
-          "dist_per_share": 0.2083,
-          "source_label": "SEC 8-K filed 2026-05-19 (acc 0002031750-26-000036)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000036/aci-20260519.htm"
         }
       ]
     },
