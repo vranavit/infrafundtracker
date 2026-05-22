@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-22T09:56:40.466977Z",
+  "last_updated": "2026-05-22T12:30:00Z",
   "funds": {
     "isq_openinfra": {
       "return_1m": 0.063591,
@@ -26,16 +26,16 @@
       "latest_nav_date": "2026-02-28"
     },
     "kkr_infra_conglomerate": {
-      "return_1m": 0.010681,
-      "return_3m": 0.00967,
-      "return_6m": 0.024704,
-      "return_1y": 0.053951,
-      "return_ytd": 0.00598,
-      "return_itd": 0.156608,
-      "annualised_itd": 0.056075,
-      "data_points_count": 32,
+      "return_1m": 0.01235,
+      "return_3m": 0.007641,
+      "return_6m": 0.019496,
+      "return_1y": 0.042985,
+      "return_ytd": 0.01235,
+      "return_itd": 0.158518,
+      "annualised_itd": 0.054963,
+      "data_points_count": 34,
       "oldest_nav_date": "2023-07-31",
-      "latest_nav_date": "2026-02-28"
+      "latest_nav_date": "2026-04-30"
     },
     "stonepeak_plus": {
       "return_1m": 0.020238,
