@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-21T13:28:13.696391Z",
+  "last_updated": "2026-05-22T09:56:40.466977Z",
   "funds": {
     "isq_openinfra": {
       "return_1m": 0.063591,
@@ -9,9 +9,9 @@
       "return_ytd": 0.019583,
       "return_itd": 0.2912,
       "annualised_itd": 0.846649,
-      "data_points_count": 6,
+      "data_points_count": 5,
       "oldest_nav_date": "2025-10-01",
-      "latest_nav_date": "2026-03-31"
+      "latest_nav_date": "2026-02-28"
     },
     "ares_aci": {
       "return_1m": -0.004771,
@@ -21,9 +21,9 @@
       "return_ytd": -0.00404,
       "return_itd": -0.019083,
       "annualised_itd": -0.014347,
-      "data_points_count": 18,
+      "data_points_count": 16,
       "oldest_nav_date": "2024-11-30",
-      "latest_nav_date": "2026-04-30"
+      "latest_nav_date": "2026-02-28"
     },
     "kkr_infra_conglomerate": {
       "return_1m": 0.010681,
@@ -33,9 +33,9 @@
       "return_ytd": 0.00598,
       "return_itd": 0.156608,
       "annualised_itd": 0.056075,
-      "data_points_count": 33,
+      "data_points_count": 32,
       "oldest_nav_date": "2023-07-31",
-      "latest_nav_date": "2026-03-31"
+      "latest_nav_date": "2026-02-28"
     },
     "stonepeak_plus": {
       "return_1m": 0.020238,
@@ -45,9 +45,9 @@
       "return_ytd": 0.005063,
       "return_itd": 0.232441,
       "annualised_itd": 0.285048,
-      "data_points_count": 11,
+      "data_points_count": 10,
       "oldest_nav_date": "2025-05-31",
-      "latest_nav_date": "2026-03-31"
+      "latest_nav_date": "2026-02-28"
     },
     "brookfield_infra_income": {
       "return_1m": 0.004591,
@@ -57,7 +57,7 @@
       "return_ytd": 0.0,
       "return_itd": 0.086395,
       "annualised_itd": 0.180254,
-      "data_points_count": 10,
+      "data_points_count": 6,
       "oldest_nav_date": "2023-12-31",
       "latest_nav_date": "2026-01-31"
     },
@@ -69,9 +69,9 @@
       "return_ytd": 0.076308,
       "return_itd": 0.168903,
       "annualised_itd": 0.866869,
-      "data_points_count": 6,
+      "data_points_count": 3,
       "oldest_nav_date": "2024-09-30",
-      "latest_nav_date": "2025-12-31"
+      "latest_nav_date": "2025-09-30"
     },
     "partners_group_infra": {
       "return_1m": 0.046784,
@@ -81,9 +81,9 @@
       "return_ytd": 0.046784,
       "return_itd": 0.234483,
       "annualised_itd": 0.881288,
-      "data_points_count": 9,
+      "data_points_count": 4,
       "oldest_nav_date": "2024-03-31",
-      "latest_nav_date": "2026-02-28"
+      "latest_nav_date": "2025-09-30"
     }
   }
 }

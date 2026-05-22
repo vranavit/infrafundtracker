@@ -1,12 +1,5 @@
 {
-  "generated_at": "2026-05-21T13:28:13.696391Z",
+  "generated_at": "2026-05-22T09:56:40.466977Z",
   "period_days": 7,
-  "changes": [
-    {
-      "date": "2026-05-21",
-      "type": "verification",
-      "fund_id": "all",
-      "summary": "Daily SEC EDGAR check: no new 8-K/NPORT-P/N-CSR filings since 2026-05-20 across the seven monitored funds. Latest filings reviewed: ISQ 8-K acc 0001213900-26-052182 2026-05-05; KKR 8-K acc 0001948056-26-000033 2026-04-24; Ares 8-K acc 0002031750-26-000036 2026-05-19; Stonepeak 8-K acc 0002045458-26-000015 2026-05-05; Brookfield NPORT-P acc 0002071691-26-005312 2026-02-27 + N-CSR acc 0001398344-26-004615 2026-03-06; Hamilton Lane NPORT-P acc 0001193125-26-082385 2026-02-27; Partners Group NPORT-P acc 0001410368-26-021559 2026-03-02 + SC TO-I acc 0001398344-26-007391 2026-04-28. Restored source URLs and HIGH confidence on JSON data files that the morning CI auto-refresh had reset to LOW/null, and synced historical.json to include the latest verified monthly rows already present in index.html."
-    }
-  ]
+  "changes": []
 }
