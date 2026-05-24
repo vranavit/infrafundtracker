@@ -1,5 +1,17 @@
 {
-  "generated_at": "2026-05-24T09:05:33.473624Z",
+  "generated_at": "2026-05-24T11:30:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "system",
+      "fund_name": "ISQ Infrastructure Fund Tracker",
+      "change_type": "MAINTENANCE",
+      "detected_at": "2026-05-24",
+      "data_date": "2026-05-24",
+      "description": "No new SEC filings detected for any monitored fund. Restored source URLs and HIGH confidence to all 7 funds (had been wiped by CI auto-refresh). Synced JSON data files to match verified index.html data: KKR Apr 30 $30.33/$7,652.7M, Ares ACI Apr 30 $24.8805/$3,445.8M, ISQ Mar 31 $32.08/$233.3M, Stonepeak Mar 31 $32.15/$1,292.4M (Class I-1). Quarterly funds unchanged.",
+      "source_accession": null,
+      "source_url": null,
+      "source_filed_date": "2026-05-24"
+    }
+  ]
 }

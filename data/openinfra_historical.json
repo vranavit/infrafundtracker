@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20T13:00:00.000000+00:00",
+  "last_updated": "2026-05-24T11:30:00Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -62,6 +62,16 @@
           "dist_per_share": 0.3399,
           "source_label": "SEC 8-K filed 2026-04-02 (Series II Transactional NAV $207,006K / 6,389,136 shares; Class F-I table $32.28)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.08,
+          "aum_m": 233.3,
+          "subs_m": 52.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-05-05 (Series II Transactional NAV $233,291K / 7,259,274 shares; Class F-I Series II $32.08)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea028912801ex99-1.htm"
         }
       ]
     },
@@ -226,6 +236,26 @@
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Feb 2026",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 24.9176,
+          "aum_m": 3130.0,
+          "subs_m": 313.1,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-04-23 (Class I/D/S NAV $24.9176; aggregate NAV $3,130.0M; portfolio FV $3,466.7M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 24.8805,
+          "aum_m": 3445.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-05-19 (Class I/D/S NAV $24.8805; aggregate NAV $3,445.8M; portfolio FV $5,618.4M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000036/aci-20260519.htm"
         }
       ]
     },
@@ -550,6 +580,26 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-02)",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 29.96,
+          "aum_m": 7230.7,
+          "subs_m": 275.1,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-04-21 (Class I Transactional NAV per Share $29.96; Total Transactional NAV $7,230,684K / 241,120,040 shares; new Jan 2026 capitalisation methodology)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 30.33,
+          "aum_m": 7652.7,
+          "subs_m": 269.5,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-05-21 (Class I Transactional NAV $30.33; Total Transactional NAV $7,652,655K / 252,117,764 shares; GAAP NAV $7,403.2M; unamortized financing/acquisition costs $14.2M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000039/k-infrax202604xex991.htm"
         }
       ]
     },
@@ -654,6 +704,16 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-03-31",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/sp-20260325.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.15,
+          "aum_m": 1292.4,
+          "subs_m": 100.5,
+          "redemptions_m": null,
+          "dist_per_share": 0.24,
+          "source_label": "SEC 8-K filed 2026-05-05 (Class I-1 Transactional NAV $32.15; SP+ INFRA cumulative capital raised $1,292.4M; April +$100.5M; Third A&R LPA new Class Z series)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm"
         }
       ]
     },
@@ -906,6 +966,16 @@
           "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 1.8426,
+          "aum_m": 257.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC SC TO-I filed 2026-04-28 (Item 10: total Fund net assets $257,823,417.12 as of Feb 28, 2026; Class I NAV $1.8426; 6,997,121 Units outstanding)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/fp0098690-1_sctoi.htm"
         }
       ]
     }

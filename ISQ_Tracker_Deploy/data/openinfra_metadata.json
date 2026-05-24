@@ -1,17 +1,21 @@
 {
-  "last_updated": "2026-05-24T09:05:33.473624Z",
+  "last_updated": "2026-05-24T11:30:00Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
-  "validation_warnings": [
-    "isq_openinfra: No source URL",
-    "ares_aci: No source URL",
-    "kkr_infra_conglomerate: No source URL",
-    "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
-    "partners_group_infra: No source URL"
-  ]
+  "validation_warnings": [],
+  "last_run": "2026-05-24T11:30:00Z",
+  "new_filings_processed": [],
+  "funds_no_new_filings": [
+    "isq_openinfra (latest acc 0001213900-26-052182 filed 2026-05-05 already tracked)",
+    "ares_aci (latest acc 0002031750-26-000036 filed 2026-05-19 already tracked)",
+    "kkr_infra_conglomerate (latest acc 0001948056-26-000039 filed 2026-05-21 already tracked)",
+    "stonepeak_plus (latest acc 0002045458-26-000015 filed 2026-05-05 already tracked)",
+    "brookfield_infra_income (latest N-CSR acc 0001398344-26-004615 filed 2026-03-06 + NPORT-P acc 0002071691-26-005312 filed 2026-02-27 already tracked)",
+    "hamilton_lane_infra (latest NPORT-P acc 0001193125-26-082385 filed 2026-02-27 already tracked)",
+    "partners_group_infra (latest NPORT-P acc 0001410368-26-021559 filed 2026-03-02 + SC TO-I acc 0001398344-26-007391 filed 2026-04-28 already tracked)"
+  ],
+  "notes": "No new SEC filings detected since 2026-05-22. Restored source URLs and HIGH confidence wiped by CI auto-refresh; synced JSON files with verified index.html data (Apr 30 NAV for KKR/Ares, Mar 31 NAV for ISQ/Stonepeak)."
 }
