@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-26T10:33:28.269071Z",
+  "last_updated": "2026-05-26T13:16:33.248348Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
@@ -13,5 +13,6 @@
     "brookfield_infra_income: No source URL",
     "hamilton_lane_infra: No source URL",
     "partners_group_infra: No source URL"
-  ]
+  ],
+  "last_run": "2026-05-26T13:16:33.248348Z"
 }
