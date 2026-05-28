@@ -1,5 +1,41 @@
 {
-  "generated_at": "2026-05-28T10:37:59.198305Z",
+  "generated_at": "2026-05-28T14:31:20.306813Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-05-28",
+      "fund_id": "brookfield_infra_income",
+      "fund_name": "Brookfield Infrastructure Income Fund",
+      "change_type": "new_nav_aum",
+      "field": "nav_per_share + total_aum",
+      "old_value": "Jan 31, 2026 NAV $10.94 (Brookfield website); Dec 2025 AUM $5,016M",
+      "new_value": "Apr 30, 2026 Class I NAV $11.05; aggregate NAV $5,554.93M",
+      "source_type": "SEC SC TO-I",
+      "source_label": "acc 0001213900-26-061266 filed 2026-05-27 (Q2 2026 quarterly tender offer commenced)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000121390026061266/ea0292033-01_sctoi.htm",
+      "shares_outstanding_apr30": {
+        "Class I": 333953501.19,
+        "Class S": 169072592.8,
+        "Class D": 172081.73,
+        "Class T": 0
+      },
+      "per_class_nav_apr30": {
+        "Class I": 11.05,
+        "Class S": 11.02,
+        "Class D": 10.93
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "share_sale_event",
+      "field": "cumulative_subscriptions",
+      "old_value": "Inception cumulative $6,848M; K-Series $13,266M",
+      "new_value": "Inception cumulative $7,043M; K-Series Platform $13,659M (May 1, 2026 share sale $194.8M / Class I 3,393,764 sh $102.9M, Class S 2,816,180 sh $85.4M, Class D 211,882 sh $6.4M)",
+      "source_type": "SEC 8-K Item 3.02",
+      "source_label": "acc 0001948056-26-000041 filed 2026-05-27 (Item 3.02 May 1, 2026 share sale)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000041/kkr-20260521.htm"
+    }
+  ]
 }

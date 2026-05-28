@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-24T11:30:00Z",
+  "last_updated": "2026-05-28T14:30:42.617548Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -818,6 +818,16 @@
           "dist_per_share": null,
           "source_label": "Brookfield Private Wealth Website Jan 2026",
           "source_url": "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 11.05,
+          "aum_m": 5554.93,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SC TO-I Q2 2026 acc 0001213900-26-061266 filed 2026-05-27",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000121390026061266/ea0292033-01_sctoi.htm"
         }
       ]
     },
