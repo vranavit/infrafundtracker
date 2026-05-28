@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-27T16:00:00Z",
+  "last_updated": "2026-05-24T11:30:00Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -882,16 +882,6 @@
           "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-02-27 (Q2 FY2026)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526082385/"
-        },
-        {
-          "date": "2026-05-08",
-          "nav": 15.79,
-          "aum_m": null,
-          "subs_m": null,
-          "redemptions_m": null,
-          "dist_per_share": null,
-          "source_label": "N-23C3A filed 2026-05-15 (Q2 2026 Repurchase Offer): Class I NAV per Share on May 8, 2026 = $15.79 (Class Y $15.85, Class R $15.35). Repurchase Pricing Date June 15, 2026.",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm"
         }
       ]
     },

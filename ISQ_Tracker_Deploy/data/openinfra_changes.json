@@ -1,28 +1,5 @@
 {
-  "generated_at": "2026-05-27T16:00:00Z",
+  "generated_at": "2026-05-28T10:37:59.198305Z",
   "period_days": 7,
-  "changes": [
-    {
-      "fund_id": "hamilton_lane_infra",
-      "fund_name": "Hamilton Lane Private Infrastructure Fund",
-      "change_type": "NAV",
-      "description": "New Class I NAV $15.79 (Class Y $15.85, Class R $15.35) as of May 8, 2026 disclosed in inaugural N-23C3A quarterly Repurchase Offer notice (up to 5% of Class I/Y/R Shares; Repurchase Pricing Date June 15, 2026).",
-      "significance": "N-23C3A",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm",
-      "detected_at": "2026-05-27T16:00:00Z",
-      "accession_number": "0001213900-26-057243",
-      "filing_date": "2026-05-15"
-    },
-    {
-      "fund_id": "hamilton_lane_infra",
-      "fund_name": "Hamilton Lane Private Infrastructure Fund",
-      "change_type": "New Filings",
-      "description": "Hamilton Lane launched its first quarterly tender offer (Q2 2026) via N-23C3A; offer covers up to 5% of outstanding Class I, Y, and R Shares at NAV on June 15, 2026 Repurchase Pricing Date.",
-      "significance": "Q2 2026 Tender Offer",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm",
-      "detected_at": "2026-05-27T16:00:00Z",
-      "accession_number": "0001213900-26-057243",
-      "filing_date": "2026-05-15"
-    }
-  ]
+  "changes": []
 }
