@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-31T09:32:15.558432Z",
+  "last_updated": "2026-05-31T10:14:12.576Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
@@ -10,8 +10,7 @@
     "ares_aci: No source URL",
     "kkr_infra_conglomerate: No source URL",
     "stonepeak_plus: No source URL",
-    "brookfield_infra_income: No source URL",
-    "hamilton_lane_infra: No source URL",
     "partners_group_infra: No source URL"
-  ]
+  ],
+  "last_run": "2026-05-31T10:14:12.576Z"
 }
