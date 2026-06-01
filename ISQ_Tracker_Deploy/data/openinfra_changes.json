@@ -1,22 +1,5 @@
 {
-  "generated_at": "2026-05-31T10:14:12.576Z",
+  "generated_at": "2026-06-01T12:16:58.638188Z",
   "period_days": 7,
-  "changes": [
-    {
-      "date": "2026-05-31",
-      "fund": "brookfield_infra_income",
-      "fund_name": "Brookfield Infrastructure Income Fund",
-      "type": "AUM_UPDATE",
-      "detail": "New NPORT-P (acc 0002071691-26-012799, filed 2026-05-29) period ending 2026-03-31: AUM (totAssets - totLiabs) = $5,389.8M (totAssets $5,538,694,758.32, totLiabs $148,864,979.09). Added 2026-03 quarterly data point.",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126012799/primary_doc.xml"
-    },
-    {
-      "date": "2026-05-31",
-      "fund": "hamilton_lane_infra",
-      "fund_name": "Hamilton Lane Private Infrastructure Fund",
-      "type": "AUM_UPDATE",
-      "detail": "New NPORT-P (acc 0001193125-26-247445, filed 2026-05-29) FY2026 year-end period ending 2026-03-31: AUM (totAssets - totLiabs) = $176.8M (totAssets $179,034,799.78, totLiabs $2,219,191.95). Added 2026-03 quarterly data point.",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526247445/primary_doc.xml"
-    }
-  ]
+  "changes": []
 }
