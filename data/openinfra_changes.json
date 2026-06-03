@@ -1,5 +1,36 @@
 {
-  "generated_at": "2026-06-03T11:27:32.332066Z",
+  "generated_at": "2026-06-03T12:26:01.907126Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-06-03",
+      "fund": "isq_openinfra",
+      "type": "nav_update",
+      "description": "April 30, 2026 NAV $32.40/share (Class F-I Series II) and Series II Transactional NAV (AUM) $287.8M from SEC 8-K filed 2026-06-02 (acc 0001213900-26-064150). +1.00% MoM vs Mar $32.08; AUM +23.4% vs $233.3M."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "isq_openinfra",
+      "type": "event",
+      "description": "Item 3.02: May 1, 2026 unregistered share issuance, total net consideration $12,965,396. Class J Shares first sold at initial Transactional NAV $25.00."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "brookfield_infra_income",
+      "type": "aum_update",
+      "description": "Q1 2026 AUM $5,389.8M (totAssets $5,538.7M - totLiabs $148.9M) from SEC NPORT-P filed 2026-05-29 (acc 0002071691-26-012799), reporting period 2026-03-31."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "hamilton_lane_infra",
+      "type": "aum_update",
+      "description": "Q3 FY2026 AUM $176.8M (totAssets $179.0M - totLiabs $2.2M) from SEC NPORT-P filed 2026-05-29 (acc 0001193125-26-247445), reporting period 2026-03-31."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "partners_group_infra",
+      "type": "aum_update",
+      "description": "Q1 2026 AUM $277.3M (totAssets $284.1M - totLiabs $6.8M) from SEC NPORT-P filed 2026-06-01 (acc 0001410368-26-056537), reporting period 2026-03-31."
+    }
+  ]
 }

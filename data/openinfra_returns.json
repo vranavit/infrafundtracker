@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-06-03T11:27:32.332066Z",
+  "last_updated": "2026-06-03T12:26:01.907126Z",
   "funds": {
     "isq_openinfra": {
-      "return_1m": -0.006196,
-      "return_3m": 0.057002,
-      "return_6m": 0.2832,
+      "return_1m": 0.009975,
+      "return_3m": 0.023373,
+      "return_6m": 0.296,
       "return_1y": null,
-      "return_ytd": 0.013266,
-      "return_itd": 0.2832,
-      "annualised_itd": 0.646602,
-      "data_points_count": 6,
+      "return_ytd": 0.023373,
+      "return_itd": 0.296,
+      "annualised_itd": 0.559686,
+      "data_points_count": 7,
       "oldest_nav_date": "2025-10-01",
-      "latest_nav_date": "2026-03-31"
+      "latest_nav_date": "2026-04-30"
     },
     "ares_aci": {
       "return_1m": -0.001489,

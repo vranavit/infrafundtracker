@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-24T11:30:00Z",
+  "last_updated": "2026-06-03T12:26:01.907126Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -72,6 +72,16 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-05-05 (Series II Transactional NAV $233,291K / 7,259,274 shares; Class F-I Series II $32.08)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea028912801ex99-1.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 32.4,
+          "aum_m": 287.8,
+          "subs_m": 13.0,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-02 (Series II Transactional NAV $287,805K / 8,883,972 shares; Class F-I Series II $32.40; Item 3.02 May 1 share issuance net $12,965,396)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026064150/ea029294701ex99-1.htm"
         }
       ]
     },
@@ -818,6 +828,16 @@
           "dist_per_share": null,
           "source_label": "Brookfield Private Wealth Website Jan 2026",
           "source_url": "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": null,
+          "aum_m": 5389.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-05-29 (Q1 2026; totAssets $5,538,694,758.32 - totLiabs $148,864,979.09)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126012799/primary_doc.xml"
         }
       ]
     },
@@ -882,6 +902,16 @@
           "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-02-27 (Q2 FY2026)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526082385/"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": null,
+          "aum_m": 176.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-05-29 (Q3 FY2026; totAssets $179,034,799.78 - totLiabs $2,219,191.95)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526247445/primary_doc.xml"
         }
       ]
     },
@@ -976,6 +1006,16 @@
           "dist_per_share": null,
           "source_label": "SEC SC TO-I filed 2026-04-28 (Item 10: total Fund net assets $257,823,417.12 as of Feb 28, 2026; Class I NAV $1.8426; 6,997,121 Units outstanding)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/fp0098690-1_sctoi.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": null,
+          "aum_m": 277.3,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-06-01 (Q1 2026; totAssets $284,088,285.76 - totLiabs $6,793,511.41)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826056537/primary_doc.xml"
         }
       ]
     }
