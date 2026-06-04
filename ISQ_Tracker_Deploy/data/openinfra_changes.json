@@ -1,90 +1,54 @@
 {
-  "generated_at": "2026-06-04T10:25:26.435014Z",
+  "generated_at": "2026-06-04T12:36:18.099318Z",
   "period_days": 7,
   "changes": [
     {
-      "fund_id": "brookfield_infra_income",
-      "fund_name": "Brookfield Infrastructure Income Fund",
-      "change_type": "AUM_UPDATE",
-      "old_value": 5389.8,
-      "new_value": 4787.0,
-      "change_pct": -11.18,
       "date": "2026-06-04",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "Brookfield Infrastructure Income Fund AUM declined 11.2% to $4,787M",
-      "detected_at": "2026-06-04"
+      "fund": "stonepeak_plus",
+      "type": "filing_update",
+      "description": "Q1 2026 10-Q filed 2026-05-15 (acc 0002045458-26-000019, period 2026-03-31): Partnership total net assets $896,710,276 (Dec 31, 2025: $735,487,400); Master Aggregator net assets $1,350,533,395. GAAP NAV per unit Mar 31, 2026: I-1 $31.61, A-1a $30.18, A-1b $30.77, A-1c $31.34, F-1 $31.34, X $32.37 (GAAP basis; transactional NAV series unchanged at $32.15)."
     },
     {
-      "fund_id": "hamilton_lane_infra",
-      "fund_name": "Hamilton Lane Private Infrastructure Fund",
-      "change_type": "AUM_UPDATE",
-      "old_value": 176.8,
-      "new_value": 142.8,
-      "change_pct": -19.23,
       "date": "2026-06-04",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "Hamilton Lane Private Infrastructure Fund AUM declined 19.2% to $143M",
-      "detected_at": "2026-06-04"
+      "fund": "kkr_infra_conglomerate",
+      "type": "event",
+      "description": "Form D/A filed 2026-06-01 (acc 0001948056-26-000042): cumulative securities sold $7,443,571,084 in private placement since first sale 2023-06-01."
     },
     {
-      "fund_id": "isq_openinfra",
-      "fund_name": "ISQ OpenInfra Company",
-      "change_type": "NAV_UPDATE",
-      "old_value": 32.4,
-      "new_value": 31.66,
-      "change_pct": -2.284,
-      "date": "2026-01-31",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "ISQ OpenInfra Company NAV decreased 2.28% to $31.6600 as of 2026-01-31",
-      "detected_at": "2026-06-04"
-    },
-    {
-      "fund_id": "isq_openinfra",
-      "fund_name": "ISQ OpenInfra Company",
-      "change_type": "AUM_UPDATE",
-      "old_value": 287.8,
-      "new_value": 188.9,
-      "change_pct": -34.36,
       "date": "2026-06-04",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "ISQ OpenInfra Company AUM declined 34.4% to $189M",
-      "detected_at": "2026-06-04"
+      "fund": "kkr_infra_conglomerate, ares_aci, stonepeak_plus",
+      "type": "data_correction",
+      "description": "nav.json snapshots brought current to latest SEC-verified values (KKR $30.33/$7,652.7M Apr 30; Ares $24.8805/$3,445.8M Apr 30; Stonepeak $32.15/$1,292.4M Mar 31) with HIGH confidence and full source citations. Repaired 2026-06-04 10:25 UTC auto-refresh regression that had reverted NAVs to stale values and stripped source URLs/confidence."
     },
     {
-      "fund_id": "partners_group_infra",
-      "fund_name": "Partners Group Infrastructure Evergreen",
-      "change_type": "NAV_UPDATE",
-      "old_value": 1.8426,
-      "new_value": 1.79,
-      "change_pct": -2.855,
-      "date": "2025-09-30",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "Partners Group Infrastructure Evergreen NAV decreased 2.85% to $1.7900 as of 2025-09-30",
-      "detected_at": "2026-06-04"
+      "date": "2026-06-03",
+      "fund": "isq_openinfra",
+      "type": "nav_update",
+      "description": "April 30, 2026 NAV $32.40/share (Class F-I Series II) and Series II Transactional NAV (AUM) $287.8M from SEC 8-K filed 2026-06-02 (acc 0001213900-26-064150). +1.00% MoM vs Mar $32.08; AUM +23.4% vs $233.3M."
     },
     {
-      "fund_id": "partners_group_infra",
-      "fund_name": "Partners Group Infrastructure Evergreen",
-      "change_type": "AUM_UPDATE",
-      "old_value": 277.3,
-      "new_value": 228.0,
-      "change_pct": -17.78,
-      "date": "2026-06-04",
-      "source_url": null,
-      "source_label": null,
-      "significance": "HIGH",
-      "description": "Partners Group Infrastructure Evergreen AUM declined 17.8% to $228M",
-      "detected_at": "2026-06-04"
+      "date": "2026-06-03",
+      "fund": "isq_openinfra",
+      "type": "event",
+      "description": "Item 3.02: May 1, 2026 unregistered share issuance, total net consideration $12,965,396. Class J Shares first sold at initial Transactional NAV $25.00."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "brookfield_infra_income",
+      "type": "aum_update",
+      "description": "Q1 2026 AUM $5,389.8M (totAssets $5,538.7M - totLiabs $148.9M) from SEC NPORT-P filed 2026-05-29 (acc 0002071691-26-012799), reporting period 2026-03-31."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "hamilton_lane_infra",
+      "type": "aum_update",
+      "description": "Q3 FY2026 AUM $176.8M (totAssets $179.0M - totLiabs $2.2M) from SEC NPORT-P filed 2026-05-29 (acc 0001193125-26-247445), reporting period 2026-03-31."
+    },
+    {
+      "date": "2026-06-03",
+      "fund": "partners_group_infra",
+      "type": "aum_update",
+      "description": "Q1 2026 AUM $277.3M (totAssets $284.1M - totLiabs $6.8M) from SEC NPORT-P filed 2026-06-01 (acc 0001410368-26-056537), reporting period 2026-03-31."
     }
   ]
 }
