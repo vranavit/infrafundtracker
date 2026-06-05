@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-06-04T12:36:18.099318Z",
+  "last_updated": "2026-06-05T10:32:04.616446Z",
   "funds": {
     "isq_openinfra": {
       "return_1m": 0.009975,
-      "return_3m": 0.023373,
+      "return_3m": 0.067545,
       "return_6m": 0.296,
       "return_1y": null,
       "return_ytd": 0.023373,
