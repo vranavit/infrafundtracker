@@ -1,5 +1,62 @@
 {
-  "generated_at": "2026-06-06T09:07:16.102415Z",
+  "generated_at": "2026-06-06T12:00:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "NEW_FILING",
+      "old_value": null,
+      "new_value": null,
+      "change_pct": null,
+      "date": "2026-06-05",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000162828026041210/aci-20260605.htm",
+      "source_label": "SEC 8-K filed 2026-06-05 (acc 0001628280-26-041210, Items 3.02/8.01)",
+      "significance": "MEDIUM",
+      "description": "Ares filed 8-K: June 2026 monthly closing $845.2M agreed; May 31, 2026 shares outstanding disclosed (Class I 140,624,908; D 1,226,744; N 15,457,039; S 10,315,993). May 31 NAV per share pending (~20 business days after Jun 1).",
+      "detected_at": "2026-06-06"
+    },
+    {
+      "fund_id": "stonepeak_plus",
+      "fund_name": "Stonepeak-Plus Infrastructure Fund",
+      "change_type": "NAV_UPDATE",
+      "old_value": 32.15,
+      "new_value": 32.36,
+      "change_pct": 0.653,
+      "date": "2026-04-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000022/sp-20260529.htm",
+      "source_label": "SEC 8-K filed 2026-06-04 (acc 0002045458-26-000022)",
+      "significance": "MEDIUM",
+      "description": "Stonepeak-Plus Infrastructure Fund NAV increased 0.65% to $32.36 (Class I-1) as of Apr 30, 2026",
+      "detected_at": "2026-06-06"
+    },
+    {
+      "fund_id": "stonepeak_plus",
+      "fund_name": "Stonepeak-Plus Infrastructure Fund",
+      "change_type": "AUM_UPDATE",
+      "old_value": 1292.4,
+      "new_value": 1345.3,
+      "change_pct": 4.09,
+      "date": "2026-06-04",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000022/sp-20260529.htm",
+      "source_label": "SEC 8-K filed 2026-06-04 (acc 0002045458-26-000022)",
+      "significance": "MEDIUM",
+      "description": "Stonepeak-Plus (SP+ INFRA) cumulative capital raised grew 4.1% to $1,345M (May 2026 +$52.8M)",
+      "detected_at": "2026-06-06"
+    },
+    {
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "change_type": "NEW_FILING",
+      "old_value": null,
+      "new_value": null,
+      "change_pct": null,
+      "date": "2026-06-05",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010448/fp0099316-1_sctoia.htm",
+      "source_label": "SEC SC TO-I/A filed 2026-06-05 (acc 0001398344-26-010448)",
+      "significance": "LOW",
+      "description": "Partners Group filed SC TO-I/A \u2014 amendment to the fund's quarterly tender/repurchase offer.",
+      "detected_at": "2026-06-06"
+    }
+  ]
 }

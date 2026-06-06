@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03T12:26:01.907126Z",
+  "last_updated": "2026-06-06T12:00:00Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -724,6 +724,16 @@
           "dist_per_share": 0.24,
           "source_label": "SEC 8-K filed 2026-05-05 (Class I-1 Transactional NAV $32.15; SP+ INFRA cumulative capital raised $1,292.4M; April +$100.5M; Third A&R LPA new Class Z series)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 32.36,
+          "aum_m": 1345.3,
+          "subs_m": 52.8,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-04 (Class I-1 Transactional NAV $32.36 as of Apr 30, 2026; per-class A-1a $32.04, A-1b $32.08, A-1c $32.12, F-1 $32.12, S-1 $33.11, X $33.18; SP+ INFRA cumulative capital raised $1,345.3M; May 2026 +$52.8M; Item 3.02 May 4 unit sale $23.92M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000022/sp-20260529.htm"
         }
       ]
     },
