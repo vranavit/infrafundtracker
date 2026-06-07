@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T09:07:16.102415Z",
+  "last_updated": "2026-06-07T09:46:39.906505Z",
   "funds": {
     "isq_openinfra": {
       "return_1m": 0.009975,
@@ -38,16 +38,16 @@
       "latest_nav_date": "2026-04-30"
     },
     "stonepeak_plus": {
-      "return_1m": 0.01228,
-      "return_3m": 0.032766,
-      "return_6m": 0.070953,
+      "return_1m": 0.006532,
+      "return_3m": 0.039512,
+      "return_6m": 0.0733,
       "return_1y": null,
-      "return_ytd": 0.017405,
-      "return_itd": 0.247575,
-      "annualised_itd": 0.272917,
-      "data_points_count": 11,
+      "return_ytd": 0.024051,
+      "return_itd": 0.255724,
+      "annualised_itd": 0.255724,
+      "data_points_count": 12,
       "oldest_nav_date": "2025-05-31",
-      "latest_nav_date": "2026-03-31"
+      "latest_nav_date": "2026-04-30"
     },
     "brookfield_infra_income": {
       "return_1m": 0.004591,
