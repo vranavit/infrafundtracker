@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-07T09:46:39.906505Z",
+  "last_updated": "2026-06-07T11:44:33Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
@@ -13,5 +13,7 @@
     "brookfield_infra_income: No source URL",
     "hamilton_lane_infra: No source URL",
     "partners_group_infra: No source URL"
-  ]
+  ],
+  "last_run": "2026-06-07T11:44:33Z",
+  "last_run_summary": "SEC EDGAR checked for all 7 funds. No new NAV/AUM data points. 1 new event filing: Partners Group SC TO-I/A tender-offer final results (acc 0001398344-26-010448, filed 2026-06-05) logged; no per-unit NAV or total AUM disclosed."
 }

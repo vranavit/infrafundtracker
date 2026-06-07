@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-06-07T09:46:39.906505Z",
+  "generated_at": "2026-06-07T11:44:33Z",
   "period_days": 7,
   "changes": [
+    {
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "change_type": "TENDER_OFFER_RESULT",
+      "old_value": null,
+      "new_value": null,
+      "change_pct": null,
+      "date": "2026-06-05",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010448/fp0099316-1_sctoia.htm",
+      "source_label": "SEC SC TO-I/A Final Amendment (CIK 1989393, acc 0001398344-26-010448, filed 2026-06-05)",
+      "significance": "MEDIUM",
+      "description": "Quarterly tender offer (commenced Jan 27, 2026; tender deadline Feb 24, 2026) final results: 2 Members validly tendered; aggregate tendered Units' NAV $10,003,008.22 valued as of the Mar 31, 2026 Valuation Date; paid via promissory notes. No new per-unit NAV or total fund AUM disclosed.",
+      "detected_at": "2026-06-07"
+    },
     {
       "fund_id": "ares_aci",
       "fund_name": "Ares Core Infrastructure Fund",
