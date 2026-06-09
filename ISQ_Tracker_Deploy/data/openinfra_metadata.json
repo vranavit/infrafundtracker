@@ -1,9 +1,11 @@
 {
-  "last_updated": "2026-06-09T10:09:04.509056Z",
+  "last_updated": "2026-06-09T15:00:14.834072Z",
+  "last_run": "2026-06-09T15:00:14.834072Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
+  "last_check_result": "No new SEC filings detected for any monitored fund. Latest incorporated filings verified current through 2026-06-05 (ISQ 8-K acc 0001213900-26-064150; KKR 8-K acc 0001948056-26-000041 + Form D/A 0001948056-26-000042; Ares 8-K acc 0001628280-26-041210; Stonepeak 8-K acc 0002045458-26-000022; Brookfield NPORT-P acc 0002071691-26-012799; Hamilton Lane NPORT-P acc 0001193125-26-247445; Partners Group NPORT-P acc 0001410368-26-056537).",
   "errors": [],
   "validation_warnings": [
     "isq_openinfra: No source URL",
