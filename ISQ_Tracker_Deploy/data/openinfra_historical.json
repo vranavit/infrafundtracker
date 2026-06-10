@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-06-10T10:17:33Z",
+  "last_updated": "2026-06-06T12:00:00Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
         {
           "date": "2025-10-01",
-          "nav": 25,
+          "nav": 25.0,
           "aum_m": 80.4,
           "subs_m": 80.4,
           "redemptions_m": null,
@@ -56,7 +56,7 @@
         {
           "date": "2026-02-28",
           "nav": 32.28,
-          "aum_m": 207,
+          "aum_m": 207.0,
           "subs_m": 28.3,
           "redemptions_m": null,
           "dist_per_share": 0.3399,
@@ -77,7 +77,7 @@
           "date": "2026-04-30",
           "nav": 32.4,
           "aum_m": 287.8,
-          "subs_m": 13,
+          "subs_m": 13.0,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-06-02 (Series II Transactional NAV $287,805K / 8,883,972 shares; Class F-I Series II $32.40; Item 3.02 May 1 share issuance net $12,965,396)",
@@ -121,7 +121,7 @@
           "date": "2025-02-28",
           "nav": 24.94,
           "aum_m": 532.8,
-          "subs_m": 35,
+          "subs_m": 35.0,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K Feb 2025",
@@ -151,7 +151,7 @@
           "date": "2025-05-31",
           "nav": 24.9464,
           "aum_m": 721.3,
-          "subs_m": 92,
+          "subs_m": 92.0,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K 2025-05",
@@ -171,7 +171,7 @@
           "date": "2025-07-31",
           "nav": 24.8587,
           "aum_m": 1176.6,
-          "subs_m": 110,
+          "subs_m": 110.0,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K Jul 2025",
@@ -180,7 +180,7 @@
         {
           "date": "2025-08-31",
           "nav": 24.8316,
-          "aum_m": 1288,
+          "aum_m": 1288.0,
           "subs_m": 165.1,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -250,7 +250,7 @@
         {
           "date": "2026-03-31",
           "nav": 24.9176,
-          "aum_m": 3130,
+          "aum_m": 3130.0,
           "subs_m": 313.1,
           "redemptions_m": null,
           "dist_per_share": 0.2083,
@@ -278,7 +278,7 @@
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-07) — Class I first sold, 1,033 shares",
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-07) \u2014 Class I first sold, 1,033 shares",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000119312523219231/d509863dex991.htm"
         },
         {
@@ -334,7 +334,7 @@
         {
           "date": "2024-01-31",
           "nav": 27.1,
-          "aum_m": 1356,
+          "aum_m": 1356.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -374,7 +374,7 @@
         {
           "date": "2024-05-31",
           "nav": 27.48,
-          "aum_m": 2116,
+          "aum_m": 2116.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -618,7 +618,7 @@
         {
           "date": "2025-05-31",
           "nav": 25.77,
-          "aum_m": 437,
+          "aum_m": 437.0,
           "subs_m": 286.1,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -638,7 +638,7 @@
         {
           "date": "2025-07-31",
           "nav": 28.69,
-          "aum_m": 547,
+          "aum_m": 547.0,
           "subs_m": 41.8,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -648,8 +648,8 @@
         {
           "date": "2025-08-31",
           "nav": 29.05,
-          "aum_m": 591,
-          "subs_m": 32,
+          "aum_m": 591.0,
+          "subs_m": 32.0,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-10-01",
@@ -658,7 +658,7 @@
         {
           "date": "2025-09-30",
           "nav": 30.02,
-          "aum_m": 686,
+          "aum_m": 686.0,
           "subs_m": 95.4,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -678,7 +678,7 @@
         {
           "date": "2025-11-30",
           "nav": 30.25,
-          "aum_m": 966,
+          "aum_m": 966.0,
           "subs_m": 238.5,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -688,7 +688,7 @@
         {
           "date": "2025-12-31",
           "nav": 31.13,
-          "aum_m": 1023,
+          "aum_m": 1023.0,
           "subs_m": 57.3,
           "redemptions_m": null,
           "dist_per_share": 0.16,
@@ -698,7 +698,7 @@
         {
           "date": "2026-01-31",
           "nav": 31.6,
-          "aum_m": 1094,
+          "aum_m": 1094.0,
           "subs_m": 71.2,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -708,7 +708,7 @@
         {
           "date": "2026-02-28",
           "nav": 31.76,
-          "aum_m": 1192,
+          "aum_m": 1192.0,
           "subs_m": 97.4,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -742,7 +742,7 @@
         {
           "date": "2023-12-31",
           "nav": 10.07,
-          "aum_m": 1597,
+          "aum_m": 1597.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -752,7 +752,7 @@
         {
           "date": "2024-03-31",
           "nav": null,
-          "aum_m": 2041,
+          "aum_m": 2041.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -762,7 +762,7 @@
         {
           "date": "2024-06-30",
           "nav": 10.25,
-          "aum_m": 2489,
+          "aum_m": 2489.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -772,7 +772,7 @@
         {
           "date": "2024-09-30",
           "nav": null,
-          "aum_m": 2734,
+          "aum_m": 2734.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -782,7 +782,7 @@
         {
           "date": "2024-12-31",
           "nav": 10.44,
-          "aum_m": 3169,
+          "aum_m": 3169.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -792,7 +792,7 @@
         {
           "date": "2025-03-31",
           "nav": null,
-          "aum_m": 3619,
+          "aum_m": 3619.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -802,7 +802,7 @@
         {
           "date": "2025-06-30",
           "nav": 10.63,
-          "aum_m": 4145,
+          "aum_m": 4145.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -812,7 +812,7 @@
         {
           "date": "2025-09-30",
           "nav": null,
-          "aum_m": 4681,
+          "aum_m": 4681.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -822,7 +822,7 @@
         {
           "date": "2025-12-31",
           "nav": 10.89,
-          "aum_m": 4787,
+          "aum_m": 4787.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -915,13 +915,13 @@
         },
         {
           "date": "2026-03-31",
-          "nav": 15.51,
+          "nav": null,
           "aum_m": 176.8,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-05-29 (Q3 FY2026; AUM totAssets $179,034,799.78 - totLiabs $2,219,191.95 = $176.8M) + N-CSR filed 2026-06-09 (acc 0001213900-26-066813): audited Class I NAV $15.51 end of period FY2026; total return 15.26%",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026066813/ea0289140-01_ncsr.htm"
+          "source_label": "NPORT-P filed 2026-05-29 (Q3 FY2026; totAssets $179,034,799.78 - totLiabs $2,219,191.95)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526247445/primary_doc.xml"
         }
       ]
     },
@@ -930,7 +930,7 @@
         {
           "date": "2024-03-31",
           "nav": 1.45,
-          "aum_m": 62,
+          "aum_m": 62.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -940,7 +940,7 @@
         {
           "date": "2024-06-30",
           "nav": null,
-          "aum_m": 74,
+          "aum_m": 74.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -950,7 +950,7 @@
         {
           "date": "2024-09-30",
           "nav": 1.53,
-          "aum_m": 82,
+          "aum_m": 82.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -960,7 +960,7 @@
         {
           "date": "2024-12-31",
           "nav": null,
-          "aum_m": 95,
+          "aum_m": 95.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -970,7 +970,7 @@
         {
           "date": "2025-03-31",
           "nav": 1.71,
-          "aum_m": 117,
+          "aum_m": 117.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -980,7 +980,7 @@
         {
           "date": "2025-06-30",
           "nav": null,
-          "aum_m": 147,
+          "aum_m": 147.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -990,7 +990,7 @@
         {
           "date": "2025-09-30",
           "nav": 1.79,
-          "aum_m": 168,
+          "aum_m": 168.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -1000,7 +1000,7 @@
         {
           "date": "2025-12-31",
           "nav": null,
-          "aum_m": 228,
+          "aum_m": 228.0,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
@@ -1019,13 +1019,13 @@
         },
         {
           "date": "2026-03-31",
-          "nav": 1.91,
+          "nav": null,
           "aum_m": 277.3,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-06-01 (Q1 2026; AUM totAssets $284,088,285.76 - totLiabs $6,793,511.41 = $277.3M) + N-CSR filed 2026-06-09 (acc 0001398344-26-010607): audited Class I unit NAV $1.91 end of period FY2026; total return after Incentive Fee 11.34%",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm"
+          "source_label": "NPORT-P filed 2026-06-01 (Q1 2026; totAssets $284,088,285.76 - totLiabs $6,793,511.41)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826056537/primary_doc.xml"
         }
       ]
     }
