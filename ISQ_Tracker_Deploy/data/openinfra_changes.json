@@ -1,5 +1,46 @@
 {
-  "generated_at": "2026-06-09T10:09:04.509056Z",
+  "generated_at": "2026-06-10T10:17:33Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "hamilton_lane_infra",
+      "fund_name": "Hamilton Lane Private Infrastructure Fund",
+      "change_type": "NAV",
+      "description": "Class I audited NAV $15.51/share as of Mar 31, 2026 (FY2026 annual report; up from $14.81 Sep 2025). Total return FY2026 15.26%.",
+      "significance": "N-CSR",
+      "detected_at": "2026-06-10T10:17:33Z",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026066813/ea0289140-01_ncsr.htm",
+      "source_label": "SEC N-CSR acc 0001213900-26-066813 filed 2026-06-09"
+    },
+    {
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "change_type": "NAV",
+      "description": "Class I unit audited NAV $1.91 as of Mar 31, 2026 (FY2026 annual report; up from $1.71 Mar 2025). Total return after Incentive Fee FY2026 11.34%.",
+      "significance": "N-CSR",
+      "detected_at": "2026-06-10T10:17:33Z",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "source_label": "SEC N-CSR acc 0001398344-26-010607 filed 2026-06-09"
+    },
+    {
+      "fund_id": "hamilton_lane_infra",
+      "fund_name": "Hamilton Lane Private Infrastructure Fund",
+      "change_type": "New Filings",
+      "description": "N-CSR annual report filed 2026-06-09 (fiscal year ended Mar 31, 2026), acc 0001213900-26-066813.",
+      "significance": "N-CSR",
+      "detected_at": "2026-06-10T10:17:33Z",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026066813/ea0289140-01_ncsr.htm",
+      "source_label": "SEC EDGAR CIK 2020510"
+    },
+    {
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "change_type": "New Filings",
+      "description": "N-CSR annual report filed 2026-06-09 (fiscal year ended Mar 31, 2026), acc 0001398344-26-010607.",
+      "significance": "N-CSR",
+      "detected_at": "2026-06-10T10:17:33Z",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "source_label": "SEC EDGAR CIK 1989393"
+    }
+  ]
 }
