@@ -1,11 +1,9 @@
 {
-  "last_updated": "2026-06-12T10:49:04.894357Z",
-  "last_run": "2026-06-12T18:41:26Z",
+  "last_updated": "2026-06-13T09:42:37.852255Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
-  "last_check_result": "No new SEC filings detected for any monitored fund. SEC EDGAR submissions checked for all 7 CIKs on 2026-06-12; latest filing per fund verified already incorporated: ISQ 8-K acc 0001213900-26-064150 (filed 2026-06-02, Apr 30 2026 Transactional NAV); KKR Form D/A acc 0001948056-26-000042 (filed 2026-06-01; Apr 30 NAV 8-K acc 0001948056-26-000039 prior); Ares 8-K acc 0001628280-26-041210 (filed 2026-06-05, Jun 2026 monthly closing Item 3.02/8.01); Stonepeak 8-K acc 0002045458-26-000022 (filed 2026-06-04, Apr 30 2026 Transactional NAV); Brookfield NPORT-P acc 0002071691-26-012799 (filed 2026-05-29, Mar 31 2026 AUM); Hamilton Lane N-CSR acc 0001213900-26-066813 (filed 2026-06-09, FY2026 audited Class I NAV $15.51); Partners Group N-CSR acc 0001398344-26-010607 (filed 2026-06-09, FY2026 audited Class I unit NAV $1.91). No new NAV, AUM, or board-event disclosures since the 2026-06-10 incorporation run. Monthly May 31 2026 NAV 8-Ks for ISQ/KKR/Ares/Stonepeak not yet filed as of this check.",
   "errors": [],
   "validation_warnings": [
     "isq_openinfra: No source URL",
