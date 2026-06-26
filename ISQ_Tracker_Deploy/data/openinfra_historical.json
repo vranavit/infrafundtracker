@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T12:00:00Z",
+  "last_updated": "2026-06-26T14:30:00Z",
   "funds": {
     "isq_openinfra": {
       "historical": [
@@ -266,6 +266,16 @@
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K filed 2026-05-19 (Class I/D/S NAV $24.8805; aggregate NAV $3,445.8M; portfolio FV $5,618.4M)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000036/aci-20260519.htm"
+        },
+        {
+          "date": "2026-05-31",
+          "nav": 24.9295,
+          "aum_m": 4178.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-06-23 (Class I/D/N/S NAV $24.9295 as of May 31, 2026; aggregate NAV $4,178.8M; portfolio FV $6,699.6M; June 2026 monthly close $851.3M / 34,147,331 shares; June 2026 distribution $0.20830/sh Class I)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000042/aci-20260623.htm"
         }
       ]
     },
@@ -610,6 +620,16 @@
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-05-21 (Class I Transactional NAV $30.33; Total Transactional NAV $7,652,655K / 252,117,764 shares; GAAP NAV $7,403.2M; unamortized financing/acquisition costs $14.2M)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000039/k-infrax202604xex991.htm"
+        },
+        {
+          "date": "2026-05-31",
+          "nav": 30.52,
+          "aum_m": 7848.3,
+          "subs_m": 243.9,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-18 (Class I Transactional NAV $30.52 as of May 31, 2026; Total Monthly Transactional NAV $7,848,273K / 257,064,884 shares; Class I 86,634,176 sh @ $2,643,812K). Item 3.02 June 1 share sale $243.9M finalized 2026-06-18 (acc 0001948056-26-000047).",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000045/k-infrax202605xex991.htm"
         }
       ]
     },
@@ -915,13 +935,13 @@
         },
         {
           "date": "2026-03-31",
-          "nav": null,
+          "nav": 15.51,
           "aum_m": 176.8,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-05-29 (Q3 FY2026; totAssets $179,034,799.78 - totLiabs $2,219,191.95)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526247445/primary_doc.xml"
+          "source_label": "NPORT-P filed 2026-05-29 (AUM totAssets $179,034,799.78 - totLiabs $2,219,191.95) + N-CSR Annual FY2026 filed 2026-06-09 (audited Class I NAV/share $15.51 end of period; Class I net assets $121,690K; acc 0001213900-26-066813)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026066813/ea0289140-01_ncsr.htm"
         }
       ]
     },
@@ -1019,13 +1039,13 @@
         },
         {
           "date": "2026-03-31",
-          "nav": null,
+          "nav": 1.91,
           "aum_m": 277.3,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
-          "source_label": "NPORT-P filed 2026-06-01 (Q1 2026; totAssets $284,088,285.76 - totLiabs $6,793,511.41)",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826056537/primary_doc.xml"
+          "source_label": "NPORT-P filed 2026-06-01 (AUM totAssets $284,088,285.76 - totLiabs $6,793,511.41) + N-CSR Annual FY2026 filed 2026-06-09 (audited Class I unit NAV $1.91 end of period; Class I net assets $261,592K; acc 0001398344-26-010607)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm"
         }
       ]
     }

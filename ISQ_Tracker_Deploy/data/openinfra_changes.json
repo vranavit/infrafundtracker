@@ -1,5 +1,56 @@
 {
-  "generated_at": "2026-06-26T09:57:56.920886Z",
+  "generated_at": "2026-06-26T14:30:00Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "NAV",
+      "description": "May 2026 Class I Transactional NAV $30.52/sh (+0.63% MoM vs Apr $30.33); Total Transactional NAV $7,848.3M (+2.56%)",
+      "significance": "8-K EX-99.1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000045/k-infrax202605xex991.htm",
+      "detected_at": "2026-06-26T14:30:00Z",
+      "filing_date": "2026-06-18"
+    },
+    {
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "NAV",
+      "description": "May 2026 Class I NAV $24.9295/sh (+0.20% MoM vs Apr $24.8805); aggregate NAV $4,178.8M (+21.3%); portfolio FV $6,699.6M",
+      "significance": "8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000042/aci-20260623.htm",
+      "detected_at": "2026-06-26T14:30:00Z",
+      "filing_date": "2026-06-23"
+    },
+    {
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "change_type": "New Filings",
+      "description": "Item 3.02 \u2014 $243.9M unregistered share sale (June 1, 2026; finalized June 18): Class I 3,842,531 sh / $117.3M, Class S $110.6M, Class D $16.1M",
+      "significance": "8-K Item 3.02",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000047/kkr-20260618.htm",
+      "detected_at": "2026-06-26T14:30:00Z",
+      "filing_date": "2026-06-24"
+    },
+    {
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "change_type": "New Filings",
+      "description": "Rover Credit Agreement closed June 9, 2026 \u2014 ACI Rover Parent (f/k/a BCP Renaissance) borrower; Morgan Stanley admin/collateral agent, MUFG & Wells Fargo joint lead arrangers (Items 1.01/1.02/2.03)",
+      "significance": "8-K Item 2.03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000039/aci-20260609.htm",
+      "detected_at": "2026-06-26T14:30:00Z",
+      "filing_date": "2026-06-15"
+    },
+    {
+      "fund_id": "isq_openinfra",
+      "fund_name": "ISQ OpenInfra Company",
+      "change_type": "New Filings",
+      "description": "Series II entered $60M initial revolving credit agreement on June 11, 2026 (Items 1.01/2.03)",
+      "significance": "8-K Item 2.03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026069622/ea0294689-8k_isq.htm",
+      "detected_at": "2026-06-26T14:30:00Z",
+      "filing_date": "2026-06-17"
+    }
+  ]
 }
