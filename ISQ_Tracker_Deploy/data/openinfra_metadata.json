@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-28T09:41:36.117787Z",
+  "last_updated": "2026-06-28T10:14:37Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
@@ -13,5 +13,8 @@
     "brookfield_infra_income: No source URL",
     "hamilton_lane_infra: No source URL",
     "partners_group_infra: No source URL"
-  ]
+  ],
+  "last_run": "2026-06-28T10:14:37Z",
+  "new_events_detected": 2,
+  "new_nav_aum_points": 0
 }
