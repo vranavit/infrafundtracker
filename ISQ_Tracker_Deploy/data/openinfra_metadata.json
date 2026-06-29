@@ -1,13 +1,9 @@
 {
-  "last_updated": "2026-06-29T10:35:49.540319Z",
+  "last_updated": "2026-06-29T11:31:51.198964Z",
   "next_update": "tomorrow 06:30 UTC",
   "funds_monitored": 7,
   "funds_with_sec_filings": 7,
   "run_status": "COMPLETE",
   "errors": [],
-  "validation_warnings": [],
-  "last_run": "2026-06-29T10:36:35.437805Z",
-  "new_nav_aum_points": 2,
-  "new_events_detected": 5,
-  "data_layer": "re-synced to SEC-verified values; CI seed corrected to prevent daily reversion"
+  "validation_warnings": []
 }
