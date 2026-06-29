@@ -1,5 +1,116 @@
 {
-  "generated_at": "2026-06-28T09:41:36.117787Z",
+  "generated_at": "2026-06-29T10:36:35.437805Z",
   "period_days": 7,
-  "changes": []
+  "changes": [
+    {
+      "change_type": "Data Integrity",
+      "fund_id": "all",
+      "fund_name": "All monitored funds",
+      "description": "JSON data layer re-synchronized to SEC-verified values for all 7 funds. The automated 'fetch_openinfra' GitHub Action (commit b72ec34) had reverted nav/historical/returns JSON to stale seed data after the 2026-06-26 manual update, leaving the dashboard's table/charts ~1-4 months behind index.html. Restored KKR & Ares May-2026 NAV and HL & PG FY2026 N-CSR NAV; brought ISQ/Stonepeak/Brookfield/HL snapshots current; confidence raised to HIGH with SEC citations. Root cause fixed in scripts/funds_config.json seed + fetch_openinfra_data.py so the daily 06:30 UTC job reproduces (not reverts) this state.",
+      "source_type": "Internal",
+      "source_url": "",
+      "source_label": "ISQ Tracker data-integrity sync",
+      "significance": "HIGH",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "NAV Update",
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "description": "Class I Transactional NAV $30.52 as of May 31, 2026 (+0.63% vs Apr 30 $30.33). Total Transactional NAV $7,848.3M across 257,064,884 shares (Class I 86,634,176 @ $2,643,812K). GAAP NAV $7,589.5M.",
+      "source_type": "SEC 8-K EX-99.1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000045/k-infrax202605xex991.htm",
+      "source_label": "SEC 8-K EX-99.1 (acc 0001948056-26-000045, filed 2026-06-18)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "NAV Update",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "description": "Class I NAV $24.9295 as of May 31, 2026 (+0.20% vs Apr 30 $24.8805). Aggregate NAV $4,178.8M; portfolio fair value $6,699.6M. June 2026 distribution $0.20830/sh (Class I gross); Jul-Sep 2026 declared at $0.20830.",
+      "source_type": "SEC 8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000042/aci-20260623.htm",
+      "source_label": "SEC 8-K Item 8.01 (acc 0002031750-26-000042, filed 2026-06-23)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "NAV Update",
+      "fund_id": "hamilton_lane_infra",
+      "fund_name": "Hamilton Lane Private Infrastructure Fund",
+      "description": "Class I NAV $15.79 as of May 8, 2026 (N-23C3A repurchase pricing; +1.81% vs audited Mar 31 $15.51). Audited FY2026 Class I NAV $15.51 (N-CSR) backfilled to the Mar-31 quarter (AUM $176.8M from NPORT-P).",
+      "source_type": "SEC N-23C3A / N-CSR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm",
+      "source_label": "SEC N-23C3A (acc 0001213900-26-057243, filed 2026-05-15) + N-CSR FY2026 (acc 0001213900-26-066813, filed 2026-06-09)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "NAV Update",
+      "fund_id": "partners_group_infra",
+      "fund_name": "Partners Group Infrastructure Evergreen",
+      "description": "Audited Class I Units NAV $1.91 as of Mar 31, 2026 (FY2026 year-end; progression $1.45 -> $1.71 -> $1.91). Class I net assets $261,592K; FY2026 total return after incentive 11.34%. Mar-31 quarter NAV backfilled (AUM $277.3M from NPORT-P).",
+      "source_type": "SEC N-CSR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "source_label": "SEC N-CSR Annual FY2026 (acc 0001398344-26-010607, filed 2026-06-09)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "New Filings",
+      "fund_id": "isq_openinfra",
+      "fund_name": "ISQ OpenInfra Company",
+      "description": "Series II entered a revolving credit agreement on Jun 11, 2026: revolving loans up to an initial $60.0M aggregate principal (expandable to $180M), LTV covenant max 30% (Items 1.01/2.03). May 2026 monthly NAV 8-K not yet filed as of this run.",
+      "source_type": "SEC 8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026069622/ea0294689-8k_isq.htm",
+      "source_label": "SEC 8-K Items 1.01/2.03 (acc 0001213900-26-069622, filed 2026-06-17)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "New Filings",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "description": "Rover (ACI Rover Parent, f/k/a BCP Renaissance) credit agreement closed Jun 9, 2026: $910.0M senior secured first-lien Term Loan B at Term SOFR + 2.25%, refinancing the ~$1.09B Initial Rover facility; 50% swapped at all-in 4.085%. June 2026 share sale $851.3M (34,147,331 shares) priced at May 31 NAV.",
+      "source_type": "SEC 8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000039/aci-20260609.htm",
+      "source_label": "SEC 8-K Items 1.01/2.03 (acc 0002031750-26-000039, filed 2026-06-15)",
+      "significance": "MEDIUM",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "New Filings",
+      "fund_id": "kkr_infra_conglomerate",
+      "fund_name": "KKR Infrastructure Conglomerate",
+      "description": "June 1, 2026 unregistered share sale finalized Jun 18: $243.9M total (Class I 3,842,531 sh/$117.3M; Class S 3,625,547/$110.6M; Class D 528,197/$16.1M). Cumulative offering ~$7,287M since inception.",
+      "source_type": "SEC 8-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000047/kkr-20260618.htm",
+      "source_label": "SEC 8-K Item 3.02 (acc 0001948056-26-000047, filed 2026-06-24)",
+      "significance": "LOW",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "New Filings",
+      "fund_id": "ares_aci",
+      "fund_name": "Ares Core Infrastructure Fund",
+      "description": "Q2 2026 quarterly tender offer completed (expired Jun 18, 2026): 199,367 shares accepted 100% at the May 31, 2026 NAV; ~$4.91M paid Jun 26, 2026. Priced at already-recorded NAV; no new NAV/AUM data point.",
+      "source_type": "SEC SC TO-I/A",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000110465926078246/tm2615050d2_sctoia.htm",
+      "source_label": "SEC SC TO-I/A Final Amendment (acc 0001104659-26-078246, filed 2026-06-26)",
+      "significance": "LOW",
+      "detected_at": "2026-06-29"
+    },
+    {
+      "change_type": "New Filings",
+      "fund_id": "hamilton_lane_infra",
+      "fund_name": "Hamilton Lane Private Infrastructure Fund",
+      "description": "Q1 2026 quarterly tender offer final results: 44,698 Class I + 2,297 Class R shares accepted 100% at the Mar 31, 2026 NAV. Priced at already-recorded NAV; no new NAV/AUM data point.",
+      "source_type": "SEC SC TO-I/A",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026072022/ea0295722-01_sctoia.htm",
+      "source_label": "SEC SC TO-I/A Final Amendment (acc 0001213900-26-072022, filed 2026-06-25)",
+      "significance": "LOW",
+      "detected_at": "2026-06-29"
+    }
+  ]
 }

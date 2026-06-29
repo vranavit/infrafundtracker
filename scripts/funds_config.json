@@ -13,9 +13,9 @@
       "has_sec_filings": true,
       "inception_date": "2025-10-01",
       "backfill_start_date": "2025-09-01",
-      "known_nav": 31.66,
-      "known_nav_date": "2026-01-31",
-      "known_aum_m": 188.9,
+      "known_nav": 32.4,
+      "known_nav_date": "2026-04-30",
+      "known_aum_m": 287.8,
       "historical_nav": [
         {
           "date": "2025-10-01",
@@ -40,9 +40,6 @@
         {
           "date": "2025-12-01",
           "nav": 28.83,
-          "nav_class_fi": 28.83,
-          "nav_class_fdte": 28.78,
-          "nav_class_e": 29.55,
           "aum_m": 122.8,
           "subs_m": 22.9,
           "redemptions_m": null,
@@ -53,9 +50,6 @@
         {
           "date": "2025-12-31",
           "nav": 30.35,
-          "nav_class_fi": 30.35,
-          "nav_class_fdte": 30.28,
-          "nav_class_e": 31.39,
           "aum_m": 153.7,
           "subs_m": 28.4,
           "redemptions_m": null,
@@ -66,17 +60,48 @@
         {
           "date": "2026-01-31",
           "nav": 31.66,
-          "nav_class_fi": 31.66,
-          "nav_class_fdte": 31.55,
-          "nav_class_e": 33.0,
           "aum_m": 188.9,
           "subs_m": 13.6,
           "redemptions_m": null,
           "dist_per_share": 0.11,
           "source_label": "SEC 8-K filed 2026-03-10",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026025277/ea0280611-8k_isqopen.htm"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 32.28,
+          "aum_m": 207.0,
+          "subs_m": 28.3,
+          "redemptions_m": null,
+          "dist_per_share": 0.3399,
+          "source_label": "SEC 8-K filed 2026-04-02 (Series II Transactional NAV $207,006K / 6,389,136 shares; Class F-I table $32.28)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026039308/ea028478001ex99-1.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.08,
+          "aum_m": 233.3,
+          "subs_m": 52.4,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-05-05 (Series II Transactional NAV $233,291K / 7,259,274 shares; Class F-I Series II $32.08)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026052182/ea028912801ex99-1.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 32.4,
+          "aum_m": 287.8,
+          "subs_m": 13.0,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-02 (Series II Transactional NAV $287,805K / 8,883,972 shares; Class F-I Series II $32.40; Item 3.02 May 1 share issuance net $12,965,396)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026064150/ea029294701ex99-1.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/2059924/000121390026064150/ea029294701ex99-1.htm",
+      "known_source_label": "SEC 8-K EX-99.1 filed 2026-06-02 (acc 0001213900-26-064150; CIK 2059924; Class F-I Series II Transactional NAV $32.40 as of Apr 30, 2026)",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     },
     {
       "id": "ares_aci",
@@ -91,9 +116,9 @@
       "has_sec_filings": true,
       "inception_date": "2024-08-28",
       "backfill_start_date": "2024-08-01",
-      "known_nav": 24.9252,
-      "known_nav_date": "2026-02-28",
-      "known_aum_m": 2782.2,
+      "known_nav": 24.9295,
+      "known_nav_date": "2026-05-31",
+      "known_aum_m": 4178.8,
       "historical_nav": [
         {
           "date": "2024-11-30",
@@ -102,7 +127,6 @@
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": 0.9221,
-          "note": "First 8-K after commencement of operations Aug 28 2024",
           "source_label": "SEC 8-K filed 2024-12-23",
           "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828024052352/november2024nav8-k.htm"
         },
@@ -164,8 +188,7 @@
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K 2025-05",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "portfolio_fv_m": 905.4
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2025-06-30",
@@ -175,8 +198,7 @@
           "redemptions_m": null,
           "dist_per_share": 0.2079,
           "source_label": "SEC 8-K filed 2025-07-21",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828025035491/aci-20250721.htm",
-          "portfolio_fv_m": 930.6
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000162828025035491/aci-20250721.htm"
         },
         {
           "date": "2025-07-31",
@@ -186,8 +208,7 @@
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K Jul 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "portfolio_fv_m": 1342.6
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2025-08-31",
@@ -197,8 +218,7 @@
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K 2025-08",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "portfolio_fv_m": 1392.6
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2025-09-30",
@@ -208,9 +228,7 @@
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-10-21",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000203175025000035/aci-20251021.htm",
-          "cumulative_shares": 65448902,
-          "portfolio_fv_m": 1741.8
+          "source_url": "https://www.sec.gov/Archives/edgar/data/0002031750/000203175025000035/aci-20251021.htm"
         },
         {
           "date": "2025-10-31",
@@ -220,9 +238,7 @@
           "redemptions_m": null,
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Oct 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "cumulative_shares": 75544123,
-          "portfolio_fv_m": 2109.2
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2025-11-30",
@@ -232,47 +248,73 @@
           "redemptions_m": null,
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Nov 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "cumulative_shares": 83553805,
-          "portfolio_fv_m": 2285.4
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2025-12-31",
           "nav": 25.0447,
           "aum_m": 2094.6,
-          "cumulative_shares": 94949605,
           "subs_m": 285.4,
           "redemptions_m": null,
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Dec 2025",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "portfolio_fv_m": 3049.3
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2026-01-31",
           "nav": 25.0263,
           "aum_m": 2383.7,
-          "cumulative_shares": 111081369,
           "subs_m": 403.7,
           "redemptions_m": null,
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Jan 2026",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750",
-          "portfolio_fv_m": 3152.4
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
         },
         {
           "date": "2026-02-28",
           "nav": 24.9252,
           "aum_m": 2782.2,
-          "cumulative_shares": 125287024,
-          "portfolio_fv_m": 3221.0,
           "subs_m": 354.1,
           "redemptions_m": null,
           "dist_per_share": 0.2083,
           "source_label": "SEC 8-K Feb 2026",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2031750"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 24.9176,
+          "aum_m": 3130.0,
+          "subs_m": 313.1,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-04-23 (Class I/D/S NAV $24.9176; aggregate NAV $3,130.0M; portfolio FV $3,466.7M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000024/aci-20260423.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 24.8805,
+          "aum_m": 3445.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-05-19 (Class I/D/S NAV $24.8805; aggregate NAV $3,445.8M; portfolio FV $5,618.4M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000036/aci-20260519.htm"
+        },
+        {
+          "date": "2026-05-31",
+          "nav": 24.9295,
+          "aum_m": 4178.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": 0.2083,
+          "source_label": "SEC 8-K filed 2026-06-23 (Class I/D/N/S NAV $24.9295 as of May 31, 2026; aggregate NAV $4,178.8M; portfolio FV $6,699.6M; June 2026 monthly close $851.3M / 34,147,331 shares; June 2026 distribution $0.20830/sh Class I)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000042/aci-20260623.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/2031750/000203175026000042/aci-20260623.htm",
+      "known_source_label": "SEC 8-K filed 2026-06-23 (acc 0002031750-26-000042; CIK 2031750; Class I Common Shares NAV, as of May 31, 2026)",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": 0.2083
     },
     {
       "id": "kkr_infra_conglomerate",
@@ -287,352 +329,366 @@
       "has_sec_filings": true,
       "inception_date": "2023-07-01",
       "backfill_start_date": "2023-07-01",
-      "known_nav": 30.28,
-      "known_nav_date": "2026-02-28",
-      "known_aum_m": 7028.8,
+      "known_nav": 30.52,
+      "known_nav_date": "2026-05-31",
+      "known_aum_m": 7848.3,
       "historical_nav": [
         {
           "date": "2023-07-31",
           "nav": 26.18,
-          "nav_class_i": 26.18,
           "aum_m": 474.2,
           "subs_m": null,
-          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-07) — Class I first sold, 1,033 shares",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000119312523219231/d509863dex991.htm",
-          "shares": 18068487
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-07) \u2014 Class I first sold, 1,033 shares",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000119312523219231/d509863dex991.htm"
         },
         {
           "date": "2023-08-31",
           "nav": 26.2,
-          "nav_class_i": 26.2,
           "aum_m": 512.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-08)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 19592157
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2023-09-30",
           "nav": 26.3,
-          "nav_class_i": 26.3,
           "aum_m": 778.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-09)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 29627732
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2023-10-31",
           "nav": 26.14,
-          "nav_class_i": 26.14,
           "aum_m": 917.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-10)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 35144743
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2023-11-30",
           "nav": 26.65,
-          "nav_class_i": 26.65,
           "aum_m": 1077.4,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-11)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 40446120
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2023-12-31",
           "nav": 26.97,
-          "nav_class_i": 26.97,
           "aum_m": 1220.8,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2023-12)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 45294472
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-01-31",
           "nav": 27.1,
-          "nav_class_i": 27.1,
           "aum_m": 1356.0,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-01)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 50083219
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-02-29",
           "nav": 27.28,
-          "nav_class_i": 27.28,
           "aum_m": null,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K 2024-02",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056"
         },
         {
           "date": "2024-03-31",
           "nav": 27.19,
-          "nav_class_i": 27.19,
           "aum_m": 1643.6,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-03)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 60472345
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-04-30",
           "nav": 27.36,
-          "nav_class_i": 27.36,
           "aum_m": 1857.4,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-04)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 67944062
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-05-31",
           "nav": 27.48,
-          "nav_class_i": 27.48,
           "aum_m": 2116.0,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-05)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 77080234
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-06-30",
           "nav": 27.5,
-          "nav_class_u": 27.48,
-          "nav_class_r": 27.5,
-          "nav_class_rd": 27.48,
-          "nav_class_d": 27.49,
-          "nav_class_i": 27.5,
-          "nav_class_s": 27.52,
           "aum_m": 2259.6,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-06)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 60472340,
-          "shares": 82206860
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-07-31",
           "nav": 27.79,
-          "nav_class_i": 27.79,
           "aum_m": 2417.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-07)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 87078576,
-          "shares": 87078576
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-08-31",
           "nav": 27.5,
           "aum_m": 2581.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-08)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 91697259,
-          "shares": 91697259
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-09-30",
           "nav": 28.25,
           "aum_m": 2734.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-09)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 82206860,
-          "shares": 96824157
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-10-31",
           "nav": 28.28,
-          "nav_class_i": 28.28,
           "aum_m": 2888.3,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-10)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 102170135
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-11-30",
           "nav": 28.38,
-          "nav_class_i": 28.38,
           "aum_m": 3053.3,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-11)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 107658682
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2024-12-31",
           "nav": 28.38,
-          "nav_class_i": 28.38,
           "aum_m": 3237.5,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2024-12)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 96824157,
-          "shares": 114085418
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-01-31",
           "nav": 28.55,
-          "nav_class_i": 28.55,
           "aum_m": 3518.8,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-01)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 123271259,
-          "shares": 123271259
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-02-28",
           "nav": 28.73,
-          "nav_class_i": 28.73,
           "aum_m": 3716.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-02)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 129481713
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-03-31",
           "nav": 28.88,
-          "nav_class_i": 28.88,
           "aum_m": 3985.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-03)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 114085418,
-          "shares": 138000777
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-04-30",
           "nav": 29.08,
-          "nav_class_i": 29.08,
           "aum_m": 4246.3,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-04)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 146071324,
-          "shares": 146071324
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-05-31",
           "nav": 29.2,
-          "nav_class_i": 29.2,
           "aum_m": 4444.8,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-05)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 152302664
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-06-30",
           "nav": 29.26,
-          "nav_class_i": 29.26,
           "aum_m": 4682.4,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-06)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 138000777,
-          "shares": 159970227
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-07-31",
           "nav": 29.36,
-          "nav_class_i": 29.36,
           "aum_m": 4948.3,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-07)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 168559090
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-08-31",
           "nav": 29.55,
-          "nav_class_i": 29.55,
           "aum_m": 5222.5,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-08)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 176818622
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-09-30",
           "nav": 29.63,
-          "nav_class_i": 29.63,
           "aum_m": 5514.7,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-09)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 156970227,
-          "shares": 186061352
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-10-31",
           "nav": 29.75,
-          "nav_class_i": 29.75,
           "aum_m": 5924.1,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-10)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 199028037,
-          "shares": 199028037
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-11-30",
           "nav": 29.99,
-          "nav_class_i": 29.99,
           "aum_m": 6242.9,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-11)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 208179905,
-          "shares": 208179905
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2025-12-31",
           "nav": 29.96,
-          "nav_class_i": 29.96,
           "aum_m": 6471.7,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2025-12)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 215892126
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2026-01-31",
           "nav": 30.1,
-          "nav_class_i": 30.1,
           "aum_m": 6809.7,
           "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-01)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "total_shares": 226105449,
-          "shares": 226105449
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
         },
         {
           "date": "2026-02-28",
           "nav": 30.28,
-          "nav_class_i": 30.28,
           "aum_m": 7028.8,
-          "total_shares": 232031512,
-          "investments_fv_m": 5876.8,
-          "cash_m": 1230.2,
           "subs_m": null,
           "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K EX-99.1 Transactional NAV (2026-02)",
-          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K",
-          "shares": 232031512
+          "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1948056&type=8-K"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 29.96,
+          "aum_m": 7230.7,
+          "subs_m": 275.1,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-04-21 (Class I Transactional NAV per Share $29.96; Total Transactional NAV $7,230,684K / 241,120,040 shares; new Jan 2026 capitalisation methodology)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000028/k-infrax202603xex991.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 30.33,
+          "aum_m": 7652.7,
+          "subs_m": 269.5,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-05-21 (Class I Transactional NAV $30.33; Total Transactional NAV $7,652,655K / 252,117,764 shares; GAAP NAV $7,403.2M; unamortized financing/acquisition costs $14.2M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000039/k-infrax202604xex991.htm"
+        },
+        {
+          "date": "2026-05-31",
+          "nav": 30.52,
+          "aum_m": 7848.3,
+          "subs_m": 243.9,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-18 (Class I Transactional NAV $30.52 as of May 31, 2026; Total Monthly Transactional NAV $7,848,273K / 257,064,884 shares; Class I 86,634,176 sh @ $2,643,812K). Item 3.02 June 1 share sale $243.9M finalized 2026-06-18 (acc 0001948056-26-000047).",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000045/k-infrax202605xex991.htm"
         }
       ],
-      "note": "KKR files monthly NAV 8-Ks. AUM $7.0B as of Feb 2026. EX-99.1 exhibits provide total Transactional NAV (AUM)."
+      "note": "KKR files monthly NAV 8-Ks. AUM $7.0B as of Feb 2026. EX-99.1 exhibits provide total Transactional NAV (AUM).",
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/1948056/000194805626000045/k-infrax202605xex991.htm",
+      "known_source_label": "SEC 8-K EX-99.1 filed 2026-06-18 (acc 0001948056-26-000045; CIK 1948056; Class I Transactional NAV per Share, as of May 31, 2026)",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     },
     {
       "id": "stonepeak_plus",
@@ -647,20 +703,17 @@
       "has_sec_filings": true,
       "inception_date": "2025-05-02",
       "backfill_start_date": "2025-05-01",
-      "known_nav": 31.76,
-      "known_nav_date": "2026-02-28",
-      "known_aum_m": 1192.0,
+      "known_nav": 32.36,
+      "known_nav_date": "2026-04-30",
+      "known_aum_m": 1345.3,
       "note": "AUM based on cumulative SP+ INFRA capital raised ($992M cash + $200M affiliate). Per-unit NAV only; total fund NAV not disclosed in filings.",
       "historical_nav": [
         {
           "date": "2025-05-31",
           "nav": 25.77,
-          "nav_class_x": 25.77,
-          "nav_class_a1a": null,
-          "nav_class_i1": null,
-          "aum_m": null,
-          "cumulative_raised_m": 437.0,
+          "aum_m": 437.0,
           "subs_m": 286.1,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-07-07 (inception)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125024968/ef20051618_8k.htm"
@@ -668,12 +721,9 @@
         {
           "date": "2025-06-30",
           "nav": 28.14,
-          "nav_class_x": 28.51,
-          "nav_class_a1a": 28.14,
-          "nav_class_i1": null,
-          "aum_m": null,
-          "cumulative_raised_m": 482.4,
+          "aum_m": 482.4,
           "subs_m": 18.4,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-08-01",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125028400/ef20053069_8k.htm"
@@ -681,12 +731,9 @@
         {
           "date": "2025-07-31",
           "nav": 28.69,
-          "nav_class_x": 28.75,
-          "nav_class_a1a": 28.32,
-          "nav_class_i1": 28.69,
-          "aum_m": null,
-          "cumulative_raised_m": 547.0,
+          "aum_m": 547.0,
           "subs_m": 41.8,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-09-04",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125033999/ef20055084_8k.htm"
@@ -694,12 +741,9 @@
         {
           "date": "2025-08-31",
           "nav": 29.05,
-          "nav_class_x": 29.16,
-          "nav_class_a1a": 28.67,
-          "nav_class_i1": 29.05,
-          "aum_m": null,
-          "cumulative_raised_m": 591.0,
+          "aum_m": 591.0,
           "subs_m": 32.0,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-10-01",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000114036125037000/ef20056485_8k.htm"
@@ -707,12 +751,9 @@
         {
           "date": "2025-09-30",
           "nav": 30.02,
-          "nav_class_x": 30.29,
-          "nav_class_a1a": 29.64,
-          "nav_class_i1": 30.02,
-          "aum_m": null,
-          "cumulative_raised_m": 686.0,
+          "aum_m": 686.0,
           "subs_m": 95.4,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2025-11-05",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545825000014/sp-20251030.htm"
@@ -720,12 +761,9 @@
         {
           "date": "2025-10-31",
           "nav": 30.15,
-          "nav_class_x": 30.51,
-          "nav_class_a1a": 29.82,
-          "nav_class_i1": 30.15,
-          "aum_m": null,
-          "cumulative_raised_m": 727.5,
+          "aum_m": 727.5,
           "subs_m": 41.4,
+          "redemptions_m": null,
           "dist_per_share": 0.3,
           "source_label": "SEC 8-K filed 2025-12-05",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545825000023/sp-20251201.htm"
@@ -733,26 +771,19 @@
         {
           "date": "2025-11-30",
           "nav": 30.25,
-          "nav_class_x": 30.63,
-          "nav_class_a1a": 29.9,
-          "nav_class_i1": 30.25,
-          "aum_m": null,
-          "cumulative_raised_m": 966.0,
+          "aum_m": 966.0,
           "subs_m": 238.5,
+          "redemptions_m": null,
           "dist_per_share": null,
-          "note": "Includes $200M affiliate contribution of warehoused investments (Princeton Digital Group, Forgital Group)",
           "source_label": "SEC 8-K filed 2026-01-05",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000003/sp-20251229.htm"
         },
         {
           "date": "2025-12-31",
           "nav": 31.13,
-          "nav_class_x": 31.67,
-          "nav_class_a1a": 30.79,
-          "nav_class_i1": 31.13,
-          "aum_m": null,
-          "cumulative_raised_m": 1023.0,
+          "aum_m": 1023.0,
           "subs_m": 57.3,
+          "redemptions_m": null,
           "dist_per_share": 0.16,
           "source_label": "SEC 8-K filed 2026-02-05",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000005/sp-20260130.htm"
@@ -760,12 +791,9 @@
         {
           "date": "2026-01-31",
           "nav": 31.6,
-          "nav_class_x": 32.21,
-          "nav_class_a1a": 31.25,
-          "nav_class_i1": 31.6,
-          "aum_m": null,
-          "cumulative_raised_m": 1094.0,
+          "aum_m": 1094.0,
           "subs_m": 71.2,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-03-04",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000007/sp-20260226.htm"
@@ -773,17 +801,38 @@
         {
           "date": "2026-02-28",
           "nav": 31.76,
-          "nav_class_x": 32.4,
-          "nav_class_a1a": 31.4,
-          "nav_class_i1": 31.76,
-          "aum_m": null,
-          "cumulative_raised_m": 1192.0,
+          "aum_m": 1192.0,
           "subs_m": 97.4,
+          "redemptions_m": null,
           "dist_per_share": null,
           "source_label": "SEC 8-K filed 2026-03-31",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000010/sp-20260325.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 32.15,
+          "aum_m": 1292.4,
+          "subs_m": 100.5,
+          "redemptions_m": null,
+          "dist_per_share": 0.24,
+          "source_label": "SEC 8-K filed 2026-05-05 (Class I-1 Transactional NAV $32.15; SP+ INFRA cumulative capital raised $1,292.4M; April +$100.5M; Third A&R LPA new Class Z series)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000015/sp-20260429.htm"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 32.36,
+          "aum_m": 1345.3,
+          "subs_m": 52.8,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC 8-K filed 2026-06-04 (Class I-1 Transactional NAV $32.36 as of Apr 30, 2026; per-class A-1a $32.04, A-1b $32.08, A-1c $32.12, F-1 $32.12, S-1 $33.11, X $33.18; SP+ INFRA cumulative capital raised $1,345.3M; May 2026 +$52.8M; Item 3.02 May 4 unit sale $23.92M)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000022/sp-20260529.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/2045458/000204545826000022/sp-20260529.htm",
+      "known_source_label": "SEC 8-K filed 2026-06-04 (acc 0002045458-26-000022; CIK 2045458; Class I-1 Transactional NAV $32.36 as of Apr 30, 2026)",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     },
     {
       "id": "brookfield_infra_income",
@@ -799,14 +848,17 @@
       "source_label": "BAM Quarterly Earnings",
       "has_sec_filings": true,
       "inception_date": "2023-11-01",
-      "known_nav": 10.94,
-      "known_nav_date": "2026-01-31",
-      "known_aum_m": 4787.0,
+      "known_nav": 11.05,
+      "known_nav_date": "2026-04-30",
+      "known_aum_m": 5389.8,
       "historical_nav": [
         {
           "date": "2023-12-31",
           "nav": 10.07,
           "aum_m": 1597.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSR Annual Report Dec 2023 / NPORT-P Q4 2023",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
         },
@@ -814,6 +866,9 @@
           "date": "2024-03-31",
           "nav": null,
           "aum_m": 2041.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P Q1 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
@@ -821,6 +876,9 @@
           "date": "2024-06-30",
           "nav": 10.25,
           "aum_m": 2489.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSRS Semi-Annual Jun 2024 / NPORT-P Q2 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
         },
@@ -828,6 +886,9 @@
           "date": "2024-09-30",
           "nav": null,
           "aum_m": 2734.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P Q3 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
@@ -835,6 +896,9 @@
           "date": "2024-12-31",
           "nav": 10.44,
           "aum_m": 3169.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSR Annual Report Dec 2024 / NPORT-P Q4 2024",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSR"
         },
@@ -842,6 +906,9 @@
           "date": "2025-03-31",
           "nav": null,
           "aum_m": 3619.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P Q1 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
@@ -849,6 +916,9 @@
           "date": "2025-06-30",
           "nav": 10.63,
           "aum_m": 4145.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSRS Semi-Annual Jun 2025 / NPORT-P Q2 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=N-CSRS"
         },
@@ -856,6 +926,9 @@
           "date": "2025-09-30",
           "nav": null,
           "aum_m": 4681.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P Q3 2025",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1955857&type=NPORT-P"
         },
@@ -863,6 +936,9 @@
           "date": "2025-12-31",
           "nav": 10.89,
           "aum_m": 4787.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSR Annual Report Dec 2025",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000139834426004615/fp0097166-1_ncsrixbrl.htm"
         },
@@ -870,10 +946,37 @@
           "date": "2026-01-31",
           "nav": 10.94,
           "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "Brookfield Private Wealth Website Jan 2026",
           "source_url": "https://privatewealth.brookfield.com/fund/brookfield-infrastructure-income-fund-inc"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": null,
+          "aum_m": 5389.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-05-29 (Q1 2026; totAssets $5,538,694,758.32 - totLiabs $148,864,979.09)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000207169126012799/primary_doc.xml"
+        },
+        {
+          "date": "2026-04-30",
+          "nav": 11.05,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC SC TO-I filed 2026-05-27 (acc 0001213900-26-061266; CIK 1955857; Class I NAV $11.05 as of Apr 30, 2026; aggregate NAV $5,554.93M; Q2 2026 quarterly tender offer)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000121390026061266/ea0292033-01_sctoi.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/1955857/000121390026061266/ea0292033-01_sctoi.htm",
+      "known_source_label": "SEC SC TO-I filed 2026-05-27 (acc 0001213900-26-061266; CIK 1955857; Class I NAV $11.05 as of Apr 30, 2026). AUM $5,389.8M from NPORT-P filed 2026-05-29 (acc 0002071691-26-012799; totAssets-totLiabs, per Brookfield NPORT methodology).",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     },
     {
       "id": "hamilton_lane_infra",
@@ -888,15 +991,18 @@
       "source_label": "SEC EDGAR (NPORT-P + N-CSR)",
       "has_sec_filings": true,
       "inception_date": "2024-07-01",
-      "known_nav": 14.81,
-      "known_nav_date": "2025-09-30",
-      "known_aum_m": 142.8,
+      "known_nav": 15.79,
+      "known_nav_date": "2026-05-08",
+      "known_aum_m": 176.8,
       "note": "US-registered fund (CIK 2020510). Class I commenced operations July 1, 2024. Fiscal year ends March 31. Hamilton Lane Q3 FY2026 earnings reported ~$950M for broader infrastructure strategy; SEC data covers the registered fund entity only.",
       "historical_nav": [
         {
           "date": "2024-09-30",
           "nav": 12.67,
           "aum_m": 30.6,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2024-11-29 + N-CSRS filed 2024-12-06 (Q1 FY2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554924077086/"
         },
@@ -904,6 +1010,9 @@
           "date": "2024-12-31",
           "nav": null,
           "aum_m": 41.2,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-02-26 (Q2 FY2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925009900/"
         },
@@ -911,6 +1020,9 @@
           "date": "2025-03-31",
           "nav": 13.76,
           "aum_m": 62.9,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-05-29 + N-CSR filed 2025-06-09 (FY2025 Annual)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925034487/"
         },
@@ -918,6 +1030,9 @@
           "date": "2025-06-30",
           "nav": null,
           "aum_m": 98.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-08-26 (Q1 FY2026)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000114554925053401/"
         },
@@ -925,6 +1040,9 @@
           "date": "2025-09-30",
           "nav": 14.81,
           "aum_m": 118.3,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-11-26 + N-CSRS filed 2025-12-05 (Semi-Annual FY2026)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312525300096/"
         },
@@ -932,10 +1050,37 @@
           "date": "2025-12-31",
           "nav": null,
           "aum_m": 142.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-02-27 (Q2 FY2026)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000119312526082385/"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 15.51,
+          "aum_m": 176.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-05-29 (AUM totAssets $179,034,799.78 - totLiabs $2,219,191.95) + N-CSR Annual FY2026 filed 2026-06-09 (audited Class I NAV/share $15.51 end of period; Class I net assets $121,690K; acc 0001213900-26-066813)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026066813/ea0289140-01_ncsr.htm"
+        },
+        {
+          "date": "2026-05-08",
+          "nav": 15.79,
+          "aum_m": null,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC N-23C3A filed 2026-05-15 (acc 0001213900-26-057243; CIK 2020510; Class I NAV per Share $15.79 as of May 8, 2026 - inaugural Q2 2026 quarterly Repurchase Offer pricing)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026057243/ea0290687-01_n23c3a.htm",
+      "known_source_label": "SEC N-23C3A filed 2026-05-15 (acc 0001213900-26-057243; CIK 2020510; Class I NAV/Share $15.79 as of May 8, 2026). AUM $176.8M from NPORT-P filed 2026-05-29 (acc 0001193125-26-247445); audited FY2026 Class I NAV $15.51 (Mar 31) from N-CSR acc 0001213900-26-066813.",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     },
     {
       "id": "partners_group_infra",
@@ -950,15 +1095,18 @@
       "source_label": "SEC EDGAR (NPORT-P + N-CSR)",
       "has_sec_filings": true,
       "inception_date": "2024-03-01",
-      "known_nav": 1.79,
-      "known_nav_date": "2025-09-30",
-      "known_aum_m": 228.0,
+      "known_nav": 1.91,
+      "known_nav_date": "2026-03-31",
+      "known_aum_m": 277.3,
       "note": "US-registered feeder vehicle (CIK 1989393). Global fund reached USD 1B per Oct 2025 press release. SEC data covers US entity only. 1-for-4 unit split on July 2, 2024; NAV values are post-split.",
       "historical_nav": [
         {
           "date": "2024-03-31",
           "nav": 1.45,
           "aum_m": 62.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "N-CSRS (Semi-Annual Sep 2024) - inception period ending Mar 31, 2024",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834424022914/fp0090505-1_ncsrs.htm"
         },
@@ -966,6 +1114,9 @@
           "date": "2024-06-30",
           "nav": null,
           "aum_m": 74.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2024-08-29 (Q2 2024)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424200094/0001752724-24-200094-index.htm"
         },
@@ -973,6 +1124,9 @@
           "date": "2024-09-30",
           "nav": 1.53,
           "aum_m": 82.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2024-11-27 + N-CSRS (Q3 2024)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272424273551/0001752724-24-273551-index.htm"
         },
@@ -980,6 +1134,9 @@
           "date": "2024-12-31",
           "nav": null,
           "aum_m": 95.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-02-28 (Q4 2024)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000175272425048490/0001752724-25-048490-index.htm"
         },
@@ -987,6 +1144,9 @@
           "date": "2025-03-31",
           "nav": 1.71,
           "aum_m": 117.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-05-29 + N-CSR Annual (FY ending Mar 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425011603/fp0093157-1_ncsr.htm"
         },
@@ -994,6 +1154,9 @@
           "date": "2025-06-30",
           "nav": null,
           "aum_m": 147.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-08-29 (Q2 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036825001816/0001410368-25-001816-index.htm"
         },
@@ -1001,6 +1164,9 @@
           "date": "2025-09-30",
           "nav": 1.79,
           "aum_m": 168.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2025-11-28 + N-CSRS Semi-Annual (Sep 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834425022226/fp0095902-1_ncsrs.htm"
         },
@@ -1008,10 +1174,37 @@
           "date": "2025-12-31",
           "nav": null,
           "aum_m": 228.0,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
           "source_label": "NPORT-P filed 2026-03-02 (Q4 2025)",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000141036826021559/0001410368-26-021559-index.htm"
+        },
+        {
+          "date": "2026-02-28",
+          "nav": 1.8426,
+          "aum_m": 257.8,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "SEC SC TO-I filed 2026-04-28 (Item 10: total Fund net assets $257,823,417.12 as of Feb 28, 2026; Class I NAV $1.8426; 6,997,121 Units outstanding)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426007391/fp0098690-1_sctoi.htm"
+        },
+        {
+          "date": "2026-03-31",
+          "nav": 1.91,
+          "aum_m": 277.3,
+          "subs_m": null,
+          "redemptions_m": null,
+          "dist_per_share": null,
+          "source_label": "NPORT-P filed 2026-06-01 (AUM totAssets $284,088,285.76 - totLiabs $6,793,511.41) + N-CSR Annual FY2026 filed 2026-06-09 (audited Class I unit NAV $1.91 end of period; Class I net assets $261,592K; acc 0001398344-26-010607)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm"
         }
-      ]
+      ],
+      "known_source_url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010607/fp0098461-1_ncsr.htm",
+      "known_source_label": "SEC N-CSR Annual FY2026 filed 2026-06-09 (acc 0001398344-26-010607; CIK 1989393; Class I Units NAV from Financial Highlights). AUM from NPORT-P filed 2026-06-01 (acc 0001410368-26-056537).",
+      "known_confidence": "HIGH",
+      "known_dist_per_share": null
     }
   ]
 }

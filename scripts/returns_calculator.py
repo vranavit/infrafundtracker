@@ -44,9 +44,16 @@ def calculate_returns(fund_id: str, historical: list) -> dict:
         )
 
     current_year   = current_date[:4]
-    ytd_candidates = [s for s in series
-                      if s["date"].startswith(current_year) and s.get("nav")]
-    ytd_nav        = ytd_candidates[0]["nav"] if ytd_candidates else None
+    # YTD base = last NAV of the PRIOR calendar year (i.e. the Dec 31 year-end
+    # carry-in), falling back to the first available point in the current year.
+    prior_year_pts = [s for s in series
+                      if s["date"][:4] < current_year and s.get("nav")]
+    if prior_year_pts:
+        ytd_nav = prior_year_pts[-1]["nav"]
+    else:
+        ytd_candidates = [s for s in series
+                          if s["date"].startswith(current_year) and s.get("nav")]
+        ytd_nav = ytd_candidates[0]["nav"] if ytd_candidates else None
 
     return {
         "return_1m":         calc_return(nav_n_months_ago(1)),

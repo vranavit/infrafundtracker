@@ -23,10 +23,18 @@ def write_json(path: str, data: dict):
 
 
 def merge_seed_data(fund: dict, result: dict) -> dict:
-    """Falls back to seed data from config if live fetch returned nothing."""
+    """Falls back to curated, SEC-verified seed data from config if live fetch returned nothing."""
     if not result.get("nav_per_share") and fund.get("known_nav"):
         result["nav_per_share"] = fund["known_nav"]
         result["nav_date"]      = fund.get("known_nav_date")
+        # Seed values are curated directly from SEC filings; carry citation + confidence
+        if fund.get("known_source_url"):
+            result["source_url"]   = fund.get("known_source_url")
+            result["source_label"] = fund.get("known_source_label")
+            result["source_type"]  = "SEC filing (curated seed)"
+            result["confidence"]   = fund.get("known_confidence", "HIGH")
+        if fund.get("known_dist_per_share") is not None:
+            result["distribution_per_share"] = fund.get("known_dist_per_share")
     if not result.get("total_aum_millions") and fund.get("known_aum_m"):
         result["total_aum_millions"] = fund["known_aum_m"]
     result["fund_website"]    = fund.get("website", "")
@@ -130,10 +138,15 @@ def main():
 
         existing_series = historical["funds"][fid].get("historical", [])
 
-        # Add seed data if not already present
+        # Add seed data if not already present; otherwise backfill any fields the
+        # existing point is still missing (e.g. NAV arriving in a later N-CSR for a
+        # quarter whose AUM was already logged from NPORT-P).
         for seed_point in fund.get("historical_nav", []):
             seed_date = seed_point.get("date")
-            if seed_date and not any(h["date"] == seed_date for h in existing_series):
+            if not seed_date:
+                continue
+            match = next((h for h in existing_series if h["date"] == seed_date), None)
+            if match is None:
                 existing_series.append({
                     "date":           seed_date,
                     "nav":            seed_point.get("nav"),
@@ -144,6 +157,16 @@ def main():
                     "source_label":   seed_point.get("source_label", "Seed"),
                     "source_url":     seed_point.get("source_url", ""),
                 })
+            else:
+                if match.get("nav") is None and seed_point.get("nav") is not None:
+                    match["nav"]          = seed_point.get("nav")
+                    match["source_label"] = seed_point.get("source_label", match.get("source_label", ""))
+                    match["source_url"]   = seed_point.get("source_url", match.get("source_url", ""))
+                if match.get("aum_m") is None and seed_point.get("aum_m") is not None:
+                    match["aum_m"] = seed_point.get("aum_m")
+                for fld in ("subs_m", "redemptions_m", "dist_per_share"):
+                    if match.get(fld) is None and seed_point.get(fld) is not None:
+                        match[fld] = seed_point.get(fld)
 
         # Add today's freshly fetched data point
         current_nav  = current.get("nav_per_share")
